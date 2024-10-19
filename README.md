@@ -34,3 +34,9 @@ Trafic flow of Bologna.
 * [Rilevazione flusso veicoli tramite spire - anno 2022](https://opendata.comune.bologna.it/explore/dataset/rilevazione-flusso-veicoli-tramite-spire-anno-2022/).
 * [Accuratezza flusso spire - 2022](https://opendata.comune.bologna.it/explore/dataset/accuratezza-spire-anno-2022).
 * [Pollution 2017-2023](https://opendata.comune.bologna.it/explore/dataset/dati-centraline-bologna-storico/).
+
+### License ###
+
+All the contents of this repository are shared using the [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
+
+![CC logo](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
