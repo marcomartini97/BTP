@@ -6,11 +6,11 @@ This repository is a template repository for the homeworks to be developed in th
 *Graph Databases* is a course of the [Master Degree in Computer Engineering](https://degrees.dei.unipd.it/master-degrees/computer-engineering/) of the  [Department of Information Engineering](https://www.dei.unipd.it/en/), [University of Padua](https://www.unipd.it/en/), Italy.
 
 ## Group members ##
-| NAME        | SURNAME     | EMAIL                                             |
-|-------------|-------------|---------------------------------------------------|
-| Ali         | Bakhshayesh | ali.bakhshayesh@studenti.unipd.it                 |
-| Francesco   | Chemello    | francesco.chemello.1@studenti.unipd.it            |
-| Marco       | Martini     | marco.martini.7@studenti.unipd.it                 |
+| NAME        | SURNAME     | EMAIL                                     | ID NUMBER  |
+|-------------|-------------|-------------------------------------------|------------|
+| Ali         | Bakhshayesh | ali.bakhshayesh@studenti.unipd.it         | 2071502    |
+| Francesco   | Chemello    | francesco.chemello.1@studenti.unipd.it    | 2121346    |
+| Marco       | Martini     | marco.martini.7@studenti.unipd.it         | 2087642    |
 
 ## Organisation of the repository ##
 The repository is organised as follows:
@@ -34,6 +34,19 @@ Trafic flow of Bologna.
 * [Rilevazione flusso veicoli tramite spire - anno 2022](https://opendata.comune.bologna.it/explore/dataset/rilevazione-flusso-veicoli-tramite-spire-anno-2022/).
 * [Accuratezza flusso spire - 2022](https://opendata.comune.bologna.it/explore/dataset/accuratezza-spire-anno-2022).
 * [Pollution 2017-2023](https://opendata.comune.bologna.it/explore/dataset/dati-centraline-bologna-storico/).
+
+## Deadlines ##
+
+| DATE                | TASK                             | EVALUATED  |
+|---------------------|----------------------------------|------------|
+| 17 October 2024     | Homework Group Creation          | NO         |
+| 25 October 2024     | Domain and Data Selection        | NO         |
+| 29 November 2024    | Ontology Creation                | YES        |
+| 20 December 2024    | RDF Dataset                      | YES        |
+| 10 January 2025     | SPARQL Queries and Analytics     | YES        |
+| 14 January 2025     | Presentation Slides              | YES        |
+| 21 January 2025     | Self-Assessment Task             | NO         |
+
 
 ### License ###
 
