@@ -31,8 +31,14 @@ Trafic flow of Bologna.
 * [Quartieri di Bologna](https://opendata.comune.bologna.it/explore/dataset/quartieri-di-bologna/).
 * [Velocita Citta 30](https://opendata.comune.bologna.it/explore/dataset/velocita-citta-30/).
 * [Archi Stradali (Roads)](https://opendata.comune.bologna.it/explore/dataset/rifter_arcstra_li/).
+* [Rilevazione flusso veicoli tramite spire - anno 2019](https://opendata.comune.bologna.it/explore/dataset/rilevazione-autoveicoli-tramite-spire-anno-2019/).
+* [Rilevazione flusso veicoli tramite spire - anno 2020](https://opendata.comune.bologna.it/explore/dataset/rilevazione-autoveicoli-tramite-spire-anno-2020/).
+* [Rilevazione flusso veicoli tramite spire - anno 2021](https://opendata.comune.bologna.it/explore/dataset/rilevazione-autoveicoli-tramite-spire-anno-2021/).
 * [Rilevazione flusso veicoli tramite spire - anno 2022](https://opendata.comune.bologna.it/explore/dataset/rilevazione-flusso-veicoli-tramite-spire-anno-2022/).
-* [Accuratezza flusso spire - 2022](https://opendata.comune.bologna.it/explore/dataset/accuratezza-spire-anno-2022).
+* [Accuratezza flusso spire - 2019](https://opendata.comune.bologna.it/explore/dataset/accuratezza-spire-anno-2019/).
+* [Accuratezza flusso spire - 2020](https://opendata.comune.bologna.it/explore/dataset/accuratezza-spire-anno-2020/).
+* [Accuratezza flusso spire - 2021](https://opendata.comune.bologna.it/explore/dataset/accuratezza-spire-anno-2021/).
+* [Accuratezza flusso spire - 2022](https://opendata.comune.bologna.it/explore/dataset/accuratezza-spire-anno-2022/).  
 * [Pollution 2017-2023](https://opendata.comune.bologna.it/explore/dataset/dati-centraline-bologna-storico/).
 
 ## Deadlines ##
