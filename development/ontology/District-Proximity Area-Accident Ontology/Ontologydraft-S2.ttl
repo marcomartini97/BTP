@@ -1,0 +1,243 @@
+@prefix : <http://www.dei.unipd.it/database2/BTPOntology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.dei.unipd.it/database2/BTPOntology/> .
+
+<http://www.dei.unipd.it/database2/BTPOntology> rdf:type owl:Ontology ;
+                                                 rdfs:comment """This is partial ontology of BTP.
+Contains 3 main classes : Quartiere (District) , ZonaDiProssimita (Proximity Zone), IncidenteStradale (Traffic Accident)""" ;
+                                                 rdfs:isDefinedBy "Ali Bakhshayesh" .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.dei.unipd.it/database2/BTPOntology/Belongs_To
+:Belongs_To rdf:type owl:ObjectProperty ;
+            owl:inverseOf :Contains_Zone ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain :Zona_Di_Prossimita ;
+            rdfs:range :Quartiere .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology/Contains_Zone
+:Contains_Zone rdf:type owl:ObjectProperty ;
+               rdfs:domain :Quartiere ;
+               rdfs:range :Zona_Di_Prossimita .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology/Happend_In_Zone
+:Happend_In_Zone rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Incidente_Stradale ;
+                 rdfs:range :Zona_Di_Prossimita .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology/Recorded_In_District
+:Recorded_In_District rdf:type owl:ObjectProperty ;
+                      owl:inverseOf :Records_Incident ;
+                      rdfs:domain :Incidente_Stradale ;
+                      rdfs:range :Quartiere .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology/Records_Incident
+:Records_Incident rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Quartiere ;
+                  rdfs:range :Incidente_Stradale .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.dei.unipd.it/database2/BTPOntology#Area
+:Area rdf:type owl:DatatypeProperty ;
+      rdfs:domain [ rdf:type owl:Class ;
+                    owl:unionOf ( :Quartiere
+                                  :Zona_Di_Prossimita
+                                )
+                  ] ;
+      rdfs:range xsd:decimal .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#Geo_Point
+:Geo_Point rdf:type owl:DatatypeProperty ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :Quartiere
+                                       :Zona_Di_Prossimita
+                                     )
+                       ] .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#Geo_Shape
+:Geo_Shape rdf:type owl:DatatypeProperty ;
+           rdfs:domain [ rdf:type owl:Class ;
+                         owl:unionOf ( :Quartiere
+                                       :Zona_Di_Prossimita
+                                     )
+                       ] .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.dei.unipd.it/database2/BTPOntology/Incidente_Stradale
+:Incidente_Stradale rdf:type owl:Class ;
+                    owl:disjointWith :Quartiere ,
+                                     :Zona_Di_Prossimita ;
+                    rdfs:comment "Contains all the accident records." .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology/Quartiere
+:Quartiere rdf:type owl:Class ;
+           owl:equivalentClass [ rdf:type owl:Class ;
+                                 owl:oneOf ( :Borgo_Panigale_-_Reno
+                                             :Navile
+                                             :Porto_-_Saragozza
+                                             :San_Donato_-_San_Vitale
+                                             :Santo_Stefano
+                                             :Savena
+                                           )
+                               ] ;
+           owl:disjointWith :Zona_Di_Prossimita ;
+           rdfs:comment "Contains all the districts in Bologna." .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology/Zona_Di_Prossimita
+:Zona_Di_Prossimita rdf:type owl:Class ;
+                    rdfs:comment "Contains all the proximity zones related to each districts in Bologna" .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.dei.unipd.it/database2/BTPOntology#BARCA
+:BARCA rdf:type owl:NamedIndividual ,
+                :Zona_Di_Prossimita .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#BERTALIA_-_NOCE
+:BERTALIA_-_NOCE rdf:type owl:NamedIndividual ,
+                          :Zona_Di_Prossimita .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#BEVERARA
+:BEVERARA rdf:type owl:NamedIndividual ,
+                   :Zona_Di_Prossimita .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#BIRRA_-_BARGELLINO_-_LAVINO
+:BIRRA_-_BARGELLINO_-_LAVINO rdf:type owl:NamedIndividual ,
+                                      :Zona_Di_Prossimita .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#BOLOGNINA
+:BOLOGNINA rdf:type owl:NamedIndividual ,
+                    :Zona_Di_Prossimita .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#BORGO_PANIGALE
+:BORGO_PANIGALE rdf:type owl:NamedIndividual ,
+                         :Zona_Di_Prossimita .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#Borgo_Panigale_-_Reno
+:Borgo_Panigale_-_Reno rdf:type owl:NamedIndividual ,
+                                :Quartiere .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#CASTELDEBOLE_-_PONTELUNGO
+:CASTELDEBOLE_-_PONTELUNGO rdf:type owl:NamedIndividual ,
+                                    :Zona_Di_Prossimita .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#CORTICELLA_-_DOZZA
+:CORTICELLA_-_DOZZA rdf:type owl:NamedIndividual ,
+                             :Zona_Di_Prossimita .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#CROCE_DEL_BIACCO_-_ROVERI
+:CROCE_DEL_BIACCO_-_ROVERI rdf:type owl:NamedIndividual ,
+                                    :Zona_Di_Prossimita .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#FOSSOLO_-_DUE_MADONNE
+:FOSSOLO_-_DUE_MADONNE rdf:type owl:NamedIndividual ,
+                                :Zona_Di_Prossimita .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#GALVANI
+:GALVANI rdf:type owl:NamedIndividual ,
+                  :Zona_Di_Prossimita .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#IRNERIO
+:IRNERIO rdf:type owl:NamedIndividual ,
+                  :Zona_Di_Prossimita .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#MALPIGHI
+:MALPIGHI rdf:type owl:NamedIndividual ,
+                   :Zona_Di_Prossimita .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#MURRI
+:MURRI rdf:type owl:NamedIndividual ,
+                :Zona_Di_Prossimita .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#Navile
+:Navile rdf:type owl:NamedIndividual ,
+                 :Quartiere .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#PONTEVECCHIO_-_MAZZINI
+:PONTEVECCHIO_-_MAZZINI rdf:type owl:NamedIndividual ,
+                                 :Zona_Di_Prossimita .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#Porto_-_Saragozza
+:Porto_-_Saragozza rdf:type owl:NamedIndividual ,
+                            :Quartiere .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#SAFFI
+:SAFFI rdf:type owl:NamedIndividual ,
+                :Zona_Di_Prossimita .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#SANTA_VIOLA
+:SANTA_VIOLA rdf:type owl:NamedIndividual ,
+                      :Zona_Di_Prossimita .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#SAN_DONATO_NUOVO
+:SAN_DONATO_NUOVO rdf:type owl:NamedIndividual ,
+                           :Zona_Di_Prossimita .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#SARAGOZZA_-_SAN_LUCA
+:SARAGOZZA_-_SAN_LUCA rdf:type owl:NamedIndividual ,
+                               :Zona_Di_Prossimita .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#San_Donato_-_San_Vitale
+:San_Donato_-_San_Vitale rdf:type owl:NamedIndividual ,
+                                  :Quartiere .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#Santo_Stefano
+:Santo_Stefano rdf:type owl:NamedIndividual ,
+                        :Quartiere .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#Savena
+:Savena rdf:type owl:NamedIndividual ,
+                 :Quartiere .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
