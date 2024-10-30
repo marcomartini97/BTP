@@ -13,89 +13,91 @@
 #    Object Properties
 #################################################################
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#hasChemicalFormula
-:hasChemicalFormula rdf:type owl:ObjectProperty ;
-                    rdfs:domain :ChemicalDetection ;
-                    rdfs:range :ChemicalElement .
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#hasDetectedOnDate
+:hasDetectedOnDate rdf:type owl:ObjectProperty ;
+                   owl:inverseOf :isDetectedOnDate ;
+                   rdfs:domain :ChemicalDetection ;
+                   rdfs:range :Date .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#hasDetect
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#hasObservedOnDate
+:hasObservedOnDate rdf:type owl:ObjectProperty ;
+                   owl:inverseOf :isObservedOnDate .
+
+
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#isDetectedOnDate
+:isDetectedOnDate rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#isObservedOnDate
+:isObservedOnDate rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Date ;
+                  rdfs:range :VehicleDetection .
+
+
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#isOn
+:isOn rdf:type owl:ObjectProperty ;
+      owl:inverseOf :isPlaced .
+
+
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasDetect
 :hasDetect rdf:type owl:ObjectProperty ;
            owl:inverseOf :isDetected ;
            rdfs:domain :ChemicalDetection ;
            rdfs:range :ChemicalElement .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#hasLevel
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasLevel
 :hasLevel rdf:type owl:ObjectProperty ;
           rdfs:domain :Coil ;
           rdfs:range :Level .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#hasMake
-:hasMake rdf:type owl:ObjectProperty ;
-         owl:inverseOf :isMadeBy ;
-         rdfs:domain :PollutionStation ;
-         rdfs:range :ChemicalDetection .
-
-
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#hasObserve
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasObserve
 :hasObserve rdf:type owl:ObjectProperty ;
             owl:inverseOf :isObserved ;
             rdfs:domain :Coil ;
             rdfs:range :VehicleDetection .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#hasPlace
-:hasPlace rdf:type owl:ObjectProperty ;
-          owl:inverseOf :isPlaced ;
-          rdfs:domain :Road ;
-          rdfs:range :Coil .
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasRegister
+:hasRegister rdf:type owl:ObjectProperty ;
+             owl:inverseOf :isRegistered ;
+             rdfs:domain :PollutionStation ;
+             rdfs:range :ChemicalDetection .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#hasTransit
-:hasTransit rdf:type owl:ObjectProperty ;
-            owl:inverseOf :isPassed .
-
-
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#hasType
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasType
 :hasType rdf:type owl:ObjectProperty ;
          rdfs:domain :Coil ;
          rdfs:range :Type .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#isDetected
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/isDetected
 :isDetected rdf:type owl:ObjectProperty .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#isMadeBy
-:isMadeBy rdf:type owl:ObjectProperty .
-
-
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#isNearTo
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/isNearTo
 :isNearTo rdf:type owl:ObjectProperty ;
           rdfs:domain :PollutionStation ;
           rdfs:range :PollutionCoil .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#isObserved
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/isObserved
 :isObserved rdf:type owl:ObjectProperty .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#isPassed
-:isPassed rdf:type owl:ObjectProperty .
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/isPlaced
+:isPlaced rdf:type owl:ObjectProperty ;
+          rdfs:domain :Road ;
+          rdfs:range :Coil .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#isPlaced
-:isPlaced rdf:type owl:ObjectProperty .
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/isRegistered
+:isRegistered rdf:type owl:ObjectProperty .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#onDate
-:onDate rdf:type owl:ObjectProperty ;
-        rdfs:domain :VehicleDetection .
-
-
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#onDay
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/onDay
 :onDay rdf:type owl:ObjectProperty ;
        rdfs:domain :Date ;
        rdfs:range :DayWeek .
@@ -105,45 +107,51 @@
 #    Data properties
 #################################################################
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#fromDate
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#inQuantity
+:inQuantity rdf:type owl:DatatypeProperty ;
+            rdfs:domain :ChemicalDetection ;
+            rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/fromDate
 :fromDate rdf:type owl:DatatypeProperty ;
           rdfs:domain :Date ;
           rdfs:range xsd:dateTime ;
           rdfs:comment "it uses dateTime as value -> check ranges and how to use it!" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#hasAccuracy
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasAccuracy
 :hasAccuracy rdf:type owl:DatatypeProperty ;
              rdfs:domain :VehicleDetection ;
              rdfs:range xsd:float ;
              rdfs:comment "NOTE: the value of the accuracy is rappresented using a float" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#hasChemicalName
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasChemicalName
 :hasChemicalName rdf:type owl:DatatypeProperty ;
                  rdfs:domain :ChemicalDetection ;
                  rdfs:range xsd:string .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#hasCode
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasCode
 :hasCode rdf:type owl:DatatypeProperty ;
          rdfs:domain :Coil ;
          rdfs:range xsd:string .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#hasId
-:hasId rdf:type owl:DatatypeProperty ;
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasCount
+:hasCount rdf:type owl:DatatypeProperty ;
+          rdfs:domain :VehicleDetection ;
+          rdfs:range xsd:integer .
+
+
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasID
+:hasID rdf:type owl:DatatypeProperty ;
        rdfs:domain :Coil ;
        rdfs:range xsd:string .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#hasNumber
-:hasNumber rdf:type owl:DatatypeProperty ;
-           rdfs:domain :VehicleDetection ;
-           rdfs:range xsd:integer .
-
-
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#toDate
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/toDate
 :toDate rdf:type owl:DatatypeProperty ;
         rdfs:domain :Date ;
         rdfs:range xsd:dateTime .
@@ -153,15 +161,32 @@
 #    Classes
 #################################################################
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#ChemicalDetection
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/ChemicalDetection
 :ChemicalDetection rdf:type owl:Class ;
                    rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasDetectedOnDate ;
+                                     owl:someValuesFrom :Date
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
                                      owl:onProperty :hasDetect ;
                                      owl:someValuesFrom :ChemicalElement
-                                   ] .
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :isRegistered ;
+                                     owl:someValuesFrom :PollutionStation
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :inQuantity ;
+                                     owl:someValuesFrom xsd:float
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty :hasChemicalName ;
+                                     owl:someValuesFrom xsd:string
+                                   ] ;
+                   rdfs:comment "Class that rappresents a Chemical Detection (a contamination of a Chemical Agent)" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#ChemicalElement
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/ChemicalElement
 :ChemicalElement rdf:type owl:Class ;
                  owl:equivalentClass [ rdf:type owl:Class ;
                                        owl:oneOf ( :C6H6
@@ -177,9 +202,13 @@
                  rdfs:comment "Class that rappresents a chemical agent"@en .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#Coil
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Coil
 :Coil rdf:type owl:Class ;
       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :isOn ;
+                        owl:someValuesFrom :Road
+                      ] ,
+                      [ rdf:type owl:Restriction ;
                         owl:onProperty :hasLevel ;
                         owl:someValuesFrom :Level
                       ] ,
@@ -192,13 +221,13 @@
                         owl:someValuesFrom xsd:string
                       ] ,
                       [ rdf:type owl:Restriction ;
-                        owl:onProperty :hasId ;
+                        owl:onProperty :hasID ;
                         owl:someValuesFrom xsd:string
                       ] ;
       rdfs:comment "Class that rappresents the machine that register the flow of vehicles"@en .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#Date
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Date
 :Date rdf:type owl:Class ;
       rdfs:subClassOf [ rdf:type owl:Restriction ;
                         owl:onProperty :onDay ;
@@ -215,7 +244,7 @@
       rdfs:comment "Class that rappresent a moment"@en .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#DayWeek
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/DayWeek
 :DayWeek rdf:type owl:Class ;
          owl:equivalentClass [ rdf:type owl:Class ;
                                owl:oneOf ( :Domenica
@@ -229,7 +258,7 @@
                              ] .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#Level
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Level
 :Level rdf:type owl:Class ;
        owl:equivalentClass [ rdf:type owl:Class ;
                              owl:oneOf ( :Level1
@@ -238,22 +267,22 @@
                            ] .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#PollutionCoil
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/PollutionCoil
 :PollutionCoil rdf:type owl:Class ;
                rdfs:subClassOf :Coil ;
                rdfs:comment "Class for Coil near to a PollutionStation"@en .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#PollutionStation
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/PollutionStation
 :PollutionStation rdf:type owl:Class ;
                   rdfs:comment "Class that rappresents a pollution station"@en .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#Road
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Road
 :Road rdf:type owl:Class .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#Type
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Type
 :Type rdf:type owl:Class ;
       owl:equivalentClass [ rdf:type owl:Class ;
                             owl:oneOf ( :Spira
@@ -262,14 +291,22 @@
                           ] .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#VehicleDetection
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/VehicleDetection
 :VehicleDetection rdf:type owl:Class ;
                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty :hasObservedOnDate ;
+                                    owl:someValuesFrom :Date
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty :isObserved ;
+                                    owl:someValuesFrom :Coil
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
                                     owl:onProperty :hasAccuracy ;
                                     owl:someValuesFrom xsd:float
                                   ] ,
                                   [ rdf:type owl:Restriction ;
-                                    owl:onProperty :hasNumber ;
+                                    owl:onProperty :hasCount ;
                                     owl:someValuesFrom xsd:integer
                                   ] .
 
@@ -278,82 +315,92 @@
 #    Individuals
 #################################################################
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#C6H6
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/C6H6
 :C6H6 rdf:type owl:NamedIndividual .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#CO
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/CO
 :CO rdf:type owl:NamedIndividual .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#Domenica
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Domenica
 :Domenica rdf:type owl:NamedIndividual ,
                    :DayWeek .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#Giovedì
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Giovedì
 :Giovedì rdf:type owl:NamedIndividual .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#Level1
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Level1
 :Level1 rdf:type owl:NamedIndividual .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#Level2
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Level2
 :Level2 rdf:type owl:NamedIndividual .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#Lunedì
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Lunedì
 :Lunedì rdf:type owl:NamedIndividual .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#Martedì
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Martedì
 :Martedì rdf:type owl:NamedIndividual .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#Mercoledì
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Mercoledì
 :Mercoledì rdf:type owl:NamedIndividual .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#NO
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/NO
 :NO rdf:type owl:NamedIndividual .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#NO2
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/NO2
 :NO2 rdf:type owl:NamedIndividual .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#NOX
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/NOX
 :NOX rdf:type owl:NamedIndividual .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#O3
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/O3
 :O3 rdf:type owl:NamedIndividual .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#PM10
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/PM10
 :PM10 rdf:type owl:NamedIndividual .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#PM2.5
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/PM2.5
 :PM2.5 rdf:type owl:NamedIndividual ,
                 :ChemicalElement .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#Sabato
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Sabato
 :Sabato rdf:type owl:NamedIndividual .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#Spira
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Spira
 :Spira rdf:type owl:NamedIndividual .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#Telecamera
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Telecamera
 :Telecamera rdf:type owl:NamedIndividual .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#Venerdì
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Venerdì
 :Venerdì rdf:type owl:NamedIndividual .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+owl:Thing rdfs:comment "These are the classes, element of interest for my ontology"@en .
+
+
+owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 
 
 #################################################################
