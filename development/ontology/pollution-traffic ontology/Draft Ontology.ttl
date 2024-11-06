@@ -13,12 +13,6 @@
 #    Object Properties
 #################################################################
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#isLocatedIn
-:isLocatedIn rdf:type owl:ObjectProperty ;
-             rdfs:domain :PollutionStation ;
-             rdfs:range :PollutionStationLocation .
-
-
 ###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasDetect
 :hasDetect rdf:type owl:ObjectProperty ;
            owl:inverseOf :isDetected ;
@@ -72,6 +66,12 @@
 :isDetectedOnDate rdf:type owl:ObjectProperty .
 
 
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/isLocatedIn
+:isLocatedIn rdf:type owl:ObjectProperty ;
+             rdfs:domain :PollutionStation ;
+             rdfs:range :PollutionStationLocation .
+
+
 ###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/isNearTo
 :isNearTo rdf:type owl:ObjectProperty ;
           rdfs:domain :PollutionStation ;
@@ -113,18 +113,18 @@
 #    Data properties
 #################################################################
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/fromDate
-:fromDate rdf:type owl:DatatypeProperty ;
-          rdfs:domain :Date ;
-          rdfs:range xsd:dateTime ;
-          rdfs:comment "it uses dateTime as value -> check ranges and how to use it!" .
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/endTime
+:endTime rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Date ;
+         rdfs:range xsd:dateTime .
 
 
 ###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasAccuracy
 :hasAccuracy rdf:type owl:DatatypeProperty ;
              rdfs:domain :VehicleDetection ;
              rdfs:range xsd:float ;
-             rdfs:comment "NOTE: the value of the accuracy is rappresented using a float" .
+             rdfs:comment "A static indicator of the coil’s detection reliability"@en ,
+                          "NOTE: the value of the accuracy is rappresented using a float" .
 
 
 ###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasChemicalName
@@ -157,27 +157,16 @@
             rdfs:range xsd:float .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/toDate
-:toDate rdf:type owl:DatatypeProperty ;
-        rdfs:domain :Date ;
-        rdfs:range xsd:dateTime .
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/startTime
+:startTime rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Date ;
+           rdfs:range xsd:dateTime ;
+           rdfs:comment "it uses dateTime as value -> check ranges and how to use it!" .
 
 
 #################################################################
 #    Classes
 #################################################################
-
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#PollutionStationLocation
-:PollutionStationLocation rdf:type owl:Class ;
-                          owl:equivalentClass [ rdf:type owl:Class ;
-                                                owl:oneOf ( :GiardiniMargherita
-                                                            :PortaSanFelice
-                                                            :ViaChiarini
-                                                          )
-                                              ] ;
-                          rdfs:comment "An enum class that list all the Pollution Station by Street"@en ;
-                          rdfs:label "Pollution Station Location"@en .
-
 
 ###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/ChemicalDetection
 :ChemicalDetection rdf:type owl:Class ;
@@ -249,12 +238,12 @@
 ###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Date
 :Date rdf:type owl:Class ;
       owl:equivalentClass [ rdf:type owl:Restriction ;
-                            owl:onProperty :fromDate ;
+                            owl:onProperty :endTime ;
                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onDataRange xsd:dateTime
                           ] ,
                           [ rdf:type owl:Restriction ;
-                            owl:onProperty :toDate ;
+                            owl:onProperty :startTime ;
                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onDataRange xsd:dateTime
                           ] ;
@@ -307,8 +296,24 @@
                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                         owl:onClass :PollutionStationLocation
                                       ] ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty :isNearTo ;
+                                    owl:allValuesFrom :PollutionCoil
+                                  ] ;
                   rdfs:comment "Class that rappresents a pollution station"@en ;
                   rdfs:label "Pollution Station"@en .
+
+
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/PollutionStationLocation
+:PollutionStationLocation rdf:type owl:Class ;
+                          owl:equivalentClass [ rdf:type owl:Class ;
+                                                owl:oneOf ( :GiardiniMargherita
+                                                            :PortaSanFelice
+                                                            :ViaChiarini
+                                                          )
+                                              ] ;
+                          rdfs:comment "An enum class that list all the Pollution Station by Street"@en ;
+                          rdfs:label "Pollution Station Location"@en .
 
 
 ###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Road
@@ -356,21 +361,6 @@
 #    Individuals
 #################################################################
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#GiardiniMargherita
-:GiardiniMargherita rdf:type owl:NamedIndividual ,
-                             :PollutionStationLocation .
-
-
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#PortaSanFelice
-:PortaSanFelice rdf:type owl:NamedIndividual ,
-                         :PollutionStationLocation .
-
-
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#ViaChiarini
-:ViaChiarini rdf:type owl:NamedIndividual ,
-                      :PollutionStationLocation .
-
-
 ###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/C6H6
 :C6H6 rdf:type owl:NamedIndividual ,
                :ChemicalElement .
@@ -384,6 +374,11 @@
 ###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Domenica
 :Domenica rdf:type owl:NamedIndividual ,
                    :DayWeek .
+
+
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/GiardiniMargherita
+:GiardiniMargherita rdf:type owl:NamedIndividual ,
+                             :PollutionStationLocation .
 
 
 ###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Giovedì
@@ -446,6 +441,11 @@
                 :ChemicalElement .
 
 
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/PortaSanFelice
+:PortaSanFelice rdf:type owl:NamedIndividual ,
+                         :PollutionStationLocation .
+
+
 ###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Sabato
 :Sabato rdf:type owl:NamedIndividual ,
                  :DayWeek .
@@ -464,6 +464,11 @@
 ###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Venerdì
 :Venerdì rdf:type owl:NamedIndividual ,
                   :DayWeek .
+
+
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/ViaChiarini
+:ViaChiarini rdf:type owl:NamedIndividual ,
+                      :PollutionStationLocation .
 
 
 #################################################################
