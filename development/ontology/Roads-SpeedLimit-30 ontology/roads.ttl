@@ -1,0 +1,177 @@
+@prefix : <http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/> .
+
+<http://www.dei.unipd.it/database2/BTPOntology> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.dei.unipd.it/database2/BTPOntology#endDate
+:endDate rdf:type owl:ObjectProperty ;
+         rdfs:domain :Project30 ;
+         rdfs:range :Date .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#fromRoad
+:fromRoad rdf:type owl:ObjectProperty ;
+          rdfs:domain :RoadArch ;
+          rdfs:range :Road .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#hasArch
+:hasArch rdf:type owl:ObjectProperty ;
+         rdfs:domain :Road ;
+         rdfs:range :RoadArch .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#hasDeploymentDate
+:hasDeploymentDate rdf:type owl:ObjectProperty ;
+                   rdfs:domain :RoadArch ;
+                   rdfs:range :Date .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#hasDistrict
+:hasDistrict rdf:type owl:ObjectProperty ;
+             rdfs:domain :Road ;
+             rdfs:range :District .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#hasImpositionDate
+:hasImpositionDate rdf:type owl:ObjectProperty ;
+                   rdfs:domain :SpeedLimit30 ;
+                   rdfs:range :Date .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#hasNode
+:hasNode rdf:type owl:ObjectProperty ;
+         rdfs:domain :RoadArch ;
+         rdfs:range :RoadNode .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#hasProjectType
+:hasProjectType rdf:type owl:ObjectProperty ;
+                rdfs:domain :Project30 ;
+                rdfs:range :ProjectType .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#hasProximityZone
+:hasProximityZone rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Project30 ;
+                  rdfs:range :ProximityZone .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#hasRoadType
+:hasRoadType rdf:type owl:ObjectProperty ;
+             rdfs:domain :Road ;
+             rdfs:range :RoadType .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#hasSpeedLimit
+:hasSpeedLimit rdf:type owl:ObjectProperty ;
+               rdfs:domain :Road ;
+               rdfs:range :SpeedLimit30 .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#onRoad
+:onRoad rdf:type owl:ObjectProperty ;
+        rdfs:domain :Project30 ;
+        rdfs:range :Road .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#startDate
+:startDate rdf:type owl:ObjectProperty ;
+           rdfs:domain :Project30 ;
+           rdfs:range :Date .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#toRoad
+:toRoad rdf:type owl:ObjectProperty ;
+        rdfs:domain :RoadArch ;
+        rdfs:range :Road .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.dei.unipd.it/database2/BTPOntology#hasCardinality
+:hasCardinality rdf:type owl:DatatypeProperty ;
+                rdfs:domain :ProjectType ;
+                rdfs:range xsd:integer .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#hasDescription
+:hasDescription rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Project30 ;
+                rdfs:range xsd:string .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#hasLength
+:hasLength rdf:type owl:DatatypeProperty ;
+           rdfs:domain :RoadArch ;
+           rdfs:range xsd:decimal .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#hasStatus
+:hasStatus rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Project30 ;
+           rdfs:range xsd:string .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#speedLimit
+:speedLimit rdf:type owl:DatatypeProperty ;
+            rdfs:domain :SpeedLimit30 ;
+            rdfs:range xsd:integer .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.dei.unipd.it/database2/BTPOntology#Date
+:Date rdf:type owl:Class .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#District
+:District rdf:type owl:Class .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#Project30
+:Project30 rdf:type owl:Class .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#ProjectType
+:ProjectType rdf:type owl:Class .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#ProximityZone
+:ProximityZone rdf:type owl:Class .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#Road
+:Road rdf:type owl:Class .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#RoadArch
+:RoadArch rdf:type owl:Class .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#RoadNode
+:RoadNode rdf:type owl:Class .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#RoadType
+:RoadType rdf:type owl:Class .
+
+
+###  http://www.dei.unipd.it/database2/BTPOntology#SpeedLimit30
+:SpeedLimit30 rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
