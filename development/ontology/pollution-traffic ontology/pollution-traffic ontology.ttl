@@ -437,27 +437,6 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 #    Individuals
 #################################################################
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#detection2
-:detection2 rdf:type owl:NamedIndividual ,
-                     :VehicleDetection ;
-            :hasObservedOnDate :data2 ;
-            :isObserved :spira2 ;
-            :hasAccuracy "0.75"^^xsd:float ;
-            :hasCount 130 ;
-            rdfs:label "Detection 2" .
-
-
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project#rilevazione2
-:rilevazione2 rdf:type owl:NamedIndividual ,
-                       :ChemicalDetection ;
-              :hasDetect :PM2.5 ;
-              :hasDetectedOnDate :data3 ;
-              :isRegistered :PortaSanFelice ;
-              :hasChemicalName "PM 2.5" ;
-              :inQuantity "12.0"^^xsd:float ;
-              rdfs:label "Rilevazione 2" .
-
-
 ###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/C6H6
 :C6H6 rdf:type owl:NamedIndividual ,
                :ChemicalElement ;
@@ -596,6 +575,16 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
             rdfs:label "Detection 1" .
 
 
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/detection2
+:detection2 rdf:type owl:NamedIndividual ,
+                     :VehicleDetection ;
+            :hasObservedOnDate :data2 ;
+            :isObserved :spira2 ;
+            :hasAccuracy "0.75"^^xsd:float ;
+            :hasCount 130 ;
+            rdfs:label "Detection 2" .
+
+
 ###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/friday
 :friday rdf:type owl:NamedIndividual ,
                  :DayWeek ;
@@ -624,6 +613,17 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
               :inQuantity "57.0"^^xsd:float ;
               rdfs:comment "Test for Chemical Detection"@en ;
               rdfs:label "Rilevazione 1" .
+
+
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/rilevazione2
+:rilevazione2 rdf:type owl:NamedIndividual ,
+                       :ChemicalDetection ;
+              :hasDetect :PM2.5 ;
+              :hasDetectedOnDate :data3 ;
+              :isRegistered :PortaSanFelice ;
+              :hasChemicalName "PM 2.5" ;
+              :inQuantity "12.0"^^xsd:float ;
+              rdfs:label "Rilevazione 2" .
 
 
 ###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/saturday
@@ -717,14 +717,6 @@ owl:Thing rdfs:comment "These are the classes, element of interest for my ontolo
   owl:distinctMembers ( :GiardiniMargherita
                         :PortaSanFelice
                         :ViaChiarini
-                      )
-] .
-
-
-[ rdf:type owl:AllDifferent ;
-  owl:distinctMembers ( :data1
-                        :data2
-                        :data3
                       )
 ] .
 
