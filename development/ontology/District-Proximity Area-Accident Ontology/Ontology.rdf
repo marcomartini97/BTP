@@ -1,0 +1,458 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.dei.unipd.it/graphdb/BTP/"
+     xml:base="http://www.dei.unipd.it/graphdb/BTP/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+    <owl:Ontology rdf:about="http://www.dei.unipd.it/graphdb/BTP">
+        <owl:imports rdf:resource="http://www.w3.org/TR/skos-reference/skos-owl1-dl.rdf"/>
+        <rdfs:comment>This is a partial ontology of BTP group project</rdfs:comment>
+        <rdfs:isDefinedBy>Ali Bakhshayesh</rdfs:isDefinedBy>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#gYear -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#gYear"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.dei.unipd.it/graphdb/BTP#Belongs_to -->
+
+    <owl:ObjectProperty rdf:about="http://www.dei.unipd.it/graphdb/BTP#Belongs_to">
+        <owl:inverseOf rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Contains_zone"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Proximity_Areas"/>
+        <rdfs:range rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Districts"/>
+        <rdfs:comment>This property links proximity areas to districts</rdfs:comment>
+        <rdfs:label xml:lang="en">Belongs_to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/graphdb/BTP#Contains_zone -->
+
+    <owl:ObjectProperty rdf:about="http://www.dei.unipd.it/graphdb/BTP#Contains_zone">
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Districts"/>
+        <rdfs:range rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Proximity_Areas"/>
+        <rdfs:comment xml:lang="en">This property conects districts to proximity areas. it is the inverse of &quot;belongs_to&quot; property</rdfs:comment>
+        <rdfs:label xml:lang="en">Contains_zone</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/graphdb/BTP#Happened_in_zone -->
+
+    <owl:ObjectProperty rdf:about="http://www.dei.unipd.it/graphdb/BTP#Happened_in_zone">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Road_Accidents"/>
+        <rdfs:range rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Proximity_Areas"/>
+        <rdfs:comment xml:lang="en">This property connects road accidents to proximity areas</rdfs:comment>
+        <rdfs:label xml:lang="en">Happened_in_zone</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/graphdb/BTP#Recorded_in_district -->
+
+    <owl:ObjectProperty rdf:about="http://www.dei.unipd.it/graphdb/BTP#Recorded_in_district">
+        <owl:inverseOf rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Recorded_incident"/>
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Road_Accidents"/>
+        <rdfs:range rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Districts"/>
+        <rdfs:comment xml:lang="en">This property connects road accidents to districts</rdfs:comment>
+        <rdfs:label xml:lang="en">Recorded_in_district</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/graphdb/BTP#Recorded_incident -->
+
+    <owl:ObjectProperty rdf:about="http://www.dei.unipd.it/graphdb/BTP#Recorded_incident">
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Districts"/>
+        <rdfs:range rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Road_Accidents"/>
+        <rdfs:comment xml:lang="en">This property connects districts to road accidents,it is the inverse of &quot;recorded_in_district&quot; property.</rdfs:comment>
+        <rdfs:label xml:lang="en">Recorded _incident</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.dei.unipd.it/graphdb/BTP#District_code -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/graphdb/BTP#District_code">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/graphdb/BTP#Districts"/>
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/graphdb/BTP#Proximity_Areas"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment xml:lang="en">district code related to each district in bologna</rdfs:comment>
+        <rdfs:label xml:lang="en">District code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/graphdb/BTP#Districts_name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/graphdb/BTP#Districts_name">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/graphdb/BTP#Districts"/>
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/graphdb/BTP#Proximity_Areas"/>
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/graphdb/BTP#Road_Accidents"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">Districts names</rdfs:label>
+        <rdfs:label xml:lang="en">The names of the all 6 districts located in bologna</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/graphdb/BTP#Number_of_accidents -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/graphdb/BTP#Number_of_accidents">
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Road_Accidents"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <rdfs:comment xml:lang="en">represnting the number of accidents that happend in the proximity area</rdfs:comment>
+        <rdfs:label xml:lang="en">NumberOfAccidents</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/graphdb/BTP#Number_of_cyclists_killed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/graphdb/BTP#Number_of_cyclists_killed">
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Road_Accidents"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment xml:lang="en">representing the Number of cyclists killed in accidents</rdfs:comment>
+        <rdfs:label xml:lang="en">Number of cyclists killed</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/graphdb/BTP#Number_of_drivers_killed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/graphdb/BTP#Number_of_drivers_killed">
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Road_Accidents"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:label xml:lang="en">Number of drivers killed</rdfs:label>
+        <rdfs:label xml:lang="en">representing the Number of drivers killed in the accidents</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/graphdb/BTP#Number_of_injured_cyclists -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/graphdb/BTP#Number_of_injured_cyclists">
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Road_Accidents"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment xml:lang="en">representing the Number of injured cyclists in the accidents</rdfs:comment>
+        <rdfs:label xml:lang="en">Number of injured cyclists</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/graphdb/BTP#Number_of_injured_drivers -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/graphdb/BTP#Number_of_injured_drivers">
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Road_Accidents"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment xml:lang="en">representing the Number of injured drivers in the accidents</rdfs:comment>
+        <rdfs:label xml:lang="en">Number of injured drivers</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/graphdb/BTP#Number_of_injured_motorcyclists -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/graphdb/BTP#Number_of_injured_motorcyclists">
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Road_Accidents"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment xml:lang="en">representing the Number of injured motorcyclists in the accidents</rdfs:comment>
+        <rdfs:label xml:lang="en">Number of injured motorcyclists</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/graphdb/BTP#Number_of_injured_pedestrians -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/graphdb/BTP#Number_of_injured_pedestrians">
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Road_Accidents"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:isDefinedBy xml:lang="en">representing the Number of injured pedestriansin the accidents</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Number of injured pedestrians</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/graphdb/BTP#Number_of_motorcyclists_killed -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/graphdb/BTP#Number_of_motorcyclists_killed">
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Road_Accidents"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment xml:lang="en">representing the Number of motorcyclists killed in the accident</rdfs:comment>
+        <rdfs:label xml:lang="en">Number of motorcyclists killed</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/graphdb/BTP#Number_of_pedestrian_deaths -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/graphdb/BTP#Number_of_pedestrian_deaths">
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Road_Accidents"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment xml:lang="en">representiung the Number of pedestrian deaths in the accidents</rdfs:comment>
+        <rdfs:label xml:lang="en">Number of pedestrian deaths</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/graphdb/BTP#Number_of_scooter_deaths -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/graphdb/BTP#Number_of_scooter_deaths">
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Road_Accidents"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment xml:lang="en">representig the Number of scooter deaths in the accidents</rdfs:comment>
+        <rdfs:label xml:lang="en">Number of scooter deaths</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/graphdb/BTP#Number_of_scooters_injured -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/graphdb/BTP#Number_of_scooters_injured">
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Road_Accidents"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment xml:lang="en">representing the Number of scooters injured in the accidents</rdfs:comment>
+        <rdfs:label xml:lang="en">Number of scooters injured</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/graphdb/BTP#Proximity_area_name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/graphdb/BTP#Proximity_area_name">
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Proximity_Areas"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">Names of the all the proximity areas related to each district</rdfs:label>
+        <rdfs:label xml:lang="en">Proximity area name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/graphdb/BTP#Total_deaths -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/graphdb/BTP#Total_deaths">
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Road_Accidents"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment xml:lang="en">Total number of deaths</rdfs:comment>
+        <rdfs:label xml:lang="en">Total deaths</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/graphdb/BTP#Total_injuries -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/graphdb/BTP#Total_injuries">
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Road_Accidents"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment xml:lang="en">Total number of injuries</rdfs:comment>
+        <rdfs:label xml:lang="en">Total injuries</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.dei.unipd.it/graphdb/BTP#Year -->
+
+    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/graphdb/BTP#Year">
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Road_Accidents"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear"/>
+        <rdfs:comment xml:lang="en">indicating the related Year in the 4 digit format (****)</rdfs:comment>
+        <rdfs:label xml:lang="en">Year</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.dei.unipd.it/graphdb/BTP#Districts -->
+
+    <owl:Class rdf:about="http://www.dei.unipd.it/graphdb/BTP#Districts">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/graphdb/BTP#Borgo_Panigale_-_Reno"/>
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/graphdb/BTP#Navile"/>
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/graphdb/BTP#Porto_-_Saragozza"/>
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/graphdb/BTP#San_Donato_-_San_Vitale"/>
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/graphdb/BTP#Santo_Stefano"/>
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/graphdb/BTP#Savena"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Contains_zone"/>
+                <owl:someValuesFrom rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Proximity_Areas"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Proximity_Areas"/>
+        <owl:disjointWith rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Road_Accidents"/>
+        <rdfs:comment xml:lang="en">Contains all the disricts in Bologna</rdfs:comment>
+        <rdfs:label xml:lang="en">Districts</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dei.unipd.it/graphdb/BTP#Proximity_Areas -->
+
+    <owl:Class rdf:about="http://www.dei.unipd.it/graphdb/BTP#Proximity_Areas">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Belongs_to"/>
+                <owl:someValuesFrom rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Districts"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Road_Accidents"/>
+        <rdfs:comment xml:lang="en">Contains all the proximity areas, related to each District</rdfs:comment>
+        <rdfs:label xml:lang="en">Proximity_Areas</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.dei.unipd.it/graphdb/BTP#Road_Accidents -->
+
+    <owl:Class rdf:about="http://www.dei.unipd.it/graphdb/BTP#Road_Accidents">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Happened_in_zone"/>
+                        <owl:someValuesFrom rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Proximity_Areas"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Recorded_in_district"/>
+                        <owl:someValuesFrom rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Districts"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">Contains all the accident records of bologna</rdfs:comment>
+        <rdfs:label xml:lang="en">Road_Accidents</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.dei.unipd.it/graphdb/BTP#Borgo_Panigale_-_Reno -->
+
+    <owl:NamedIndividual rdf:about="http://www.dei.unipd.it/graphdb/BTP#Borgo_Panigale_-_Reno">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Districts"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dei.unipd.it/graphdb/BTP#Navile -->
+
+    <owl:NamedIndividual rdf:about="http://www.dei.unipd.it/graphdb/BTP#Navile">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Districts"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dei.unipd.it/graphdb/BTP#Porto_-_Saragozza -->
+
+    <owl:NamedIndividual rdf:about="http://www.dei.unipd.it/graphdb/BTP#Porto_-_Saragozza">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Districts"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dei.unipd.it/graphdb/BTP#San_Donato_-_San_Vitale -->
+
+    <owl:NamedIndividual rdf:about="http://www.dei.unipd.it/graphdb/BTP#San_Donato_-_San_Vitale">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Districts"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dei.unipd.it/graphdb/BTP#Santo_Stefano -->
+
+    <owl:NamedIndividual rdf:about="http://www.dei.unipd.it/graphdb/BTP#Santo_Stefano">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Districts"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.dei.unipd.it/graphdb/BTP#Savena -->
+
+    <owl:NamedIndividual rdf:about="http://www.dei.unipd.it/graphdb/BTP#Savena">
+        <rdf:type rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Districts"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
