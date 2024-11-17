@@ -79,6 +79,16 @@
     
 
 
+    <!-- http://www.dei.unipd.it/graphdb/BTP#hasAccidentYear -->
+
+    <owl:ObjectProperty rdf:about="http://www.dei.unipd.it/graphdb/BTP#hasAccidentYear">
+        <rdfs:domain rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Road_Accident"/>
+        <rdfs:comment xml:lang="en">this property is pointing to the year in which the recorded accidents happened</rdfs:comment>
+        <rdfs:label xml:lang="en">accident year</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.dei.unipd.it/graphdb/BTP#recordedInDistrict -->
 
     <owl:ObjectProperty rdf:about="http://www.dei.unipd.it/graphdb/BTP#recordedInDistrict">
@@ -119,6 +129,7 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.dei.unipd.it/graphdb/BTP#District"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment xml:lang="en">represent a unique code which is assigned to each district</rdfs:comment>
         <rdfs:label xml:lang="en">district code</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -130,6 +141,7 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.dei.unipd.it/graphdb/BTP#District"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">represent the name of the district wich is unique for each district</rdfs:comment>
         <rdfs:label xml:lang="en">district name</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -262,6 +274,7 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Proximity_Area"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">reprsenting the names of proximity area related to the district, the mentioned names are unique</rdfs:comment>
         <rdfs:label xml:lang="en">proximity area name</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -286,12 +299,6 @@
         <rdfs:comment xml:lang="en">representing the total number of injuries</rdfs:comment>
         <rdfs:label xml:lang="en">total number of injuries</rdfs:label>
     </owl:DatatypeProperty>
-    
-
-
-    <!-- http://www.dei.unipd.it/graphdb/BTP#year -->
-
-    <owl:DatatypeProperty rdf:about="http://www.dei.unipd.it/graphdb/BTP#year"/>
     
 
 
@@ -322,20 +329,14 @@
         <owl:equivalentClass>
             <owl:Class>
                 <owl:oneOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.dei.unipd.it/graphdb/BTP#Borgo_Panigale_-_Reno"/>
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/graphdb/BTP#Borgo_Panigale_Reno"/>
                     <rdf:Description rdf:about="http://www.dei.unipd.it/graphdb/BTP#Navile"/>
-                    <rdf:Description rdf:about="http://www.dei.unipd.it/graphdb/BTP#Porto_-_Saragozza"/>
-                    <rdf:Description rdf:about="http://www.dei.unipd.it/graphdb/BTP#San_Donato_-_San_Vitale"/>
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/graphdb/BTP#Porto_Saragozza"/>
+                    <rdf:Description rdf:about="http://www.dei.unipd.it/graphdb/BTP#San_Donato_San_Vitale"/>
                     <rdf:Description rdf:about="http://www.dei.unipd.it/graphdb/BTP#Santo_Stefano"/>
                     <rdf:Description rdf:about="http://www.dei.unipd.it/graphdb/BTP#Savena"/>
                 </owl:oneOf>
             </owl:Class>
-        </owl:equivalentClass>
-        <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.dei.unipd.it/graphdb/BTP#containsArea"/>
-                <owl:someValuesFrom rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Proximity_Area"/>
-            </owl:Restriction>
         </owl:equivalentClass>
         <owl:disjointWith rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Proximity_Area"/>
         <owl:disjointWith rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Road_Accident"/>
@@ -378,6 +379,13 @@
     <!-- http://www.dei.unipd.it/graphdb/BTP#Proximity_Area -->
 
     <owl:Class rdf:about="http://www.dei.unipd.it/graphdb/BTP#Proximity_Area">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.dei.unipd.it/graphdb/BTP#belongsTo"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.dei.unipd.it/graphdb/BTP#District"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <owl:disjointWith rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Road_Accident"/>
         <rdfs:comment xml:lang="en">Contains all the proximity areas, related to each District</rdfs:comment>
         <rdfs:label xml:lang="en">Proximity_Areas</rdfs:label>
@@ -389,10 +397,20 @@
 
     <owl:Class rdf:about="http://www.dei.unipd.it/graphdb/BTP#Road_Accident">
         <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.dei.unipd.it/graphdb/BTP#happendInArea"/>
-                <owl:someValuesFrom rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Proximity_Area"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.dei.unipd.it/graphdb/BTP#happendInArea"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.dei.unipd.it/graphdb/BTP#Proximity_Area"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.dei.unipd.it/graphdb/BTP#recordedInDistrict"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.dei.unipd.it/graphdb/BTP#District"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </owl:equivalentClass>
         <rdfs:comment xml:lang="en">Contains all the accident records of bologna</rdfs:comment>
         <rdfs:label xml:lang="en">Road_Accidents</rdfs:label>
@@ -421,9 +439,9 @@
     
 
 
-    <!-- http://www.dei.unipd.it/graphdb/BTP#Borgo_Panigale_-_Reno -->
+    <!-- http://www.dei.unipd.it/graphdb/BTP#Borgo_Panigale_Reno -->
 
-    <owl:NamedIndividual rdf:about="http://www.dei.unipd.it/graphdb/BTP#Borgo_Panigale_-_Reno">
+    <owl:NamedIndividual rdf:about="http://www.dei.unipd.it/graphdb/BTP#Borgo_Panigale_Reno">
         <rdf:type rdf:resource="http://www.dei.unipd.it/graphdb/BTP#District"/>
     </owl:NamedIndividual>
     
@@ -437,17 +455,17 @@
     
 
 
-    <!-- http://www.dei.unipd.it/graphdb/BTP#Porto_-_Saragozza -->
+    <!-- http://www.dei.unipd.it/graphdb/BTP#Porto_Saragozza -->
 
-    <owl:NamedIndividual rdf:about="http://www.dei.unipd.it/graphdb/BTP#Porto_-_Saragozza">
+    <owl:NamedIndividual rdf:about="http://www.dei.unipd.it/graphdb/BTP#Porto_Saragozza">
         <rdf:type rdf:resource="http://www.dei.unipd.it/graphdb/BTP#District"/>
     </owl:NamedIndividual>
     
 
 
-    <!-- http://www.dei.unipd.it/graphdb/BTP#San_Donato_-_San_Vitale -->
+    <!-- http://www.dei.unipd.it/graphdb/BTP#San_Donato_San_Vitale -->
 
-    <owl:NamedIndividual rdf:about="http://www.dei.unipd.it/graphdb/BTP#San_Donato_-_San_Vitale">
+    <owl:NamedIndividual rdf:about="http://www.dei.unipd.it/graphdb/BTP#San_Donato_San_Vitale">
         <rdf:type rdf:resource="http://www.dei.unipd.it/graphdb/BTP#District"/>
     </owl:NamedIndividual>
     
