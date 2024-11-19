@@ -7,18 +7,12 @@
 @base <http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/> .
 
 <http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project> rdf:type owl:Ontology ;
-                                                                                 rdfs:comment "Francesco Chemello 2121346" ,
-                                                                                              "This is the ontology for the first draft about traffic cars" .
+                                                                                 rdfs:comment "This is the ontology about pollution and traffic."@en ,
+                                                                                              "Francesco Chemello 2121346" .
 
 #################################################################
 #    Object Properties
 #################################################################
-
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasDate
-:hasDate rdf:type owl:ObjectProperty ;
-         rdfs:comment "General property for time relationships"@en ;
-         rdfs:label "has Date" .
-
 
 ###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasDetect
 :hasDetect rdf:type owl:ObjectProperty ;
@@ -29,13 +23,13 @@
            rdfs:label "has Detect" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasDetectedOnDate
-:hasDetectedOnDate rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf :hasDate ;
-                   owl:inverseOf :isDetectedOnDate ;
-                   rdfs:domain :ChemicalDetection ;
-                   rdfs:range :Date ;
-                   rdfs:label "has Detect On Date" .
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasDetectedOnPeriod
+:hasDetectedOnPeriod rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :hasPeriod ;
+                     owl:inverseOf :isDetectedOnPeriod ;
+                     rdfs:domain :ChemicalDetection ;
+                     rdfs:range :Period ;
+                     rdfs:label "has Detect On Period" .
 
 
 ###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasLevel
@@ -60,11 +54,17 @@
             rdfs:label "has Observe" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasObservedOnDate
-:hasObservedOnDate rdf:type owl:ObjectProperty ;
-                   rdfs:subPropertyOf :hasDate ;
-                   owl:inverseOf :isObservedOnDate ;
-                   rdfs:label "has Observed On Date" .
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasObservedOnPeriod
+:hasObservedOnPeriod rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :hasPeriod ;
+                     owl:inverseOf :isObservedOnPeriod ;
+                     rdfs:label "has Observed On Period" .
+
+
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasPeriod
+:hasPeriod rdf:type owl:ObjectProperty ;
+           rdfs:comment "General property for time relationships"@en ;
+           rdfs:label "has Period" .
 
 
 ###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasRegister
@@ -88,10 +88,10 @@
             rdfs:label "is Detected" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/isDetectedOnDate
-:isDetectedOnDate rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf :hasDate ;
-                  rdfs:label "is Detected on Date" .
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/isDetectedOnPeriod
+:isDetectedOnPeriod rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :hasPeriod ;
+                    rdfs:label "is Detected on Period" .
 
 
 ###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/isLocatedAt
@@ -119,12 +119,12 @@
             rdfs:label "is Observed" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/isObservedOnDate
-:isObservedOnDate rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf :hasDate ;
-                  rdfs:domain :Date ;
-                  rdfs:range :VehicleDetection ;
-                  rdfs:label "is Observed On Date" .
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/isObservedOnPeriod
+:isObservedOnPeriod rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :hasPeriod ;
+                    rdfs:domain :Period ;
+                    rdfs:range :VehicleDetection ;
+                    rdfs:label "is Observed On Period" .
 
 
 ###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/isOn
@@ -150,7 +150,7 @@
 
 ###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/onDay
 :onDay rdf:type owl:ObjectProperty ;
-       rdfs:domain :Date ;
+       rdfs:domain :Period ;
        rdfs:range :DayWeek ;
        rdfs:label "on Day" .
 
@@ -166,7 +166,7 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 ###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/endTime
 :endTime rdf:type owl:DatatypeProperty ;
          rdfs:subPropertyOf :inTime ;
-         rdfs:domain :Date ;
+         rdfs:domain :Period ;
          rdfs:range xsd:dateTime ;
          rdfs:label "end Time" .
 
@@ -231,7 +231,7 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 ###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/startTime
 :startTime rdf:type owl:DatatypeProperty ;
            rdfs:subPropertyOf :inTime ;
-           rdfs:domain :Date ;
+           rdfs:domain :Period ;
            rdfs:range xsd:dateTime ;
            rdfs:comment "it uses dateTime as value -> check ranges and how to use it!" ;
            rdfs:label "start Time" .
@@ -249,9 +249,9 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
                                                                 owl:onClass :ChemicalElement
                                                               ]
                                                               [ rdf:type owl:Restriction ;
-                                                                owl:onProperty :hasDetectedOnDate ;
+                                                                owl:onProperty :hasDetectedOnPeriod ;
                                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                owl:onClass :Date
+                                                                owl:onClass :Period
                                                               ]
                                                               [ rdf:type owl:Restriction ;
                                                                 owl:onProperty :isRegistered ;
@@ -311,30 +311,6 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
       rdfs:label "Coil"@en .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Date
-:Date rdf:type owl:Class ;
-      owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                   owl:onProperty :endTime ;
-                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                   owl:onDataRange xsd:dateTime
-                                                 ]
-                                                 [ rdf:type owl:Restriction ;
-                                                   owl:onProperty :startTime ;
-                                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                   owl:onDataRange xsd:dateTime
-                                                 ]
-                                               ) ;
-                            rdf:type owl:Class
-                          ] ;
-      rdfs:subClassOf [ rdf:type owl:Restriction ;
-                        owl:onProperty :onDay ;
-                        owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onClass :DayWeek
-                      ] ;
-      rdfs:comment "Class that rappresent a event in the time"@en ;
-      rdfs:label "Date"@en .
-
-
 ###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/DayWeek
 :DayWeek rdf:type owl:Class ;
          owl:equivalentClass [ rdf:type owl:Class ;
@@ -359,6 +335,30 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
                                        )
                            ] ;
        rdfs:label "Level"@en .
+
+
+###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Period
+:Period rdf:type owl:Class ;
+        owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :endTime ;
+                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                     owl:onDataRange xsd:dateTime
+                                                   ]
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :startTime ;
+                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                     owl:onDataRange xsd:dateTime
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :onDay ;
+                          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :DayWeek
+                        ] ;
+        rdfs:comment "Class that rappresent a event in the time"@en ;
+        rdfs:label "Period"@en .
 
 
 ###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/PollutionCoil
@@ -407,9 +407,9 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 ###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/VehicleDetection
 :VehicleDetection rdf:type owl:Class ;
                   owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                               owl:onProperty :hasObservedOnDate ;
+                                                               owl:onProperty :hasObservedOnPeriod ;
                                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                               owl:onClass :Date
+                                                               owl:onClass :Period
                                                              ]
                                                              [ rdf:type owl:Restriction ;
                                                                owl:onProperty :isObserved ;
@@ -539,7 +539,7 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 
 ###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/data1
 :data1 rdf:type owl:NamedIndividual ,
-                :Date ;
+                :Period ;
        :onDay :saturday ;
        :endTime "-2020-08-16T23:00:00"^^xsd:dateTime ;
        :startTime "-2020-08-16T22:00:00"^^xsd:dateTime ;
@@ -548,7 +548,7 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 
 ###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/data2
 :data2 rdf:type owl:NamedIndividual ,
-                :Date ;
+                :Period ;
        :onDay :friday ;
        :endTime "-2020-06-20T13:00:00"^^xsd:dateTime ;
        :startTime "-2020-06-19T23:00:00"^^xsd:dateTime ;
@@ -557,7 +557,7 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 
 ###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/data3
 :data3 rdf:type owl:NamedIndividual ,
-                :Date ;
+                :Period ;
        :onDay :friday ;
        :endTime "-2020-05-11T12:00:00"^^xsd:dateTime ;
        :startTime "-2020-05-12T12:00:00"^^xsd:dateTime ;
@@ -567,7 +567,7 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 ###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/detection1
 :detection1 rdf:type owl:NamedIndividual ,
                      :VehicleDetection ;
-            :hasObservedOnDate :data1 ;
+            :hasObservedOnPeriod :data1 ;
             :isObserved :spira1 ;
             :hasAccuracy "1.0"^^xsd:float ;
             :hasCount 100 ;
@@ -578,7 +578,7 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 ###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/detection2
 :detection2 rdf:type owl:NamedIndividual ,
                      :VehicleDetection ;
-            :hasObservedOnDate :data2 ;
+            :hasObservedOnPeriod :data2 ;
             :isObserved :spira2 ;
             :hasAccuracy "0.75"^^xsd:float ;
             :hasCount 130 ;
@@ -607,7 +607,7 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 :rilevazione1 rdf:type owl:NamedIndividual ,
                        :ChemicalDetection ;
               :hasDetect :O3 ;
-              :hasDetectedOnDate :data1 ;
+              :hasDetectedOnPeriod :data1 ;
               :isRegistered :GiardiniMargherita ;
               :hasChemicalName "Ozono" ;
               :inQuantity "57.0"^^xsd:float ;
@@ -619,7 +619,7 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 :rilevazione2 rdf:type owl:NamedIndividual ,
                        :ChemicalDetection ;
               :hasDetect :PM2.5 ;
-              :hasDetectedOnDate :data3 ;
+              :hasDetectedOnPeriod :data3 ;
               :isRegistered :PortaSanFelice ;
               :hasChemicalName "PM 2.5" ;
               :inQuantity "12.0"^^xsd:float ;
