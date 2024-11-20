@@ -1,10 +1,10 @@
-@prefix : <http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/> .
+@prefix : <http://www.dei.unipd.it/~gdb/ontology/btp/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/> .
+@base <http://www.dei.unipd.it/~gdb/ontology/btp/> .
 
 <http://www.dei.unipd.it/~gdb/ontology/btp/> rdf:type owl:Ontology ;
                                               owl:imports <http://www.w3.org/2004/02/skos/core> .
@@ -201,7 +201,8 @@
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/hasCalendarDate
 :hasCalendarDate rdf:type owl:DatatypeProperty ;
                  rdfs:domain :Date ;
-                 rdfs:range xsd:dateTime .
+                 rdfs:range xsd:dateTime ;
+                 rdfs:comment "dateTime value that defines a day in a particular month in a particular year"@en .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/hasCardinality
@@ -230,6 +231,13 @@
            rdfs:domain :Project30 ;
            rdfs:range xsd:string ;
            rdfs:comment "Defines whether the project is ongoing, planned or finished"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasYear
+:hasYear rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Year ;
+         rdfs:range xsd:int ;
+         rdfs:comment "Integer that defines the year a.d."@en .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/speedLimit
