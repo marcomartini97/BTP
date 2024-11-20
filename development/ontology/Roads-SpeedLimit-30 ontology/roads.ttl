@@ -6,72 +6,71 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @base <http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/> .
 
-<http://www.dei.unipd.it/database2/BTPOntology> rdf:type owl:Ontology .
+<http://www.dei.unipd.it/~gdb/ontology/btp/> rdf:type owl:Ontology ;
+                                              owl:imports <http://www.w3.org/2004/02/skos/core> .
 
 #################################################################
 #    Object Properties
 #################################################################
 
-###  http://www.dei.unipd.it/database2/BTPOntology#hasArchFromRoad
-:hasArchFromRoad rdf:type owl:ObjectProperty ;
-                 owl:inverseOf :isArchFromRoad .
-
-
-###  http://www.dei.unipd.it/database2/BTPOntology#hasArchToRoad
-:hasArchToRoad rdf:type owl:ObjectProperty ;
-               owl:inverseOf :isArchToRoad .
-
-
-###  http://www.dei.unipd.it/database2/BTPOntology#isArch
-:isArch rdf:type owl:ObjectProperty ;
-        owl:inverseOf :hasArch .
-
-
-###  http://www.dei.unipd.it/database2/BTPOntology#isStartDate
-:isStartDate rdf:type owl:ObjectProperty ;
-             owl:inverseOf :hasStartDate .
-
-
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/hasArch
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasArch
 :hasArch rdf:type owl:ObjectProperty ;
+         owl:inverseOf :isArch ;
+         rdf:type owl:FunctionalProperty ;
          rdfs:domain :Road ;
          rdfs:range :RoadArch ;
          rdfs:comment "Defines the arch present on a road"@en .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/hasDeploymentDate
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasArchFromRoad
+:hasArchFromRoad rdf:type owl:ObjectProperty ;
+                 owl:inverseOf :isArchFromRoad ;
+                 rdf:type owl:FunctionalProperty .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasArchToRoad
+:hasArchToRoad rdf:type owl:ObjectProperty ;
+               owl:inverseOf :isArchToRoad ;
+               rdf:type owl:FunctionalProperty .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasDeploymentDate
 :hasDeploymentDate rdf:type owl:ObjectProperty ;
                    owl:inverseOf :isDeploymentDate ;
+                   rdf:type owl:FunctionalProperty ;
                    rdfs:domain :RoadArch ;
                    rdfs:range :Date ;
                    rdfs:comment "Defines the date when a road arch was deployed"@en .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/hasDistrict
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasDistrict
 :hasDistrict rdf:type owl:ObjectProperty ;
              owl:inverseOf :isDistrict ;
+             rdf:type owl:FunctionalProperty ;
              rdfs:domain :Road ;
              rdfs:range :District ;
              rdfs:comment "Defines the District a road is in"@en .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/hasEndDate
-:hasEndDate rdf:type owl:ObjectProperty ;
-            owl:inverseOf :isEndDate ;
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasEndYear
+:hasEndYear rdf:type owl:ObjectProperty ;
+            owl:inverseOf :isEndYear ;
+            rdf:type owl:FunctionalProperty ;
             rdfs:domain :Project30 ;
-            rdfs:range :Date ;
+            rdfs:range :Year ;
             rdfs:comment "The Date when a Project is supposed to end"@en .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/hasImpositionDate
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasImpositionDate
 :hasImpositionDate rdf:type owl:ObjectProperty ;
                    owl:inverseOf :isImpositionDate ;
+                   rdf:type owl:FunctionalProperty ;
                    rdfs:domain :SpeedLimit30 ;
                    rdfs:range :Date ;
                    rdfs:comment "Defines the date when a certain speed limit was imposed"@en .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/hasNode
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasNode
 :hasNode rdf:type owl:ObjectProperty ;
          owl:inverseOf :isNode ;
          rdfs:domain :RoadArch ;
@@ -79,12 +78,12 @@
          rdfs:comment "Defines a node present in a road"@en .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/hasProject
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasProject
 :hasProject rdf:type owl:ObjectProperty ;
             owl:inverseOf :isProjectOnRoad .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/hasProjectType
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasProjectType
 :hasProjectType rdf:type owl:ObjectProperty ;
                 owl:inverseOf :isProjectType ;
                 rdfs:domain :Project30 ;
@@ -92,128 +91,148 @@
                 rdfs:comment "Defines the type for a certain project"@en .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/hasProximityZone
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasProximityZone
 :hasProximityZone rdf:type owl:ObjectProperty ;
                   owl:inverseOf :isProximityType ;
+                  rdf:type owl:FunctionalProperty ;
                   rdfs:domain :Project30 ;
                   rdfs:range :ProximityZone ;
                   rdfs:comment "Defines the proximity zone where a project is taking place"@en .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/hasRoadType
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasRoadType
 :hasRoadType rdf:type owl:ObjectProperty ;
              owl:inverseOf :isRoadType ;
+             rdf:type owl:FunctionalProperty ;
              rdfs:domain :Road ;
              rdfs:range :RoadType ;
              rdfs:comment "Defines the type of a road"@en .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/hasSpeedLimit
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasSpeedLimit
 :hasSpeedLimit rdf:type owl:ObjectProperty ;
                owl:inverseOf :isSpeedLimit ;
+               rdf:type owl:FunctionalProperty ;
                rdfs:domain :Road ;
                rdfs:range :SpeedLimit30 ;
                rdfs:comment "Defines the speed limit of a Road Arch" .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/hasStartDate
-:hasStartDate rdf:type owl:ObjectProperty ;
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasStartYear
+:hasStartYear rdf:type owl:ObjectProperty ;
+              owl:inverseOf :isStartYear ;
+              rdf:type owl:FunctionalProperty ;
               rdfs:domain :Project30 ;
-              rdfs:range :Date ;
+              rdfs:range :Year ;
               rdfs:comment "Defines when a Project is started"@en .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/isArchFromRoad
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isArch
+:isArch rdf:type owl:ObjectProperty ,
+                 owl:InverseFunctionalProperty .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isArchFromRoad
 :isArchFromRoad rdf:type owl:ObjectProperty ;
                 rdfs:domain :RoadArch ;
                 rdfs:range :Road ;
                 rdfs:comment "The starting road of a Road Arch"@en .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/isArchToRoad
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isArchToRoad
 :isArchToRoad rdf:type owl:ObjectProperty ;
               rdfs:domain :RoadArch ;
               rdfs:range :Road ;
               rdfs:comment "The Road where the arch finishes"@en .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/isDeploymentDate
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isDeploymentDate
 :isDeploymentDate rdf:type owl:ObjectProperty ;
                   rdfs:comment "Defines when a road arch has been deployed in the city infrastructure"@en .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/isDistrict
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isDistrict
 :isDistrict rdf:type owl:ObjectProperty .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/isEndDate
-:isEndDate rdf:type owl:ObjectProperty .
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isEndYear
+:isEndYear rdf:type owl:ObjectProperty .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/isImpositionDate
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isImpositionDate
 :isImpositionDate rdf:type owl:ObjectProperty .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/isNode
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isNode
 :isNode rdf:type owl:ObjectProperty .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/isProjectOnRoad
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isProjectOnRoad
 :isProjectOnRoad rdf:type owl:ObjectProperty ;
                  rdfs:domain :Project30 ;
                  rdfs:range :Road ;
                  rdfs:comment "Defines the road where a project is taking place"@en .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/isProjectType
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isProjectType
 :isProjectType rdf:type owl:ObjectProperty .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/isProximityType
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isProximityType
 :isProximityType rdf:type owl:ObjectProperty .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/isRoadType
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isRoadType
 :isRoadType rdf:type owl:ObjectProperty .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/isSpeedLimit
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isSpeedLimit
 :isSpeedLimit rdf:type owl:ObjectProperty .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isStartYear
+:isStartYear rdf:type owl:ObjectProperty .
 
 
 #################################################################
 #    Data properties
 #################################################################
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/hasCardinality
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasCalendarDate
+:hasCalendarDate rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Date ;
+                 rdfs:range xsd:dateTime .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasCardinality
 :hasCardinality rdf:type owl:DatatypeProperty ;
                 rdfs:domain :ProjectType ;
                 rdfs:range xsd:integer ;
                 rdfs:comment "Defines if the Project Type is primary or secondary"@en .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/hasDescription
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasDescription
 :hasDescription rdf:type owl:DatatypeProperty ;
                 rdfs:domain :Project30 ;
                 rdfs:range xsd:string ;
                 rdfs:comment "Describes the scope of project"@en .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/hasLength
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasLength
 :hasLength rdf:type owl:DatatypeProperty ;
            rdfs:domain :RoadArch ;
            rdfs:range xsd:decimal ;
            rdfs:comment "Describes the length of a road arch (unit: meters)"@en .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/hasStatus
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasStatus
 :hasStatus rdf:type owl:DatatypeProperty ;
            rdfs:domain :Project30 ;
            rdfs:range xsd:string ;
            rdfs:comment "Defines whether the project is ongoing, planned or finished"@en .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/speedLimit
+###  http://www.dei.unipd.it/~gdb/ontology/btp/speedLimit
 :speedLimit rdf:type owl:DatatypeProperty ;
             rdfs:domain :SpeedLimit30 ;
             rdfs:range xsd:integer ;
@@ -224,61 +243,76 @@
 #    Classes
 #################################################################
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/Date
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Date
 :Date rdf:type owl:Class ;
-      rdfs:comment "Stump Date"@en .
+      rdfs:comment "Date class, used to represent day/month/year"@en .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/District
+###  http://www.dei.unipd.it/~gdb/ontology/btp/District
 :District rdf:type owl:Class ;
           rdfs:comment "Stump District" .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/Project30
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Project30
 :Project30 rdf:type owl:Class ;
+           owl:equivalentClass [ rdf:type owl:Restriction ;
+                                 owl:onProperty :hasProjectType ;
+                                 owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                 owl:onClass :ProjectType
+                               ] ;
            rdfs:comment "A Project defined in the \"Progetto Città 30\""@en .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/ProjectType
+###  http://www.dei.unipd.it/~gdb/ontology/btp/ProjectType
 :ProjectType rdf:type owl:Class ;
              rdfs:comment "The type of a project defined in \"Progetto Città 30\""@en .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/ProximityZone
+###  http://www.dei.unipd.it/~gdb/ontology/btp/ProximityZone
 :ProximityZone rdf:type owl:Class ;
                rdfs:comment "Stump Proximity Zone"@en .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/Road
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Road
 :Road rdf:type owl:Class ;
       rdfs:comment "A Road present in the City of Bologna"@en .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/RoadArch
+###  http://www.dei.unipd.it/~gdb/ontology/btp/RoadArch
 :RoadArch rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasNode ;
+                                owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                owl:onClass :RoadNode
+                              ] ;
           rdfs:comment "An arch that connects two roads"@en .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/RoadNode
+###  http://www.dei.unipd.it/~gdb/ontology/btp/RoadNode
 :RoadNode rdf:type owl:Class ;
           rdfs:comment "A Road node that connects two or more roads"@en .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/RoadType
+###  http://www.dei.unipd.it/~gdb/ontology/btp/RoadType
 :RoadType rdf:type owl:Class ;
           rdfs:comment "The type of road (i.e: street, intersection, highway)"@en .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/SpeedLimit30
+###  http://www.dei.unipd.it/~gdb/ontology/btp/SpeedLimit30
 :SpeedLimit30 rdf:type owl:Class ;
               rdfs:comment "The speed limit on a road arch in the City of Bologna"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Year
+:Year rdf:type owl:Class ;
+      rdfs:comment "Represents an year a.d."@en .
 
 
 #################################################################
 #    Individuals
 #################################################################
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/arch_2985
+###  http://www.dei.unipd.it/~gdb/ontology/btp/arch_2985
 :arch_2985 rdf:type owl:NamedIndividual ,
                     :RoadArch ;
            :hasDeploymentDate :date_arch01 ;
@@ -289,57 +323,79 @@
            :hasLength 41 .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/arch_2986
+###  http://www.dei.unipd.it/~gdb/ontology/btp/arch_2986
 :arch_2986 rdf:type owl:NamedIndividual ,
                     :RoadArch ;
            :hasNode :node_203 ;
            :isArchToRoad :road_53200 .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/arch_5842
+###  http://www.dei.unipd.it/~gdb/ontology/btp/arch_5842
 :arch_5842 rdf:type owl:NamedIndividual ,
                     :RoadArch ;
            :hasNode :node_207 ;
            :isArchToRoad :road_53200 .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/date_arch01
+###  http://www.dei.unipd.it/~gdb/ontology/btp/date_arch01
 :date_arch01 rdf:type owl:NamedIndividual ,
                       :Date ;
+             :hasCalendarDate "1991-10-21T00:00:00+01:00"^^xsd:dateTime ;
              rdfs:label "21 Ottobre 1991" .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/district_13
+###  http://www.dei.unipd.it/~gdb/ontology/btp/district_13
 :district_13 rdf:type owl:NamedIndividual ,
                       :District ;
              rdfs:label "Quartiere Porto - Saragozza" .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/node_203
+###  http://www.dei.unipd.it/~gdb/ontology/btp/node_203
 :node_203 rdf:type owl:NamedIndividual ,
                    :RoadNode .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/node_207
+###  http://www.dei.unipd.it/~gdb/ontology/btp/node_207
 :node_207 rdf:type owl:NamedIndividual ,
                    :RoadNode .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/road_35550
+###  http://www.dei.unipd.it/~gdb/ontology/btp/projectTypeScheme
+:projectTypeScheme rdf:type owl:NamedIndividual ,
+                            <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
+                   rdfs:comment """SKOS Concept Scheme that describes a Project Type for \"Progetto Città 30\"
+
+Possible concepts are:
+
+Tram e trasporto pubblico
+Piste e corsie ciclabili
+Interventi di messa in sicurezza
+Piazze pedonali e scolastiche
+
+Accessibilità
+Ponti/Canali
+Nuova centralità urbana diffusa
+Riqualificazione dei marciapiedi
+Sicurezza e manutenzione
+Impronta verde
+Trasformazioni di interesse territoriale""" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/road_35550
 :road_35550 rdf:type owl:NamedIndividual ,
                      :Road ;
             :hasArch :arch_5842 ;
             rdfs:label "Via Santa Maria Maggiore" .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/road_50550
+###  http://www.dei.unipd.it/~gdb/ontology/btp/road_50550
 :road_50550 rdf:type owl:NamedIndividual ,
                      :Road ;
             :hasArch :arch_2986 ;
             rdfs:label "Via Riva di Reno" .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/road_53200
+###  http://www.dei.unipd.it/~gdb/ontology/btp/road_53200
 :road_53200 rdf:type owl:NamedIndividual ,
                      :Road ;
             :hasArch :arch_2985 ;
@@ -348,7 +404,7 @@
             rdfs:label "Via Nazario Sauro" .
 
 
-###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-24/roadtype_via
+###  http://www.dei.unipd.it/~gdb/ontology/btp/roadtype_via
 :roadtype_via rdf:type owl:NamedIndividual ,
                        :RoadType .
 
