@@ -1,20 +1,20 @@
-@prefix : <http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/> .
+@prefix : <http://www.dei.unipd.it/~gdb/ontology/btp/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/> .
+@base <http://www.dei.unipd.it/~gdb/ontology/btp/> .
 
-<http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project> rdf:type owl:Ontology ;
-                                                                                 rdfs:comment "This is the ontology about pollution and traffic."@en ,
-                                                                                              "Francesco Chemello 2121346" .
+<http://www.dei.unipd.it/~gdb/ontology/btp> rdf:type owl:Ontology ;
+                                             rdfs:comment "This is the ontology about pollution and traffic."@en ,
+                                                          "Francesco Chemello 2121346" .
 
 #################################################################
 #    Object Properties
 #################################################################
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasDetect
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasDetect
 :hasDetect rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf owl:topObjectProperty ;
            owl:inverseOf :isDetected ;
@@ -23,7 +23,7 @@
            rdfs:label "has Detect" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasDetectedOnPeriod
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasDetectedOnPeriod
 :hasDetectedOnPeriod rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf :hasPeriod ;
                      owl:inverseOf :isDetectedOnPeriod ;
@@ -32,20 +32,20 @@
                      rdfs:label "has Detect On Period" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasLevel
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasLevel
 :hasLevel rdf:type owl:ObjectProperty ;
           rdfs:domain :Coil ;
           rdfs:range :Level ;
           rdfs:label "has Level" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasMeasure
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasMeasure
 :hasMeasure rdf:type owl:ObjectProperty ;
             owl:inverseOf :isMeasured ;
             rdfs:label "has Measure" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasObserve
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasObserve
 :hasObserve rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf :hasMeasure ;
             owl:inverseOf :isObserved ;
@@ -54,20 +54,20 @@
             rdfs:label "has Observe" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasObservedOnPeriod
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasObservedOnPeriod
 :hasObservedOnPeriod rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf :hasPeriod ;
                      owl:inverseOf :isObservedOnPeriod ;
                      rdfs:label "has Observed On Period" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasPeriod
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasPeriod
 :hasPeriod rdf:type owl:ObjectProperty ;
            rdfs:comment "General property for time relationships"@en ;
            rdfs:label "has Period" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasRegister
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasRegister
 :hasRegister rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf :hasMeasure ;
              owl:inverseOf :isRegistered ;
@@ -76,36 +76,36 @@
              rdfs:label "has Register" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasType
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasType
 :hasType rdf:type owl:ObjectProperty ;
          rdfs:domain :Coil ;
          rdfs:range :Type ;
          rdfs:label "has Type" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/isDetected
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isDetected
 :isDetected rdf:type owl:ObjectProperty ;
             rdfs:label "is Detected" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/isDetectedOnPeriod
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isDetectedOnPeriod
 :isDetectedOnPeriod rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf :hasPeriod ;
                     rdfs:label "is Detected on Period" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/isLocatedAt
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isLocatedAt
 :isLocatedAt rdf:type owl:ObjectProperty ;
              rdfs:comment "General property for spacial relationships"@en ;
              rdfs:label "is Located At" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/isMeasured
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isMeasured
 :isMeasured rdf:type owl:ObjectProperty ;
             rdfs:label "is Measured" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/isNearTo
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isNearTo
 :isNearTo rdf:type owl:ObjectProperty ;
           rdfs:subPropertyOf :isLocatedAt ;
           rdfs:domain :PollutionStation ;
@@ -113,13 +113,13 @@
           rdfs:label "is Near To" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/isObserved
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isObserved
 :isObserved rdf:type owl:ObjectProperty ;
             rdfs:subPropertyOf :isMeasured ;
             rdfs:label "is Observed" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/isObservedOnPeriod
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isObservedOnPeriod
 :isObservedOnPeriod rdf:type owl:ObjectProperty ;
                     rdfs:subPropertyOf :hasPeriod ;
                     rdfs:domain :Period ;
@@ -127,14 +127,14 @@
                     rdfs:label "is Observed On Period" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/isOn
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isOn
 :isOn rdf:type owl:ObjectProperty ;
       rdfs:subPropertyOf :isLocatedAt ;
       owl:inverseOf :isPlaced ;
       rdfs:label "is On" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/isPlaced
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isPlaced
 :isPlaced rdf:type owl:ObjectProperty ;
           rdfs:subPropertyOf :isLocatedAt ;
           rdfs:domain :Road ;
@@ -142,13 +142,13 @@
           rdfs:label "is Placed" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/isRegistered
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isRegistered
 :isRegistered rdf:type owl:ObjectProperty ;
               rdfs:subPropertyOf :isMeasured ;
               rdfs:label "is Registered" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/onDay
+###  http://www.dei.unipd.it/~gdb/ontology/btp/onDay
 :onDay rdf:type owl:ObjectProperty ;
        rdfs:domain :Period ;
        rdfs:range :DayWeek ;
@@ -163,7 +163,7 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 #    Data properties
 #################################################################
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/endTime
+###  http://www.dei.unipd.it/~gdb/ontology/btp/endTime
 :endTime rdf:type owl:DatatypeProperty ;
          rdfs:subPropertyOf :inTime ;
          rdfs:domain :Period ;
@@ -171,7 +171,7 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
          rdfs:label "end Time" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasAccuracy
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasAccuracy
 :hasAccuracy rdf:type owl:DatatypeProperty ;
              rdfs:domain :VehicleDetection ;
              rdfs:range xsd:float ;
@@ -179,21 +179,21 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
              rdfs:label "has Accuracy" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasChemicalName
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasChemicalName
 :hasChemicalName rdf:type owl:DatatypeProperty ;
                  rdfs:domain :ChemicalDetection ;
                  rdfs:range xsd:string ;
                  rdfs:label "has Chemical Name" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasCode
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasCode
 :hasCode rdf:type owl:DatatypeProperty ;
          rdfs:domain :Coil ;
          rdfs:range xsd:string ;
          rdfs:label "has Code" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasCount
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasCount
 :hasCount rdf:type owl:DatatypeProperty ;
           rdfs:subPropertyOf :hasQuantified ;
           rdfs:domain :VehicleDetection ;
@@ -201,20 +201,20 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
           rdfs:label "has Count" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasID
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasID
 :hasID rdf:type owl:DatatypeProperty ;
        rdfs:domain :Coil ;
        rdfs:range xsd:string ;
        rdfs:label "has ID" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/hasQuantified
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasQuantified
 :hasQuantified rdf:type owl:DatatypeProperty ;
                rdfs:comment "General property for measurement"@en ;
                rdfs:label "has Quantified" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/inQuantity
+###  http://www.dei.unipd.it/~gdb/ontology/btp/inQuantity
 :inQuantity rdf:type owl:DatatypeProperty ;
             rdfs:subPropertyOf :hasQuantified ;
             rdfs:domain :ChemicalDetection ;
@@ -222,13 +222,13 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
             rdfs:label "in Quantity" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/inTime
+###  http://www.dei.unipd.it/~gdb/ontology/btp/inTime
 :inTime rdf:type owl:DatatypeProperty ;
         rdfs:comment "General property for time" ;
         rdfs:label "in Time" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/startTime
+###  http://www.dei.unipd.it/~gdb/ontology/btp/startTime
 :startTime rdf:type owl:DatatypeProperty ;
            rdfs:subPropertyOf :inTime ;
            rdfs:domain :Period ;
@@ -241,7 +241,7 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 #    Classes
 #################################################################
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/ChemicalDetection
+###  http://www.dei.unipd.it/~gdb/ontology/btp/ChemicalDetection
 :ChemicalDetection rdf:type owl:Class ;
                    owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                 owl:onProperty :hasDetect ;
@@ -276,7 +276,7 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
                    rdfs:label "Chemical Detection"@en .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/ChemicalElement
+###  http://www.dei.unipd.it/~gdb/ontology/btp/ChemicalElement
 :ChemicalElement rdf:type owl:Class ;
                  owl:equivalentClass [ rdf:type owl:Class ;
                                        owl:oneOf ( :C6H6
@@ -293,7 +293,7 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
                  rdfs:label "Chemical Element"@en .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Coil
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Coil
 :Coil rdf:type owl:Class ;
       rdfs:subClassOf [ rdf:type owl:Restriction ;
                         owl:onProperty :isOn ;
@@ -311,7 +311,7 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
       rdfs:label "Coil"@en .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/DayWeek
+###  http://www.dei.unipd.it/~gdb/ontology/btp/DayWeek
 :DayWeek rdf:type owl:Class ;
          owl:equivalentClass [ rdf:type owl:Class ;
                                owl:oneOf ( :friday
@@ -327,7 +327,7 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
          rdfs:label "Day of the Week"@en .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Level
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Level
 :Level rdf:type owl:Class ;
        owl:equivalentClass [ rdf:type owl:Class ;
                              owl:oneOf ( :Level1
@@ -337,7 +337,7 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
        rdfs:label "Level"@en .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Period
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Period
 :Period rdf:type owl:Class ;
         owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                      owl:onProperty :endTime ;
@@ -361,7 +361,7 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
         rdfs:label "Period"@en .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/PollutionCoil
+###  http://www.dei.unipd.it/~gdb/ontology/btp/PollutionCoil
 :PollutionCoil rdf:type owl:Class ;
                rdfs:subClassOf :Coil ;
                owl:disjointWith :SimpleCoil ;
@@ -369,7 +369,7 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
                rdfs:label "Pollution Coil"@en .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/PollutionStation
+###  http://www.dei.unipd.it/~gdb/ontology/btp/PollutionStation
 :PollutionStation rdf:type owl:Class ;
                   owl:equivalentClass [ rdf:type owl:Class ;
                                         owl:oneOf ( :GiardiniMargherita
@@ -381,12 +381,12 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
                   rdfs:label "Pollution Station"@en .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Road
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Road
 :Road rdf:type owl:Class ;
       rdfs:label "Road"@en .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/SimpleCoil
+###  http://www.dei.unipd.it/~gdb/ontology/btp/SimpleCoil
 :SimpleCoil rdf:type owl:Class ;
             rdfs:subClassOf :Coil ;
             rdfs:comment """Class that rappresents all the coils that are NOT a pollution colis but a traffic coil.
@@ -394,7 +394,7 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
             rdfs:label "Simple Coil" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Type
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Type
 :Type rdf:type owl:Class ;
       owl:equivalentClass [ rdf:type owl:Class ;
                             owl:oneOf ( :Spira
@@ -404,7 +404,7 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
       rdfs:label "Type"@en .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/VehicleDetection
+###  http://www.dei.unipd.it/~gdb/ontology/btp/VehicleDetection
 :VehicleDetection rdf:type owl:Class ;
                   owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                                owl:onProperty :hasObservedOnPeriod ;
@@ -437,107 +437,107 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 #    Individuals
 #################################################################
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/C6H6
+###  http://www.dei.unipd.it/~gdb/ontology/btp/C6H6
 :C6H6 rdf:type owl:NamedIndividual ,
                :ChemicalElement ;
       rdfs:comment "Benzene" ;
       rdfs:label "C6H6" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/CO
+###  http://www.dei.unipd.it/~gdb/ontology/btp/CO
 :CO rdf:type owl:NamedIndividual ,
              :ChemicalElement ;
     rdfs:comment "Carbon monoxide" ;
     rdfs:label "CO" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/GiardiniMargherita
+###  http://www.dei.unipd.it/~gdb/ontology/btp/GiardiniMargherita
 :GiardiniMargherita rdf:type owl:NamedIndividual ,
                              :PollutionStation ;
                     rdfs:label "Giardini Margherita" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Level1
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Level1
 :Level1 rdf:type owl:NamedIndividual ,
                  :Level ;
         owl:differentFrom :Level2 ;
         rdfs:label "Level 1" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Level2
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Level2
 :Level2 rdf:type owl:NamedIndividual ,
                  :Level ;
         rdfs:label "Level 2" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/NO
+###  http://www.dei.unipd.it/~gdb/ontology/btp/NO
 :NO rdf:type owl:NamedIndividual ,
              :ChemicalElement ;
     rdfs:comment "Nitrogen monoxide" ;
     rdfs:label "NO" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/NO2
+###  http://www.dei.unipd.it/~gdb/ontology/btp/NO2
 :NO2 rdf:type owl:NamedIndividual ,
               :ChemicalElement ;
      rdfs:comment "Nitrogen dioxide" ;
      rdfs:label "NO2" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/NOX
+###  http://www.dei.unipd.it/~gdb/ontology/btp/NOX
 :NOX rdf:type owl:NamedIndividual ,
               :ChemicalElement ;
      rdfs:comment "Nitrogen oxides" ;
      rdfs:label "NOX" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/O3
+###  http://www.dei.unipd.it/~gdb/ontology/btp/O3
 :O3 rdf:type owl:NamedIndividual ,
              :ChemicalElement ;
     rdfs:comment "Ozone" ;
     rdfs:label "O3" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/PM10
+###  http://www.dei.unipd.it/~gdb/ontology/btp/PM10
 :PM10 rdf:type owl:NamedIndividual ,
                :ChemicalElement ;
       rdfs:comment "PM 10" ;
       rdfs:label "PM 10" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/PM2.5
+###  http://www.dei.unipd.it/~gdb/ontology/btp/PM2.5
 :PM2.5 rdf:type owl:NamedIndividual ,
                 :ChemicalElement ;
        rdfs:comment "PM 2.5" ;
        rdfs:label "PM 2.5" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/PortaSanFelice
+###  http://www.dei.unipd.it/~gdb/ontology/btp/PortaSanFelice
 :PortaSanFelice rdf:type owl:NamedIndividual ,
                          :PollutionStation ;
                 :isNearTo :spira2 ;
                 rdfs:label "Porta San Felice" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Spira
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Spira
 :Spira rdf:type owl:NamedIndividual ,
                 :Type ;
        owl:differentFrom :Telecamera .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/Telecamera
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Telecamera
 :Telecamera rdf:type owl:NamedIndividual ,
                      :Type .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/ViaChiarini
+###  http://www.dei.unipd.it/~gdb/ontology/btp/ViaChiarini
 :ViaChiarini rdf:type owl:NamedIndividual ,
                       :PollutionStation ;
              :isNearTo :spira3 ;
              rdfs:label "Via Chiarini" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/data1
+###  http://www.dei.unipd.it/~gdb/ontology/btp/data1
 :data1 rdf:type owl:NamedIndividual ,
                 :Period ;
        :onDay :saturday ;
@@ -546,7 +546,7 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
        rdfs:label "Data 1" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/data2
+###  http://www.dei.unipd.it/~gdb/ontology/btp/data2
 :data2 rdf:type owl:NamedIndividual ,
                 :Period ;
        :onDay :friday ;
@@ -555,7 +555,7 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
        rdfs:label "Data 2" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/data3
+###  http://www.dei.unipd.it/~gdb/ontology/btp/data3
 :data3 rdf:type owl:NamedIndividual ,
                 :Period ;
        :onDay :friday ;
@@ -564,7 +564,7 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
        rdfs:label "Data 3" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/detection1
+###  http://www.dei.unipd.it/~gdb/ontology/btp/detection1
 :detection1 rdf:type owl:NamedIndividual ,
                      :VehicleDetection ;
             :hasObservedOnPeriod :data1 ;
@@ -575,7 +575,7 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
             rdfs:label "Detection 1" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/detection2
+###  http://www.dei.unipd.it/~gdb/ontology/btp/detection2
 :detection2 rdf:type owl:NamedIndividual ,
                      :VehicleDetection ;
             :hasObservedOnPeriod :data2 ;
@@ -585,25 +585,25 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
             rdfs:label "Detection 2" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/friday
+###  http://www.dei.unipd.it/~gdb/ontology/btp/friday
 :friday rdf:type owl:NamedIndividual ,
                  :DayWeek ;
         rdfs:label "Friday" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/mainroad
+###  http://www.dei.unipd.it/~gdb/ontology/btp/mainroad
 :mainroad rdf:type owl:NamedIndividual ,
                    :Road ;
           rdfs:label "Main Road" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/monday
+###  http://www.dei.unipd.it/~gdb/ontology/btp/monday
 :monday rdf:type owl:NamedIndividual ,
                  :DayWeek ;
         rdfs:label "Monday" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/rilevazione1
+###  http://www.dei.unipd.it/~gdb/ontology/btp/rilevazione1
 :rilevazione1 rdf:type owl:NamedIndividual ,
                        :ChemicalDetection ;
               :hasDetect :O3 ;
@@ -615,7 +615,7 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
               rdfs:label "Rilevazione 1" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/rilevazione2
+###  http://www.dei.unipd.it/~gdb/ontology/btp/rilevazione2
 :rilevazione2 rdf:type owl:NamedIndividual ,
                        :ChemicalDetection ;
               :hasDetect :PM2.5 ;
@@ -626,13 +626,13 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
               rdfs:label "Rilevazione 2" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/saturday
+###  http://www.dei.unipd.it/~gdb/ontology/btp/saturday
 :saturday rdf:type owl:NamedIndividual ,
                    :DayWeek ;
           rdfs:label "Saturday" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/spira1
+###  http://www.dei.unipd.it/~gdb/ontology/btp/spira1
 :spira1 rdf:type owl:NamedIndividual ,
                  :SimpleCoil ;
         :hasLevel :Level1 ;
@@ -643,7 +643,7 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
         rdfs:label "Spira 1" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/spira2
+###  http://www.dei.unipd.it/~gdb/ontology/btp/spira2
 :spira2 rdf:type owl:NamedIndividual ,
                  :PollutionCoil ;
         :hasLevel :Level2 ;
@@ -654,7 +654,7 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
         rdfs:label "Spira 2" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/spira3
+###  http://www.dei.unipd.it/~gdb/ontology/btp/spira3
 :spira3 rdf:type owl:NamedIndividual ,
                  :PollutionCoil ;
         :hasLevel :Level2 ;
@@ -665,25 +665,25 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
         rdfs:label "Spira 3" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/sunday
+###  http://www.dei.unipd.it/~gdb/ontology/btp/sunday
 :sunday rdf:type owl:NamedIndividual ,
                  :DayWeek ;
         rdfs:label "Sunday" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/thursday
+###  http://www.dei.unipd.it/~gdb/ontology/btp/thursday
 :thursday rdf:type owl:NamedIndividual ,
                    :DayWeek ;
           rdfs:label "Thrusday" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/tuesday
+###  http://www.dei.unipd.it/~gdb/ontology/btp/tuesday
 :tuesday rdf:type owl:NamedIndividual ,
                   :DayWeek ;
          rdfs:label "Tuesday" .
 
 
-###  http://www.semanticweb.org/cesco/ontologies/2024/9/draft-ontology-gdb-project/wednesday
+###  http://www.dei.unipd.it/~gdb/ontology/btp/wednesday
 :wednesday rdf:type owl:NamedIndividual ,
                     :DayWeek ;
            rdfs:label "Wednesday" .
