@@ -1,0 +1,1045 @@
+@prefix : <http://www.dei.unipd.it/~gdb/ontology/btp/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.dei.unipd.it/~gdb/ontology/btp/> .
+
+<http://www.dei.unipd.it/~gdb/ontology/btp> rdf:type owl:Ontology ;
+                                             rdfs:comment "BTP Ontology Assignment"@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+### Francesco's Object Properties #################################################################################################################
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasDetect
+:hasDetect rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           owl:inverseOf :isDetected ;
+           rdfs:domain :ChemicalDetection ;
+           rdfs:range :ChemicalElement ;
+           rdfs:label "has Detect" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasDetectedOnPeriod
+:hasDetectedOnPeriod rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :hasPeriod ;
+                     owl:inverseOf :isDetectedOnPeriod ;
+                     rdfs:domain :ChemicalDetection ;
+                     rdfs:range :Period ;
+                     rdfs:label "has Detect On Period" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasLevel
+:hasLevel rdf:type owl:ObjectProperty ;
+          rdfs:domain :Coil ;
+          rdfs:range :Level ;
+          rdfs:label "has Level" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasMeasure
+:hasMeasure rdf:type owl:ObjectProperty ;
+            owl:inverseOf :isMeasured ;
+            rdfs:label "has Measure" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasObserve
+:hasObserve rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :hasMeasure ;
+            owl:inverseOf :isObserved ;
+            rdfs:domain :Coil ;
+            rdfs:range :VehicleDetection ;
+            rdfs:label "has Observe" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasObservedOnPeriod
+:hasObservedOnPeriod rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf :hasPeriod ;
+                     owl:inverseOf :isObservedOnPeriod ;
+                     rdfs:label "has Observed On Period" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasPeriod
+:hasPeriod rdf:type owl:ObjectProperty ;
+           rdfs:comment "General property for time relationships"@en ;
+           rdfs:label "has Period" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasRegister
+:hasRegister rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf :hasMeasure ;
+             owl:inverseOf :isRegistered ;
+             rdfs:domain :PollutionStation ;
+             rdfs:range :ChemicalDetection ;
+             rdfs:label "has Register" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasType
+:hasType rdf:type owl:ObjectProperty ;
+         rdfs:domain :Coil ;
+         rdfs:range :Type ;
+         rdfs:label "has Type" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isDetected
+:isDetected rdf:type owl:ObjectProperty ;
+            rdfs:label "is Detected" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isDetectedOnPeriod
+:isDetectedOnPeriod rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :hasPeriod ;
+                    rdfs:label "is Detected on Period" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isLocatedAt
+:isLocatedAt rdf:type owl:ObjectProperty ;
+             rdfs:comment "General property for spacial relationships"@en ;
+             rdfs:label "is Located At" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isMeasured
+:isMeasured rdf:type owl:ObjectProperty ;
+            rdfs:label "is Measured" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isNearTo
+:isNearTo rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :isLocatedAt ;
+          rdfs:domain :PollutionStation ;
+          rdfs:range :PollutionCoil ;
+          rdfs:label "is Near To" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isObserved
+:isObserved rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :isMeasured ;
+            rdfs:label "is Observed" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isObservedOnPeriod
+:isObservedOnPeriod rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf :hasPeriod ;
+                    rdfs:domain :Period ;
+                    rdfs:range :VehicleDetection ;
+                    rdfs:label "is Observed On Period" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isOn
+:isOn rdf:type owl:ObjectProperty ;
+      rdfs:subPropertyOf :isLocatedAt ;
+      owl:inverseOf :isPlaced ;
+      rdfs:label "is On" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isPlaced
+:isPlaced rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf :isLocatedAt ;
+          rdfs:domain :Road ;
+          rdfs:range :Coil ;
+          rdfs:label "is Placed" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isRegistered
+:isRegistered rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :isMeasured ;
+              rdfs:label "is Registered" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/onDay
+:onDay rdf:type owl:ObjectProperty ;
+       rdfs:domain :Period ;
+       rdfs:range :DayWeek ;
+       rdfs:label "on Day" .
+
+
+### Ali's Object Properties #######################################################################################################################
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#belongsTo
+:belongsTo rdf:type owl:ObjectProperty ;
+           owl:inverseOf :containsArea ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain :Proximity_Area ;
+           rdfs:range :District ;
+           rdfs:comment "This property links proximity areas to districts" ;
+           rdfs:label "belongs to"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#containsArea
+:containsArea rdf:type owl:ObjectProperty ;
+              rdfs:domain :District ;
+              rdfs:range :Proximity_Area ;
+              rdfs:comment "This property conects districts to proximity areas. it is the inverse of \"belongs_to\" property"@en ;
+              rdfs:label "contains area"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#happendInArea
+:happendInArea rdf:type owl:ObjectProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain :Road_Accident ;
+               rdfs:range :Proximity_Area ;
+               rdfs:comment "This property connects road accidents to proximity areas"@en ;
+               rdfs:label "happened in area"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#hasAccidentYear
+:hasAccidentYear rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Road_Accident ;
+                 rdfs:comment "this property is pointing to the year in which the recorded accidents happened"@en ;
+                 rdfs:label "accident year"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#recordedInDistrict
+:recordedInDistrict rdf:type owl:ObjectProperty ;
+                    owl:inverseOf :recordedIncident ;
+                    rdfs:domain :Road_Accident ;
+                    rdfs:range :District ;
+                    rdfs:comment "This property connects road accidents to districts"@en ;
+                    rdfs:label "recorded in district"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#recordedIncident
+:recordedIncident rdf:type owl:ObjectProperty ;
+                  rdfs:domain :District ;
+                  rdfs:range :Road_Accident ;
+                  rdfs:comment "This property connects districts to road accidents,it is the inverse of \"recorded_in_district\" property."@en ;
+                  rdfs:label "recorded incident"@en .
+
+### Marco's Object Properties #####################################################################################################################
+
+
+###  http://www.w3.org/2002/07/owl#topObjectProperty
+owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+### Francesco's Data Properties ###################################################################################################################
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/endTime
+:endTime rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf :inTime ;
+         rdfs:domain :Period ;
+         rdfs:range xsd:dateTime ;
+         rdfs:label "end Time" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasAccuracy
+:hasAccuracy rdf:type owl:DatatypeProperty ;
+             rdfs:domain :VehicleDetection ;
+             rdfs:range xsd:float ;
+             rdfs:comment "A static indicator of the coil’s detection reliability"@en ;
+             rdfs:label "has Accuracy" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasChemicalName
+:hasChemicalName rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :ChemicalDetection ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "has Chemical Name" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasCode
+:hasCode rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Coil ;
+         rdfs:range xsd:string ;
+         rdfs:label "has Code" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasCount
+:hasCount rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf :hasQuantified ;
+          rdfs:domain :VehicleDetection ;
+          rdfs:range xsd:integer ;
+          rdfs:label "has Count" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasID
+:hasID rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Coil ;
+       rdfs:range xsd:string ;
+       rdfs:label "has ID" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasQuantified
+:hasQuantified rdf:type owl:DatatypeProperty ;
+               rdfs:comment "General property for measurement"@en ;
+               rdfs:label "has Quantified" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/inQuantity
+:inQuantity rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf :hasQuantified ;
+            rdfs:domain :ChemicalDetection ;
+            rdfs:range xsd:float ;
+            rdfs:label "in Quantity" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/inTime
+:inTime rdf:type owl:DatatypeProperty ;
+        rdfs:comment "General property for time" ;
+        rdfs:label "in Time" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/startTime
+:startTime rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :inTime ;
+           rdfs:domain :Period ;
+           rdfs:range xsd:dateTime ;
+           rdfs:comment "it uses dateTime as value -> check ranges and how to use it!" ;
+           rdfs:label "start Time" .
+
+### Ali's Data Properties #########################################################################################################################
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#districtCode
+:districtCode rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain :District ;
+              rdfs:range xsd:integer ;
+              rdfs:comment "represent a unique code which is assigned to each district"@en ;
+              rdfs:label "district code"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#districtName
+:districtName rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain :District ;
+              rdfs:range xsd:string ;
+              rdfs:comment "represent the name of the district wich is unique for each district"@en ;
+              rdfs:label "district name"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#numberOfAccidents
+:numberOfAccidents rdf:type owl:DatatypeProperty ;
+                   rdfs:domain :Road_Accident ;
+                   rdfs:range xsd:integer ;
+                   rdfs:comment "representing the total number of accidents that happend"@en ;
+                   rdfs:label "number of accidents"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#numberOfCyclistsDeath
+:numberOfCyclistsDeath rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :Cyclist ;
+                       rdfs:range xsd:integer ;
+                       rdfs:comment "number of cyclists who died in the accident"@en ;
+                       rdfs:label "number of cyclists death"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#numberOfCyclistsInjuries
+:numberOfCyclistsInjuries rdf:type owl:DatatypeProperty ;
+                          rdfs:domain :Cyclist ;
+                          rdfs:range xsd:integer ;
+                          rdfs:comment "number of cyclists who got injured in the accident"@en ;
+                          rdfs:label "number of cyclists injuries"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#numberOfDriverDeath
+:numberOfDriverDeath rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :Driver ;
+                     rdfs:range xsd:integer ;
+                     rdfs:comment "number of drivers who died in the accident"@en ;
+                     rdfs:label "number of driver death"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#numberOfDriverInjuries
+:numberOfDriverInjuries rdf:type owl:DatatypeProperty ;
+                        rdfs:domain :Driver ;
+                        rdfs:range xsd:integer ;
+                        rdfs:comment "number of drivers who got injured in the accident"@en ;
+                        rdfs:label "number of driver injuries"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#numberOfMotorcyclistsDeath
+:numberOfMotorcyclistsDeath rdf:type owl:DatatypeProperty ;
+                            rdfs:domain :Motorcyclist ;
+                            rdfs:range xsd:integer ;
+                            rdfs:comment "number of motorcyclists who died in the accident"@en ;
+                            rdfs:label "number of motorcyclists death"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#numberOfMotorcyclistsInjuries
+:numberOfMotorcyclistsInjuries rdf:type owl:DatatypeProperty ;
+                               rdfs:domain :Motorcyclist ;
+                               rdfs:range xsd:integer ;
+                               rdfs:comment "number of motorcyclists who got injured in the accident"@en ;
+                               rdfs:label "number of motorcyclists injuries"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#numberOfPedestrainDeath
+:numberOfPedestrainDeath rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :Pedestrain ;
+                         rdfs:range xsd:integer ;
+                         rdfs:comment "representing the number of pedestrains who died in the accident"@en ;
+                         rdfs:label "number of pedestrain death"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#numberOfPedestrainInjuries
+:numberOfPedestrainInjuries rdf:type owl:DatatypeProperty ;
+                            rdfs:domain :Pedestrain ;
+                            rdfs:range xsd:integer ;
+                            rdfs:label "number of pedestrain injuries"@en ,
+                                       "representing the number of pedestrains who got injured in the accident"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#numberOfScooterDeath
+:numberOfScooterDeath rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :Scooter ;
+                      rdfs:range xsd:integer ;
+                      rdfs:comment "number of scooter drivers who died in the accident"@en ;
+                      rdfs:label "number of scooter death"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#numberOfScooterInjuries
+:numberOfScooterInjuries rdf:type owl:DatatypeProperty ;
+                         rdfs:domain :Scooter ;
+                         rdfs:range xsd:integer ;
+                         rdfs:comment "number of scooter drivers who got injured in the accident"@en ;
+                         rdfs:label "number of scooter injuries"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#proximityAreaName
+:proximityAreaName rdf:type owl:DatatypeProperty ,
+                            owl:FunctionalProperty ;
+                   rdfs:domain :Proximity_Area ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "reprsenting the names of proximity area related to the district, the mentioned names are unique"@en ;
+                   rdfs:label "proximity area name"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#totalNumberOfDeath
+:totalNumberOfDeath rdf:type owl:DatatypeProperty ;
+                    rdfs:domain :Road_Accident ;
+                    rdfs:range xsd:integer ;
+                    rdfs:comment "representing the total number of the people who died"@en ;
+                    rdfs:label "total number of death"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#totalNumberOfInjuries
+:totalNumberOfInjuries rdf:type owl:DatatypeProperty ;
+                       rdfs:domain :Road_Accident ;
+                       rdfs:range xsd:integer ;
+                       rdfs:comment "representing the total number of injuries"@en ;
+                       rdfs:label "total number of injuries"@en .
+
+### Marco's Data Properties #######################################################################################################################
+
+
+
+#################################################################
+#    Classes
+#################################################################
+
+### Francesco's Classes ###########################################################################################################################
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/ChemicalDetection
+:ChemicalDetection rdf:type owl:Class ;
+                   owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :hasDetect ;
+                                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                owl:onClass :ChemicalElement
+                                                              ]
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :hasDetectedOnPeriod ;
+                                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                owl:onClass :Period
+                                                              ]
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :isRegistered ;
+                                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                owl:onClass :PollutionStation
+                                                              ]
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :hasChemicalName ;
+                                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                owl:onDataRange xsd:string
+                                                              ]
+                                                              [ rdf:type owl:Restriction ;
+                                                                owl:onProperty :inQuantity ;
+                                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                owl:onDataRange xsd:float
+                                                              ]
+                                                            ) ;
+                                         rdf:type owl:Class
+                                       ] ;
+                   owl:disjointWith :VehicleDetection ;
+                   rdfs:comment "Class that rappresents the detection of a chemical agent. It must have a Pollution Station, a Date, a Chemical Element, a Chemical Name, a Quantity and a Chemical Name (es. CO2 is carbon dioxide)"@en ;
+                   rdfs:label "Chemical Detection"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/ChemicalElement
+:ChemicalElement rdf:type owl:Class ;
+                 owl:equivalentClass [ rdf:type owl:Class ;
+                                       owl:oneOf ( :C6H6
+                                                   :CO
+                                                   :NO
+                                                   :NO2
+                                                   :NOX
+                                                   :O3
+                                                   :PM10
+                                                   :PM2.5
+                                                 )
+                                     ] ;
+                 rdfs:comment "Class that rappresents a chemical element such as: CO2, CO, NO, NOX, PM10 and so on"@en ;
+                 rdfs:label "Chemical Element"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Coil
+:Coil rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :isOn ;
+                        owl:someValuesFrom :Road
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasCode ;
+                        owl:someValuesFrom xsd:string
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasID ;
+                        owl:someValuesFrom xsd:string
+                      ] ;
+      rdfs:comment "Class that rappresents the machine that register the flow of vehicles"@en ;
+      rdfs:label "Coil"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/DayWeek
+:DayWeek rdf:type owl:Class ;
+         owl:equivalentClass [ rdf:type owl:Class ;
+                               owl:oneOf ( :friday
+                                           :monday
+                                           :saturday
+                                           :sunday
+                                           :thursday
+                                           :tuesday
+                                           :wednesday
+                                         )
+                             ] ;
+         rdfs:comment "Class that rappresents a day of the week. It's an enum class"@en ;
+         rdfs:label "Day of the Week"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Level
+:Level rdf:type owl:Class ;
+       owl:equivalentClass [ rdf:type owl:Class ;
+                             owl:oneOf ( :Level1
+                                         :Level2
+                                       )
+                           ] ;
+       rdfs:label "Level"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Period
+:Period rdf:type owl:Class ;
+        owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :endTime ;
+                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                     owl:onDataRange xsd:dateTime
+                                                   ]
+                                                   [ rdf:type owl:Restriction ;
+                                                     owl:onProperty :startTime ;
+                                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                     owl:onDataRange xsd:dateTime
+                                                   ]
+                                                 ) ;
+                              rdf:type owl:Class
+                            ] ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :onDay ;
+                          owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :DayWeek
+                        ] ;
+        rdfs:comment "Class that rappresent a event in the time"@en ;
+        rdfs:label "Period"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/PollutionCoil
+:PollutionCoil rdf:type owl:Class ;
+               rdfs:subClassOf :Coil ;
+               owl:disjointWith :SimpleCoil ;
+               rdfs:comment "Class for Coil near to a Pollution Station. Only the instances belonging to this subclass are used to evaluate Pollution"@en ;
+               rdfs:label "Pollution Coil"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/PollutionStation
+:PollutionStation rdf:type owl:Class ;
+                  owl:equivalentClass [ rdf:type owl:Class ;
+                                        owl:oneOf ( :GiardiniMargherita
+                                                    :PortaSanFelice
+                                                    :ViaChiarini
+                                                  )
+                                      ] ;
+                  rdfs:comment "Class that rappresents a pollution station"@en ;
+                  rdfs:label "Pollution Station"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Road
+:Road rdf:type owl:Class ;
+      rdfs:label "Road"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/SimpleCoil
+:SimpleCoil rdf:type owl:Class ;
+            rdfs:subClassOf :Coil ;
+            rdfs:comment """Class that rappresents all the coils that are NOT a pollution colis but a traffic coil.
+'Coil' / 'Pollution Coil' = 'Simple Coil'"""@en ;
+            rdfs:label "Simple Coil" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Type
+:Type rdf:type owl:Class ;
+      owl:equivalentClass [ rdf:type owl:Class ;
+                            owl:oneOf ( :Spira
+                                        :Telecamera
+                                      )
+                          ] ;
+      rdfs:label "Type"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/VehicleDetection
+:VehicleDetection rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :hasObservedOnPeriod ;
+                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                               owl:onClass :Period
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :isObserved ;
+                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                               owl:onClass :Coil
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :hasAccuracy ;
+                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                               owl:onDataRange xsd:float
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty :hasCount ;
+                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                               owl:onDataRange xsd:integer
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
+                  rdfs:comment "Class that identifies a detection of a vehicle through a coil. It must be associated to: an Accuracy value (float), a Date, a Coil and a Count (integer)"@en ;
+                  rdfs:label "Vehicle Detection"@en .
+
+### Ali's Classes #################################################################################################################################
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#Cyclist
+:Cyclist rdf:type owl:Class ;
+         rdfs:subClassOf :Road_Accident ;
+         rdfs:comment "Contains all the accidents related to cyclists"@en ;
+         rdfs:label "Cyclist"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#District
+:District rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Class ;
+                                owl:oneOf ( :Borgo_Panigale_Reno
+                                            :Navile
+                                            :Porto_Saragozza
+                                            :San_Donato_San_Vitale
+                                            :Santo_Stefano
+                                            :Savena
+                                          )
+                              ] ;
+          owl:disjointWith :Proximity_Area ,
+                           :Road_Accident ;
+          rdfs:comment "Contains all the disricts in Bologna"@en ;
+          rdfs:label "Districts"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#Driver
+:Driver rdf:type owl:Class ;
+        rdfs:subClassOf :Road_Accident ;
+        rdfs:comment "Contains all the accidents related to drivers"@en ;
+        rdfs:label "Driver"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#Motorcyclist
+:Motorcyclist rdf:type owl:Class ;
+              rdfs:subClassOf :Road_Accident ;
+              rdfs:comment "Contains all the accidents related to motorcyclists"@en ;
+              rdfs:label "Motorcyclist"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#Pedestrain
+:Pedestrain rdf:type owl:Class ;
+            rdfs:subClassOf :Road_Accident ;
+            rdfs:comment "Contains all the accidents related to pedstrains"@en ;
+            rdfs:label "Pedestrain"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#Proximity_Area
+:Proximity_Area rdf:type owl:Class ;
+                owl:equivalentClass [ rdf:type owl:Restriction ;
+                                      owl:onProperty :belongsTo ;
+                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                      owl:onClass :District
+                                    ] ;
+                owl:disjointWith :Road_Accident ;
+                rdfs:comment "Contains all the proximity areas, related to each District"@en ;
+                rdfs:label "Proximity_Areas"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#Road_Accident
+:Road_Accident rdf:type owl:Class ;
+               owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :happendInArea ;
+                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                            owl:onClass :Proximity_Area
+                                                          ]
+                                                          [ rdf:type owl:Restriction ;
+                                                            owl:onProperty :recordedInDistrict ;
+                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                            owl:onClass :District
+                                                          ]
+                                                        ) ;
+                                     rdf:type owl:Class
+                                   ] ;
+               rdfs:comment "Contains all the accident records of bologna"@en ;
+               rdfs:label "Road_Accidents"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#Scooter
+:Scooter rdf:type owl:Class ;
+         rdfs:subClassOf :Road_Accident ;
+         rdfs:comment "Contains all the accidents related to scooters"@en ;
+         rdfs:label "Scooter"@en .
+
+### Marco's Classes ###############################################################################################################################
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/C6H6
+:C6H6 rdf:type owl:NamedIndividual ,
+               :ChemicalElement ;
+      rdfs:comment "Benzene" ;
+      rdfs:label "C6H6" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/CO
+:CO rdf:type owl:NamedIndividual ,
+             :ChemicalElement ;
+    rdfs:comment "Carbon monoxide" ;
+    rdfs:label "CO" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/GiardiniMargherita
+:GiardiniMargherita rdf:type owl:NamedIndividual ,
+                             :PollutionStation ;
+                    rdfs:label "Giardini Margherita" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Level1
+:Level1 rdf:type owl:NamedIndividual ,
+                 :Level ;
+        owl:differentFrom :Level2 ;
+        rdfs:label "Level 1" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Level2
+:Level2 rdf:type owl:NamedIndividual ,
+                 :Level ;
+        rdfs:label "Level 2" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/NO
+:NO rdf:type owl:NamedIndividual ,
+             :ChemicalElement ;
+    rdfs:comment "Nitrogen monoxide" ;
+    rdfs:label "NO" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/NO2
+:NO2 rdf:type owl:NamedIndividual ,
+              :ChemicalElement ;
+     rdfs:comment "Nitrogen dioxide" ;
+     rdfs:label "NO2" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/NOX
+:NOX rdf:type owl:NamedIndividual ,
+              :ChemicalElement ;
+     rdfs:comment "Nitrogen oxides" ;
+     rdfs:label "NOX" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/O3
+:O3 rdf:type owl:NamedIndividual ,
+             :ChemicalElement ;
+    rdfs:comment "Ozone" ;
+    rdfs:label "O3" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/PM10
+:PM10 rdf:type owl:NamedIndividual ,
+               :ChemicalElement ;
+      rdfs:comment "PM 10" ;
+      rdfs:label "PM 10" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/PM2.5
+:PM2.5 rdf:type owl:NamedIndividual ,
+                :ChemicalElement ;
+       rdfs:comment "PM 2.5" ;
+       rdfs:label "PM 2.5" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/PortaSanFelice
+:PortaSanFelice rdf:type owl:NamedIndividual ,
+                         :PollutionStation ;
+                :isNearTo :spira2 ;
+                rdfs:label "Porta San Felice" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Spira
+:Spira rdf:type owl:NamedIndividual ,
+                :Type ;
+       owl:differentFrom :Telecamera .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Telecamera
+:Telecamera rdf:type owl:NamedIndividual ,
+                     :Type .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/ViaChiarini
+:ViaChiarini rdf:type owl:NamedIndividual ,
+                      :PollutionStation ;
+             :isNearTo :spira3 ;
+             rdfs:label "Via Chiarini" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/data1
+:data1 rdf:type owl:NamedIndividual ,
+                :Period ;
+       :onDay :saturday ;
+       :endTime "-2020-08-16T23:00:00"^^xsd:dateTime ;
+       :startTime "-2020-08-16T22:00:00"^^xsd:dateTime ;
+       rdfs:label "Data 1" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/data2
+:data2 rdf:type owl:NamedIndividual ,
+                :Period ;
+       :onDay :friday ;
+       :endTime "-2020-06-20T13:00:00"^^xsd:dateTime ;
+       :startTime "-2020-06-19T23:00:00"^^xsd:dateTime ;
+       rdfs:label "Data 2" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/data3
+:data3 rdf:type owl:NamedIndividual ,
+                :Period ;
+       :onDay :friday ;
+       :endTime "-2020-05-11T12:00:00"^^xsd:dateTime ;
+       :startTime "-2020-05-12T12:00:00"^^xsd:dateTime ;
+       rdfs:label "Data 3" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/detection1
+:detection1 rdf:type owl:NamedIndividual ,
+                     :VehicleDetection ;
+            :hasObservedOnPeriod :data1 ;
+            :isObserved :spira1 ;
+            :hasAccuracy "1.0"^^xsd:float ;
+            :hasCount 100 ;
+            rdfs:comment "Test for Vehicle detection"@en ;
+            rdfs:label "Detection 1" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/detection2
+:detection2 rdf:type owl:NamedIndividual ,
+                     :VehicleDetection ;
+            :hasObservedOnPeriod :data2 ;
+            :isObserved :spira2 ;
+            :hasAccuracy "0.75"^^xsd:float ;
+            :hasCount 130 ;
+            rdfs:label "Detection 2" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/friday
+:friday rdf:type owl:NamedIndividual ,
+                 :DayWeek ;
+        rdfs:label "Friday" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/mainroad
+:mainroad rdf:type owl:NamedIndividual ,
+                   :Road ;
+          rdfs:label "Main Road" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/monday
+:monday rdf:type owl:NamedIndividual ,
+                 :DayWeek ;
+        rdfs:label "Monday" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/rilevazione1
+:rilevazione1 rdf:type owl:NamedIndividual ,
+                       :ChemicalDetection ;
+              :hasDetect :O3 ;
+              :hasDetectedOnPeriod :data1 ;
+              :isRegistered :GiardiniMargherita ;
+              :hasChemicalName "Ozono" ;
+              :inQuantity "57.0"^^xsd:float ;
+              rdfs:comment "Test for Chemical Detection"@en ;
+              rdfs:label "Rilevazione 1" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/rilevazione2
+:rilevazione2 rdf:type owl:NamedIndividual ,
+                       :ChemicalDetection ;
+              :hasDetect :PM2.5 ;
+              :hasDetectedOnPeriod :data3 ;
+              :isRegistered :PortaSanFelice ;
+              :hasChemicalName "PM 2.5" ;
+              :inQuantity "12.0"^^xsd:float ;
+              rdfs:label "Rilevazione 2" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/saturday
+:saturday rdf:type owl:NamedIndividual ,
+                   :DayWeek ;
+          rdfs:label "Saturday" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/spira1
+:spira1 rdf:type owl:NamedIndividual ,
+                 :SimpleCoil ;
+        :hasLevel :Level1 ;
+        :hasType :Telecamera ;
+        :isOn :mainroad ;
+        :hasCode "ABCD1234" ;
+        :hasID "ABCD1234" ;
+        rdfs:label "Spira 1" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/spira2
+:spira2 rdf:type owl:NamedIndividual ,
+                 :PollutionCoil ;
+        :hasLevel :Level2 ;
+        :hasType :Spira ;
+        :isOn :mainroad ;
+        :hasCode "DEF5678" ;
+        :hasID "DEF5678" ;
+        rdfs:label "Spira 2" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/spira3
+:spira3 rdf:type owl:NamedIndividual ,
+                 :PollutionCoil ;
+        :hasLevel :Level2 ;
+        :hasType :Telecamera ;
+        :isOn :mainroad ;
+        :hasCode "GHI9012" ;
+        :hasID "GHI9012" ;
+        rdfs:label "Spira 3" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/sunday
+:sunday rdf:type owl:NamedIndividual ,
+                 :DayWeek ;
+        rdfs:label "Sunday" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/thursday
+:thursday rdf:type owl:NamedIndividual ,
+                   :DayWeek ;
+          rdfs:label "Thrusday" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/tuesday
+:tuesday rdf:type owl:NamedIndividual ,
+                  :DayWeek ;
+         rdfs:label "Tuesday" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/wednesday
+:wednesday rdf:type owl:NamedIndividual ,
+                    :DayWeek ;
+           rdfs:label "Wednesday" .
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#Borgo_Panigale_Reno
+:Borgo_Panigale_Reno rdf:type owl:NamedIndividual ,
+                              :District .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#Navile
+:Navile rdf:type owl:NamedIndividual ,
+                 :District .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#Porto_Saragozza
+:Porto_Saragozza rdf:type owl:NamedIndividual ,
+                          :District .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#San_Donato_San_Vitale
+:San_Donato_San_Vitale rdf:type owl:NamedIndividual ,
+                                :District .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#Santo_Stefano
+:Santo_Stefano rdf:type owl:NamedIndividual ,
+                        :District .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#Savena
+:Savena rdf:type owl:NamedIndividual ,
+                 :District .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+owl:Thing rdfs:comment "These are the classes, element of interest for my ontology"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :C6H6
+                        :CO
+                        :NO
+                        :NO2
+                        :NOX
+                        :O3
+                        :PM10
+                        :PM2.5
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :GiardiniMargherita
+                        :PortaSanFelice
+                        :ViaChiarini
+                      )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( :friday
+                        :monday
+                        :saturday
+                        :sunday
+                        :thursday
+                        :tuesday
+                        :wednesday
+                      )
+] .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
