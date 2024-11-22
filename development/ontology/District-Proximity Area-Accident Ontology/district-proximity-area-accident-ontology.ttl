@@ -28,7 +28,7 @@ xsd:gYear rdf:type rdfs:Datatype .
 :belongsTo rdf:type owl:ObjectProperty ;
            owl:inverseOf :containsArea ;
            rdf:type owl:FunctionalProperty ;
-           rdfs:domain :Proximity_Area ;
+           rdfs:domain :ProximityArea ;
            rdfs:range :District ;
            rdfs:comment "This property links proximity areas to districts" ;
            rdfs:label "belongs to"@en .
@@ -37,7 +37,7 @@ xsd:gYear rdf:type rdfs:Datatype .
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/containsArea
 :containsArea rdf:type owl:ObjectProperty ;
               rdfs:domain :District ;
-              rdfs:range :Proximity_Area ;
+              rdfs:range :ProximityArea ;
               rdfs:comment "This property conects districts to proximity areas. it is the inverse of \"belongs_to\" property"@en ;
               rdfs:label "contains area"@en .
 
@@ -45,15 +45,15 @@ xsd:gYear rdf:type rdfs:Datatype .
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/happendInArea
 :happendInArea rdf:type owl:ObjectProperty ,
                         owl:FunctionalProperty ;
-               rdfs:domain :Road_Accident ;
-               rdfs:range :Proximity_Area ;
+               rdfs:domain :RoadAccident ;
+               rdfs:range :ProximityArea ;
                rdfs:comment "This property connects road accidents to proximity areas"@en ;
                rdfs:label "happened in area"@en .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/hasAccidentYear
 :hasAccidentYear rdf:type owl:ObjectProperty ;
-                 rdfs:domain :Road_Accident ;
+                 rdfs:domain :RoadAccident ;
                  rdfs:comment "this property is pointing to the year in which the recorded accidents happened"@en ;
                  rdfs:label "has accident year"@en .
 
@@ -61,7 +61,7 @@ xsd:gYear rdf:type rdfs:Datatype .
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/recordedInDistrict
 :recordedInDistrict rdf:type owl:ObjectProperty ;
                     owl:inverseOf :recordedIncident ;
-                    rdfs:domain :Road_Accident ;
+                    rdfs:domain :RoadAccident ;
                     rdfs:range :District ;
                     rdfs:comment "This property connects road accidents to districts"@en ;
                     rdfs:label "recorded in district"@en .
@@ -70,7 +70,7 @@ xsd:gYear rdf:type rdfs:Datatype .
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/recordedIncident
 :recordedIncident rdf:type owl:ObjectProperty ;
                   rdfs:domain :District ;
-                  rdfs:range :Road_Accident ;
+                  rdfs:range :RoadAccident ;
                   rdfs:comment "This property connects districts to road accidents,it is the inverse of \"recorded_in_district\" property."@en ;
                   rdfs:label "recorded incident"@en .
 
@@ -99,7 +99,7 @@ xsd:gYear rdf:type rdfs:Datatype .
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/numberOfAccidents
 :numberOfAccidents rdf:type owl:DatatypeProperty ;
-                   rdfs:domain :Road_Accident ;
+                   rdfs:domain :RoadAccident ;
                    rdfs:range xsd:integer ;
                    rdfs:comment "representing the total number of accidents that happend"@en ;
                    rdfs:label "number of accidents"@en .
@@ -188,7 +188,7 @@ xsd:gYear rdf:type rdfs:Datatype .
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/proximityAreaName
 :proximityAreaName rdf:type owl:DatatypeProperty ,
                             owl:FunctionalProperty ;
-                   rdfs:domain :Proximity_Area ;
+                   rdfs:domain :ProximityArea ;
                    rdfs:range xsd:string ;
                    rdfs:comment "reprsenting the names of proximity area related to the district, the mentioned names are unique"@en ;
                    rdfs:label "proximity area name"@en .
@@ -196,7 +196,7 @@ xsd:gYear rdf:type rdfs:Datatype .
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/totalNumberOfDeath
 :totalNumberOfDeath rdf:type owl:DatatypeProperty ;
-                    rdfs:domain :Road_Accident ;
+                    rdfs:domain :RoadAccident ;
                     rdfs:range xsd:integer ;
                     rdfs:comment "representing the total number of the people who died"@en ;
                     rdfs:label "total number of death"@en .
@@ -204,7 +204,7 @@ xsd:gYear rdf:type rdfs:Datatype .
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/totalNumberOfInjuries
 :totalNumberOfInjuries rdf:type owl:DatatypeProperty ;
-                       rdfs:domain :Road_Accident ;
+                       rdfs:domain :RoadAccident ;
                        rdfs:range xsd:integer ;
                        rdfs:comment "representing the total number of injuries"@en ;
                        rdfs:label "total number of injuries"@en .
@@ -216,7 +216,7 @@ xsd:gYear rdf:type rdfs:Datatype .
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/Cyclist
 :Cyclist rdf:type owl:Class ;
-         rdfs:subClassOf :Road_Accident ;
+         rdfs:subClassOf :RoadAccident ;
          rdfs:comment "Contains all the accidents related to cyclists"@en ;
          rdfs:label "Cyclist"@en .
 
@@ -232,67 +232,67 @@ xsd:gYear rdf:type rdfs:Datatype .
                                             :Savena
                                           )
                               ] ;
-          owl:disjointWith :Proximity_Area ,
-                           :Road_Accident ;
+          owl:disjointWith :ProximityArea ,
+                           :RoadAccident ;
           rdfs:comment "Contains all the disricts in Bologna"@en ;
           rdfs:label "District"@en .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/Driver
 :Driver rdf:type owl:Class ;
-        rdfs:subClassOf :Road_Accident ;
+        rdfs:subClassOf :RoadAccident ;
         rdfs:comment "Contains all the accidents related to drivers"@en ;
         rdfs:label "Driver"@en .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/Motorcyclist
 :Motorcyclist rdf:type owl:Class ;
-              rdfs:subClassOf :Road_Accident ;
+              rdfs:subClassOf :RoadAccident ;
               rdfs:comment "Contains all the accidents related to motorcyclists"@en ;
               rdfs:label "Motorcyclist"@en .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/Pedestrain
 :Pedestrain rdf:type owl:Class ;
-            rdfs:subClassOf :Road_Accident ;
+            rdfs:subClassOf :RoadAccident ;
             rdfs:comment "Contains all the accidents related to pedstrains"@en ;
             rdfs:label "Pedestrain"@en .
 
 
-###  http://www.dei.unipd.it/~gdb/ontology/btp/Proximity_Area
-:Proximity_Area rdf:type owl:Class ;
-                owl:equivalentClass [ rdf:type owl:Restriction ;
-                                      owl:onProperty :belongsTo ;
-                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                      owl:onClass :District
-                                    ] ;
-                owl:disjointWith :Road_Accident ;
-                rdfs:comment "Contains all the proximity areas, related to each District"@en ;
-                rdfs:label "Proximity Area"@en .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/Road_Accident
-:Road_Accident rdf:type owl:Class ;
-               owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                            owl:onProperty :happendInArea ;
-                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                            owl:onClass :Proximity_Area
-                                                          ]
-                                                          [ rdf:type owl:Restriction ;
-                                                            owl:onProperty :recordedInDistrict ;
-                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                            owl:onClass :District
-                                                          ]
-                                                        ) ;
-                                     rdf:type owl:Class
+###  http://www.dei.unipd.it/~gdb/ontology/btp/ProximityArea
+:ProximityArea rdf:type owl:Class ;
+               owl:equivalentClass [ rdf:type owl:Restriction ;
+                                     owl:onProperty :belongsTo ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass :District
                                    ] ;
-               rdfs:comment "Contains all the accident records of bologna"@en ;
-               rdfs:label "Road Accident"@en .
+               owl:disjointWith :RoadAccident ;
+               rdfs:comment "Contains all the proximity areas, related to each District"@en ;
+               rdfs:label "Proximity Area"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/RoadAccident
+:RoadAccident rdf:type owl:Class ;
+              owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :happendInArea ;
+                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                           owl:onClass :ProximityArea
+                                                         ]
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :recordedInDistrict ;
+                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                           owl:onClass :District
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ;
+              rdfs:comment "Contains all the accident records of bologna"@en ;
+              rdfs:label "Road Accident"@en .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/Scooter
 :Scooter rdf:type owl:Class ;
-         rdfs:subClassOf :Road_Accident ;
+         rdfs:subClassOf :RoadAccident ;
          rdfs:comment "Contains all the accidents related to scooters"@en ;
          rdfs:label "Scooter"@en .
 

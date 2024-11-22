@@ -11,7 +11,6 @@
                                              owl:imports <http://www.w3.org/TR/skos-reference/skos-owl1-dl.rdf> ;
                                              rdfs:comment "BTP Ontology Assignment"@en .
 
-
 #################################################################
 #    Datatypes
 #################################################################
@@ -24,7 +23,39 @@ xsd:gYear rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
-### Francesco's Object Properties #################################################################################################################
+###  http://www.dei.unipd.it/~gdb/ontology/btp/belongsTo
+:belongsTo rdf:type owl:ObjectProperty ;
+           owl:inverseOf :containsArea ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain :ProximityArea ;
+           rdfs:range :District ;
+           rdfs:comment "This property links proximity areas to districts" ;
+           rdfs:label "belongs to"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/containsArea
+:containsArea rdf:type owl:ObjectProperty ;
+              rdfs:domain :District ;
+              rdfs:range :ProximityArea ;
+              rdfs:comment "This property conects districts to proximity areas. it is the inverse of \"belongs_to\" property"@en ;
+              rdfs:label "contains area"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/happendInArea
+:happendInArea rdf:type owl:ObjectProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain :RoadAccident ;
+               rdfs:range :ProximityArea ;
+               rdfs:comment "This property connects road accidents to proximity areas"@en ;
+               rdfs:label "happened in area"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasAccidentYear
+:hasAccidentYear rdf:type owl:ObjectProperty ;
+                 rdfs:domain :RoadAccident ;
+                 rdfs:comment "this property is pointing to the year in which the recorded accidents happened"@en ;
+                 rdfs:label "has accident year"@en .
+
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/hasDetect
 :hasDetect rdf:type owl:ObjectProperty ;
@@ -167,46 +198,10 @@ xsd:gYear rdf:type rdfs:Datatype .
        rdfs:label "on Day" .
 
 
-### Ali's Object Properties #######################################################################################################################
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/belongsTo
-:belongsTo rdf:type owl:ObjectProperty ;
-           owl:inverseOf :containsArea ;
-           rdf:type owl:FunctionalProperty ;
-           rdfs:domain :Proximity_Area ;
-           rdfs:range :District ;
-           rdfs:comment "This property links proximity areas to districts" ;
-           rdfs:label "belongs to"@en .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/containsArea
-:containsArea rdf:type owl:ObjectProperty ;
-              rdfs:domain :District ;
-              rdfs:range :Proximity_Area ;
-              rdfs:comment "This property conects districts to proximity areas. it is the inverse of \"belongs_to\" property"@en ;
-              rdfs:label "contains area"@en .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/happendInArea
-:happendInArea rdf:type owl:ObjectProperty ,
-                        owl:FunctionalProperty ;
-               rdfs:domain :Road_Accident ;
-               rdfs:range :Proximity_Area ;
-               rdfs:comment "This property connects road accidents to proximity areas"@en ;
-               rdfs:label "happened in area"@en .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/hasAccidentYear
-:hasAccidentYear rdf:type owl:ObjectProperty ;
-                 rdfs:domain :Road_Accident ;
-                 rdfs:comment "this property is pointing to the year in which the recorded accidents happened"@en ;
-                 rdfs:label "has accident year"@en .
-
-
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/recordedInDistrict
 :recordedInDistrict rdf:type owl:ObjectProperty ;
                     owl:inverseOf :recordedIncident ;
-                    rdfs:domain :Road_Accident ;
+                    rdfs:domain :RoadAccident ;
                     rdfs:range :District ;
                     rdfs:comment "This property connects road accidents to districts"@en ;
                     rdfs:label "recorded in district"@en .
@@ -215,11 +210,9 @@ xsd:gYear rdf:type rdfs:Datatype .
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/recordedIncident
 :recordedIncident rdf:type owl:ObjectProperty ;
                   rdfs:domain :District ;
-                  rdfs:range :Road_Accident ;
+                  rdfs:range :RoadAccident ;
                   rdfs:comment "This property connects districts to road accidents,it is the inverse of \"recorded_in_district\" property."@en ;
                   rdfs:label "recorded incident"@en .
-
-### Marco's Object Properties #####################################################################################################################
 
 
 ###  http://www.w3.org/2002/07/owl#topObjectProperty
@@ -230,7 +223,23 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 #    Data properties
 #################################################################
 
-### Francesco's Data Properties ###################################################################################################################
+###  http://www.dei.unipd.it/~gdb/ontology/btp/districtCode
+:districtCode rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain :District ;
+              rdfs:range xsd:integer ;
+              rdfs:comment "represent a unique code which is assigned to each district"@en ;
+              rdfs:label "district code"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/districtName
+:districtName rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain :District ;
+              rdfs:range xsd:string ;
+              rdfs:comment "represent the name of the district wich is unique for each district"@en ;
+              rdfs:label "district name"@en .
+
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/endTime
 :endTime rdf:type owl:DatatypeProperty ;
@@ -297,37 +306,9 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
         rdfs:label "in Time" .
 
 
-###  http://www.dei.unipd.it/~gdb/ontology/btp/startTime
-:startTime rdf:type owl:DatatypeProperty ;
-           rdfs:subPropertyOf :inTime ;
-           rdfs:domain :Period ;
-           rdfs:range xsd:dateTime ;
-           rdfs:comment "it uses dateTime as value -> check ranges and how to use it!" ;
-           rdfs:label "start Time" .
-
-### Ali's Data Properties #########################################################################################################################
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/districtCode
-:districtCode rdf:type owl:DatatypeProperty ,
-                       owl:FunctionalProperty ;
-              rdfs:domain :District ;
-              rdfs:range xsd:integer ;
-              rdfs:comment "represent a unique code which is assigned to each district"@en ;
-              rdfs:label "district code"@en .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/districtName
-:districtName rdf:type owl:DatatypeProperty ,
-                       owl:FunctionalProperty ;
-              rdfs:domain :District ;
-              rdfs:range xsd:string ;
-              rdfs:comment "represent the name of the district wich is unique for each district"@en ;
-              rdfs:label "district name"@en .
-
-
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/numberOfAccidents
 :numberOfAccidents rdf:type owl:DatatypeProperty ;
-                   rdfs:domain :Road_Accident ;
+                   rdfs:domain :RoadAccident ;
                    rdfs:range xsd:integer ;
                    rdfs:comment "representing the total number of accidents that happend"@en ;
                    rdfs:label "number of accidents"@en .
@@ -416,15 +397,24 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/proximityAreaName
 :proximityAreaName rdf:type owl:DatatypeProperty ,
                             owl:FunctionalProperty ;
-                   rdfs:domain :Proximity_Area ;
+                   rdfs:domain :ProximityArea ;
                    rdfs:range xsd:string ;
                    rdfs:comment "reprsenting the names of proximity area related to the district, the mentioned names are unique"@en ;
                    rdfs:label "proximity area name"@en .
 
 
+###  http://www.dei.unipd.it/~gdb/ontology/btp/startTime
+:startTime rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf :inTime ;
+           rdfs:domain :Period ;
+           rdfs:range xsd:dateTime ;
+           rdfs:comment "it uses dateTime as value -> check ranges and how to use it!" ;
+           rdfs:label "start Time" .
+
+
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/totalNumberOfDeath
 :totalNumberOfDeath rdf:type owl:DatatypeProperty ;
-                    rdfs:domain :Road_Accident ;
+                    rdfs:domain :RoadAccident ;
                     rdfs:range xsd:integer ;
                     rdfs:comment "representing the total number of the people who died"@en ;
                     rdfs:label "total number of death"@en .
@@ -432,20 +422,15 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/totalNumberOfInjuries
 :totalNumberOfInjuries rdf:type owl:DatatypeProperty ;
-                       rdfs:domain :Road_Accident ;
+                       rdfs:domain :RoadAccident ;
                        rdfs:range xsd:integer ;
                        rdfs:comment "representing the total number of injuries"@en ;
                        rdfs:label "total number of injuries"@en .
-
-### Marco's Data Properties #######################################################################################################################
-
 
 
 #################################################################
 #    Classes
 #################################################################
-
-### Francesco's Classes ###########################################################################################################################
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/ChemicalDetection
 :ChemicalDetection rdf:type owl:Class ;
@@ -517,6 +502,13 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
       rdfs:label "Coil"@en .
 
 
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Cyclist
+:Cyclist rdf:type owl:Class ;
+         rdfs:subClassOf :RoadAccident ;
+         rdfs:comment "Contains all the accidents related to cyclists"@en ;
+         rdfs:label "Cyclist"@en .
+
+
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/DayWeek
 :DayWeek rdf:type owl:Class ;
          owl:equivalentClass [ rdf:type owl:Class ;
@@ -533,6 +525,30 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
          rdfs:label "Day of the Week"@en .
 
 
+###  http://www.dei.unipd.it/~gdb/ontology/btp/District
+:District rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Class ;
+                                owl:oneOf ( :Borgo_Panigale_Reno
+                                            :Navile
+                                            :Porto_Saragozza
+                                            :San_Donato_San_Vitale
+                                            :Santo_Stefano
+                                            :Savena
+                                          )
+                              ] ;
+          owl:disjointWith :ProximityArea ,
+                           :RoadAccident ;
+          rdfs:comment "Contains all the disricts in Bologna"@en ;
+          rdfs:label "District"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Driver
+:Driver rdf:type owl:Class ;
+        rdfs:subClassOf :RoadAccident ;
+        rdfs:comment "Contains all the accidents related to drivers"@en ;
+        rdfs:label "Driver"@en .
+
+
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/Level
 :Level rdf:type owl:Class ;
        owl:equivalentClass [ rdf:type owl:Class ;
@@ -541,6 +557,20 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
                                        )
                            ] ;
        rdfs:label "Level"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Motorcyclist
+:Motorcyclist rdf:type owl:Class ;
+              rdfs:subClassOf :RoadAccident ;
+              rdfs:comment "Contains all the accidents related to motorcyclists"@en ;
+              rdfs:label "Motorcyclist"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Pedestrain
+:Pedestrain rdf:type owl:Class ;
+            rdfs:subClassOf :RoadAccident ;
+            rdfs:comment "Contains all the accidents related to pedstrains"@en ;
+            rdfs:label "Pedestrain"@en .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/Period
@@ -587,9 +617,47 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
                   rdfs:label "Pollution Station"@en .
 
 
+###  http://www.dei.unipd.it/~gdb/ontology/btp/ProximityArea
+:ProximityArea rdf:type owl:Class ;
+               owl:equivalentClass [ rdf:type owl:Restriction ;
+                                     owl:onProperty :belongsTo ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onClass :District
+                                   ] ;
+               owl:disjointWith :RoadAccident ;
+               rdfs:comment "Contains all the proximity areas, related to each District"@en ;
+               rdfs:label "Proximity Area"@en .
+
+
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/Road
 :Road rdf:type owl:Class ;
       rdfs:label "Road"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/RoadAccident
+:RoadAccident rdf:type owl:Class ;
+              owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :happendInArea ;
+                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                           owl:onClass :ProximityArea
+                                                         ]
+                                                         [ rdf:type owl:Restriction ;
+                                                           owl:onProperty :recordedInDistrict ;
+                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                           owl:onClass :District
+                                                         ]
+                                                       ) ;
+                                    rdf:type owl:Class
+                                  ] ;
+              rdfs:comment "Contains all the accident records of bologna"@en ;
+              rdfs:label "Road Accident"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Scooter
+:Scooter rdf:type owl:Class ;
+         rdfs:subClassOf :RoadAccident ;
+         rdfs:comment "Contains all the accidents related to scooters"@en ;
+         rdfs:label "Scooter"@en .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/SimpleCoil
@@ -638,97 +706,16 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
                   rdfs:comment "Class that identifies a detection of a vehicle through a coil. It must be associated to: an Accuracy value (float), a Date, a Coil and a Count (integer)"@en ;
                   rdfs:label "Vehicle Detection"@en .
 
-### Ali's Classes #################################################################################################################################
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/Cyclist
-:Cyclist rdf:type owl:Class ;
-         rdfs:subClassOf :Road_Accident ;
-         rdfs:comment "Contains all the accidents related to cyclists"@en ;
-         rdfs:label "Cyclist"@en .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/District
-:District rdf:type owl:Class ;
-          owl:equivalentClass [ rdf:type owl:Class ;
-                                owl:oneOf ( :Borgo_Panigale_Reno
-                                            :Navile
-                                            :Porto_Saragozza
-                                            :San_Donato_San_Vitale
-                                            :Santo_Stefano
-                                            :Savena
-                                          )
-                              ] ;
-          owl:disjointWith :Proximity_Area ,
-                           :Road_Accident ;
-          rdfs:comment "Contains all the disricts in Bologna"@en ;
-          rdfs:label "District"@en .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/Driver
-:Driver rdf:type owl:Class ;
-        rdfs:subClassOf :Road_Accident ;
-        rdfs:comment "Contains all the accidents related to drivers"@en ;
-        rdfs:label "Driver"@en .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/Motorcyclist
-:Motorcyclist rdf:type owl:Class ;
-              rdfs:subClassOf :Road_Accident ;
-              rdfs:comment "Contains all the accidents related to motorcyclists"@en ;
-              rdfs:label "Motorcyclist"@en .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/Pedestrain
-:Pedestrain rdf:type owl:Class ;
-            rdfs:subClassOf :Road_Accident ;
-            rdfs:comment "Contains all the accidents related to pedstrains"@en ;
-            rdfs:label "Pedestrain"@en .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/Proximity_Area
-:Proximity_Area rdf:type owl:Class ;
-                owl:equivalentClass [ rdf:type owl:Restriction ;
-                                      owl:onProperty :belongsTo ;
-                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                      owl:onClass :District
-                                    ] ;
-                owl:disjointWith :Road_Accident ;
-                rdfs:comment "Contains all the proximity areas, related to each District"@en ;
-                rdfs:label "Proximity Area"@en .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/Road_Accident
-:Road_Accident rdf:type owl:Class ;
-               owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
-                                                            owl:onProperty :happendInArea ;
-                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                            owl:onClass :Proximity_Area
-                                                          ]
-                                                          [ rdf:type owl:Restriction ;
-                                                            owl:onProperty :recordedInDistrict ;
-                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                            owl:onClass :District
-                                                          ]
-                                                        ) ;
-                                     rdf:type owl:Class
-                                   ] ;
-               rdfs:comment "Contains all the accident records of bologna"@en ;
-               rdfs:label "Road Accident"@en .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/Scooter
-:Scooter rdf:type owl:Class ;
-         rdfs:subClassOf :Road_Accident ;
-         rdfs:comment "Contains all the accidents related to scooters"@en ;
-         rdfs:label "Scooter"@en .
-
-### Marco's Classes ###############################################################################################################################
 
 #################################################################
 #    Individuals
 #################################################################
 
-### Francesco's Individuals #######################################################################################################################
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Borgo_Panigale_Reno
+:Borgo_Panigale_Reno rdf:type owl:NamedIndividual ,
+                              :District ;
+                     rdfs:label "Borgo Panigale Reno" .
+
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/C6H6
 :C6H6 rdf:type owl:NamedIndividual ,
@@ -784,6 +771,12 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
      rdfs:label "NOX" .
 
 
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Navile
+:Navile rdf:type owl:NamedIndividual ,
+                 :District ;
+        rdfs:label "Navile" .
+
+
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/O3
 :O3 rdf:type owl:NamedIndividual ,
              :ChemicalElement ;
@@ -810,6 +803,30 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
                          :PollutionStation ;
                 :isNearTo :spira2 ;
                 rdfs:label "Porta San Felice" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Porto_Saragozza
+:Porto_Saragozza rdf:type owl:NamedIndividual ,
+                          :District ;
+                 rdfs:label "Porto Saragozza" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/San_Donato_San_Vitale
+:San_Donato_San_Vitale rdf:type owl:NamedIndividual ,
+                                :District ;
+                       rdfs:label "San Donato San Vitale" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Santo_Stefano
+:Santo_Stefano rdf:type owl:NamedIndividual ,
+                        :District ;
+               rdfs:label "Santo Stefano" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/Savena
+:Savena rdf:type owl:NamedIndividual ,
+                 :District ;
+        rdfs:label "Savena" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/Spira
@@ -980,45 +997,6 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 :wednesday rdf:type owl:NamedIndividual ,
                     :DayWeek ;
            rdfs:label "Wednesday" .
-
-### Ali's Individuals #############################################################################################################################
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/Borgo_Panigale_Reno
-:Borgo_Panigale_Reno rdf:type owl:NamedIndividual ,
-                              :District ;
-                     rdfs:label "Borgo Panigale Reno" .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/Navile
-:Navile rdf:type owl:NamedIndividual ,
-                 :District ;
-        rdfs:label "Navile" .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/Porto_Saragozza
-:Porto_Saragozza rdf:type owl:NamedIndividual ,
-                          :District ;
-                 rdfs:label "Porto Saragozza" .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/San_Donato_San_Vitale
-:San_Donato_San_Vitale rdf:type owl:NamedIndividual ,
-                                :District ;
-                       rdfs:label "San Donato San Vitale" .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/Santo_Stefano
-:Santo_Stefano rdf:type owl:NamedIndividual ,
-                        :District ;
-               rdfs:label "Santo Stefano" .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/Savena
-:Savena rdf:type owl:NamedIndividual ,
-                 :District ;
-        rdfs:label "Savena" .
-
-### Marco's Individuals ###########################################################################################################################
 
 
 #################################################################
