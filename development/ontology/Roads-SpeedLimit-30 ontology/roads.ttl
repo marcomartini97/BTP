@@ -86,6 +86,7 @@
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/hasProjectType
 :hasProjectType rdf:type owl:ObjectProperty ;
                 owl:inverseOf :isProjectType ;
+                rdf:type owl:FunctionalProperty ;
                 rdfs:domain :Project30 ;
                 rdfs:range :ProjectType ;
                 rdfs:comment "Defines the type for a certain project"@en .
@@ -107,6 +108,15 @@
              rdfs:domain :Road ;
              rdfs:range :RoadType ;
              rdfs:comment "Defines the type of a road"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasSecondaryProjectType
+:hasSecondaryProjectType rdf:type owl:ObjectProperty ;
+                         owl:inverseOf :isSecondaryProjectType ;
+                         rdf:type owl:FunctionalProperty ;
+                         rdfs:domain :Project30 ;
+                         rdfs:range :ProjectType ;
+                         rdfs:comment "Secondary Project Type"@en .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/hasSpeedLimit
@@ -186,6 +196,10 @@
 :isRoadType rdf:type owl:ObjectProperty .
 
 
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isSecondaryProjectType
+:isSecondaryProjectType rdf:type owl:ObjectProperty .
+
+
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/isSpeedLimit
 :isSpeedLimit rdf:type owl:ObjectProperty .
 
@@ -203,13 +217,6 @@
                  rdfs:domain :Date ;
                  rdfs:range xsd:dateTime ;
                  rdfs:comment "dateTime value that defines a day in a particular month in a particular year"@en .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/hasCardinality
-:hasCardinality rdf:type owl:DatatypeProperty ;
-                rdfs:domain :ProjectType ;
-                rdfs:range xsd:integer ;
-                rdfs:comment "Defines if the Project Type is primary or secondary"@en .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/hasDescription
@@ -303,7 +310,55 @@
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/RoadType
 :RoadType rdf:type owl:Class ;
-          rdfs:comment "The type of road (i.e: street, intersection, highway)"@en .
+          owl:equivalentClass [ rdf:type owl:Class ;
+                                owl:oneOf ( :roadtype_autostrada
+                                            :roadtype_corte
+                                            :roadtype_galleria
+                                            :roadtype_giardino
+                                            :roadtype_largo
+                                            :roadtype_localita
+                                            :roadtype_mura
+                                            :roadtype_passaggio
+                                            :roadtype_piazza
+                                            :roadtype_piazzale
+                                            :roadtype_ponte
+                                            :roadtype_raccordo
+                                            :roadtype_rampa
+                                            :roadtype_rotonda
+                                            :roadtype_salita
+                                            :roadtype_sottopasso
+                                            :roadtype_strada
+                                            :roadtype_undefined
+                                            :roadtype_via
+                                            :roadtype_viale
+                                          )
+                              ] ;
+          rdfs:comment """The type of road, enumerated class that can be one of:
+
+AUTOSTRADA
+CORTE
+GALLERIA
+GIARDINO
+LARGO
+LOCALITA'
+MURA
+UNDEFINED
+PASSAGGIO
+PIAZZA
+PIAZZALE
+PIAZZETTA
+PONTE
+RACCORDO
+RAMPA
+ROTONDA
+SALITA
+SOTTOPASSO
+STRADA
+TANGENZIALE
+VIA
+VIALE
+VICOLO
+VOLTONE"""@en .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/SpeedLimit30
@@ -319,6 +374,24 @@
 #################################################################
 #    Individuals
 #################################################################
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/abbattimentoBarriereArchitettoniche
+:abbattimentoBarriereArchitettoniche rdf:type owl:NamedIndividual ,
+                                              :ProjectType ,
+                                              <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                     <http://www.w3.org/2004/02/skos/core#broader> :projectType ;
+                                     <http://www.w3.org/2004/02/skos/core#inScheme> :projectTypeScheme ;
+                                     <http://www.w3.org/2004/02/skos/core#prefLabel> "Abbattimento barriere architettoniche"@it .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/accessibilita
+:accessibilita rdf:type owl:NamedIndividual ,
+                        :ProjectType ,
+                        <http://www.w3.org/2004/02/skos/core#Concept> ;
+               <http://www.w3.org/2004/02/skos/core#broader> :projectType ;
+               <http://www.w3.org/2004/02/skos/core#inScheme> :projectTypeScheme ;
+               <http://www.w3.org/2004/02/skos/core#prefLabel> "Accessibilità"@it .
+
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/arch_2985
 :arch_2985 rdf:type owl:NamedIndividual ,
@@ -358,6 +431,24 @@
              rdfs:label "Quartiere Porto - Saragozza" .
 
 
+###  http://www.dei.unipd.it/~gdb/ontology/btp/interventiDiMessaInSicurezza
+:interventiDiMessaInSicurezza rdf:type owl:NamedIndividual ,
+                                       :ProjectType ,
+                                       <http://www.w3.org/2004/02/skos/core#Concept> ;
+                              <http://www.w3.org/2004/02/skos/core#broader> :projectType ;
+                              <http://www.w3.org/2004/02/skos/core#inScheme> :projectTypeScheme ;
+                              <http://www.w3.org/2004/02/skos/core#prefLabel> "Interventi di messa in sicurezza"@it .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/manutenzioneStrade
+:manutenzioneStrade rdf:type owl:NamedIndividual ,
+                             :ProjectType ,
+                             <http://www.w3.org/2004/02/skos/core#Concept> ;
+                    <http://www.w3.org/2004/02/skos/core#broader> :projectType ;
+                    <http://www.w3.org/2004/02/skos/core#inScheme> :projectTypeScheme ;
+                    <http://www.w3.org/2004/02/skos/core#prefLabel> "Manutenzione strade"@it .
+
+
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/node_203
 :node_203 rdf:type owl:NamedIndividual ,
                    :RoadNode .
@@ -368,32 +459,93 @@
                    :RoadNode .
 
 
+###  http://www.dei.unipd.it/~gdb/ontology/btp/nuovaCentralitaUrbanaDiffusa
+:nuovaCentralitaUrbanaDiffusa rdf:type owl:NamedIndividual ,
+                                       :ProjectType ,
+                                       <http://www.w3.org/2004/02/skos/core#Concept> ;
+                              <http://www.w3.org/2004/02/skos/core#broader> :projectType ;
+                              <http://www.w3.org/2004/02/skos/core#inScheme> :projectTypeScheme ;
+                              <http://www.w3.org/2004/02/skos/core#prefLabel> "Nuova centralità urbana diffusa"@it .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/nuovoAssettoStradale
+:nuovoAssettoStradale rdf:type owl:NamedIndividual ,
+                               :ProjectType ,
+                               <http://www.w3.org/2004/02/skos/core#Concept> ;
+                      <http://www.w3.org/2004/02/skos/core#broader> :projectType ;
+                      <http://www.w3.org/2004/02/skos/core#inScheme> :projectTypeScheme ;
+                      <http://www.w3.org/2004/02/skos/core#prefLabel> "Nuovo assetto stradale"@it .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/piazzePedonaliEScolastiche
+:piazzePedonaliEScolastiche rdf:type owl:NamedIndividual ,
+                                     :ProjectType ,
+                                     <http://www.w3.org/2004/02/skos/core#Concept> ;
+                            <http://www.w3.org/2004/02/skos/core#broader> :projectType ;
+                            <http://www.w3.org/2004/02/skos/core#inScheme> :projectTypeScheme ;
+                            <http://www.w3.org/2004/02/skos/core#prefLabel> "Piazze pedonali e scolastiche"@it .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/pisteECorsieCiclabili
+:pisteECorsieCiclabili rdf:type owl:NamedIndividual ,
+                                :ProjectType ,
+                                <http://www.w3.org/2004/02/skos/core#Concept> ;
+                       <http://www.w3.org/2004/02/skos/core#broader> :projectType ;
+                       <http://www.w3.org/2004/02/skos/core#inScheme> :projectTypeScheme ;
+                       <http://www.w3.org/2004/02/skos/core#prefLabel> "Piste e corsie ciclabili"@it .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/pontiCanali
+:pontiCanali rdf:type owl:NamedIndividual ,
+                      :ProjectType ,
+                      <http://www.w3.org/2004/02/skos/core#Concept> ;
+             <http://www.w3.org/2004/02/skos/core#broader> :projectType ;
+             <http://www.w3.org/2004/02/skos/core#inScheme> :projectTypeScheme ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "Ponti/Canali"@it .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/projectType
+:projectType rdf:type owl:NamedIndividual ,
+                      <http://www.w3.org/2004/02/skos/core#Concept> ;
+             <http://www.w3.org/2004/02/skos/core#inScheme> :projectTypeScheme ;
+             <http://www.w3.org/2004/02/skos/core#narrower> :abbattimentoBarriereArchitettoniche ,
+                                                            :accessibilita ,
+                                                            :interventiDiMessaInSicurezza ,
+                                                            :manutenzioneStrade ,
+                                                            :nuovaCentralitaUrbanaDiffusa ,
+                                                            :nuovoAssettoStradale ,
+                                                            :piazzePedonaliEScolastiche ,
+                                                            :pisteECorsieCiclabili ,
+                                                            :pontiCanali ,
+                                                            :riqualificazioneDeiMarciapiedi ,
+                                                            :tramETrasportoPubblico ,
+                                                            :viaDellaConoscenza ;
+             <http://www.w3.org/2004/02/skos/core#topConceptOf> :projectTypeScheme ;
+             rdfs:comment "SKOS Concept Scheme that describes a Project Type Taxonomy for \"Progetto Città 30\""@en ;
+             <http://www.w3.org/2004/02/skos/core#prefLabel> "ProjectType"@en ,
+                                                             "Tipo di Progetto"@it .
+
+
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/projectTypeScheme
 :projectTypeScheme rdf:type owl:NamedIndividual ,
                             <http://www.w3.org/2004/02/skos/core#ConceptScheme> ;
-                   rdfs:comment """SKOS Concept Scheme that describes a Project Type for \"Progetto Città 30\"
+                   <http://www.w3.org/2004/02/skos/core#prefLabel> "Project Type Scheme"@en .
 
-Possible concepts are:
 
-Tram e trasporto pubblico
-Piste e corsie ciclabili
-Interventi di messa in sicurezza
-Piazze pedonali e scolastiche
-
-Accessibilità
-Ponti/Canali
-Nuova centralità urbana diffusa
-Riqualificazione dei marciapiedi
-Sicurezza e manutenzione
-Impronta verde
-Trasformazioni di interesse territoriale""" .
+###  http://www.dei.unipd.it/~gdb/ontology/btp/riqualificazioneDeiMarciapiedi
+:riqualificazioneDeiMarciapiedi rdf:type owl:NamedIndividual ,
+                                         :ProjectType ,
+                                         <http://www.w3.org/2004/02/skos/core#Concept> ;
+                                <http://www.w3.org/2004/02/skos/core#broader> :projectType ;
+                                <http://www.w3.org/2004/02/skos/core#inScheme> :projectTypeScheme ;
+                                <http://www.w3.org/2004/02/skos/core#prefLabel> "Riqualificazione dei marciapiedi"@it .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/road_35550
 :road_35550 rdf:type owl:NamedIndividual ,
                      :Road ;
             :hasArch :arch_5842 ;
-            rdfs:label "Via Santa Maria Maggiore" .
+            rdfs:label "Via Santa Maria maggiore" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/road_50550
@@ -412,9 +564,132 @@ Trasformazioni di interesse territoriale""" .
             rdfs:label "Via Nazario Sauro" .
 
 
+###  http://www.dei.unipd.it/~gdb/ontology/btp/roadtype_autostrada
+:roadtype_autostrada rdf:type owl:NamedIndividual ,
+                              :RoadType .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/roadtype_corte
+:roadtype_corte rdf:type owl:NamedIndividual ,
+                         :RoadType .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/roadtype_galleria
+:roadtype_galleria rdf:type owl:NamedIndividual ,
+                            :RoadType .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/roadtype_giardino
+:roadtype_giardino rdf:type owl:NamedIndividual ,
+                            :RoadType .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/roadtype_largo
+:roadtype_largo rdf:type owl:NamedIndividual ,
+                         :RoadType .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/roadtype_localita
+:roadtype_localita rdf:type owl:NamedIndividual ,
+                            :RoadType .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/roadtype_mura
+:roadtype_mura rdf:type owl:NamedIndividual ,
+                        :RoadType .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/roadtype_passaggio
+:roadtype_passaggio rdf:type owl:NamedIndividual ,
+                             :RoadType .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/roadtype_piazza
+:roadtype_piazza rdf:type owl:NamedIndividual ,
+                          :RoadType .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/roadtype_piazzale
+:roadtype_piazzale rdf:type owl:NamedIndividual ,
+                            :RoadType .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/roadtype_piazzetta
+:roadtype_piazzetta rdf:type owl:NamedIndividual ,
+                             :RoadType .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/roadtype_ponte
+:roadtype_ponte rdf:type owl:NamedIndividual ,
+                         :RoadType .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/roadtype_raccordo
+:roadtype_raccordo rdf:type owl:NamedIndividual ,
+                            :RoadType .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/roadtype_rampa
+:roadtype_rampa rdf:type owl:NamedIndividual ,
+                         :RoadType .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/roadtype_rotonda
+:roadtype_rotonda rdf:type owl:NamedIndividual ,
+                           :RoadType .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/roadtype_salita
+:roadtype_salita rdf:type owl:NamedIndividual ,
+                          :RoadType .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/roadtype_sottopasso
+:roadtype_sottopasso rdf:type owl:NamedIndividual ,
+                              :RoadType .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/roadtype_strada
+:roadtype_strada rdf:type owl:NamedIndividual ,
+                          :RoadType .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/roadtype_tangenziale
+:roadtype_tangenziale rdf:type owl:NamedIndividual ,
+                               :RoadType .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/roadtype_undefined
+:roadtype_undefined rdf:type owl:NamedIndividual ,
+                             :RoadType .
+
+
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/roadtype_via
 :roadtype_via rdf:type owl:NamedIndividual ,
                        :RoadType .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/roadtype_viale
+:roadtype_viale rdf:type owl:NamedIndividual ,
+                         :RoadType .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/tramETrasportoPubblico
+:tramETrasportoPubblico rdf:type owl:NamedIndividual ,
+                                 :ProjectType ,
+                                 <http://www.w3.org/2004/02/skos/core#Concept> ;
+                        <http://www.w3.org/2004/02/skos/core#broader> :projectType ;
+                        <http://www.w3.org/2004/02/skos/core#inScheme> :projectTypeScheme ;
+                        <http://www.w3.org/2004/02/skos/core#prefLabel> "Tram e trasporto pubblico"@it .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/viaDellaConoscenza
+:viaDellaConoscenza rdf:type owl:NamedIndividual ,
+                             :ProjectType ,
+                             <http://www.w3.org/2004/02/skos/core#Concept> ;
+                    <http://www.w3.org/2004/02/skos/core#broader> :projectType ;
+                    <http://www.w3.org/2004/02/skos/core#inScheme> :projectTypeScheme ;
+                    <http://www.w3.org/2004/02/skos/core#prefLabel> "Via della Conoscenza"@it .
 
 
 ###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
