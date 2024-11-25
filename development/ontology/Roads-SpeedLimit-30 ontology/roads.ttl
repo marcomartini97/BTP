@@ -86,7 +86,6 @@
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/hasProjectType
 :hasProjectType rdf:type owl:ObjectProperty ;
                 owl:inverseOf :isProjectType ;
-                rdf:type owl:FunctionalProperty ;
                 rdfs:domain :Project30 ;
                 rdfs:range :ProjectType ;
                 rdfs:comment "Defines the type for a certain project"@en .
