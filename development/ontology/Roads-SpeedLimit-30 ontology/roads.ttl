@@ -86,6 +86,7 @@
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/hasProjectType
 :hasProjectType rdf:type owl:ObjectProperty ;
                 owl:inverseOf :isProjectType ;
+                rdf:type owl:FunctionalProperty ;
                 rdfs:domain :Project30 ;
                 rdfs:range :ProjectType ;
                 rdfs:comment "Defines the type for a certain project"@en .
@@ -269,10 +270,18 @@
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/Project30
 :Project30 rdf:type owl:Class ;
-           owl:equivalentClass [ rdf:type owl:Restriction ;
-                                 owl:onProperty :hasProjectType ;
-                                 owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
-                                 owl:onClass :ProjectType
+           owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :hasProjectType ;
+                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                        owl:onClass :ProjectType
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :hasSecondaryProjectType ;
+                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                        owl:onClass :ProjectType
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
                                ] ;
            rdfs:comment "A Project defined in the \"Progetto Città 30\""@en .
 
