@@ -70,6 +70,8 @@ xsd:gYear rdf:type rdfs:Datatype .
 :hasArchFromRoad rdf:type owl:ObjectProperty ;
                  owl:inverseOf :isArchFromRoad ;
                  rdf:type owl:FunctionalProperty ;
+                 rdfs:domain :Road ;
+                 rdfs:range :RoadArch ;
                  rdfs:label "has Arch From Road" .
 
 
@@ -77,6 +79,8 @@ xsd:gYear rdf:type rdfs:Datatype .
 :hasArchToRoad rdf:type owl:ObjectProperty ;
                owl:inverseOf :isArchToRoad ;
                rdf:type owl:FunctionalProperty ;
+               rdfs:domain :Road ;
+               rdfs:range :RoadArch ;
                rdfs:label "has Arch To Road" .
 
 
@@ -185,6 +189,9 @@ xsd:gYear rdf:type rdfs:Datatype .
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/hasProject
 :hasProject rdf:type owl:ObjectProperty ;
             owl:inverseOf :isProjectOnRoad ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain :Road ;
+            rdfs:range :Project30 ;
             rdfs:label "has Project" .
 
 
@@ -267,11 +274,14 @@ xsd:gYear rdf:type rdfs:Datatype .
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/isArch
 :isArch rdf:type owl:ObjectProperty ,
                  owl:InverseFunctionalProperty ;
+        rdfs:domain :RoadArch ;
+        rdfs:range :Road ;
         rdfs:label "is Arch" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/isArchFromRoad
-:isArchFromRoad rdf:type owl:ObjectProperty ;
+:isArchFromRoad rdf:type owl:ObjectProperty ,
+                         owl:InverseFunctionalProperty ;
                 rdfs:domain :RoadArch ;
                 rdfs:range :Road ;
                 rdfs:comment "The starting road of a Road Arch"@en ;
@@ -279,7 +289,8 @@ xsd:gYear rdf:type rdfs:Datatype .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/isArchToRoad
-:isArchToRoad rdf:type owl:ObjectProperty ;
+:isArchToRoad rdf:type owl:ObjectProperty ,
+                       owl:InverseFunctionalProperty ;
               rdfs:domain :RoadArch ;
               rdfs:range :Road ;
               rdfs:comment "The Road where the arch finishes"@en ;
@@ -287,7 +298,10 @@ xsd:gYear rdf:type rdfs:Datatype .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/isDeploymentDate
-:isDeploymentDate rdf:type owl:ObjectProperty ;
+:isDeploymentDate rdf:type owl:ObjectProperty ,
+                           owl:InverseFunctionalProperty ;
+                  rdfs:domain :Date ;
+                  rdfs:range :RoadArch ;
                   rdfs:comment "Defines when a road arch has been deployed in the city infrastructure"@en ;
                   rdfs:label "is Deployment Date" .
 
@@ -304,17 +318,26 @@ xsd:gYear rdf:type rdfs:Datatype .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/isDistrict
-:isDistrict rdf:type owl:ObjectProperty ;
+:isDistrict rdf:type owl:ObjectProperty ,
+                     owl:InverseFunctionalProperty ;
+            rdfs:domain :District ;
+            rdfs:range :Road ;
             rdfs:label "is District" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/isEndYear
-:isEndYear rdf:type owl:ObjectProperty ;
+:isEndYear rdf:type owl:ObjectProperty ,
+                    owl:InverseFunctionalProperty ;
+           rdfs:domain :Year ;
+           rdfs:range :Project30 ;
            rdfs:label "is End Year" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/isImpositionDate
-:isImpositionDate rdf:type owl:ObjectProperty ;
+:isImpositionDate rdf:type owl:ObjectProperty ,
+                           owl:InverseFunctionalProperty ;
+                  rdfs:domain :Date ;
+                  rdfs:range :SpeedLimit30 ;
                   rdfs:label "is Imposition Date" .
 
 
@@ -339,6 +362,8 @@ xsd:gYear rdf:type rdfs:Datatype .
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/isNode
 :isNode rdf:type owl:ObjectProperty ;
+        rdfs:domain :RoadNode ;
+        rdfs:range :RoadArch ;
         rdfs:label "is Node" .
 
 
@@ -372,7 +397,8 @@ xsd:gYear rdf:type rdfs:Datatype .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/isProjectOnRoad
-:isProjectOnRoad rdf:type owl:ObjectProperty ;
+:isProjectOnRoad rdf:type owl:ObjectProperty ,
+                          owl:InverseFunctionalProperty ;
                  rdfs:domain :Project30 ;
                  rdfs:range :Road ;
                  rdfs:comment "Defines the road where a project is taking place"@en ;
@@ -380,12 +406,19 @@ xsd:gYear rdf:type rdfs:Datatype .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/isProjectType
-:isProjectType rdf:type owl:ObjectProperty ;
+:isProjectType rdf:type owl:ObjectProperty ,
+                        owl:InverseFunctionalProperty ;
+               rdfs:domain :ProjectType ;
+               rdfs:range :Project30 ;
                rdfs:label "is Project Type" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/isProximityArea
-:isProximityArea rdf:type owl:ObjectProperty .
+:isProximityArea rdf:type owl:ObjectProperty ,
+                          owl:InverseFunctionalProperty ;
+                 rdfs:domain :ProximityArea ;
+                 rdfs:range :Project30 ;
+                 rdfs:label "is Proximity Area"@en .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/isRegistered
@@ -395,22 +428,34 @@ xsd:gYear rdf:type rdfs:Datatype .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/isRoadType
-:isRoadType rdf:type owl:ObjectProperty ;
+:isRoadType rdf:type owl:ObjectProperty ,
+                     owl:InverseFunctionalProperty ;
+            rdfs:domain :RoadType ;
+            rdfs:range :Road ;
             rdfs:label "is Road Type" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/isSecondaryProjectType
-:isSecondaryProjectType rdf:type owl:ObjectProperty ;
+:isSecondaryProjectType rdf:type owl:ObjectProperty ,
+                                 owl:InverseFunctionalProperty ;
+                        rdfs:domain :ProjectType ;
+                        rdfs:range :Project30 ;
                         rdfs:label "is Secondary Project Type" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/isSpeedLimit
-:isSpeedLimit rdf:type owl:ObjectProperty ;
+:isSpeedLimit rdf:type owl:ObjectProperty ,
+                       owl:InverseFunctionalProperty ;
+              rdfs:domain :SpeedLimit30 ;
+              rdfs:range :Road ;
               rdfs:label "is Speed Limit" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/isStartYear
-:isStartYear rdf:type owl:ObjectProperty ;
+:isStartYear rdf:type owl:ObjectProperty ,
+                      owl:InverseFunctionalProperty ;
+             rdfs:domain :Year ;
+             rdfs:range :Project30 ;
              rdfs:label "is Start Year" .
 
 
@@ -423,6 +468,7 @@ xsd:gYear rdf:type rdfs:Datatype .
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/recordedAccident
 :recordedAccident rdf:type owl:ObjectProperty ;
+                  rdfs:subPropertyOf :recordedInDistrict ;
                   owl:inverseOf :recordedInDistrict ;
                   rdfs:domain :District ;
                   rdfs:range :RoadAccident ;
@@ -466,7 +512,8 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 :hasCalendarDate rdf:type owl:DatatypeProperty ;
                  rdfs:domain :Date ;
                  rdfs:range xsd:dateTime ;
-                 rdfs:comment "dateTime value that defines a day in a particular month in a particular year"@en .
+                 rdfs:comment "dateTime value that defines a day in a particular month in a particular year"@en ;
+                 rdfs:label "has Calendar Date" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/hasChemicalName
@@ -495,7 +542,8 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 :hasDescription rdf:type owl:DatatypeProperty ;
                 rdfs:domain :Project30 ;
                 rdfs:range xsd:string ;
-                rdfs:comment "Describes the scope of project"@en .
+                rdfs:comment "Describes the scope of project"@en ;
+                rdfs:label "has Description" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/hasID
@@ -509,7 +557,8 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 :hasLength rdf:type owl:DatatypeProperty ;
            rdfs:domain :RoadArch ;
            rdfs:range xsd:decimal ;
-           rdfs:comment "Describes the length of a road arch (unit: meters)"@en .
+           rdfs:comment "Describes the length of a road arch (unit: meters)"@en ;
+           rdfs:label "has Length" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/hasQuantified
@@ -522,14 +571,16 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 :hasStatus rdf:type owl:DatatypeProperty ;
            rdfs:domain :Project30 ;
            rdfs:range xsd:string ;
-           rdfs:comment "Defines whether the project is ongoing, planned or finished"@en .
+           rdfs:comment "Defines whether the project is ongoing, planned or finished"@en ;
+           rdfs:label "has Status" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/hasYear
 :hasYear rdf:type owl:DatatypeProperty ;
          rdfs:domain :Year ;
          rdfs:range xsd:int ;
-         rdfs:comment "Integer that defines the year a.d."@en .
+         rdfs:comment "Integer that defines the year a.d."@en ;
+         rdfs:label "has Year" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/inQuantity
@@ -750,6 +801,11 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/Date
 :Date rdf:type owl:Class ;
+      owl:equivalentClass [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasCalendarDate ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:dateTime
+                          ] ;
       rdfs:comment "Date class, used to represent day/month/year"@en .
 
 
@@ -872,6 +928,16 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
                                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                         owl:onClass :ProjectType
                                                       ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :hasDescription ;
+                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                        owl:onDataRange xsd:string
+                                                      ]
+                                                      [ rdf:type owl:Restriction ;
+                                                        owl:onProperty :hasStatus ;
+                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                        owl:onDataRange xsd:string
+                                                      ]
                                                     ) ;
                                  rdf:type owl:Class
                                ] ;
@@ -950,10 +1016,28 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/RoadArch
 :RoadArch rdf:type owl:Class ;
-          owl:equivalentClass [ rdf:type owl:Restriction ;
-                                owl:onProperty :hasNode ;
-                                owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
-                                owl:onClass :RoadNode
+          owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :hasNode ;
+                                                       owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                                       owl:onClass :RoadNode
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :isArchFromRoad ;
+                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onClass :Road
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :isArchToRoad ;
+                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onClass :Road
+                                                     ]
+                                                     [ rdf:type owl:Restriction ;
+                                                       owl:onProperty :hasLength ;
+                                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onDataRange xsd:integer
+                                                     ]
+                                                   ) ;
+                                rdf:type owl:Class
                               ] ;
           rdfs:comment "An arch that connects two roads"@en ;
           rdfs:label "Road Arch" .
@@ -1036,6 +1120,11 @@ VOLTONE"""@en ;
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/SpeedLimit30
 :SpeedLimit30 rdf:type owl:Class ;
+              owl:equivalentClass [ rdf:type owl:Restriction ;
+                                    owl:onProperty :speedLimit ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onDataRange xsd:integer
+                                  ] ;
               rdfs:comment "The speed limit on a road arch in the City of Bologna"@en ;
               rdfs:label "Speed Limit 30" .
 
@@ -1081,6 +1170,11 @@ VOLTONE"""@en ;
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/Year
 :Year rdf:type owl:Class ;
+      owl:equivalentClass [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasYear ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:integer
+                          ] ;
       rdfs:comment "Represents an year a.d."@en .
 
 
@@ -1298,8 +1392,7 @@ VOLTONE"""@en ;
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/mainroad
-:mainroad rdf:type owl:NamedIndividual ,
-                   :Road ;
+:mainroad rdf:type owl:NamedIndividual ;
           rdfs:label "Main Road" .
 
 
@@ -1446,25 +1539,6 @@ VOLTONE"""@en ;
                                 skos:broader :projectType ;
                                 skos:inScheme :projectTypeScheme ;
                                 skos:prefLabel "Riqualificazione dei marciapiedi"@it .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/road_35550
-:road_35550 rdf:type owl:NamedIndividual ,
-                     :Road ;
-            rdfs:label "Via Santa Maria maggiore" .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/road_50550
-:road_50550 rdf:type owl:NamedIndividual ,
-                     :Road ;
-            rdfs:label "Via Riva di Reno" .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/road_53200
-:road_53200 rdf:type owl:NamedIndividual ,
-                     :Road ;
-            :hasRoadType :roadtype_via ;
-            rdfs:label "Via Nazario Sauro" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/roadtype_autostrada
