@@ -23,14 +23,13 @@ xsd:gYear rdf:type rdfs:Datatype .
 #    Object Properties
 #################################################################
 
-###  http://www.dei.unipd.it/~gdb/ontology/btp/belongsTo
-:belongsTo rdf:type owl:ObjectProperty ;
-           owl:inverseOf :containsArea ;
-           rdf:type owl:FunctionalProperty ;
-           rdfs:domain :ProximityArea ;
-           rdfs:range :District ;
-           rdfs:comment "This property links proximity areas to districts" ;
-           rdfs:label "belongs To"@en .
+###  http://www.dei.unipd.it/~gdb/ontology/btp/belongsToDistrict
+:belongsToDistrict rdf:type owl:ObjectProperty ;
+                   owl:inverseOf :containsArea ;
+                   rdfs:domain :ProximityArea ;
+                   rdfs:range :District ;
+                   rdfs:comment "This property links proximity areas to districts" ;
+                   rdfs:label "belongs To District"@en .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/containsArea
@@ -42,8 +41,7 @@ xsd:gYear rdf:type rdfs:Datatype .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/happendInArea
-:happendInArea rdf:type owl:ObjectProperty ,
-                        owl:FunctionalProperty ;
+:happendInArea rdf:type owl:ObjectProperty ;
                rdfs:domain :RoadAccident ;
                rdfs:range :ProximityArea ;
                rdfs:comment "This property connects road accidents to proximity areas"@en ;
@@ -423,21 +421,21 @@ xsd:gYear rdf:type rdfs:Datatype .
        rdfs:label "on Day" .
 
 
+###  http://www.dei.unipd.it/~gdb/ontology/btp/recordedAccident
+:recordedAccident rdf:type owl:ObjectProperty ;
+                  owl:inverseOf :recordedInDistrict ;
+                  rdfs:domain :District ;
+                  rdfs:range :RoadAccident ;
+                  rdfs:comment "This property connects districts to road accidents,it is the inverse of \"recorded_in_district\" property."@en ;
+                  rdfs:label "recorded Accident"@en .
+
+
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/recordedInDistrict
 :recordedInDistrict rdf:type owl:ObjectProperty ;
-                    owl:inverseOf :recordedIncident ;
                     rdfs:domain :RoadAccident ;
                     rdfs:range :District ;
                     rdfs:comment "This property connects road accidents to districts"@en ;
                     rdfs:label "recorded In District"@en .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/recordedIncident
-:recordedIncident rdf:type owl:ObjectProperty ;
-                  rdfs:domain :District ;
-                  rdfs:range :RoadAccident ;
-                  rdfs:comment "This property connects districts to road accidents,it is the inverse of \"recorded_in_district\" property."@en ;
-                  rdfs:label "recorded Incident"@en .
 
 
 ###  http://www.w3.org/2002/07/owl#topObjectProperty
@@ -447,24 +445,6 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 #################################################################
 #    Data properties
 #################################################################
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/districtCode
-:districtCode rdf:type owl:DatatypeProperty ,
-                       owl:FunctionalProperty ;
-              rdfs:domain :District ;
-              rdfs:range xsd:integer ;
-              rdfs:comment "represent a unique code which is assigned to each district"@en ;
-              rdfs:label "district Code"@en .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/districtName
-:districtName rdf:type owl:DatatypeProperty ,
-                       owl:FunctionalProperty ;
-              rdfs:domain :District ;
-              rdfs:range xsd:string ;
-              rdfs:comment "represent the name of the district wich is unique for each district"@en ;
-              rdfs:label "district Name"@en .
-
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/endTime
 :endTime rdf:type owl:DatatypeProperty ;
@@ -654,15 +634,6 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
                          rdfs:label "number Of Scooter Injuries"@en .
 
 
-###  http://www.dei.unipd.it/~gdb/ontology/btp/proximityAreaName
-:proximityAreaName rdf:type owl:DatatypeProperty ,
-                            owl:FunctionalProperty ;
-                   rdfs:domain :ProximityArea ;
-                   rdfs:range xsd:string ;
-                   rdfs:comment "reprsenting the names of proximity area related to the district, the mentioned names are unique"@en ;
-                   rdfs:label "proximity Area Name"@en .
-
-
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/speedLimit
 :speedLimit rdf:type owl:DatatypeProperty ;
             rdfs:domain :SpeedLimit30 ;
@@ -809,6 +780,7 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
                                             :savena
                                           )
                               ] ;
+          owl:disjointWith :ProximityArea ;
           rdfs:comment "Contains all the disricts in Bologna"@en ;
           rdfs:label "District"@en .
 
@@ -944,7 +916,7 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
                                                )
                                    ] ,
                                    [ rdf:type owl:Restriction ;
-                                     owl:onProperty :belongsTo ;
+                                     owl:onProperty :belongsToDistrict ;
                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onClass :District
                                    ] ;
