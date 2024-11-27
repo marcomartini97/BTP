@@ -200,14 +200,14 @@ xsd:gYear rdf:type rdfs:Datatype .
                 rdfs:label "has Project Type" .
 
 
-###  http://www.dei.unipd.it/~gdb/ontology/btp/hasProximityZone
-:hasProximityZone rdf:type owl:ObjectProperty ;
-                  owl:inverseOf :isProximityType ;
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasProximityArea
+:hasProximityArea rdf:type owl:ObjectProperty ;
+                  owl:inverseOf :isProximityArea ;
                   rdf:type owl:FunctionalProperty ;
                   rdfs:domain :Project30 ;
-                  rdfs:range :ProximityZone ;
+                  rdfs:range :ProximityArea ;
                   rdfs:comment "Defines the proximity zone where a project is taking place"@en ;
-                  rdfs:label "has Proximity Zone" .
+                  rdfs:label "has Proximity Area"@en .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/hasRegister
@@ -386,9 +386,8 @@ xsd:gYear rdf:type rdfs:Datatype .
                rdfs:label "is Project Type" .
 
 
-###  http://www.dei.unipd.it/~gdb/ontology/btp/isProximityType
-:isProximityType rdf:type owl:ObjectProperty ;
-                 rdfs:label "is Proximity Type" .
+###  http://www.dei.unipd.it/~gdb/ontology/btp/isProximityArea
+:isProximityArea rdf:type owl:ObjectProperty .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/isRegistered
@@ -810,8 +809,6 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
                                             :Savena
                                           )
                               ] ;
-          owl:disjointWith :ProximityArea ,
-                           :RoadAccident ;
           rdfs:comment "Contains all the disricts in Bologna"@en ;
           rdfs:label "District"@en .
 
@@ -949,14 +946,8 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
                                      owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                      owl:onClass :District
                                    ] ;
-               owl:disjointWith :RoadAccident ;
                rdfs:comment "Contains all the proximity areas, related to each District"@en ;
                rdfs:label "Proximity Area"@en .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/ProximityZone
-:ProximityZone rdf:type owl:Class ;
-               rdfs:label "Proximity Zone" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/Road
@@ -1123,129 +1114,34 @@ VOLTONE"""@en ;
 #    Individuals
 #################################################################
 
-###  http://www.dei.unipd.it/~gdb/ontology/btp#BARCA
+###  http://www.dei.unipd.it/~gdb/ontology/btp/BARCA
 :BARCA rdf:type owl:NamedIndividual ,
                 :ProximityArea .
 
 
-###  http://www.dei.unipd.it/~gdb/ontology/btp#BERTALIANOCE
+###  http://www.dei.unipd.it/~gdb/ontology/btp/BERTALIANOCE
 :BERTALIANOCE rdf:type owl:NamedIndividual ,
                        :ProximityArea .
 
 
-###  http://www.dei.unipd.it/~gdb/ontology/btp#BEVERARA
+###  http://www.dei.unipd.it/~gdb/ontology/btp/BEVERARA
 :BEVERARA rdf:type owl:NamedIndividual ,
                    :ProximityArea .
 
 
-###  http://www.dei.unipd.it/~gdb/ontology/btp#BIRRABARGELLINOLAVINO
+###  http://www.dei.unipd.it/~gdb/ontology/btp/BIRRABARGELLINOLAVINO
 :BIRRABARGELLINOLAVINO rdf:type owl:NamedIndividual ,
                                 :ProximityArea .
 
 
-###  http://www.dei.unipd.it/~gdb/ontology/btp#BOLOGNINA
+###  http://www.dei.unipd.it/~gdb/ontology/btp/BOLOGNINA
 :BOLOGNINA rdf:type owl:NamedIndividual ,
                     :ProximityArea .
 
 
-###  http://www.dei.unipd.it/~gdb/ontology/btp#BORGOPANIGALE
+###  http://www.dei.unipd.it/~gdb/ontology/btp/BORGOPANIGALE
 :BORGOPANIGALE rdf:type owl:NamedIndividual ,
                         :ProximityArea .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp#CASTELDEBOLEPONTELUNGO
-:CASTELDEBOLEPONTELUNGO rdf:type owl:NamedIndividual ,
-                                 :ProximityArea .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp#CIRENAICAMASSARENTISCANDELLARA
-:CIRENAICAMASSARENTISCANDELLARA rdf:type owl:NamedIndividual ,
-                                         :ProximityArea .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp#CORTICELLADOZZA
-:CORTICELLADOZZA rdf:type owl:NamedIndividual ,
-                          :ProximityArea .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp#CROCEDELBIACCOROVERI
-:CROCEDELBIACCOROVERI rdf:type owl:NamedIndividual ,
-                               :ProximityArea .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp#FOSSOLODUEMADONNE
-:FOSSOLODUEMADONNE rdf:type owl:NamedIndividual ,
-                            :ProximityArea .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp#GALVANI
-:GALVANI rdf:type owl:NamedIndividual ,
-                  :ProximityArea .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp#IRNERIO
-:IRNERIO rdf:type owl:NamedIndividual ,
-                  :ProximityArea .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp#LUNGOSAVENA
-:LUNGOSAVENA rdf:type owl:NamedIndividual ,
-                      :ProximityArea .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp#MALPIGHI
-:MALPIGHI rdf:type owl:NamedIndividual ,
-                   :ProximityArea .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp#MARCONI
-:MARCONI rdf:type owl:NamedIndividual ,
-                  :ProximityArea .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp#MURRI
-:MURRI rdf:type owl:NamedIndividual ,
-                :ProximityArea .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp#OSSERVANZAPADERNO
-:OSSERVANZAPADERNO rdf:type owl:NamedIndividual ,
-                            :ProximityArea .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp#PONTEVECCHIOMAZZINI
-:PONTEVECCHIOMAZZINI rdf:type owl:NamedIndividual ,
-                              :ProximityArea .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp#SAFFI
-:SAFFI rdf:type owl:NamedIndividual ,
-                :ProximityArea .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp#SANDONATONUOVO
-:SANDONATONUOVO rdf:type owl:NamedIndividual ,
-                         :ProximityArea .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp#SANDONATOVECCHIO
-:SANDONATOVECCHIO rdf:type owl:NamedIndividual ,
-                           :ProximityArea .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp#SANTAVIOLA
-:SANTAVIOLA rdf:type owl:NamedIndividual ,
-                     :ProximityArea .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp#SARAGOZZASANLUCA
-:SARAGOZZASANLUCA rdf:type owl:NamedIndividual ,
-                           :ProximityArea .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp#VIATOSCANASRUFFILLOMONTEDONATO
-:VIATOSCANASRUFFILLOMONTEDONATO rdf:type owl:NamedIndividual ,
-                                         :ProximityArea .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/BorgoPanigaleReno
@@ -1261,6 +1157,16 @@ VOLTONE"""@en ;
       rdfs:label "C6H6" .
 
 
+###  http://www.dei.unipd.it/~gdb/ontology/btp/CASTELDEBOLEPONTELUNGO
+:CASTELDEBOLEPONTELUNGO rdf:type owl:NamedIndividual ,
+                                 :ProximityArea .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/CIRENAICAMASSARENTISCANDELLARA
+:CIRENAICAMASSARENTISCANDELLARA rdf:type owl:NamedIndividual ,
+                                         :ProximityArea .
+
+
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/CO
 :CO rdf:type owl:NamedIndividual ,
              :ChemicalElement ;
@@ -1268,10 +1174,40 @@ VOLTONE"""@en ;
     rdfs:label "CO" .
 
 
+###  http://www.dei.unipd.it/~gdb/ontology/btp/CORTICELLADOZZA
+:CORTICELLADOZZA rdf:type owl:NamedIndividual ,
+                          :ProximityArea .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/CROCEDELBIACCOROVERI
+:CROCEDELBIACCOROVERI rdf:type owl:NamedIndividual ,
+                               :ProximityArea .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/FOSSOLODUEMADONNE
+:FOSSOLODUEMADONNE rdf:type owl:NamedIndividual ,
+                            :ProximityArea .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/GALVANI
+:GALVANI rdf:type owl:NamedIndividual ,
+                  :ProximityArea .
+
+
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/GiardiniMargherita
 :GiardiniMargherita rdf:type owl:NamedIndividual ,
                              :PollutionStation ;
                     rdfs:label "Giardini Margherita" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/IRNERIO
+:IRNERIO rdf:type owl:NamedIndividual ,
+                  :ProximityArea .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/LUNGOSAVENA
+:LUNGOSAVENA rdf:type owl:NamedIndividual ,
+                      :ProximityArea .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/Level1
@@ -1285,6 +1221,21 @@ VOLTONE"""@en ;
 :Level2 rdf:type owl:NamedIndividual ,
                  :Level ;
         rdfs:label "Level 2" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/MALPIGHI
+:MALPIGHI rdf:type owl:NamedIndividual ,
+                   :ProximityArea .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/MARCONI
+:MARCONI rdf:type owl:NamedIndividual ,
+                  :ProximityArea .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/MURRI
+:MURRI rdf:type owl:NamedIndividual ,
+                :ProximityArea .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/NO
@@ -1321,6 +1272,11 @@ VOLTONE"""@en ;
     rdfs:label "O3" .
 
 
+###  http://www.dei.unipd.it/~gdb/ontology/btp/OSSERVANZAPADERNO
+:OSSERVANZAPADERNO rdf:type owl:NamedIndividual ,
+                            :ProximityArea .
+
+
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/PM10
 :PM10 rdf:type owl:NamedIndividual ,
                :ChemicalElement ;
@@ -1335,6 +1291,11 @@ VOLTONE"""@en ;
        rdfs:label "PM 2.5" .
 
 
+###  http://www.dei.unipd.it/~gdb/ontology/btp/PONTEVECCHIOMAZZINI
+:PONTEVECCHIOMAZZINI rdf:type owl:NamedIndividual ,
+                              :ProximityArea .
+
+
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/PortaSanFelice
 :PortaSanFelice rdf:type owl:NamedIndividual ,
                          :PollutionStation ;
@@ -1346,6 +1307,31 @@ VOLTONE"""@en ;
 :PortoSaragozza rdf:type owl:NamedIndividual ,
                          :District ;
                 rdfs:label "Porto Saragozza" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/SAFFI
+:SAFFI rdf:type owl:NamedIndividual ,
+                :ProximityArea .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/SANDONATONUOVO
+:SANDONATONUOVO rdf:type owl:NamedIndividual ,
+                         :ProximityArea .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/SANDONATOVECCHIO
+:SANDONATOVECCHIO rdf:type owl:NamedIndividual ,
+                           :ProximityArea .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/SANTAVIOLA
+:SANTAVIOLA rdf:type owl:NamedIndividual ,
+                     :ProximityArea .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/SARAGOZZASANLUCA
+:SARAGOZZASANLUCA rdf:type owl:NamedIndividual ,
+                           :ProximityArea .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/SanDonatoSanVitale
@@ -1375,6 +1361,11 @@ VOLTONE"""@en ;
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/Telecamera
 :Telecamera rdf:type owl:NamedIndividual ,
                      :Type .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/VIATOSCANASRUFFILLOMONTEDONATO
+:VIATOSCANASRUFFILLOMONTEDONATO rdf:type owl:NamedIndividual ,
+                                         :ProximityArea .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/ViaChiarini
@@ -1480,11 +1471,6 @@ VOLTONE"""@en ;
             :hasAccuracy "0.75"^^xsd:float ;
             :hasCount 130 ;
             rdfs:label "Detection 2" .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/district_13
-:district_13 rdf:type owl:NamedIndividual ;
-             rdfs:label "Quartiere Porto - Saragozza" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/friday
@@ -1656,7 +1642,6 @@ VOLTONE"""@en ;
 :road_53200 rdf:type owl:NamedIndividual ,
                      :Road ;
             :hasArch :arch_2985 ;
-            :hasDistrict :district_13 ;
             :hasRoadType :roadtype_via ;
             rdfs:label "Via Nazario Sauro" .
 
