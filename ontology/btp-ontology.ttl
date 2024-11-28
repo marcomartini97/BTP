@@ -523,13 +523,6 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
                  rdfs:label "has Chemical Name" .
 
 
-###  http://www.dei.unipd.it/~gdb/ontology/btp/hasCode
-:hasCode rdf:type owl:DatatypeProperty ;
-         rdfs:domain :Coil ;
-         rdfs:range xsd:string ;
-         rdfs:label "has Code" .
-
-
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/hasCount
 :hasCount rdf:type owl:DatatypeProperty ;
           rdfs:subPropertyOf :hasQuantified ;
@@ -779,10 +772,6 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
       rdfs:subClassOf [ rdf:type owl:Restriction ;
                         owl:onProperty :isOn ;
                         owl:someValuesFrom :Road
-                      ] ,
-                      [ rdf:type owl:Restriction ;
-                        owl:onProperty :hasCode ;
-                        owl:someValuesFrom xsd:string
                       ] ,
                       [ rdf:type owl:Restriction ;
                         owl:onProperty :hasID ;
