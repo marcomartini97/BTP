@@ -1112,8 +1112,8 @@ VOLTONE"""@en ;
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/Type
 :Type rdf:type owl:Class ;
       owl:equivalentClass [ rdf:type owl:Class ;
-                            owl:oneOf ( :Spira
-                                        :Telecamera
+                            owl:oneOf ( :spira
+                                        :telecamera
                                       )
                           ] ;
       rdfs:label "Type"@en .
@@ -1216,17 +1216,6 @@ VOLTONE"""@en ;
                 :ChemicalElement ;
        rdfs:comment "PM 2.5" ;
        rdfs:label "PM 2.5" .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/Spira
-:Spira rdf:type owl:NamedIndividual ,
-                :Type ;
-       owl:differentFrom :Telecamera .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/Telecamera
-:Telecamera rdf:type owl:NamedIndividual ,
-                     :Type .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/abbattimentoBarriereArchitettoniche
@@ -1378,11 +1367,6 @@ VOLTONE"""@en ;
 :lungoSavena rdf:type owl:NamedIndividual ,
                       :ProximityArea ;
              rdfs:label "Lungo Savena" .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/mainroad
-:mainroad rdf:type owl:NamedIndividual ;
-          rdfs:label "Main Road" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/malpighi
@@ -1728,10 +1712,23 @@ VOLTONE"""@en ;
                         skos:prefLabel "Sicurezza e manutenzione"@it .
 
 
+###  http://www.dei.unipd.it/~gdb/ontology/btp/spira
+:spira rdf:type owl:NamedIndividual ,
+                :Type ;
+       owl:differentFrom :telecamera ;
+       rdfs:label "Spira" .
+
+
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/sunday
 :sunday rdf:type owl:NamedIndividual ,
                  :DayWeek ;
         rdfs:label "Sunday" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/telecamera
+:telecamera rdf:type owl:NamedIndividual ,
+                     :Type ;
+            rdfs:label "Telecamera" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/thursday
