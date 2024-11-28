@@ -1,0 +1,160 @@
+@prefix : <http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-9/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-9/> .
+
+<http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-9> rdf:type owl:Ontology ;
+                                                                           owl:imports <http://www.dei.unipd.it/~gdb/ontology/btp> .
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasCalendarDate
+<http://www.dei.unipd.it/~gdb/ontology/btp/hasCalendarDate> rdf:type owl:FunctionalProperty .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasDescription
+<http://www.dei.unipd.it/~gdb/ontology/btp/hasDescription> rdf:type owl:FunctionalProperty .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/hasStatus
+<http://www.dei.unipd.it/~gdb/ontology/btp/hasStatus> rdf:type owl:FunctionalProperty .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-9/arch_4443
+:arch_4443 rdf:type owl:NamedIndividual ;
+           <http://www.dei.unipd.it/~gdb/ontology/btp/hasDeploymentDate> :date_01 ;
+           <http://www.dei.unipd.it/~gdb/ontology/btp/hasNode> :node_6591 ,
+                                                               :node_6592 ;
+           <http://www.dei.unipd.it/~gdb/ontology/btp/hasSpeedLimit> :speed_30 ;
+           <http://www.dei.unipd.it/~gdb/ontology/btp/isArchFromRoad> :road_via_vizzani ;
+           <http://www.dei.unipd.it/~gdb/ontology/btp/isArchToRoad> :via_dell_arcobaleno .
+
+
+###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-9/arch_6344
+:arch_6344 rdf:type owl:NamedIndividual ;
+           <http://www.dei.unipd.it/~gdb/ontology/btp/hasNode> :node_14056 ,
+                                                               :node_6567 ;
+           <http://www.dei.unipd.it/~gdb/ontology/btp/hasSpeedLimit> :speed_50 ;
+           <http://www.dei.unipd.it/~gdb/ontology/btp/isArchFromRoad> :via_antonio_bondi ;
+           <http://www.dei.unipd.it/~gdb/ontology/btp/isArchToRoad> :road_via_vizzani ;
+           <http://www.dei.unipd.it/~gdb/ontology/btp/hasLength> 90 .
+
+
+###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-9/arch_7431
+:arch_7431 rdf:type owl:NamedIndividual ,
+                    <http://www.dei.unipd.it/~gdb/ontology/btp/RoadArch> ;
+           <http://www.dei.unipd.it/~gdb/ontology/btp/hasDeploymentDate> :date_02 ;
+           <http://www.dei.unipd.it/~gdb/ontology/btp/hasNode> :node_14971 ,
+                                                               :node_6591 ;
+           <http://www.dei.unipd.it/~gdb/ontology/btp/hasSpeedLimit> :speed_30 ;
+           <http://www.dei.unipd.it/~gdb/ontology/btp/isArchFromRoad> :via_dell_arcobaleno ;
+           <http://www.dei.unipd.it/~gdb/ontology/btp/isArchToRoad> :road_via_vizzani ;
+           <http://www.dei.unipd.it/~gdb/ontology/btp/hasLength> 20 .
+
+
+###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-9/date_01
+:date_01 rdf:type owl:NamedIndividual ,
+                  <http://www.dei.unipd.it/~gdb/ontology/btp/Date> ;
+         <http://www.dei.unipd.it/~gdb/ontology/btp/hasCalendarDate> "1991-10-21T00:00:00Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-9/date_02
+:date_02 rdf:type owl:NamedIndividual ;
+         <http://www.dei.unipd.it/~gdb/ontology/btp/hasCalendarDate> "1997-06-30T00:00:00Z"^^xsd:dateTime .
+
+
+###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-9/node_14056
+:node_14056 rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-9/node_14971
+:node_14971 rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-9/node_6567
+:node_6567 rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-9/node_6591
+:node_6591 rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-9/node_6592
+:node_6592 rdf:type owl:NamedIndividual .
+
+
+###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-9/project30_10
+:project30_10 rdf:type owl:NamedIndividual ,
+                       <http://www.dei.unipd.it/~gdb/ontology/btp/Project30> ;
+              <http://www.dei.unipd.it/~gdb/ontology/btp/hasEndYear> :year_2025 ;
+              <http://www.dei.unipd.it/~gdb/ontology/btp/hasProjectType> <http://www.dei.unipd.it/~gdb/ontology/btp/interventiDiMessaInSicurezza> ,
+                                                                         <http://www.dei.unipd.it/~gdb/ontology/btp/riqualificazioneDeiMarciapiedi> ,
+                                                                         <http://www.dei.unipd.it/~gdb/ontology/btp/sicurezzaEManutenzione> ;
+              <http://www.dei.unipd.it/~gdb/ontology/btp/hasProximityArea> <http://www.dei.unipd.it/~gdb/ontology/btp/cirenaicaMassarentiScandellara> ;
+              <http://www.dei.unipd.it/~gdb/ontology/btp/hasStartYear> :year_2024 ;
+              <http://www.dei.unipd.it/~gdb/ontology/btp/hasDescription> "Riqualificazione e messa in sicurezza dei percorsi e degli attraversamenti pedonali" ;
+              <http://www.dei.unipd.it/~gdb/ontology/btp/hasStatus> "In progettazione" .
+
+
+###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-9/project30_11
+:project30_11 rdf:type owl:NamedIndividual ;
+              <http://www.dei.unipd.it/~gdb/ontology/btp/hasEndYear> :year_2025 ;
+              <http://www.dei.unipd.it/~gdb/ontology/btp/hasProximityArea> <http://www.dei.unipd.it/~gdb/ontology/btp/corticellaDozza> ;
+              <http://www.dei.unipd.it/~gdb/ontology/btp/hasStartYear> :year_2024 .
+
+
+###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-9/project30_12
+:project30_12 rdf:type owl:NamedIndividual ;
+              <http://www.dei.unipd.it/~gdb/ontology/btp/hasProximityArea> <http://www.dei.unipd.it/~gdb/ontology/btp/cirenaicaMassarentiScandellara> .
+
+
+###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-9/road_via_vizzani
+:road_via_vizzani rdf:type owl:NamedIndividual ,
+                           <http://www.dei.unipd.it/~gdb/ontology/btp/Road> ;
+                  <http://www.dei.unipd.it/~gdb/ontology/btp/hasDistrict> <http://www.dei.unipd.it/~gdb/ontology/btp/sanDonatoSanVitale> ;
+                  <http://www.dei.unipd.it/~gdb/ontology/btp/hasProject> :project30_10 ;
+                  <http://www.dei.unipd.it/~gdb/ontology/btp/hasRoadType> <http://www.dei.unipd.it/~gdb/ontology/btp/roadtype_via> .
+
+
+###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-9/speed_30
+:speed_30 rdf:type owl:NamedIndividual ;
+          <http://www.dei.unipd.it/~gdb/ontology/btp/speedLimit> 30 .
+
+
+###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-9/speed_50
+:speed_50 rdf:type owl:NamedIndividual ;
+          <http://www.dei.unipd.it/~gdb/ontology/btp/speedLimit> 50 .
+
+
+###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-9/via_antonio_bondi
+:via_antonio_bondi rdf:type owl:NamedIndividual ;
+                   <http://www.dei.unipd.it/~gdb/ontology/btp/hasDistrict> <http://www.dei.unipd.it/~gdb/ontology/btp/sanDonatoSanVitale> ;
+                   <http://www.dei.unipd.it/~gdb/ontology/btp/hasRoadType> <http://www.dei.unipd.it/~gdb/ontology/btp/roadtype_via> .
+
+
+###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-9/via_dell_arcobaleno
+:via_dell_arcobaleno rdf:type owl:NamedIndividual ;
+                     <http://www.dei.unipd.it/~gdb/ontology/btp/hasDistrict> <http://www.dei.unipd.it/~gdb/ontology/btp/sanDonatoSanVitale> ;
+                     <http://www.dei.unipd.it/~gdb/ontology/btp/hasRoadType> <http://www.dei.unipd.it/~gdb/ontology/btp/roadtype_piazzetta> .
+
+
+###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-9/year_2024
+:year_2024 rdf:type owl:NamedIndividual ;
+           <http://www.dei.unipd.it/~gdb/ontology/btp/hasYear> 2024 .
+
+
+###  http://www.semanticweb.org/marco/ontologies/2024/10/untitled-ontology-9/year_2025
+:year_2025 rdf:type owl:NamedIndividual ;
+           <http://www.dei.unipd.it/~gdb/ontology/btp/hasYear> 2025 .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
