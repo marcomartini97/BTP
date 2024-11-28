@@ -1148,36 +1148,6 @@ VOLTONE"""@en ;
 #    Individuals
 #################################################################
 
-###  http://www.dei.unipd.it/~gdb/ontology/btp#speed10
-:speed10 rdf:type owl:NamedIndividual ,
-                  :SpeedLimit30 ;
-         :speedLimit 10 .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp#speed15
-:speed15 rdf:type owl:NamedIndividual ,
-                  :SpeedLimit30 ;
-         :speedLimit 15 .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp#speed30
-:speed30 rdf:type owl:NamedIndividual ,
-                  :SpeedLimit30 ;
-         :speedLimit 30 .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp#speed5
-:speed5 rdf:type owl:NamedIndividual ,
-                 :SpeedLimit30 ;
-        :speedLimit 5 .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp#speed50
-:speed50 rdf:type owl:NamedIndividual ,
-                  :SpeedLimit30 ;
-         :speedLimit 50 .
-
-
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/C6H6
 :C6H6 rdf:type owl:NamedIndividual ,
                :ChemicalElement ;
@@ -1252,36 +1222,42 @@ VOLTONE"""@en ;
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/barca
 :barca rdf:type owl:NamedIndividual ,
                 :ProximityArea ;
+       :belongsToDistrict :borgoPanigaleReno ;
        rdfs:label "Barca" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/bertaliaNoce
 :bertaliaNoce rdf:type owl:NamedIndividual ,
                        :ProximityArea ;
+              :belongsToDistrict :navile ;
               rdfs:label "Bertalia Noce" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/beverara
 :beverara rdf:type owl:NamedIndividual ,
                    :ProximityArea ;
+          :belongsToDistrict :navile ;
           rdfs:label "Beverara" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/birraBargellinoLavino
 :birraBargellinoLavino rdf:type owl:NamedIndividual ,
                                 :ProximityArea ;
+                       :belongsToDistrict :borgoPanigaleReno ;
                        rdfs:label "Birra Bargellino Lavino" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/bolognina
 :bolognina rdf:type owl:NamedIndividual ,
                     :ProximityArea ;
+           :belongsToDistrict :navile ;
            rdfs:label "Bolognina" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/borgoPanigale
 :borgoPanigale rdf:type owl:NamedIndividual ,
                         :ProximityArea ;
+               :belongsToDistrict :borgoPanigaleReno ;
                rdfs:label "Borgo Panigale" .
 
 
@@ -1294,12 +1270,14 @@ VOLTONE"""@en ;
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/casteldebolePontelungo
 :casteldebolePontelungo rdf:type owl:NamedIndividual ,
                                  :ProximityArea ;
+                        :belongsToDistrict :borgoPanigaleReno ;
                         rdfs:label "Casteldebole Pontelungo" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/cirenaicaMassarentiScandellara
 :cirenaicaMassarentiScandellara rdf:type owl:NamedIndividual ,
                                          :ProximityArea ;
+                                :belongsToDistrict :sanDonatoSanVitale ;
                                 rdfs:label "Cirenaica Massarenti Scandellara" .
 
 
@@ -1313,18 +1291,21 @@ VOLTONE"""@en ;
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/corticellaDozza
 :corticellaDozza rdf:type owl:NamedIndividual ,
                           :ProximityArea ;
+                 :belongsToDistrict :navile ;
                  rdfs:label "Corticella Dozza" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/croceDelBiaccoRoveri
 :croceDelBiaccoRoveri rdf:type owl:NamedIndividual ,
                                :ProximityArea ;
+                      :belongsToDistrict :sanDonatoSanVitale ;
                       rdfs:label "Croce Del Biacco Roveri" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/fossoloDueMadonne
 :fossoloDueMadonne rdf:type owl:NamedIndividual ,
                             :ProximityArea ;
+                   :belongsToDistrict :savena ;
                    rdfs:label "Fossolo Due Madonne" .
 
 
@@ -1337,6 +1318,7 @@ VOLTONE"""@en ;
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/galvani
 :galvani rdf:type owl:NamedIndividual ,
                   :ProximityArea ;
+         :belongsToDistrict :santoStefano ;
          rdfs:label "Galvani" .
 
 
@@ -1363,6 +1345,7 @@ VOLTONE"""@en ;
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/irnerio
 :irnerio rdf:type owl:NamedIndividual ,
                   :ProximityArea ;
+         :belongsToDistrict :santoStefano ;
          rdfs:label "Irnerio" .
 
 
@@ -1382,12 +1365,14 @@ VOLTONE"""@en ;
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/lungoSavena
 :lungoSavena rdf:type owl:NamedIndividual ,
                       :ProximityArea ;
+             :belongsToDistrict :savena ;
              rdfs:label "Lungo Savena" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/malpighi
 :malpighi rdf:type owl:NamedIndividual ,
                    :ProximityArea ;
+          :belongsToDistrict :portoSaragozza ;
           rdfs:label "Malpighi" .
 
 
@@ -1401,6 +1386,7 @@ VOLTONE"""@en ;
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/marconi
 :marconi rdf:type owl:NamedIndividual ,
                   :ProximityArea ;
+         :belongsToDistrict :portoSaragozza ;
          rdfs:label "Marconi" .
 
 
@@ -1413,6 +1399,7 @@ VOLTONE"""@en ;
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/murri
 :murri rdf:type owl:NamedIndividual ,
                 :ProximityArea ;
+       :belongsToDistrict :santoStefano ;
        rdfs:label "Murri" .
 
 
@@ -1439,6 +1426,7 @@ VOLTONE"""@en ;
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/osservanzaPaderno
 :osservanzaPaderno rdf:type owl:NamedIndividual ,
                             :ProximityArea ;
+                   :belongsToDistrict :santoStefano ;
                    rdfs:label "Osservanza Paderno" .
 
 
@@ -1459,6 +1447,7 @@ VOLTONE"""@en ;
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/pontevecchioMazzini
 :pontevecchioMazzini rdf:type owl:NamedIndividual ,
                               :ProximityArea ;
+                     :belongsToDistrict :savena ;
                      rdfs:label "Pontevecchio Mazzini" .
 
 
@@ -1663,12 +1652,14 @@ VOLTONE"""@en ;
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/saffi
 :saffi rdf:type owl:NamedIndividual ,
                 :ProximityArea ;
+       :belongsToDistrict :portoSaragozza ;
        rdfs:label "Saffi" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/sanDonatoNuovo
 :sanDonatoNuovo rdf:type owl:NamedIndividual ,
                          :ProximityArea ;
+                :belongsToDistrict :sanDonatoSanVitale ;
                 rdfs:label "San Donato Nuovo" .
 
 
@@ -1681,12 +1672,14 @@ VOLTONE"""@en ;
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/sanDonatoVecchio
 :sanDonatoVecchio rdf:type owl:NamedIndividual ,
                            :ProximityArea ;
+                  :belongsToDistrict :sanDonatoSanVitale ;
                   rdfs:label "San Donato Vecchio" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/santaViola
 :santaViola rdf:type owl:NamedIndividual ,
                      :ProximityArea ;
+            :belongsToDistrict :borgoPanigaleReno ;
             rdfs:label "Santa Viola" .
 
 
@@ -1699,6 +1692,7 @@ VOLTONE"""@en ;
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/saragozzaSanLuca
 :saragozzaSanLuca rdf:type owl:NamedIndividual ,
                            :ProximityArea ;
+                  :belongsToDistrict :portoSaragozza ;
                   rdfs:label "Saragozza San Luca" .
 
 
@@ -1726,6 +1720,36 @@ VOLTONE"""@en ;
                                  :ProjectThread ,
                                  skos:Concept ;
                         skos:prefLabel "Sicurezza e manutenzione"@it .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/speed10
+:speed10 rdf:type owl:NamedIndividual ,
+                  :SpeedLimit30 ;
+         :speedLimit 10 .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/speed15
+:speed15 rdf:type owl:NamedIndividual ,
+                  :SpeedLimit30 ;
+         :speedLimit 15 .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/speed30
+:speed30 rdf:type owl:NamedIndividual ,
+                  :SpeedLimit30 ;
+         :speedLimit 30 .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/speed5
+:speed5 rdf:type owl:NamedIndividual ,
+                 :SpeedLimit30 ;
+        :speedLimit 5 .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/speed50
+:speed50 rdf:type owl:NamedIndividual ,
+                  :SpeedLimit30 ;
+         :speedLimit 50 .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/spira
@@ -1789,6 +1813,7 @@ VOLTONE"""@en ;
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/viaToscanaSRuffilloMonteDonato
 :viaToscanaSRuffilloMonteDonato rdf:type owl:NamedIndividual ,
                                          :ProximityArea ;
+                                :belongsToDistrict :savena ;
                                 rdfs:label "Via Toscana S. Ruffillo Monte Donato" .
 
 
