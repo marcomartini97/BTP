@@ -234,16 +234,6 @@ xsd:gYear rdf:type rdfs:Datatype .
              rdfs:label "has Road Type" .
 
 
-###  http://www.dei.unipd.it/~gdb/ontology/btp/hasSecondaryProjectType
-:hasSecondaryProjectType rdf:type owl:ObjectProperty ;
-                         owl:inverseOf :isSecondaryProjectType ;
-                         rdf:type owl:FunctionalProperty ;
-                         rdfs:domain :Project30 ;
-                         rdfs:range :ProjectType ;
-                         rdfs:comment "Secondary Project Type"@en ;
-                         rdfs:label "has Secondary Project Type" .
-
-
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/hasSpeedLimit
 :hasSpeedLimit rdf:type owl:ObjectProperty ;
                owl:inverseOf :isSpeedLimit ;
@@ -433,14 +423,6 @@ xsd:gYear rdf:type rdfs:Datatype .
             rdfs:domain :RoadType ;
             rdfs:range :Road ;
             rdfs:label "is Road Type" .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/isSecondaryProjectType
-:isSecondaryProjectType rdf:type owl:ObjectProperty ,
-                                 owl:InverseFunctionalProperty ;
-                        rdfs:domain :ProjectType ;
-                        rdfs:range :Project30 ;
-                        rdfs:label "is Secondary Project Type" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/isSpeedLimit
@@ -910,12 +892,12 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
            owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
                                                         owl:onProperty :hasProjectType ;
                                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                        owl:onClass :ProjectType
+                                                        owl:onClass :ProjectThread
                                                       ]
                                                       [ rdf:type owl:Restriction ;
-                                                        owl:onProperty :hasSecondaryProjectType ;
-                                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                        owl:onClass :ProjectType
+                                                        owl:onProperty :hasProjectType ;
+                                                        owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                                        owl:onClass :ProjectTheme
                                                       ]
                                                       [ rdf:type owl:Restriction ;
                                                         owl:onProperty :hasDescription ;
@@ -932,6 +914,20 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
                                ] ;
            rdfs:comment "A Project defined in the \"Progetto Città 30\""@en ;
            rdfs:label "Project 30" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/ProjectTheme
+:ProjectTheme rdf:type owl:Class ;
+              rdfs:subClassOf :ProjectType ;
+              rdfs:comment "The General Theme for a Project, usually more in detail than a Thread"@en ;
+              rdfs:label "Project Theme"@en .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/ProjectThread
+:ProjectThread rdf:type owl:Class ;
+               rdfs:subClassOf :ProjectType ;
+               rdfs:comment "The General Thread (or Topic) for a Project, usually more generic than the Theme"@en ;
+               rdfs:label "Project Thread"@en .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/ProjectType
@@ -1240,19 +1236,16 @@ VOLTONE"""@en ;
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/abbattimentoBarriereArchitettoniche
 :abbattimentoBarriereArchitettoniche rdf:type owl:NamedIndividual ,
-                                              :ProjectType ,
+                                              :ProjectTheme ,
                                               skos:Concept ;
-                                     skos:broader :projectType ;
-                                     skos:inScheme :projectTypeScheme ;
                                      skos:prefLabel "Abbattimento barriere architettoniche"@it .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/accessibilita
 :accessibilita rdf:type owl:NamedIndividual ,
-                        :ProjectType ,
+                        :ProjectTheme ,
+                        :ProjectThread ,
                         skos:Concept ;
-               skos:broader :projectType ;
-               skos:inScheme :projectTypeScheme ;
                skos:prefLabel "Accessibilità"@it .
 
 
@@ -1310,6 +1303,13 @@ VOLTONE"""@en ;
                                 rdfs:label "Cirenaica Massarenti Scandellara" .
 
 
+###  http://www.dei.unipd.it/~gdb/ontology/btp/cittaDellaConoscenza
+:cittaDellaConoscenza rdf:type owl:NamedIndividual ,
+                               :ProjectThread ,
+                               skos:Concept ;
+                      skos:prefLabel "Città della conoscenza"@it .
+
+
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/corticellaDozza
 :corticellaDozza rdf:type owl:NamedIndividual ,
                           :ProximityArea ;
@@ -1346,12 +1346,17 @@ VOLTONE"""@en ;
                     rdfs:label "Giardini Margherita" .
 
 
+###  http://www.dei.unipd.it/~gdb/ontology/btp/improntaVerde
+:improntaVerde rdf:type owl:NamedIndividual ,
+                        :ProjectThread ,
+                        skos:Concept ;
+               skos:prefLabel "Impronta verde"@it .
+
+
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/interventiDiMessaInSicurezza
 :interventiDiMessaInSicurezza rdf:type owl:NamedIndividual ,
-                                       :ProjectType ,
+                                       :ProjectTheme ,
                                        skos:Concept ;
-                              skos:broader :projectType ;
-                              skos:inScheme :projectTypeScheme ;
                               skos:prefLabel "Interventi di messa in sicurezza"@it .
 
 
@@ -1393,10 +1398,8 @@ VOLTONE"""@en ;
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/manutenzioneStrade
 :manutenzioneStrade rdf:type owl:NamedIndividual ,
-                             :ProjectType ,
+                             :ProjectThread ,
                              skos:Concept ;
-                    skos:broader :projectType ;
-                    skos:inScheme :projectTypeScheme ;
                     skos:prefLabel "Manutenzione strade"@it .
 
 
@@ -1426,19 +1429,15 @@ VOLTONE"""@en ;
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/nuovaCentralitaUrbanaDiffusa
 :nuovaCentralitaUrbanaDiffusa rdf:type owl:NamedIndividual ,
-                                       :ProjectType ,
+                                       :ProjectTheme ,
                                        skos:Concept ;
-                              skos:broader :projectType ;
-                              skos:inScheme :projectTypeScheme ;
                               skos:prefLabel "Nuova centralità urbana diffusa"@it .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/nuovoAssettoStradale
 :nuovoAssettoStradale rdf:type owl:NamedIndividual ,
-                               :ProjectType ,
+                               :ProjectTheme ,
                                skos:Concept ;
-                      skos:broader :projectType ;
-                      skos:inScheme :projectTypeScheme ;
                       skos:prefLabel "Nuovo assetto stradale"@it .
 
 
@@ -1450,19 +1449,15 @@ VOLTONE"""@en ;
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/piazzePedonaliEScolastiche
 :piazzePedonaliEScolastiche rdf:type owl:NamedIndividual ,
-                                     :ProjectType ,
+                                     :ProjectTheme ,
                                      skos:Concept ;
-                            skos:broader :projectType ;
-                            skos:inScheme :projectTypeScheme ;
                             skos:prefLabel "Piazze pedonali e scolastiche"@it .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/pisteECorsieCiclabili
 :pisteECorsieCiclabili rdf:type owl:NamedIndividual ,
-                                :ProjectType ,
+                                :ProjectTheme ,
                                 skos:Concept ;
-                       skos:broader :projectType ;
-                       skos:inScheme :projectTypeScheme ;
                        skos:prefLabel "Piste e corsie ciclabili"@it .
 
 
@@ -1474,10 +1469,8 @@ VOLTONE"""@en ;
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/pontiCanali
 :pontiCanali rdf:type owl:NamedIndividual ,
-                      :ProjectType ,
+                      :ProjectThread ,
                       skos:Concept ;
-             skos:broader :projectType ;
-             skos:inScheme :projectTypeScheme ;
              skos:prefLabel "Ponti/Canali"@it .
 
 
@@ -1493,23 +1486,34 @@ VOLTONE"""@en ;
                 rdfs:label "Porto Saragozza" .
 
 
+###  http://www.dei.unipd.it/~gdb/ontology/btp/projectTheme
+:projectTheme rdf:type owl:NamedIndividual ,
+                       :ProjectTheme ,
+                       skos:Concept .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/projectThemeScheme
+:projectThemeScheme rdf:type owl:NamedIndividual ,
+                             skos:ConceptScheme ;
+                    skos:hasTopConcept :projectTheme .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/projectThread
+:projectThread rdf:type owl:NamedIndividual ,
+                        :ProjectThread ,
+                        skos:Concept .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/projectThreadScheme
+:projectThreadScheme rdf:type owl:NamedIndividual ,
+                              skos:ConceptScheme ;
+                     skos:hasTopConcept :projectThread .
+
+
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/projectType
 :projectType rdf:type owl:NamedIndividual ,
+                      :ProjectType ,
                       skos:Concept ;
-             skos:inScheme :projectTypeScheme ;
-             skos:narrower :abbattimentoBarriereArchitettoniche ,
-                           :accessibilita ,
-                           :interventiDiMessaInSicurezza ,
-                           :manutenzioneStrade ,
-                           :nuovaCentralitaUrbanaDiffusa ,
-                           :nuovoAssettoStradale ,
-                           :piazzePedonaliEScolastiche ,
-                           :pisteECorsieCiclabili ,
-                           :pontiCanali ,
-                           :riqualificazioneDeiMarciapiedi ,
-                           :tramETrasportoPubblico ,
-                           :viaDellaConoscenza ;
-             skos:topConceptOf :projectTypeScheme ;
              rdfs:comment "SKOS Concept Scheme that describes a Project Type Taxonomy for \"Progetto Città 30\""@en ;
              skos:prefLabel "ProjectType"@en ,
                             "Tipo di Progetto"@it .
@@ -1518,15 +1522,14 @@ VOLTONE"""@en ;
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/projectTypeScheme
 :projectTypeScheme rdf:type owl:NamedIndividual ,
                             skos:ConceptScheme ;
+                   skos:hasTopConcept :projectType ;
                    skos:prefLabel "Project Type Scheme"@en .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/riqualificazioneDeiMarciapiedi
 :riqualificazioneDeiMarciapiedi rdf:type owl:NamedIndividual ,
-                                         :ProjectType ,
+                                         :ProjectThread ,
                                          skos:Concept ;
-                                skos:broader :projectType ;
-                                skos:inScheme :projectTypeScheme ;
                                 skos:prefLabel "Riqualificazione dei marciapiedi"@it .
 
 
@@ -1716,6 +1719,20 @@ VOLTONE"""@en ;
         rdfs:label "Savena" .
 
 
+###  http://www.dei.unipd.it/~gdb/ontology/btp/sicurezza
+:sicurezza rdf:type owl:NamedIndividual ,
+                    :ProjectThread ,
+                    skos:Concept ;
+           skos:prefLabel "Sicurezza"@it .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/sicurezzaEManutenzione
+:sicurezzaEManutenzione rdf:type owl:NamedIndividual ,
+                                 :ProjectThread ,
+                                 skos:Concept ;
+                        skos:prefLabel "Sicurezza e manutenzione"@it .
+
+
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/sunday
 :sunday rdf:type owl:NamedIndividual ,
                  :DayWeek ;
@@ -1730,11 +1747,16 @@ VOLTONE"""@en ;
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/tramETrasportoPubblico
 :tramETrasportoPubblico rdf:type owl:NamedIndividual ,
-                                 :ProjectType ,
+                                 :ProjectTheme ,
                                  skos:Concept ;
-                        skos:broader :projectType ;
-                        skos:inScheme :projectTypeScheme ;
                         skos:prefLabel "Tram e trasporto pubblico"@it .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/trasformazioniDiInteresseTerritoriale
+:trasformazioniDiInteresseTerritoriale rdf:type owl:NamedIndividual ,
+                                                :ProjectThread ,
+                                                skos:Concept ;
+                                       skos:prefLabel "Trasformazioni di interesse territoriale"@it .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/tuesday
@@ -1751,10 +1773,8 @@ VOLTONE"""@en ;
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/viaDellaConoscenza
 :viaDellaConoscenza rdf:type owl:NamedIndividual ,
-                             :ProjectType ,
+                             :ProjectTheme ,
                              skos:Concept ;
-                    skos:broader :projectType ;
-                    skos:inScheme :projectTypeScheme ;
                     skos:prefLabel "Via della Conoscenza"@it .
 
 
