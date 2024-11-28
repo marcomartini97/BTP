@@ -468,7 +468,6 @@ xsd:gYear rdf:type rdfs:Datatype .
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/recordedAccident
 :recordedAccident rdf:type owl:ObjectProperty ;
-                  rdfs:subPropertyOf :recordedInDistrict ;
                   owl:inverseOf :recordedInDistrict ;
                   rdfs:domain :District ;
                   rdfs:range :RoadAccident ;
