@@ -1148,6 +1148,36 @@ VOLTONE"""@en ;
 #    Individuals
 #################################################################
 
+###  http://www.dei.unipd.it/~gdb/ontology/btp#speed10
+:speed10 rdf:type owl:NamedIndividual ,
+                  :SpeedLimit30 ;
+         :speedLimit 10 .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#speed15
+:speed15 rdf:type owl:NamedIndividual ,
+                  :SpeedLimit30 ;
+         :speedLimit 15 .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#speed30
+:speed30 rdf:type owl:NamedIndividual ,
+                  :SpeedLimit30 ;
+         :speedLimit 30 .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#speed5
+:speed5 rdf:type owl:NamedIndividual ,
+                 :SpeedLimit30 ;
+        :speedLimit 5 .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#speed50
+:speed50 rdf:type owl:NamedIndividual ,
+                  :SpeedLimit30 ;
+         :speedLimit 50 .
+
+
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/C6H6
 :C6H6 rdf:type owl:NamedIndividual ,
                :ChemicalElement ;
