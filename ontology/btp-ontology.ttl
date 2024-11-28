@@ -189,7 +189,6 @@ xsd:gYear rdf:type rdfs:Datatype .
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/hasProject
 :hasProject rdf:type owl:ObjectProperty ;
             owl:inverseOf :isProjectOnRoad ;
-            rdf:type owl:FunctionalProperty ;
             rdfs:domain :Road ;
             rdfs:range :Project30 ;
             rdfs:label "has Project" .
@@ -198,7 +197,6 @@ xsd:gYear rdf:type rdfs:Datatype .
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/hasProjectType
 :hasProjectType rdf:type owl:ObjectProperty ;
                 owl:inverseOf :isProjectType ;
-                rdf:type owl:FunctionalProperty ;
                 rdfs:domain :Project30 ;
                 rdfs:range :ProjectType ;
                 rdfs:comment "Defines the type for a certain project"@en ;
@@ -387,8 +385,7 @@ xsd:gYear rdf:type rdfs:Datatype .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/isProjectOnRoad
-:isProjectOnRoad rdf:type owl:ObjectProperty ,
-                          owl:InverseFunctionalProperty ;
+:isProjectOnRoad rdf:type owl:ObjectProperty ;
                  rdfs:domain :Project30 ;
                  rdfs:range :Road ;
                  rdfs:comment "Defines the road where a project is taking place"@en ;
@@ -396,8 +393,7 @@ xsd:gYear rdf:type rdfs:Datatype .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/isProjectType
-:isProjectType rdf:type owl:ObjectProperty ,
-                        owl:InverseFunctionalProperty ;
+:isProjectType rdf:type owl:ObjectProperty ;
                rdfs:domain :ProjectType ;
                rdfs:range :Project30 ;
                rdfs:label "is Project Type" .
@@ -1527,7 +1523,7 @@ VOLTONE"""@en ;
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/riqualificazioneDeiMarciapiedi
 :riqualificazioneDeiMarciapiedi rdf:type owl:NamedIndividual ,
-                                         :ProjectThread ,
+                                         :ProjectTheme ,
                                          skos:Concept ;
                                 skos:prefLabel "Riqualificazione dei marciapiedi"@it .
 
