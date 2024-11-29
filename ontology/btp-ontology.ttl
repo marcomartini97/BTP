@@ -942,14 +942,6 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/Road
 :Road rdf:type owl:Class ;
       owl:equivalentClass [ rdf:type owl:Restriction ;
-                            owl:onProperty :hasArchFromRoad ;
-                            owl:someValuesFrom :RoadArch
-                          ] ,
-                          [ rdf:type owl:Restriction ;
-                            owl:onProperty :hasArchToRoad ;
-                            owl:someValuesFrom :RoadArch
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty :hasDistrict ;
                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass :District
