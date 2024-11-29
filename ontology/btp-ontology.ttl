@@ -732,7 +732,8 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 :Coil rdf:type owl:Class ;
       rdfs:subClassOf [ rdf:type owl:Restriction ;
                         owl:onProperty :isOn ;
-                        owl:someValuesFrom :Road
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Road
                       ] ,
                       [ rdf:type owl:Restriction ;
                         owl:onProperty :hasID ;
