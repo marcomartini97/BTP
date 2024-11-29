@@ -852,9 +852,9 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/PollutionStation
 :PollutionStation rdf:type owl:Class ;
                   owl:equivalentClass [ rdf:type owl:Class ;
-                                        owl:oneOf ( :giardiniMargherita
-                                                    :portaSanFelice
-                                                    :viaChiarini
+                                        owl:oneOf ( :giardiniMargheritaControlUnit
+                                                    :portaSanFeliceControlUnit
+                                                    :viaChiariniControlUnit
                                                   )
                                       ] ;
                   rdfs:comment "Class that rappresents a pollution station"@en ;
@@ -1314,10 +1314,11 @@ VOLTONE"""@en ;
          rdfs:label "Galvani" .
 
 
-###  http://www.dei.unipd.it/~gdb/ontology/btp/giardiniMargherita
-:giardiniMargherita rdf:type owl:NamedIndividual ,
-                             :PollutionStation ;
-                    rdfs:label "Giardini Margherita" .
+###  http://www.dei.unipd.it/~gdb/ontology/btp/giardiniMargheritaControlUnit
+:giardiniMargheritaControlUnit rdf:type owl:NamedIndividual ,
+                                        :PollutionStation ;
+                               rdfs:comment "Control unit located in Giardini Margherita"@en ;
+                               rdfs:label "Giardini Margherita control unit" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/improntaVerde
@@ -1450,10 +1451,11 @@ VOLTONE"""@en ;
              skos:prefLabel "Ponti/Canali"@it .
 
 
-###  http://www.dei.unipd.it/~gdb/ontology/btp/portaSanFelice
-:portaSanFelice rdf:type owl:NamedIndividual ,
-                         :PollutionStation ;
-                rdfs:label "Porta San Felice" .
+###  http://www.dei.unipd.it/~gdb/ontology/btp/portaSanFeliceControlUnit
+:portaSanFeliceControlUnit rdf:type owl:NamedIndividual ,
+                                    :PollutionStation ;
+                           rdfs:comment "Control unit located in Porta San Felice"@en ;
+                           rdfs:label "Porta San Felice control unit" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/portoSaragozza
@@ -1717,31 +1719,36 @@ VOLTONE"""@en ;
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/speed10
 :speed10 rdf:type owl:NamedIndividual ,
                   :SpeedLimit30 ;
-         :speedLimit 10 .
+         :speedLimit 10 ;
+         rdfs:label "Speed: 10 km/h" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/speed15
 :speed15 rdf:type owl:NamedIndividual ,
                   :SpeedLimit30 ;
-         :speedLimit 15 .
+         :speedLimit 15 ;
+         rdfs:label "Speed: 15 km/h" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/speed30
 :speed30 rdf:type owl:NamedIndividual ,
                   :SpeedLimit30 ;
-         :speedLimit 30 .
+         :speedLimit 30 ;
+         rdfs:label "Speed: 30 km/h" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/speed5
 :speed5 rdf:type owl:NamedIndividual ,
                  :SpeedLimit30 ;
-        :speedLimit 5 .
+        :speedLimit 5 ;
+        rdfs:label "Speed: 5 km/h" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/speed50
 :speed50 rdf:type owl:NamedIndividual ,
                   :SpeedLimit30 ;
-         :speedLimit 50 .
+         :speedLimit 50 ;
+         rdfs:label "Speed: 50 km/h" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/spira
@@ -1789,10 +1796,11 @@ VOLTONE"""@en ;
          rdfs:label "Tuesday" .
 
 
-###  http://www.dei.unipd.it/~gdb/ontology/btp/viaChiarini
-:viaChiarini rdf:type owl:NamedIndividual ,
-                      :PollutionStation ;
-             rdfs:label "Via Chiarini" .
+###  http://www.dei.unipd.it/~gdb/ontology/btp/viaChiariniControlUnit
+:viaChiariniControlUnit rdf:type owl:NamedIndividual ,
+                                 :PollutionStation ;
+                        rdfs:comment "Control unit located in Via Chiarini"@en ;
+                        rdfs:label "Via Chiarini control unit" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/viaDellaConoscenza
@@ -1862,9 +1870,9 @@ owl:Thing rdfs:comment "These are the classes, element of interest for my ontolo
 
 
 [ rdf:type owl:AllDifferent ;
-  owl:distinctMembers ( :giardiniMargherita
-                        :portaSanFelice
-                        :viaChiarini
+  owl:distinctMembers ( :giardiniMargheritaControlUnit
+                        :portaSanFeliceControlUnit
+                        :viaChiariniControlUnit
                       )
 ] .
 
