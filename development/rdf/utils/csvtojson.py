@@ -86,7 +86,7 @@ except MemoryError:
 # Check if the conversion is right
 jsonfile = os.path.join(abs_path, jsonfilename)
 num_elements = count_json_elements(jsonfile)
-if (num_elements == total_rows):
+if (num_elements == total_rows-1):
     print("Conversion successful!")
 else:
     print("Conversion failed, please try again.")
