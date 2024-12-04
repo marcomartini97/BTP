@@ -69,11 +69,10 @@ try:
                 record = {labels[i]: row.iloc[i] for i in range(len(labels))}
                 # Write to JSON file
                 json.dump(record, json_file)
-                # Check if it is the last element
-                json_file.write(',\n')
-            if skip + chunksizes >= total_rows:
-                # Last element
-                json_file.write(']')
+                if skip + index + 1 < total_rows:
+                    json_file.write(',\n')
+                else:
+                    json_file.write(']')
         pbar.update(chunksizes)
     pbar.close()
 
