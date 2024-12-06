@@ -7,6 +7,9 @@
 node_modules/
 dist/
 
+# LFS server
+.lfsconfig
+
 # Log files
 *.log
 
