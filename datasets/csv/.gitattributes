@@ -1,0 +1,12 @@
+rilevazione_flusso_veicoli_2022.csv filter=lfs diff=lfs merge=lfs -text
+accuratezza_spire_2019.csv filter=lfs diff=lfs merge=lfs -text
+rilevazione_flusso_veicoli_2020.csv filter=lfs diff=lfs merge=lfs -text
+accuratezza_spire_2022.csv filter=lfs diff=lfs merge=lfs -text
+dati_centraline_2019.csv filter=lfs diff=lfs merge=lfs -text
+dati_centraline_2020.csv filter=lfs diff=lfs merge=lfs -text
+dati_centraline_2021.csv filter=lfs diff=lfs merge=lfs -text
+dati_centraline_2022.csv filter=lfs diff=lfs merge=lfs -text
+rilevazione_flusso_veicoli_2019.csv filter=lfs diff=lfs merge=lfs -text
+accuratezza_spire_2020.csv filter=lfs diff=lfs merge=lfs -text
+accuratezza_spire_2021.csv filter=lfs diff=lfs merge=lfs -text
+rilevazione_flusso_veicoli_2021.csv filter=lfs diff=lfs merge=lfs -text
