@@ -1,0 +1,57 @@
+@prefix btp: <http://www.dei.unipd.it/~gdb/ontology/btp/#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+btp:PollutionCoil rdfs:subClassOf btp:Coil .
+
+btp:coil_18 a btp:SimpleCoil ;
+    btp:hasID "0.127 1.5 8 1"^^xsd:string ;
+    btp:hasLevel btp:level_1 ;
+    btp:hasType btp:type_spira ;
+    btp:isOn btp:road_38600 .
+
+btp:coil_358 a btp:SimpleCoil ;
+    btp:hasID "1.17 1.82 8 1"^^xsd:string ;
+    btp:hasLevel btp:level_1 ;
+    btp:hasType btp:type_spira ;
+    btp:isOn btp:road_29600 .
+
+btp:coil_368 a btp:SimpleCoil ;
+    btp:hasID "1.4 1.3 8 1"^^xsd:string ;
+    btp:hasLevel btp:level_1 ;
+    btp:hasType btp:type_spira ;
+    btp:isOn btp:road_30400 .
+
+btp:coil_442 a btp:SimpleCoil ;
+    btp:hasID "2.21 2.10 6 1"^^xsd:string ;
+    btp:hasLevel btp:level_1 ;
+    btp:hasType btp:type_spira ;
+    btp:isOn btp:road_61550 .
+
+btp:coil_731 a btp:SimpleCoil ;
+    btp:hasID "4.19 4.9 4 1"^^xsd:string ;
+    btp:hasLevel btp:level_1 ;
+    btp:hasType btp:type_spira ;
+    btp:isOn btp:road_21500 .
+
+btp:road_21500 rdfs:label "viale gian battista ercolani"^^xsd:string ;
+    btp:isPlacedOn btp:coil_731 .
+
+btp:road_29600 rdfs:label "via guerrazzi"^^xsd:string ;
+    btp:isPlacedOn btp:coil_358 .
+
+btp:road_30400 rdfs:label "via irnerio"^^xsd:string ;
+    btp:isPlacedOn btp:coil_368 .
+
+btp:road_38600 rdfs:label "via dei mille"^^xsd:string ;
+    btp:isPlacedOn btp:coil_18 .
+
+btp:road_61550 rdfs:label "viale giovanni vicini"^^xsd:string ;
+    btp:isPlacedOn btp:coil_442 .
+
+btp:SimpleCoil rdfs:subClassOf btp:Coil .
+
+btp:level_1 a btp:Level .
+
+btp:type_spira a btp:Type .
+
