@@ -944,15 +944,15 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 :Road rdf:type owl:Class ;
       owl:equivalentClass [ rdf:type owl:Restriction ;
                             owl:onProperty :hasDistrict ;
-                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                            owl:onClass :District
+                            owl:someValuesFrom :District
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty :hasRoadType ;
                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass :RoadType
                           ] ;
-      rdfs:comment "A Road present in the City of Bologna"@en .
+      rdfs:comment """A Road present in the City of Bologna.
+Some roads can be long and traverse multiple districts"""@en .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/RoadAccident
@@ -1002,7 +1002,7 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 :RoadNode rdf:type owl:Class ;
           owl:equivalentClass [ rdf:type owl:Restriction ;
                                 owl:onProperty :isNode ;
-                                owl:someValuesFrom :Road
+                                owl:someValuesFrom :RoadArch
                               ] ;
           rdfs:comment "A Road node that connects two or more roads"@en ;
           rdfs:label "Road Node" .
@@ -1011,7 +1011,8 @@ owl:topObjectProperty rdfs:comment "These are the relation between classes"@en .
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/RoadType
 :RoadType rdf:type owl:Class ;
           owl:equivalentClass [ rdf:type owl:Class ;
-                                owl:oneOf ( :roadtype_autostrada
+                                owl:oneOf ( :roadtype_vicolo
+                                            :roadtype_autostrada
                                             :roadtype_corte
                                             :roadtype_galleria
                                             :roadtype_giardino
@@ -1140,6 +1141,12 @@ VOLTONE"""@en ;
 #################################################################
 #    Individuals
 #################################################################
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#roadtype_vicolo
+:roadtype_vicolo rdf:type owl:NamedIndividual ,
+                          :RoadType ;
+                 rdfs:label "Road-Type: Vicolo" .
+
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/C6H6
 :C6H6 rdf:type owl:NamedIndividual ,
