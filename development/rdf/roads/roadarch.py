@@ -7,12 +7,20 @@ import re
 
 # Load the ontology from git folder
 ontology_path = '../../../ontology/btp-ontology.ttl'
+btp = Graph()
+btp.parse(ontology_path, format='turtle')
+
 g = Graph()
-g.parse(ontology_path, format='turtle')
 
 # Define namespaces
 BASE = Namespace("http://www.dei.unipd.it/~gdb/ontology/btp/")
-g.bind("base", BASE)
+OWL = Namespace("http://www.w3.org/2002/07/owl#")
+btp.bind("", BASE)
+g.bind("", BASE)
+g.bind("owl", OWL)
+
+# Add Ontology definition
+g.add((BASE["asserted"], RDF.type, OWL.Ontology))
 
 # Load the JSON file from git folder
 json_file_path = '../../../datasets/json/rifter_arcstra_li.json'
@@ -34,6 +42,18 @@ road_map = {entry['nomevia']: entry['codvia'] for entry in json_data}
 print(f"Processing JSON data from: {ontology_path} ... ")
 p_bar = tqdm(total=len(json_data))
 
+# Add all Object properties
+g.add((BASE.hasRoadType, RDF.type, OWL.ObjectProperty))
+g.add((BASE.hasNode, RDF.type, OWL.ObjectProperty))
+g.add((BASE.hasDistrict, RDF.type, OWL.ObjectProperty))
+g.add((BASE.hasDeploymentDate, RDF.type, OWL.ObjectProperty))
+g.add((BASE.isArchFromRoad, RDF.type, OWL.ObjectProperty))
+g.add((BASE.isArchToRoad, RDF.type, OWL.ObjectProperty))
+
+# Add all Data properties
+g.add((BASE.hasCalendarDate, RDF.type, OWL.DatatypeProperty))
+g.add((BASE.length, RDF.type, OWL.DatatypeProperty))
+
 # Process each JSON entry
 for entry in json_data:
     # Create URIs for Roads, RoadArch, Districts, and RoadNodes
@@ -51,8 +71,8 @@ for entry in json_data:
 
     # Add Road class and its properties
     g.add((road_uri, RDF.type, BASE.Road))
-    g.add((road_uri, RDFS.label, Literal(entry['nomevia'], lang='en')))
-    if(roadtype_uri, RDF.type, BASE.RoadType) in g:
+    g.add((road_uri, RDFS.label, Literal(entry['nomevia'], lang='it')))
+    if(roadtype_uri, RDF.type, BASE.RoadType) in btp:
         g.add((road_uri, BASE.hasRoadType, roadtype_uri));
     else:
         g.add((road_uri, BASE.hasRoadType, BASE["roadtype_undefined"]));
@@ -87,6 +107,7 @@ p_bar.close()
 # Serialize the updated graph back to a file
 output_path = 'rdf/injested_roads.ttl'
 print(f"Saving graph to {output_path}")
+
 g.serialize(destination=output_path, format='turtle')
 
 print(f"Ontology updated and saved to {output_path}")
