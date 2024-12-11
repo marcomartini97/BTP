@@ -2,6 +2,7 @@ import json
 from datetime import datetime
 from rdflib import Graph, Namespace, Literal, RDF, URIRef
 from rdflib.namespace import RDFS, XSD
+from tqdm import tqdm
 import re
 
 # Load the ontology from git folder
@@ -18,6 +19,9 @@ json_file_path = '../../../datasets/json/rifter_arcstra_li.json'
 with open(json_file_path, 'r') as f:
     json_data = json.load(f)
 
+def get_first_word_lower(s):
+    return s.split()[0].lower() if s else ''
+
 
 def to_camel_case(s):
     s = re.sub(r'[-/]', '', s)
@@ -26,6 +30,9 @@ def to_camel_case(s):
 
 # Create a hashmap for nomevia to codvia
 road_map = {entry['nomevia']: entry['codvia'] for entry in json_data}
+
+print(f"Processing JSON data from: {ontology_path} ... ")
+p_bar = tqdm(total=len(json_data))
 
 # Process each JSON entry
 for entry in json_data:
@@ -36,6 +43,7 @@ for entry in json_data:
     date_uri = BASE[f"date_{entry['data_istit']}"]
     node_1_uri = BASE[f"roadnode_{entry['cod_nodo1']}"]
     node_2_uri = BASE[f"roadnode_{entry['cod_nodo2']}"]
+    roadtype_uri = BASE[f"roadtype_{get_first_word_lower(entry['nomevia'])}"]
 
     # Add Node class
     g.add((node_1_uri, RDF.type, BASE.RoadNode))
@@ -44,11 +52,17 @@ for entry in json_data:
     # Add Road class and its properties
     g.add((road_uri, RDF.type, BASE.Road))
     g.add((road_uri, RDFS.label, Literal(entry['nomevia'], lang='en')))
+    if(roadtype_uri, RDF.type, BASE.RoadType) in g:
+        g.add((road_uri, BASE.hasRoadType, roadtype_uri));
+    else:
+        g.add((road_uri, BASE.hasRoadType, BASE["roadtype_undefined"]));
+
 
     # Add RoadArch class and link to Road
     g.add((roadarch_uri, RDF.type, BASE.RoadArch))
     g.add((roadarch_uri, BASE.hasNode, node_1_uri))
     g.add((roadarch_uri, BASE.hasNode, node_2_uri))
+    g.add((roadarch_uri, BASE.length, Literal(entry['lunghez'], datatype=XSD.decimal)))
     if(entry['da'] in road_map and entry['a'] in road_map):
         from_uri = BASE[f"road_{road_map[entry['da']]}"]
         to_uri = BASE[f"road_{road_map[entry['a']]}"]
@@ -65,14 +79,14 @@ for entry in json_data:
     # Link Road to District
     g.add((road_uri, BASE.hasDistrict, district_uri))
 
-    # Handle additional properties
-    if 'lunghez' in entry:
-        g.add((roadarch_uri, BASE.length, Literal(entry['lunghez'], datatype=XSD.decimal)))
+    # Update progress bar
+    p_bar.update(1)
+
+p_bar.close()
 
 # Serialize the updated graph back to a file
 output_path = 'rdf/injested_roads.ttl'
-filtered_g = Graph()
-filtered_g += g
-filtered_g.serialize(destination=output_path, format='turtle')
+print(f"Saving graph to {output_path}")
+g.serialize(destination=output_path, format='turtle')
 
 print(f"Ontology updated and saved to {output_path}")
