@@ -491,19 +491,19 @@ def merge_graph(regex, name_file):
 
 def get_arch_by_road(road_name):
 
-    # TODO: Add the road.ttl file
-    return ''
-    ############################################
-
     #Graph
     g_road = Graph()
     g_road.parse(os.path.join(save_path, 'road.ttl'), format='turtle')
 
-    # Query to get the arc's code associated to a road
+    # Try to normalize the road name
+    road_name = road_name.lower()
+    road_name = road_name.replace("'", ' ')
+
+    # Query to get the arc's code associated to a road -> using similarity
     arc_query = prepareQuery("""
         SELECT DISTINCT ?arc WHERE {
             ?arc btp:hasRoad ?road .
-        FILTER (?road = ?road_name)
+        FILTER (CONTAINS(LCASE(?road), LCASE(?road_name)))
                                 }""" , initNs={"btp": BTP})
     
     res = g_road.query(arc_query, initBindings={'road_name':Literal(road_name, datatype=XSD.string)})
@@ -562,15 +562,10 @@ for namefile in rilevazione_flusso:
     total_rows = len(pd.read_csv(namefile))
     pbar = tqdm(total=total_rows)
 
-    test_iter = 10
-
     for chunk in pd.read_csv(namefile, sep=';', chunksize=chunksize):
         
         # Manage NaN values
         chunk = chunk.fillna('')
-
-        if test_iter == 0:
-            break
 
         # Memory monitor
         if psutil.virtual_memory().percent > 80 or len(threads) == psutil.cpu_count():
@@ -580,8 +575,6 @@ for namefile in rilevazione_flusso:
                 # At least one thread is now available
                 break
 
-        test_iter -= 1
-        
         # I can start a new thread
         thread = threading.Thread(target=coils_process_chunk, args=(chunk, piece, year_dataset))
         thread.start()
@@ -614,15 +607,10 @@ for namefile in rilevazione_flusso:
     total_rows = len(pd.read_csv(namefile))
     pbar = tqdm(total=total_rows)
 
-    test_iter = 10
-
     for chunk in pd.read_csv(namefile, sep=';', chunksize=chunksize):
 
         # Manage NaN values
         chunk = chunk.fillna('')
-
-        if test_iter == 0:
-            break
 
         # Memory monitor
         if psutil.virtual_memory().percent > 80 or len(threads) == psutil.cpu_count():
@@ -631,8 +619,6 @@ for namefile in rilevazione_flusso:
                 thread.join()
                 # At least one thread is now available
                 break
-
-        test_iter -= 1
         
         # I can start a new thread
         thread = threading.Thread(target=vehicle_count_process_chunk, args=(chunk, piece, year_dataset))
@@ -668,15 +654,10 @@ for namefile in accuratezza_spire:
     total_rows = len(pd.read_csv(namefile))
     pbar = tqdm(total=total_rows)
 
-    test_iter = 10
-
     for chunk in pd.read_csv(namefile, sep=';', chunksize=chunksize):
 
         # Manage NaN values
         chunk = chunk.fillna('')
-
-        if test_iter == 0:
-            break
 
         # Memory monitor
         if psutil.virtual_memory().percent > 80 or len(threads) == psutil.cpu_count():
@@ -685,8 +666,6 @@ for namefile in accuratezza_spire:
                 thread.join()
                 # At least one thread is now available
                 break
-
-        test_iter -= 1
         
         # I can start a new thread
         thread = threading.Thread(target=vehicle_accuracy_process_chunk, args=(chunk, piece, year_dataset))
@@ -720,15 +699,10 @@ for namefile in centraline:
     total_rows = len(pd.read_csv(namefile))
     pbar = tqdm(total=total_rows)
 
-    test_iter = 10
-
     for chunk in pd.read_csv(namefile, sep=';', chunksize=chunksize):
 
         # Manage NaN values
         chunk = chunk.fillna('')
-
-        if test_iter == 0:
-            break
 
         # Memory monitor
         if psutil.virtual_memory().percent > 80 or len(threads) == psutil.cpu_count():
@@ -737,8 +711,6 @@ for namefile in centraline:
                 thread.join()
                 # At least one thread is now available
                 break
-
-        test_iter -= 1
 
         # I can start a new thread
         thread = threading.Thread(target=pollution_process_chunk, args=(chunk, piece, year_dataset))
