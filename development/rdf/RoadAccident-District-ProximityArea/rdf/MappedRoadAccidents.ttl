@@ -1,0 +1,5428 @@
+@prefix btp: <http://www.dei.unipd.it/~gdb/ontology/btp/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+btp:accident_0 a btp:RoadAccident ;
+    btp:happendInArea btp:casteldebolePontelungo ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfAccidents 32 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno ;
+    btp:totalNumberOfDeath 2 ;
+    btp:totalNumberOfInjuries 40 .
+
+btp:accident_1 a btp:RoadAccident ;
+    btp:happendInArea btp:croceDelBiaccoRoveri ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfAccidents 69 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 91 .
+
+btp:accident_10 a btp:RoadAccident ;
+    btp:happendInArea btp:malpighi ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfAccidents 59 ;
+    btp:recordedInDistrict btp:portoSaragozza ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 69 .
+
+btp:accident_100 a btp:RoadAccident ;
+    btp:happendInArea btp:viaToscanaS.RuffilloMonteDonato ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfAccidents 41 ;
+    btp:recordedInDistrict btp:savena ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 50 .
+
+btp:accident_101 a btp:RoadAccident ;
+    btp:happendInArea btp:casteldebolePontelungo ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfAccidents 18 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 26 .
+
+btp:accident_102 a btp:RoadAccident ;
+    btp:happendInArea btp:croceDelBiaccoRoveri ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfAccidents 39 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 57 .
+
+btp:accident_103 a btp:RoadAccident ;
+    btp:happendInArea btp:irnerio ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfAccidents 52 ;
+    btp:recordedInDistrict btp:santoStefano ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 67 .
+
+btp:accident_104 a btp:RoadAccident ;
+    btp:happendInArea btp:malpighi ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfAccidents 39 ;
+    btp:recordedInDistrict btp:portoSaragozza ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 50 .
+
+btp:accident_105 a btp:RoadAccident ;
+    btp:happendInArea btp:marconi ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfAccidents 55 ;
+    btp:recordedInDistrict btp:portoSaragozza ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 67 .
+
+btp:accident_106 a btp:RoadAccident ;
+    btp:happendInArea btp:murri ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfAccidents 100 ;
+    btp:recordedInDistrict btp:santoStefano ;
+    btp:totalNumberOfDeath 2 ;
+    btp:totalNumberOfInjuries 118 .
+
+btp:accident_107 a btp:RoadAccident ;
+    btp:happendInArea btp:osservanzaPaderno ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfAccidents 31 ;
+    btp:recordedInDistrict btp:santoStefano ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 44 .
+
+btp:accident_108 a btp:RoadAccident ;
+    btp:happendInArea btp:saffi ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfAccidents 51 ;
+    btp:recordedInDistrict btp:portoSaragozza ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 61 .
+
+btp:accident_109 a btp:RoadAccident ;
+    btp:happendInArea btp:sanDonatoVecchio ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfAccidents 78 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 98 .
+
+btp:accident_11 a btp:RoadAccident ;
+    btp:happendInArea btp:marconi ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfAccidents 69 ;
+    btp:recordedInDistrict btp:portoSaragozza ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 80 .
+
+btp:accident_110 a btp:RoadAccident ;
+    btp:happendInArea btp:saragozzaSanLuca ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfAccidents 56 ;
+    btp:recordedInDistrict btp:portoSaragozza ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 63 .
+
+btp:accident_111 a btp:RoadAccident ;
+    btp:happendInArea btp:viaToscanaS.RuffilloMonteDonato ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfAccidents 22 ;
+    btp:recordedInDistrict btp:savena ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 25 .
+
+btp:accident_112 a btp:RoadAccident ;
+    btp:happendInArea btp:corticellaDozza ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfAccidents 88 ;
+    btp:recordedInDistrict btp:navile ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 116 .
+
+btp:accident_113 a btp:RoadAccident ;
+    btp:happendInArea btp:bolognina ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfAccidents 115 ;
+    btp:recordedInDistrict btp:navile ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 147 .
+
+btp:accident_114 a btp:RoadAccident ;
+    btp:happendInArea btp:barca ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfAccidents 75 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 86 .
+
+btp:accident_115 a btp:RoadAccident ;
+    btp:happendInArea btp:birraBargellinoLavino ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfAccidents 61 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 93 .
+
+btp:accident_116 a btp:RoadAccident ;
+    btp:happendInArea btp:casteldebolePontelungo ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfAccidents 34 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 37 .
+
+btp:accident_117 a btp:RoadAccident ;
+    btp:happendInArea btp:lungoSavena ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfAccidents 25 ;
+    btp:recordedInDistrict btp:savena ;
+    btp:totalNumberOfDeath 2 ;
+    btp:totalNumberOfInjuries 34 .
+
+btp:accident_118 a btp:RoadAccident ;
+    btp:happendInArea btp:marconi ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfAccidents 83 ;
+    btp:recordedInDistrict btp:portoSaragozza ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 94 .
+
+btp:accident_119 a btp:RoadAccident ;
+    btp:happendInArea btp:osservanzaPaderno ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfAccidents 41 ;
+    btp:recordedInDistrict btp:santoStefano ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 53 .
+
+btp:accident_12 a btp:RoadAccident ;
+    btp:happendInArea btp:osservanzaPaderno ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfAccidents 47 ;
+    btp:recordedInDistrict btp:santoStefano ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 72 .
+
+btp:accident_120 a btp:RoadAccident ;
+    btp:happendInArea btp:barca ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfAccidents 83 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 104 .
+
+btp:accident_121 a btp:RoadAccident ;
+    btp:happendInArea btp:borgoPanigale ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfAccidents 116 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno ;
+    btp:totalNumberOfDeath 6 ;
+    btp:totalNumberOfInjuries 165 .
+
+btp:accident_122 a btp:RoadAccident ;
+    btp:happendInArea btp:marconi ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfAccidents 88 ;
+    btp:recordedInDistrict btp:portoSaragozza ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 108 .
+
+btp:accident_123 a btp:RoadAccident ;
+    btp:happendInArea btp:saragozzaSanLuca ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfAccidents 102 ;
+    btp:recordedInDistrict btp:portoSaragozza ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 122 .
+
+btp:accident_124 a btp:RoadAccident ;
+    btp:happendInArea btp:beverara ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfAccidents 45 ;
+    btp:recordedInDistrict btp:navile ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 59 .
+
+btp:accident_13 a btp:RoadAccident ;
+    btp:happendInArea btp:sanDonatoVecchio ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfAccidents 145 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 217 .
+
+btp:accident_14 a btp:RoadAccident ;
+    btp:happendInArea btp:santaViola ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfAccidents 40 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 46 .
+
+btp:accident_15 a btp:RoadAccident ;
+    btp:happendInArea btp:beverara ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfAccidents 43 ;
+    btp:recordedInDistrict btp:navile ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 61 .
+
+btp:accident_16 a btp:RoadAccident ;
+    btp:happendInArea btp:bolognina ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfAccidents 136 ;
+    btp:recordedInDistrict btp:navile ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 159 .
+
+btp:accident_17 a btp:RoadAccident ;
+    btp:happendInArea btp:cirenaicaMassarentiScandellara ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfAccidents 132 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 149 .
+
+btp:accident_18 a btp:RoadAccident ;
+    btp:happendInArea btp:fossoloDueMadonne ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfAccidents 28 ;
+    btp:recordedInDistrict btp:savena ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 34 .
+
+btp:accident_19 a btp:RoadAccident ;
+    btp:happendInArea btp:galvani ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfAccidents 46 ;
+    btp:recordedInDistrict btp:santoStefano ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 50 .
+
+btp:accident_2 a btp:RoadAccident ;
+    btp:happendInArea btp:fossoloDueMadonne ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfAccidents 36 ;
+    btp:recordedInDistrict btp:savena ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 48 .
+
+btp:accident_20 a btp:RoadAccident ;
+    btp:happendInArea btp:sanDonatoNuovo ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfAccidents 44 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 59 .
+
+btp:accident_21 a btp:RoadAccident ;
+    btp:happendInArea btp:bertaliaNoce ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfAccidents 40 ;
+    btp:recordedInDistrict btp:navile ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 50 .
+
+btp:accident_22 a btp:RoadAccident ;
+    btp:happendInArea btp:cirenaicaMassarentiScandellara ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfAccidents 161 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 213 .
+
+btp:accident_23 a btp:RoadAccident ;
+    btp:happendInArea btp:croceDelBiaccoRoveri ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfAccidents 63 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 80 .
+
+btp:accident_24 a btp:RoadAccident ;
+    btp:happendInArea btp:irnerio ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfAccidents 96 ;
+    btp:recordedInDistrict btp:santoStefano ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 113 .
+
+btp:accident_25 a btp:RoadAccident ;
+    btp:happendInArea btp:murri ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfAccidents 128 ;
+    btp:recordedInDistrict btp:santoStefano ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 152 .
+
+btp:accident_26 a btp:RoadAccident ;
+    btp:happendInArea btp:pontevecchioMazzini ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfAccidents 119 ;
+    btp:recordedInDistrict btp:savena ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 148 .
+
+btp:accident_27 a btp:RoadAccident ;
+    btp:happendInArea btp:saffi ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfAccidents 87 ;
+    btp:recordedInDistrict btp:portoSaragozza ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 111 .
+
+btp:accident_28 a btp:RoadAccident ;
+    btp:happendInArea btp:sanDonatoNuovo ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfAccidents 54 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 78 .
+
+btp:accident_29 a btp:RoadAccident ;
+    btp:happendInArea btp:sanDonatoVecchio ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfAccidents 138 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale ;
+    btp:totalNumberOfDeath 2 ;
+    btp:totalNumberOfInjuries 181 .
+
+btp:accident_3 a btp:RoadAccident ;
+    btp:happendInArea btp:irnerio ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfAccidents 108 ;
+    btp:recordedInDistrict btp:santoStefano ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 132 .
+
+btp:accident_30 a btp:RoadAccident ;
+    btp:happendInArea btp:santaViola ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfAccidents 57 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 65 .
+
+btp:accident_31 a btp:RoadAccident ;
+    btp:happendInArea btp:saragozzaSanLuca ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfAccidents 104 ;
+    btp:recordedInDistrict btp:portoSaragozza ;
+    btp:totalNumberOfDeath 2 ;
+    btp:totalNumberOfInjuries 113 .
+
+btp:accident_32 a btp:RoadAccident ;
+    btp:happendInArea btp:viaToscanaS.RuffilloMonteDonato ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfAccidents 26 ;
+    btp:recordedInDistrict btp:savena ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 33 .
+
+btp:accident_33 a btp:RoadAccident ;
+    btp:happendInArea btp:beverara ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfAccidents 49 ;
+    btp:recordedInDistrict btp:navile ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 70 .
+
+btp:accident_34 a btp:RoadAccident ;
+    btp:happendInArea btp:bertaliaNoce ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfAccidents 55 ;
+    btp:recordedInDistrict btp:navile ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 64 .
+
+btp:accident_35 a btp:RoadAccident ;
+    btp:happendInArea btp:birraBargellinoLavino ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfAccidents 62 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 85 .
+
+btp:accident_36 a btp:RoadAccident ;
+    btp:happendInArea btp:croceDelBiaccoRoveri ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfAccidents 81 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 108 .
+
+btp:accident_37 a btp:RoadAccident ;
+    btp:happendInArea btp:irnerio ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfAccidents 102 ;
+    btp:recordedInDistrict btp:santoStefano ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 132 .
+
+btp:accident_38 a btp:RoadAccident ;
+    btp:happendInArea btp:lungoSavena ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfAccidents 38 ;
+    btp:recordedInDistrict btp:savena ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 50 .
+
+btp:accident_39 a btp:RoadAccident ;
+    btp:happendInArea btp:malpighi ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfAccidents 69 ;
+    btp:recordedInDistrict btp:portoSaragozza ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 87 .
+
+btp:accident_4 a btp:RoadAccident ;
+    btp:happendInArea btp:lungoSavena ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfAccidents 23 ;
+    btp:recordedInDistrict btp:savena ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 25 .
+
+btp:accident_40 a btp:RoadAccident ;
+    btp:happendInArea btp:murri ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfAccidents 139 ;
+    btp:recordedInDistrict btp:santoStefano ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 167 .
+
+btp:accident_41 a btp:RoadAccident ;
+    btp:happendInArea btp:viaToscanaS.RuffilloMonteDonato ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfAccidents 30 ;
+    btp:recordedInDistrict btp:savena ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 44 .
+
+btp:accident_42 a btp:RoadAccident ;
+    btp:happendInArea btp:corticellaDozza ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfAccidents 114 ;
+    btp:recordedInDistrict btp:navile ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 166 .
+
+btp:accident_43 a btp:RoadAccident ;
+    btp:happendInArea btp:barca ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfAccidents 76 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno ;
+    btp:totalNumberOfDeath 3 ;
+    btp:totalNumberOfInjuries 97 .
+
+btp:accident_44 a btp:RoadAccident ;
+    btp:happendInArea btp:birraBargellinoLavino ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfAccidents 59 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 98 .
+
+btp:accident_45 a btp:RoadAccident ;
+    btp:happendInArea btp:borgoPanigale ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfAccidents 102 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno ;
+    btp:totalNumberOfDeath 3 ;
+    btp:totalNumberOfInjuries 147 .
+
+btp:accident_46 a btp:RoadAccident ;
+    btp:happendInArea btp:cirenaicaMassarentiScandellara ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfAccidents 172 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 209 .
+
+btp:accident_47 a btp:RoadAccident ;
+    btp:happendInArea btp:galvani ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfAccidents 49 ;
+    btp:recordedInDistrict btp:santoStefano ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 61 .
+
+btp:accident_48 a btp:RoadAccident ;
+    btp:happendInArea btp:marconi ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfAccidents 97 ;
+    btp:recordedInDistrict btp:portoSaragozza ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 114 .
+
+btp:accident_49 a btp:RoadAccident ;
+    btp:happendInArea btp:pontevecchioMazzini ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfAccidents 115 ;
+    btp:recordedInDistrict btp:savena ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 139 .
+
+btp:accident_5 a btp:RoadAccident ;
+    btp:happendInArea btp:malpighi ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfAccidents 63 ;
+    btp:recordedInDistrict btp:portoSaragozza ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 82 .
+
+btp:accident_50 a btp:RoadAccident ;
+    btp:happendInArea btp:sanDonatoNuovo ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfAccidents 52 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale ;
+    btp:totalNumberOfDeath 2 ;
+    btp:totalNumberOfInjuries 77 .
+
+btp:accident_51 a btp:RoadAccident ;
+    btp:happendInArea btp:sanDonatoVecchio ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfAccidents 127 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale ;
+    btp:totalNumberOfDeath 2 ;
+    btp:totalNumberOfInjuries 167 .
+
+btp:accident_52 a btp:RoadAccident ;
+    btp:happendInArea btp:santaViola ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfAccidents 39 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 48 .
+
+btp:accident_53 a btp:RoadAccident ;
+    btp:happendInArea btp:beverara ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfAccidents 56 ;
+    btp:recordedInDistrict btp:navile ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 85 .
+
+btp:accident_54 a btp:RoadAccident ;
+    btp:happendInArea btp:bertaliaNoce ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfAccidents 27 ;
+    btp:recordedInDistrict btp:navile ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 44 .
+
+btp:accident_55 a btp:RoadAccident ;
+    btp:happendInArea btp:cirenaicaMassarentiScandellara ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfAccidents 195 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale ;
+    btp:totalNumberOfDeath 2 ;
+    btp:totalNumberOfInjuries 248 .
+
+btp:accident_56 a btp:RoadAccident ;
+    btp:happendInArea btp:croceDelBiaccoRoveri ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfAccidents 72 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 93 .
+
+btp:accident_57 a btp:RoadAccident ;
+    btp:happendInArea btp:fossoloDueMadonne ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfAccidents 45 ;
+    btp:recordedInDistrict btp:savena ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 55 .
+
+btp:accident_58 a btp:RoadAccident ;
+    btp:happendInArea btp:galvani ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfAccidents 45 ;
+    btp:recordedInDistrict btp:santoStefano ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 52 .
+
+btp:accident_59 a btp:RoadAccident ;
+    btp:happendInArea btp:irnerio ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfAccidents 122 ;
+    btp:recordedInDistrict btp:santoStefano ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 152 .
+
+btp:accident_6 a btp:RoadAccident ;
+    btp:happendInArea btp:murri ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfAccidents 135 ;
+    btp:recordedInDistrict btp:santoStefano ;
+    btp:totalNumberOfDeath 2 ;
+    btp:totalNumberOfInjuries 163 .
+
+btp:accident_60 a btp:RoadAccident ;
+    btp:happendInArea btp:murri ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfAccidents 126 ;
+    btp:recordedInDistrict btp:santoStefano ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 158 .
+
+btp:accident_61 a btp:RoadAccident ;
+    btp:happendInArea btp:corticellaDozza ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfAccidents 110 ;
+    btp:recordedInDistrict btp:navile ;
+    btp:totalNumberOfDeath 3 ;
+    btp:totalNumberOfInjuries 147 .
+
+btp:accident_62 a btp:RoadAccident ;
+    btp:happendInArea btp:barca ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfAccidents 51 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno ;
+    btp:totalNumberOfDeath 2 ;
+    btp:totalNumberOfInjuries 60 .
+
+btp:accident_63 a btp:RoadAccident ;
+    btp:happendInArea btp:bertaliaNoce ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfAccidents 28 ;
+    btp:recordedInDistrict btp:navile ;
+    btp:totalNumberOfDeath 2 ;
+    btp:totalNumberOfInjuries 41 .
+
+btp:accident_64 a btp:RoadAccident ;
+    btp:happendInArea btp:birraBargellinoLavino ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfAccidents 38 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 59 .
+
+btp:accident_65 a btp:RoadAccident ;
+    btp:happendInArea btp:borgoPanigale ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfAccidents 61 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 80 .
+
+btp:accident_66 a btp:RoadAccident ;
+    btp:happendInArea btp:lungoSavena ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfAccidents 11 ;
+    btp:recordedInDistrict btp:savena ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 13 .
+
+btp:accident_67 a btp:RoadAccident ;
+    btp:happendInArea btp:pontevecchioMazzini ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfAccidents 73 ;
+    btp:recordedInDistrict btp:savena ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 84 .
+
+btp:accident_68 a btp:RoadAccident ;
+    btp:happendInArea btp:santaViola ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfAccidents 24 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 29 .
+
+btp:accident_69 a btp:RoadAccident ;
+    btp:happendInArea btp:beverara ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfAccidents 39 ;
+    btp:recordedInDistrict btp:navile ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 56 .
+
+btp:accident_7 a btp:RoadAccident ;
+    btp:happendInArea btp:saragozzaSanLuca ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfAccidents 88 ;
+    btp:recordedInDistrict btp:portoSaragozza ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 107 .
+
+btp:accident_70 a btp:RoadAccident ;
+    btp:happendInArea btp:borgoPanigale ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfAccidents 98 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 136 .
+
+btp:accident_71 a btp:RoadAccident ;
+    btp:happendInArea btp:fossoloDueMadonne ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfAccidents 39 ;
+    btp:recordedInDistrict btp:savena ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 46 .
+
+btp:accident_72 a btp:RoadAccident ;
+    btp:happendInArea btp:galvani ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfAccidents 49 ;
+    btp:recordedInDistrict btp:santoStefano ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 53 .
+
+btp:accident_73 a btp:RoadAccident ;
+    btp:happendInArea btp:malpighi ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfAccidents 63 ;
+    btp:recordedInDistrict btp:portoSaragozza ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 74 .
+
+btp:accident_74 a btp:RoadAccident ;
+    btp:happendInArea btp:corticellaDozza ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfAccidents 109 ;
+    btp:recordedInDistrict btp:navile ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 143 .
+
+btp:accident_75 a btp:RoadAccident ;
+    btp:happendInArea btp:bolognina ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfAccidents 122 ;
+    btp:recordedInDistrict btp:navile ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 158 .
+
+btp:accident_76 a btp:RoadAccident ;
+    btp:happendInArea btp:casteldebolePontelungo ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfAccidents 43 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 51 .
+
+btp:accident_77 a btp:RoadAccident ;
+    btp:happendInArea btp:cirenaicaMassarentiScandellara ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfAccidents 191 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale ;
+    btp:totalNumberOfDeath 4 ;
+    btp:totalNumberOfInjuries 248 .
+
+btp:accident_78 a btp:RoadAccident ;
+    btp:happendInArea btp:fossoloDueMadonne ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfAccidents 36 ;
+    btp:recordedInDistrict btp:savena ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 46 .
+
+btp:accident_79 a btp:RoadAccident ;
+    btp:happendInArea btp:galvani ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfAccidents 61 ;
+    btp:recordedInDistrict btp:santoStefano ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 71 .
+
+btp:accident_8 a btp:RoadAccident ;
+    btp:happendInArea btp:viaToscanaS.RuffilloMonteDonato ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfAccidents 39 ;
+    btp:recordedInDistrict btp:savena ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 43 .
+
+btp:accident_80 a btp:RoadAccident ;
+    btp:happendInArea btp:osservanzaPaderno ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfAccidents 37 ;
+    btp:recordedInDistrict btp:santoStefano ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 42 .
+
+btp:accident_81 a btp:RoadAccident ;
+    btp:happendInArea btp:pontevecchioMazzini ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfAccidents 110 ;
+    btp:recordedInDistrict btp:savena ;
+    btp:totalNumberOfDeath 5 ;
+    btp:totalNumberOfInjuries 123 .
+
+btp:accident_82 a btp:RoadAccident ;
+    btp:happendInArea btp:saffi ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfAccidents 99 ;
+    btp:recordedInDistrict btp:portoSaragozza ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 121 .
+
+btp:accident_83 a btp:RoadAccident ;
+    btp:happendInArea btp:sanDonatoNuovo ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfAccidents 64 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 85 .
+
+btp:accident_84 a btp:RoadAccident ;
+    btp:happendInArea btp:sanDonatoVecchio ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfAccidents 118 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 156 .
+
+btp:accident_85 a btp:RoadAccident ;
+    btp:happendInArea btp:santaViola ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfAccidents 55 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 74 .
+
+btp:accident_86 a btp:RoadAccident ;
+    btp:happendInArea btp:bolognina ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfAccidents 182 ;
+    btp:recordedInDistrict btp:navile ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 222 .
+
+btp:accident_87 a btp:RoadAccident ;
+    btp:happendInArea btp:bertaliaNoce ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfAccidents 60 ;
+    btp:recordedInDistrict btp:navile ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 89 .
+
+btp:accident_88 a btp:RoadAccident ;
+    btp:happendInArea btp:osservanzaPaderno ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfAccidents 40 ;
+    btp:recordedInDistrict btp:santoStefano ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 49 .
+
+btp:accident_89 a btp:RoadAccident ;
+    btp:happendInArea btp:saffi ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfAccidents 94 ;
+    btp:recordedInDistrict btp:portoSaragozza ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 115 .
+
+btp:accident_9 a btp:RoadAccident ;
+    btp:happendInArea btp:lungoSavena ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfAccidents 25 ;
+    btp:recordedInDistrict btp:savena ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 33 .
+
+btp:accident_90 a btp:RoadAccident ;
+    btp:happendInArea btp:corticellaDozza ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfAccidents 141 ;
+    btp:recordedInDistrict btp:navile ;
+    btp:totalNumberOfDeath 2 ;
+    btp:totalNumberOfInjuries 199 .
+
+btp:accident_91 a btp:RoadAccident ;
+    btp:happendInArea btp:bolognina ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfAccidents 150 ;
+    btp:recordedInDistrict btp:navile ;
+    btp:totalNumberOfDeath 2 ;
+    btp:totalNumberOfInjuries 190 .
+
+btp:accident_92 a btp:RoadAccident ;
+    btp:happendInArea btp:barca ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfAccidents 80 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 99 .
+
+btp:accident_93 a btp:RoadAccident ;
+    btp:happendInArea btp:birraBargellinoLavino ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfAccidents 42 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno ;
+    btp:totalNumberOfDeath 2 ;
+    btp:totalNumberOfInjuries 49 .
+
+btp:accident_94 a btp:RoadAccident ;
+    btp:happendInArea btp:borgoPanigale ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfAccidents 93 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno ;
+    btp:totalNumberOfDeath 5 ;
+    btp:totalNumberOfInjuries 132 .
+
+btp:accident_95 a btp:RoadAccident ;
+    btp:happendInArea btp:casteldebolePontelungo ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfAccidents 25 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 35 .
+
+btp:accident_96 a btp:RoadAccident ;
+    btp:happendInArea btp:pontevecchioMazzini ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfAccidents 110 ;
+    btp:recordedInDistrict btp:savena ;
+    btp:totalNumberOfDeath 2 ;
+    btp:totalNumberOfInjuries 136 .
+
+btp:accident_97 a btp:RoadAccident ;
+    btp:happendInArea btp:saffi ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfAccidents 97 ;
+    btp:recordedInDistrict btp:portoSaragozza ;
+    btp:totalNumberOfDeath 1 ;
+    btp:totalNumberOfInjuries 120 .
+
+btp:accident_98 a btp:RoadAccident ;
+    btp:happendInArea btp:sanDonatoNuovo ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfAccidents 55 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 74 .
+
+btp:accident_99 a btp:RoadAccident ;
+    btp:happendInArea btp:saragozzaSanLuca ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfAccidents 93 ;
+    btp:recordedInDistrict btp:portoSaragozza ;
+    btp:totalNumberOfDeath 0 ;
+    btp:totalNumberOfInjuries 114 .
+
+btp:cyclistAccident_0 a btp:Cyclist ;
+    btp:happendInArea btp:casteldebolePontelungo ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 1 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:cyclistAccident_1 a btp:Cyclist ;
+    btp:happendInArea btp:croceDelBiaccoRoveri ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 7 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:cyclistAccident_10 a btp:Cyclist ;
+    btp:happendInArea btp:malpighi ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 7 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:cyclistAccident_100 a btp:Cyclist ;
+    btp:happendInArea btp:viaToscanaS.RuffilloMonteDonato ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 2 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:cyclistAccident_101 a btp:Cyclist ;
+    btp:happendInArea btp:casteldebolePontelungo ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 4 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:cyclistAccident_102 a btp:Cyclist ;
+    btp:happendInArea btp:croceDelBiaccoRoveri ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 4 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:cyclistAccident_103 a btp:Cyclist ;
+    btp:happendInArea btp:irnerio ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfCyclistsDeath 1 ;
+    btp:numberOfCyclistsInjuries 14 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:cyclistAccident_104 a btp:Cyclist ;
+    btp:happendInArea btp:malpighi ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 7 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:cyclistAccident_105 a btp:Cyclist ;
+    btp:happendInArea btp:marconi ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 12 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:cyclistAccident_106 a btp:Cyclist ;
+    btp:happendInArea btp:murri ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 20 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:cyclistAccident_107 a btp:Cyclist ;
+    btp:happendInArea btp:osservanzaPaderno ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfCyclistsDeath 1 ;
+    btp:numberOfCyclistsInjuries 3 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:cyclistAccident_108 a btp:Cyclist ;
+    btp:happendInArea btp:saffi ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 11 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:cyclistAccident_109 a btp:Cyclist ;
+    btp:happendInArea btp:sanDonatoVecchio ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 11 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:cyclistAccident_11 a btp:Cyclist ;
+    btp:happendInArea btp:marconi ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 10 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:cyclistAccident_110 a btp:Cyclist ;
+    btp:happendInArea btp:saragozzaSanLuca ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfCyclistsDeath 1 ;
+    btp:numberOfCyclistsInjuries 12 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:cyclistAccident_111 a btp:Cyclist ;
+    btp:happendInArea btp:viaToscanaS.RuffilloMonteDonato ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 1 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:cyclistAccident_112 a btp:Cyclist ;
+    btp:happendInArea btp:corticellaDozza ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 8 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:cyclistAccident_113 a btp:Cyclist ;
+    btp:happendInArea btp:bolognina ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 26 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:cyclistAccident_114 a btp:Cyclist ;
+    btp:happendInArea btp:barca ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 13 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:cyclistAccident_115 a btp:Cyclist ;
+    btp:happendInArea btp:birraBargellinoLavino ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 4 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:cyclistAccident_116 a btp:Cyclist ;
+    btp:happendInArea btp:casteldebolePontelungo ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 5 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:cyclistAccident_117 a btp:Cyclist ;
+    btp:happendInArea btp:lungoSavena ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 2 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:cyclistAccident_118 a btp:Cyclist ;
+    btp:happendInArea btp:marconi ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 28 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:cyclistAccident_119 a btp:Cyclist ;
+    btp:happendInArea btp:osservanzaPaderno ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 5 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:cyclistAccident_12 a btp:Cyclist ;
+    btp:happendInArea btp:osservanzaPaderno ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 5 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:cyclistAccident_120 a btp:Cyclist ;
+    btp:happendInArea btp:barca ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 16 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:cyclistAccident_121 a btp:Cyclist ;
+    btp:happendInArea btp:borgoPanigale ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfCyclistsDeath 1 ;
+    btp:numberOfCyclistsInjuries 9 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:cyclistAccident_122 a btp:Cyclist ;
+    btp:happendInArea btp:marconi ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 20 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:cyclistAccident_123 a btp:Cyclist ;
+    btp:happendInArea btp:saragozzaSanLuca ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 26 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:cyclistAccident_124 a btp:Cyclist ;
+    btp:happendInArea btp:beverara ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 11 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:cyclistAccident_13 a btp:Cyclist ;
+    btp:happendInArea btp:sanDonatoVecchio ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 20 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:cyclistAccident_14 a btp:Cyclist ;
+    btp:happendInArea btp:santaViola ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 3 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:cyclistAccident_15 a btp:Cyclist ;
+    btp:happendInArea btp:beverara ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 6 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:cyclistAccident_16 a btp:Cyclist ;
+    btp:happendInArea btp:bolognina ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 22 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:cyclistAccident_17 a btp:Cyclist ;
+    btp:happendInArea btp:cirenaicaMassarentiScandellara ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 24 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:cyclistAccident_18 a btp:Cyclist ;
+    btp:happendInArea btp:fossoloDueMadonne ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 5 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:cyclistAccident_19 a btp:Cyclist ;
+    btp:happendInArea btp:galvani ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 7 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:cyclistAccident_2 a btp:Cyclist ;
+    btp:happendInArea btp:fossoloDueMadonne ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 5 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:cyclistAccident_20 a btp:Cyclist ;
+    btp:happendInArea btp:sanDonatoNuovo ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 5 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:cyclistAccident_21 a btp:Cyclist ;
+    btp:happendInArea btp:bertaliaNoce ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 3 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:cyclistAccident_22 a btp:Cyclist ;
+    btp:happendInArea btp:cirenaicaMassarentiScandellara ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 26 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:cyclistAccident_23 a btp:Cyclist ;
+    btp:happendInArea btp:croceDelBiaccoRoveri ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 7 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:cyclistAccident_24 a btp:Cyclist ;
+    btp:happendInArea btp:irnerio ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 30 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:cyclistAccident_25 a btp:Cyclist ;
+    btp:happendInArea btp:murri ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 22 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:cyclistAccident_26 a btp:Cyclist ;
+    btp:happendInArea btp:pontevecchioMazzini ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 22 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:cyclistAccident_27 a btp:Cyclist ;
+    btp:happendInArea btp:saffi ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 15 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:cyclistAccident_28 a btp:Cyclist ;
+    btp:happendInArea btp:sanDonatoNuovo ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 6 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:cyclistAccident_29 a btp:Cyclist ;
+    btp:happendInArea btp:sanDonatoVecchio ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 19 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:cyclistAccident_3 a btp:Cyclist ;
+    btp:happendInArea btp:irnerio ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 26 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:cyclistAccident_30 a btp:Cyclist ;
+    btp:happendInArea btp:santaViola ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 6 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:cyclistAccident_31 a btp:Cyclist ;
+    btp:happendInArea btp:saragozzaSanLuca ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfCyclistsDeath 1 ;
+    btp:numberOfCyclistsInjuries 21 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:cyclistAccident_32 a btp:Cyclist ;
+    btp:happendInArea btp:viaToscanaS.RuffilloMonteDonato ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 4 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:cyclistAccident_33 a btp:Cyclist ;
+    btp:happendInArea btp:beverara ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 5 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:cyclistAccident_34 a btp:Cyclist ;
+    btp:happendInArea btp:bertaliaNoce ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 3 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:cyclistAccident_35 a btp:Cyclist ;
+    btp:happendInArea btp:birraBargellinoLavino ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 4 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:cyclistAccident_36 a btp:Cyclist ;
+    btp:happendInArea btp:croceDelBiaccoRoveri ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 6 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:cyclistAccident_37 a btp:Cyclist ;
+    btp:happendInArea btp:irnerio ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 27 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:cyclistAccident_38 a btp:Cyclist ;
+    btp:happendInArea btp:lungoSavena ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 4 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:cyclistAccident_39 a btp:Cyclist ;
+    btp:happendInArea btp:malpighi ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 15 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:cyclistAccident_4 a btp:Cyclist ;
+    btp:happendInArea btp:lungoSavena ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 4 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:cyclistAccident_40 a btp:Cyclist ;
+    btp:happendInArea btp:murri ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 28 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:cyclistAccident_41 a btp:Cyclist ;
+    btp:happendInArea btp:viaToscanaS.RuffilloMonteDonato ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 5 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:cyclistAccident_42 a btp:Cyclist ;
+    btp:happendInArea btp:corticellaDozza ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfCyclistsDeath 1 ;
+    btp:numberOfCyclistsInjuries 7 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:cyclistAccident_43 a btp:Cyclist ;
+    btp:happendInArea btp:barca ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfCyclistsDeath 1 ;
+    btp:numberOfCyclistsInjuries 4 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:cyclistAccident_44 a btp:Cyclist ;
+    btp:happendInArea btp:birraBargellinoLavino ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 2 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:cyclistAccident_45 a btp:Cyclist ;
+    btp:happendInArea btp:borgoPanigale ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 3 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:cyclistAccident_46 a btp:Cyclist ;
+    btp:happendInArea btp:cirenaicaMassarentiScandellara ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 30 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:cyclistAccident_47 a btp:Cyclist ;
+    btp:happendInArea btp:galvani ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 8 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:cyclistAccident_48 a btp:Cyclist ;
+    btp:happendInArea btp:marconi ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 16 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:cyclistAccident_49 a btp:Cyclist ;
+    btp:happendInArea btp:pontevecchioMazzini ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 17 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:cyclistAccident_5 a btp:Cyclist ;
+    btp:happendInArea btp:malpighi ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 6 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:cyclistAccident_50 a btp:Cyclist ;
+    btp:happendInArea btp:sanDonatoNuovo ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfCyclistsDeath 1 ;
+    btp:numberOfCyclistsInjuries 6 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:cyclistAccident_51 a btp:Cyclist ;
+    btp:happendInArea btp:sanDonatoVecchio ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 24 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:cyclistAccident_52 a btp:Cyclist ;
+    btp:happendInArea btp:santaViola ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 5 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:cyclistAccident_53 a btp:Cyclist ;
+    btp:happendInArea btp:beverara ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 2 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:cyclistAccident_54 a btp:Cyclist ;
+    btp:happendInArea btp:bertaliaNoce ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 2 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:cyclistAccident_55 a btp:Cyclist ;
+    btp:happendInArea btp:cirenaicaMassarentiScandellara ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 25 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:cyclistAccident_56 a btp:Cyclist ;
+    btp:happendInArea btp:croceDelBiaccoRoveri ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 7 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:cyclistAccident_57 a btp:Cyclist ;
+    btp:happendInArea btp:fossoloDueMadonne ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 8 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:cyclistAccident_58 a btp:Cyclist ;
+    btp:happendInArea btp:galvani ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 8 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:cyclistAccident_59 a btp:Cyclist ;
+    btp:happendInArea btp:irnerio ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 29 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:cyclistAccident_6 a btp:Cyclist ;
+    btp:happendInArea btp:murri ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfCyclistsDeath 1 ;
+    btp:numberOfCyclistsInjuries 20 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:cyclistAccident_60 a btp:Cyclist ;
+    btp:happendInArea btp:murri ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 17 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:cyclistAccident_61 a btp:Cyclist ;
+    btp:happendInArea btp:corticellaDozza ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfCyclistsDeath 2 ;
+    btp:numberOfCyclistsInjuries 7 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:cyclistAccident_62 a btp:Cyclist ;
+    btp:happendInArea btp:barca ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 10 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:cyclistAccident_63 a btp:Cyclist ;
+    btp:happendInArea btp:bertaliaNoce ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 2 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:cyclistAccident_64 a btp:Cyclist ;
+    btp:happendInArea btp:birraBargellinoLavino ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 3 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:cyclistAccident_65 a btp:Cyclist ;
+    btp:happendInArea btp:borgoPanigale ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 10 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:cyclistAccident_66 a btp:Cyclist ;
+    btp:happendInArea btp:lungoSavena ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 1 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:cyclistAccident_67 a btp:Cyclist ;
+    btp:happendInArea btp:pontevecchioMazzini ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 18 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:cyclistAccident_68 a btp:Cyclist ;
+    btp:happendInArea btp:santaViola ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 2 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:cyclistAccident_69 a btp:Cyclist ;
+    btp:happendInArea btp:beverara ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 3 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:cyclistAccident_7 a btp:Cyclist ;
+    btp:happendInArea btp:saragozzaSanLuca ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfCyclistsDeath 1 ;
+    btp:numberOfCyclistsInjuries 15 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:cyclistAccident_70 a btp:Cyclist ;
+    btp:happendInArea btp:borgoPanigale ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 9 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:cyclistAccident_71 a btp:Cyclist ;
+    btp:happendInArea btp:fossoloDueMadonne ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 5 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:cyclistAccident_72 a btp:Cyclist ;
+    btp:happendInArea btp:galvani ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 6 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:cyclistAccident_73 a btp:Cyclist ;
+    btp:happendInArea btp:malpighi ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 13 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:cyclistAccident_74 a btp:Cyclist ;
+    btp:happendInArea btp:corticellaDozza ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 17 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:cyclistAccident_75 a btp:Cyclist ;
+    btp:happendInArea btp:bolognina ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 24 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:cyclistAccident_76 a btp:Cyclist ;
+    btp:happendInArea btp:casteldebolePontelungo ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 6 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:cyclistAccident_77 a btp:Cyclist ;
+    btp:happendInArea btp:cirenaicaMassarentiScandellara ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 29 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:cyclistAccident_78 a btp:Cyclist ;
+    btp:happendInArea btp:fossoloDueMadonne ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 2 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:cyclistAccident_79 a btp:Cyclist ;
+    btp:happendInArea btp:galvani ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 14 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:cyclistAccident_8 a btp:Cyclist ;
+    btp:happendInArea btp:viaToscanaS.RuffilloMonteDonato ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 0 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:cyclistAccident_80 a btp:Cyclist ;
+    btp:happendInArea btp:osservanzaPaderno ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 6 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:cyclistAccident_81 a btp:Cyclist ;
+    btp:happendInArea btp:pontevecchioMazzini ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 13 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:cyclistAccident_82 a btp:Cyclist ;
+    btp:happendInArea btp:saffi ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 17 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:cyclistAccident_83 a btp:Cyclist ;
+    btp:happendInArea btp:sanDonatoNuovo ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 9 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:cyclistAccident_84 a btp:Cyclist ;
+    btp:happendInArea btp:sanDonatoVecchio ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 19 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:cyclistAccident_85 a btp:Cyclist ;
+    btp:happendInArea btp:santaViola ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 5 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:cyclistAccident_86 a btp:Cyclist ;
+    btp:happendInArea btp:bolognina ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 40 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:cyclistAccident_87 a btp:Cyclist ;
+    btp:happendInArea btp:bertaliaNoce ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 5 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:cyclistAccident_88 a btp:Cyclist ;
+    btp:happendInArea btp:osservanzaPaderno ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 5 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:cyclistAccident_89 a btp:Cyclist ;
+    btp:happendInArea btp:saffi ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 15 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:cyclistAccident_9 a btp:Cyclist ;
+    btp:happendInArea btp:lungoSavena ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 5 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:cyclistAccident_90 a btp:Cyclist ;
+    btp:happendInArea btp:corticellaDozza ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 13 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:cyclistAccident_91 a btp:Cyclist ;
+    btp:happendInArea btp:bolognina ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 26 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:cyclistAccident_92 a btp:Cyclist ;
+    btp:happendInArea btp:barca ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 5 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:cyclistAccident_93 a btp:Cyclist ;
+    btp:happendInArea btp:birraBargellinoLavino ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 3 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:cyclistAccident_94 a btp:Cyclist ;
+    btp:happendInArea btp:borgoPanigale ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 5 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:cyclistAccident_95 a btp:Cyclist ;
+    btp:happendInArea btp:casteldebolePontelungo ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 3 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:cyclistAccident_96 a btp:Cyclist ;
+    btp:happendInArea btp:pontevecchioMazzini ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 20 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:cyclistAccident_97 a btp:Cyclist ;
+    btp:happendInArea btp:saffi ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 16 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:cyclistAccident_98 a btp:Cyclist ;
+    btp:happendInArea btp:sanDonatoNuovo ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 6 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:cyclistAccident_99 a btp:Cyclist ;
+    btp:happendInArea btp:saragozzaSanLuca ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfCyclistsDeath 0 ;
+    btp:numberOfCyclistsInjuries 21 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:driverAccident_0 a btp:Driver ;
+    btp:happendInArea btp:casteldebolePontelungo ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 22 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:driverAccident_1 a btp:Driver ;
+    btp:happendInArea btp:croceDelBiaccoRoveri ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 53 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:driverAccident_10 a btp:Driver ;
+    btp:happendInArea btp:malpighi ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 4 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:driverAccident_100 a btp:Driver ;
+    btp:happendInArea btp:viaToscanaS.RuffilloMonteDonato ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 18 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:driverAccident_101 a btp:Driver ;
+    btp:happendInArea btp:casteldebolePontelungo ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 13 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:driverAccident_102 a btp:Driver ;
+    btp:happendInArea btp:croceDelBiaccoRoveri ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 35 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:driverAccident_103 a btp:Driver ;
+    btp:happendInArea btp:irnerio ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 19 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:driverAccident_104 a btp:Driver ;
+    btp:happendInArea btp:malpighi ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 6 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:driverAccident_105 a btp:Driver ;
+    btp:happendInArea btp:marconi ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 9 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:driverAccident_106 a btp:Driver ;
+    btp:happendInArea btp:murri ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 26 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:driverAccident_107 a btp:Driver ;
+    btp:happendInArea btp:osservanzaPaderno ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 23 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:driverAccident_108 a btp:Driver ;
+    btp:happendInArea btp:saffi ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 16 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:driverAccident_109 a btp:Driver ;
+    btp:happendInArea btp:sanDonatoVecchio ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 41 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:driverAccident_11 a btp:Driver ;
+    btp:happendInArea btp:marconi ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 12 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:driverAccident_110 a btp:Driver ;
+    btp:happendInArea btp:saragozzaSanLuca ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 10 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:driverAccident_111 a btp:Driver ;
+    btp:happendInArea btp:viaToscanaS.RuffilloMonteDonato ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 7 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:driverAccident_112 a btp:Driver ;
+    btp:happendInArea btp:corticellaDozza ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 64 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:driverAccident_113 a btp:Driver ;
+    btp:happendInArea btp:bolognina ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 43 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:driverAccident_114 a btp:Driver ;
+    btp:happendInArea btp:barca ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 30 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:driverAccident_115 a btp:Driver ;
+    btp:happendInArea btp:birraBargellinoLavino ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 69 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:driverAccident_116 a btp:Driver ;
+    btp:happendInArea btp:casteldebolePontelungo ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 11 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:driverAccident_117 a btp:Driver ;
+    btp:happendInArea btp:lungoSavena ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfDriverDeath 2 ;
+    btp:numberOfDriverInjuries 17 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:driverAccident_118 a btp:Driver ;
+    btp:happendInArea btp:marconi ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 9 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:driverAccident_119 a btp:Driver ;
+    btp:happendInArea btp:osservanzaPaderno ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 14 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:driverAccident_12 a btp:Driver ;
+    btp:happendInArea btp:osservanzaPaderno ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 42 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:driverAccident_120 a btp:Driver ;
+    btp:happendInArea btp:barca ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 45 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:driverAccident_121 a btp:Driver ;
+    btp:happendInArea btp:borgoPanigale ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfDriverDeath 1 ;
+    btp:numberOfDriverInjuries 106 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:driverAccident_122 a btp:Driver ;
+    btp:happendInArea btp:marconi ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 9 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:driverAccident_123 a btp:Driver ;
+    btp:happendInArea btp:saragozzaSanLuca ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 21 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:driverAccident_124 a btp:Driver ;
+    btp:happendInArea btp:beverara ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 19 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:driverAccident_13 a btp:Driver ;
+    btp:happendInArea btp:sanDonatoVecchio ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 112 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:driverAccident_14 a btp:Driver ;
+    btp:happendInArea btp:santaViola ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 12 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:driverAccident_15 a btp:Driver ;
+    btp:happendInArea btp:beverara ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 31 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:driverAccident_16 a btp:Driver ;
+    btp:happendInArea btp:bolognina ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 47 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:driverAccident_17 a btp:Driver ;
+    btp:happendInArea btp:cirenaicaMassarentiScandellara ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfDriverDeath 1 ;
+    btp:numberOfDriverInjuries 39 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:driverAccident_18 a btp:Driver ;
+    btp:happendInArea btp:fossoloDueMadonne ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 15 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:driverAccident_19 a btp:Driver ;
+    btp:happendInArea btp:galvani ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 4 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:driverAccident_2 a btp:Driver ;
+    btp:happendInArea btp:fossoloDueMadonne ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 24 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:driverAccident_20 a btp:Driver ;
+    btp:happendInArea btp:sanDonatoNuovo ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 36 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:driverAccident_21 a btp:Driver ;
+    btp:happendInArea btp:bertaliaNoce ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 20 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:driverAccident_22 a btp:Driver ;
+    btp:happendInArea btp:cirenaicaMassarentiScandellara ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 59 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:driverAccident_23 a btp:Driver ;
+    btp:happendInArea btp:croceDelBiaccoRoveri ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 43 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:driverAccident_24 a btp:Driver ;
+    btp:happendInArea btp:irnerio ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 24 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:driverAccident_25 a btp:Driver ;
+    btp:happendInArea btp:murri ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 25 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:driverAccident_26 a btp:Driver ;
+    btp:happendInArea btp:pontevecchioMazzini ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 44 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:driverAccident_27 a btp:Driver ;
+    btp:happendInArea btp:saffi ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 42 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:driverAccident_28 a btp:Driver ;
+    btp:happendInArea btp:sanDonatoNuovo ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 48 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:driverAccident_29 a btp:Driver ;
+    btp:happendInArea btp:sanDonatoVecchio ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfDriverDeath 2 ;
+    btp:numberOfDriverInjuries 93 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:driverAccident_3 a btp:Driver ;
+    btp:happendInArea btp:irnerio ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 21 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:driverAccident_30 a btp:Driver ;
+    btp:happendInArea btp:santaViola ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 17 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:driverAccident_31 a btp:Driver ;
+    btp:happendInArea btp:saragozzaSanLuca ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfDriverDeath 1 ;
+    btp:numberOfDriverInjuries 19 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:driverAccident_32 a btp:Driver ;
+    btp:happendInArea btp:viaToscanaS.RuffilloMonteDonato ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 16 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:driverAccident_33 a btp:Driver ;
+    btp:happendInArea btp:beverara ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 37 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:driverAccident_34 a btp:Driver ;
+    btp:happendInArea btp:bertaliaNoce ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 36 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:driverAccident_35 a btp:Driver ;
+    btp:happendInArea btp:birraBargellinoLavino ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 52 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:driverAccident_36 a btp:Driver ;
+    btp:happendInArea btp:croceDelBiaccoRoveri ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfDriverDeath 1 ;
+    btp:numberOfDriverInjuries 63 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:driverAccident_37 a btp:Driver ;
+    btp:happendInArea btp:irnerio ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 18 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:driverAccident_38 a btp:Driver ;
+    btp:happendInArea btp:lungoSavena ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 20 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:driverAccident_39 a btp:Driver ;
+    btp:happendInArea btp:malpighi ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 12 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:driverAccident_4 a btp:Driver ;
+    btp:happendInArea btp:lungoSavena ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 8 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:driverAccident_40 a btp:Driver ;
+    btp:happendInArea btp:murri ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfDriverDeath 1 ;
+    btp:numberOfDriverInjuries 23 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:driverAccident_41 a btp:Driver ;
+    btp:happendInArea btp:viaToscanaS.RuffilloMonteDonato ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 13 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:driverAccident_42 a btp:Driver ;
+    btp:happendInArea btp:corticellaDozza ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 89 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:driverAccident_43 a btp:Driver ;
+    btp:happendInArea btp:barca ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 44 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:driverAccident_44 a btp:Driver ;
+    btp:happendInArea btp:birraBargellinoLavino ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 72 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:driverAccident_45 a btp:Driver ;
+    btp:happendInArea btp:borgoPanigale ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 92 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:driverAccident_46 a btp:Driver ;
+    btp:happendInArea btp:cirenaicaMassarentiScandellara ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 41 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:driverAccident_47 a btp:Driver ;
+    btp:happendInArea btp:galvani ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 11 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:driverAccident_48 a btp:Driver ;
+    btp:happendInArea btp:marconi ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 21 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:driverAccident_49 a btp:Driver ;
+    btp:happendInArea btp:pontevecchioMazzini ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 51 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:driverAccident_5 a btp:Driver ;
+    btp:happendInArea btp:malpighi ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 12 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:driverAccident_50 a btp:Driver ;
+    btp:happendInArea btp:sanDonatoNuovo ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 44 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:driverAccident_51 a btp:Driver ;
+    btp:happendInArea btp:sanDonatoVecchio ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 71 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:driverAccident_52 a btp:Driver ;
+    btp:happendInArea btp:santaViola ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 14 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:driverAccident_53 a btp:Driver ;
+    btp:happendInArea btp:beverara ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 53 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:driverAccident_54 a btp:Driver ;
+    btp:happendInArea btp:bertaliaNoce ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 26 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:driverAccident_55 a btp:Driver ;
+    btp:happendInArea btp:cirenaicaMassarentiScandellara ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfDriverDeath 1 ;
+    btp:numberOfDriverInjuries 83 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:driverAccident_56 a btp:Driver ;
+    btp:happendInArea btp:croceDelBiaccoRoveri ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 49 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:driverAccident_57 a btp:Driver ;
+    btp:happendInArea btp:fossoloDueMadonne ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 21 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:driverAccident_58 a btp:Driver ;
+    btp:happendInArea btp:galvani ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 3 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:driverAccident_59 a btp:Driver ;
+    btp:happendInArea btp:irnerio ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 25 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:driverAccident_6 a btp:Driver ;
+    btp:happendInArea btp:murri ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfDriverDeath 1 ;
+    btp:numberOfDriverInjuries 46 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:driverAccident_60 a btp:Driver ;
+    btp:happendInArea btp:murri ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 34 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:driverAccident_61 a btp:Driver ;
+    btp:happendInArea btp:corticellaDozza ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfDriverDeath 1 ;
+    btp:numberOfDriverInjuries 77 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:driverAccident_62 a btp:Driver ;
+    btp:happendInArea btp:barca ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 24 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:driverAccident_63 a btp:Driver ;
+    btp:happendInArea btp:bertaliaNoce ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 22 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:driverAccident_64 a btp:Driver ;
+    btp:happendInArea btp:birraBargellinoLavino ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 43 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:driverAccident_65 a btp:Driver ;
+    btp:happendInArea btp:borgoPanigale ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 45 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:driverAccident_66 a btp:Driver ;
+    btp:happendInArea btp:lungoSavena ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 3 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:driverAccident_67 a btp:Driver ;
+    btp:happendInArea btp:pontevecchioMazzini ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 28 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:driverAccident_68 a btp:Driver ;
+    btp:happendInArea btp:santaViola ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 13 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:driverAccident_69 a btp:Driver ;
+    btp:happendInArea btp:beverara ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 29 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:driverAccident_7 a btp:Driver ;
+    btp:happendInArea btp:saragozzaSanLuca ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 22 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:driverAccident_70 a btp:Driver ;
+    btp:happendInArea btp:borgoPanigale ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 92 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:driverAccident_71 a btp:Driver ;
+    btp:happendInArea btp:fossoloDueMadonne ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 15 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:driverAccident_72 a btp:Driver ;
+    btp:happendInArea btp:galvani ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 6 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:driverAccident_73 a btp:Driver ;
+    btp:happendInArea btp:malpighi ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 11 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:driverAccident_74 a btp:Driver ;
+    btp:happendInArea btp:corticellaDozza ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 60 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:driverAccident_75 a btp:Driver ;
+    btp:happendInArea btp:bolognina ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 54 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:driverAccident_76 a btp:Driver ;
+    btp:happendInArea btp:casteldebolePontelungo ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 18 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:driverAccident_77 a btp:Driver ;
+    btp:happendInArea btp:cirenaicaMassarentiScandellara ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 84 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:driverAccident_78 a btp:Driver ;
+    btp:happendInArea btp:fossoloDueMadonne ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 17 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:driverAccident_79 a btp:Driver ;
+    btp:happendInArea btp:galvani ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 10 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:driverAccident_8 a btp:Driver ;
+    btp:happendInArea btp:viaToscanaS.RuffilloMonteDonato ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 15 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:driverAccident_80 a btp:Driver ;
+    btp:happendInArea btp:osservanzaPaderno ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 8 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:driverAccident_81 a btp:Driver ;
+    btp:happendInArea btp:pontevecchioMazzini ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfDriverDeath 4 ;
+    btp:numberOfDriverInjuries 36 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:driverAccident_82 a btp:Driver ;
+    btp:happendInArea btp:saffi ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 42 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:driverAccident_83 a btp:Driver ;
+    btp:happendInArea btp:sanDonatoNuovo ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 37 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:driverAccident_84 a btp:Driver ;
+    btp:happendInArea btp:sanDonatoVecchio ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 81 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:driverAccident_85 a btp:Driver ;
+    btp:happendInArea btp:santaViola ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 30 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:driverAccident_86 a btp:Driver ;
+    btp:happendInArea btp:bolognina ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 57 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:driverAccident_87 a btp:Driver ;
+    btp:happendInArea btp:bertaliaNoce ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 58 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:driverAccident_88 a btp:Driver ;
+    btp:happendInArea btp:osservanzaPaderno ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 20 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:driverAccident_89 a btp:Driver ;
+    btp:happendInArea btp:saffi ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 41 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:driverAccident_9 a btp:Driver ;
+    btp:happendInArea btp:lungoSavena ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 13 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:driverAccident_90 a btp:Driver ;
+    btp:happendInArea btp:corticellaDozza ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 117 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:driverAccident_91 a btp:Driver ;
+    btp:happendInArea btp:bolognina ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 59 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:driverAccident_92 a btp:Driver ;
+    btp:happendInArea btp:barca ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 48 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:driverAccident_93 a btp:Driver ;
+    btp:happendInArea btp:birraBargellinoLavino ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 25 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:driverAccident_94 a btp:Driver ;
+    btp:happendInArea btp:borgoPanigale ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfDriverDeath 2 ;
+    btp:numberOfDriverInjuries 77 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:driverAccident_95 a btp:Driver ;
+    btp:happendInArea btp:casteldebolePontelungo ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 16 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:driverAccident_96 a btp:Driver ;
+    btp:happendInArea btp:pontevecchioMazzini ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfDriverDeath 1 ;
+    btp:numberOfDriverInjuries 53 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:driverAccident_97 a btp:Driver ;
+    btp:happendInArea btp:saffi ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 48 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:driverAccident_98 a btp:Driver ;
+    btp:happendInArea btp:sanDonatoNuovo ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 40 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:driverAccident_99 a btp:Driver ;
+    btp:happendInArea btp:saragozzaSanLuca ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfDriverDeath 0 ;
+    btp:numberOfDriverInjuries 26 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:happendInArea a owl:ObjectProperty .
+
+btp:hasAccidentYear a owl:ObjectProperty .
+
+btp:hasYear a owl:DatatypeProperty .
+
+btp:motorcyclistAccident_0 a btp:Motorcyclist ;
+    btp:happendInArea btp:casteldebolePontelungo ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfMotorcyclistsDeath 2 ;
+    btp:numberOfMotorcyclistsInjuries 8 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:motorcyclistAccident_1 a btp:Motorcyclist ;
+    btp:happendInArea btp:croceDelBiaccoRoveri ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 21 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:motorcyclistAccident_10 a btp:Motorcyclist ;
+    btp:happendInArea btp:malpighi ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 33 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:motorcyclistAccident_100 a btp:Motorcyclist ;
+    btp:happendInArea btp:viaToscanaS.RuffilloMonteDonato ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 21 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:motorcyclistAccident_101 a btp:Motorcyclist ;
+    btp:happendInArea btp:casteldebolePontelungo ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 7 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:motorcyclistAccident_102 a btp:Motorcyclist ;
+    btp:happendInArea btp:croceDelBiaccoRoveri ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 10 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:motorcyclistAccident_103 a btp:Motorcyclist ;
+    btp:happendInArea btp:irnerio ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 21 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:motorcyclistAccident_104 a btp:Motorcyclist ;
+    btp:happendInArea btp:malpighi ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 16 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:motorcyclistAccident_105 a btp:Motorcyclist ;
+    btp:happendInArea btp:marconi ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 26 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:motorcyclistAccident_106 a btp:Motorcyclist ;
+    btp:happendInArea btp:murri ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfMotorcyclistsDeath 1 ;
+    btp:numberOfMotorcyclistsInjuries 58 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:motorcyclistAccident_107 a btp:Motorcyclist ;
+    btp:happendInArea btp:osservanzaPaderno ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 9 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:motorcyclistAccident_108 a btp:Motorcyclist ;
+    btp:happendInArea btp:saffi ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 19 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:motorcyclistAccident_109 a btp:Motorcyclist ;
+    btp:happendInArea btp:sanDonatoVecchio ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 25 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:motorcyclistAccident_11 a btp:Motorcyclist ;
+    btp:happendInArea btp:marconi ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 29 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:motorcyclistAccident_110 a btp:Motorcyclist ;
+    btp:happendInArea btp:saragozzaSanLuca ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 28 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:motorcyclistAccident_111 a btp:Motorcyclist ;
+    btp:happendInArea btp:viaToscanaS.RuffilloMonteDonato ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 11 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:motorcyclistAccident_112 a btp:Motorcyclist ;
+    btp:happendInArea btp:corticellaDozza ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 25 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:motorcyclistAccident_113 a btp:Motorcyclist ;
+    btp:happendInArea btp:bolognina ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 38 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:motorcyclistAccident_114 a btp:Motorcyclist ;
+    btp:happendInArea btp:barca ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 30 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:motorcyclistAccident_115 a btp:Motorcyclist ;
+    btp:happendInArea btp:birraBargellinoLavino ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 12 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:motorcyclistAccident_116 a btp:Motorcyclist ;
+    btp:happendInArea btp:casteldebolePontelungo ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 10 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:motorcyclistAccident_117 a btp:Motorcyclist ;
+    btp:happendInArea btp:lungoSavena ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 10 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:motorcyclistAccident_118 a btp:Motorcyclist ;
+    btp:happendInArea btp:marconi ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 24 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:motorcyclistAccident_119 a btp:Motorcyclist ;
+    btp:happendInArea btp:osservanzaPaderno ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 23 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:motorcyclistAccident_12 a btp:Motorcyclist ;
+    btp:happendInArea btp:osservanzaPaderno ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 19 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:motorcyclistAccident_120 a btp:Motorcyclist ;
+    btp:happendInArea btp:barca ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfMotorcyclistsDeath 1 ;
+    btp:numberOfMotorcyclistsInjuries 29 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:motorcyclistAccident_121 a btp:Motorcyclist ;
+    btp:happendInArea btp:borgoPanigale ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfMotorcyclistsDeath 3 ;
+    btp:numberOfMotorcyclistsInjuries 36 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:motorcyclistAccident_122 a btp:Motorcyclist ;
+    btp:happendInArea btp:marconi ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 39 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:motorcyclistAccident_123 a btp:Motorcyclist ;
+    btp:happendInArea btp:saragozzaSanLuca ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 47 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:motorcyclistAccident_124 a btp:Motorcyclist ;
+    btp:happendInArea btp:beverara ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 18 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:motorcyclistAccident_13 a btp:Motorcyclist ;
+    btp:happendInArea btp:sanDonatoVecchio ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfMotorcyclistsDeath 1 ;
+    btp:numberOfMotorcyclistsInjuries 39 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:motorcyclistAccident_14 a btp:Motorcyclist ;
+    btp:happendInArea btp:santaViola ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 21 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:motorcyclistAccident_15 a btp:Motorcyclist ;
+    btp:happendInArea btp:beverara ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 20 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:motorcyclistAccident_16 a btp:Motorcyclist ;
+    btp:happendInArea btp:bolognina ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfMotorcyclistsDeath 1 ;
+    btp:numberOfMotorcyclistsInjuries 48 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:motorcyclistAccident_17 a btp:Motorcyclist ;
+    btp:happendInArea btp:cirenaicaMassarentiScandellara ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 62 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:motorcyclistAccident_18 a btp:Motorcyclist ;
+    btp:happendInArea btp:fossoloDueMadonne ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 11 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:motorcyclistAccident_19 a btp:Motorcyclist ;
+    btp:happendInArea btp:galvani ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 25 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:motorcyclistAccident_2 a btp:Motorcyclist ;
+    btp:happendInArea btp:fossoloDueMadonne ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 14 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:motorcyclistAccident_20 a btp:Motorcyclist ;
+    btp:happendInArea btp:sanDonatoNuovo ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 15 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:motorcyclistAccident_21 a btp:Motorcyclist ;
+    btp:happendInArea btp:bertaliaNoce ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 13 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:motorcyclistAccident_22 a btp:Motorcyclist ;
+    btp:happendInArea btp:cirenaicaMassarentiScandellara ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 90 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:motorcyclistAccident_23 a btp:Motorcyclist ;
+    btp:happendInArea btp:croceDelBiaccoRoveri ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfMotorcyclistsDeath 1 ;
+    btp:numberOfMotorcyclistsInjuries 24 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:motorcyclistAccident_24 a btp:Motorcyclist ;
+    btp:happendInArea btp:irnerio ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 26 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:motorcyclistAccident_25 a btp:Motorcyclist ;
+    btp:happendInArea btp:murri ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfMotorcyclistsDeath 1 ;
+    btp:numberOfMotorcyclistsInjuries 75 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:motorcyclistAccident_26 a btp:Motorcyclist ;
+    btp:happendInArea btp:pontevecchioMazzini ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 60 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:motorcyclistAccident_27 a btp:Motorcyclist ;
+    btp:happendInArea btp:saffi ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 37 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:motorcyclistAccident_28 a btp:Motorcyclist ;
+    btp:happendInArea btp:sanDonatoNuovo ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 13 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:motorcyclistAccident_29 a btp:Motorcyclist ;
+    btp:happendInArea btp:sanDonatoVecchio ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 35 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:motorcyclistAccident_3 a btp:Motorcyclist ;
+    btp:happendInArea btp:irnerio ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 35 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:motorcyclistAccident_30 a btp:Motorcyclist ;
+    btp:happendInArea btp:santaViola ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 27 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:motorcyclistAccident_31 a btp:Motorcyclist ;
+    btp:happendInArea btp:saragozzaSanLuca ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 49 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:motorcyclistAccident_32 a btp:Motorcyclist ;
+    btp:happendInArea btp:viaToscanaS.RuffilloMonteDonato ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 8 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:motorcyclistAccident_33 a btp:Motorcyclist ;
+    btp:happendInArea btp:beverara ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 13 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:motorcyclistAccident_34 a btp:Motorcyclist ;
+    btp:happendInArea btp:bertaliaNoce ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 19 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:motorcyclistAccident_35 a btp:Motorcyclist ;
+    btp:happendInArea btp:birraBargellinoLavino ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 17 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:motorcyclistAccident_36 a btp:Motorcyclist ;
+    btp:happendInArea btp:croceDelBiaccoRoveri ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 29 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:motorcyclistAccident_37 a btp:Motorcyclist ;
+    btp:happendInArea btp:irnerio ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 33 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:motorcyclistAccident_38 a btp:Motorcyclist ;
+    btp:happendInArea btp:lungoSavena ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 14 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:motorcyclistAccident_39 a btp:Motorcyclist ;
+    btp:happendInArea btp:malpighi ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 27 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:motorcyclistAccident_4 a btp:Motorcyclist ;
+    btp:happendInArea btp:lungoSavena ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 10 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:motorcyclistAccident_40 a btp:Motorcyclist ;
+    btp:happendInArea btp:murri ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 78 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:motorcyclistAccident_41 a btp:Motorcyclist ;
+    btp:happendInArea btp:viaToscanaS.RuffilloMonteDonato ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 14 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:motorcyclistAccident_42 a btp:Motorcyclist ;
+    btp:happendInArea btp:corticellaDozza ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 44 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:motorcyclistAccident_43 a btp:Motorcyclist ;
+    btp:happendInArea btp:barca ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 28 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:motorcyclistAccident_44 a btp:Motorcyclist ;
+    btp:happendInArea btp:birraBargellinoLavino ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 11 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:motorcyclistAccident_45 a btp:Motorcyclist ;
+    btp:happendInArea btp:borgoPanigale ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 26 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:motorcyclistAccident_46 a btp:Motorcyclist ;
+    btp:happendInArea btp:cirenaicaMassarentiScandellara ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 92 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:motorcyclistAccident_47 a btp:Motorcyclist ;
+    btp:happendInArea btp:galvani ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 28 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:motorcyclistAccident_48 a btp:Motorcyclist ;
+    btp:happendInArea btp:marconi ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 32 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:motorcyclistAccident_49 a btp:Motorcyclist ;
+    btp:happendInArea btp:pontevecchioMazzini ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfMotorcyclistsDeath 1 ;
+    btp:numberOfMotorcyclistsInjuries 46 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:motorcyclistAccident_5 a btp:Motorcyclist ;
+    btp:happendInArea btp:malpighi ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 27 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:motorcyclistAccident_50 a btp:Motorcyclist ;
+    btp:happendInArea btp:sanDonatoNuovo ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 15 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:motorcyclistAccident_51 a btp:Motorcyclist ;
+    btp:happendInArea btp:sanDonatoVecchio ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 48 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:motorcyclistAccident_52 a btp:Motorcyclist ;
+    btp:happendInArea btp:santaViola ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 21 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:motorcyclistAccident_53 a btp:Motorcyclist ;
+    btp:happendInArea btp:beverara ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 26 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:motorcyclistAccident_54 a btp:Motorcyclist ;
+    btp:happendInArea btp:bertaliaNoce ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfMotorcyclistsDeath 1 ;
+    btp:numberOfMotorcyclistsInjuries 5 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:motorcyclistAccident_55 a btp:Motorcyclist ;
+    btp:happendInArea btp:cirenaicaMassarentiScandellara ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 92 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:motorcyclistAccident_56 a btp:Motorcyclist ;
+    btp:happendInArea btp:croceDelBiaccoRoveri ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 28 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:motorcyclistAccident_57 a btp:Motorcyclist ;
+    btp:happendInArea btp:fossoloDueMadonne ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 22 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:motorcyclistAccident_58 a btp:Motorcyclist ;
+    btp:happendInArea btp:galvani ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 27 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:motorcyclistAccident_59 a btp:Motorcyclist ;
+    btp:happendInArea btp:irnerio ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 46 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:motorcyclistAccident_6 a btp:Motorcyclist ;
+    btp:happendInArea btp:murri ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 65 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:motorcyclistAccident_60 a btp:Motorcyclist ;
+    btp:happendInArea btp:murri ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 70 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:motorcyclistAccident_61 a btp:Motorcyclist ;
+    btp:happendInArea btp:corticellaDozza ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 38 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:motorcyclistAccident_62 a btp:Motorcyclist ;
+    btp:happendInArea btp:barca ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfMotorcyclistsDeath 1 ;
+    btp:numberOfMotorcyclistsInjuries 16 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:motorcyclistAccident_63 a btp:Motorcyclist ;
+    btp:happendInArea btp:bertaliaNoce ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 10 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:motorcyclistAccident_64 a btp:Motorcyclist ;
+    btp:happendInArea btp:birraBargellinoLavino ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 8 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:motorcyclistAccident_65 a btp:Motorcyclist ;
+    btp:happendInArea btp:borgoPanigale ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfMotorcyclistsDeath 1 ;
+    btp:numberOfMotorcyclistsInjuries 10 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:motorcyclistAccident_66 a btp:Motorcyclist ;
+    btp:happendInArea btp:lungoSavena ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 5 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:motorcyclistAccident_67 a btp:Motorcyclist ;
+    btp:happendInArea btp:pontevecchioMazzini ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 28 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:motorcyclistAccident_68 a btp:Motorcyclist ;
+    btp:happendInArea btp:santaViola ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfMotorcyclistsDeath 1 ;
+    btp:numberOfMotorcyclistsInjuries 10 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:motorcyclistAccident_69 a btp:Motorcyclist ;
+    btp:happendInArea btp:beverara ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 15 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:motorcyclistAccident_7 a btp:Motorcyclist ;
+    btp:happendInArea btp:saragozzaSanLuca ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 52 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:motorcyclistAccident_70 a btp:Motorcyclist ;
+    btp:happendInArea btp:borgoPanigale ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 16 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:motorcyclistAccident_71 a btp:Motorcyclist ;
+    btp:happendInArea btp:fossoloDueMadonne ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 19 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:motorcyclistAccident_72 a btp:Motorcyclist ;
+    btp:happendInArea btp:galvani ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 20 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:motorcyclistAccident_73 a btp:Motorcyclist ;
+    btp:happendInArea btp:malpighi ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 31 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:motorcyclistAccident_74 a btp:Motorcyclist ;
+    btp:happendInArea btp:corticellaDozza ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 37 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:motorcyclistAccident_75 a btp:Motorcyclist ;
+    btp:happendInArea btp:bolognina ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 41 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:motorcyclistAccident_76 a btp:Motorcyclist ;
+    btp:happendInArea btp:casteldebolePontelungo ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 17 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:motorcyclistAccident_77 a btp:Motorcyclist ;
+    btp:happendInArea btp:cirenaicaMassarentiScandellara ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfMotorcyclistsDeath 3 ;
+    btp:numberOfMotorcyclistsInjuries 75 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:motorcyclistAccident_78 a btp:Motorcyclist ;
+    btp:happendInArea btp:fossoloDueMadonne ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 13 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:motorcyclistAccident_79 a btp:Motorcyclist ;
+    btp:happendInArea btp:galvani ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 32 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:motorcyclistAccident_8 a btp:Motorcyclist ;
+    btp:happendInArea btp:viaToscanaS.RuffilloMonteDonato ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 20 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:motorcyclistAccident_80 a btp:Motorcyclist ;
+    btp:happendInArea btp:osservanzaPaderno ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 18 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:motorcyclistAccident_81 a btp:Motorcyclist ;
+    btp:happendInArea btp:pontevecchioMazzini ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfMotorcyclistsDeath 1 ;
+    btp:numberOfMotorcyclistsInjuries 44 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:motorcyclistAccident_82 a btp:Motorcyclist ;
+    btp:happendInArea btp:saffi ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 43 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:motorcyclistAccident_83 a btp:Motorcyclist ;
+    btp:happendInArea btp:sanDonatoNuovo ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfMotorcyclistsDeath 1 ;
+    btp:numberOfMotorcyclistsInjuries 23 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:motorcyclistAccident_84 a btp:Motorcyclist ;
+    btp:happendInArea btp:sanDonatoVecchio ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfMotorcyclistsDeath 1 ;
+    btp:numberOfMotorcyclistsInjuries 29 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:motorcyclistAccident_85 a btp:Motorcyclist ;
+    btp:happendInArea btp:santaViola ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 20 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:motorcyclistAccident_86 a btp:Motorcyclist ;
+    btp:happendInArea btp:bolognina ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfMotorcyclistsDeath 1 ;
+    btp:numberOfMotorcyclistsInjuries 50 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:motorcyclistAccident_87 a btp:Motorcyclist ;
+    btp:happendInArea btp:bertaliaNoce ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 12 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:motorcyclistAccident_88 a btp:Motorcyclist ;
+    btp:happendInArea btp:osservanzaPaderno ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfMotorcyclistsDeath 1 ;
+    btp:numberOfMotorcyclistsInjuries 22 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:motorcyclistAccident_89 a btp:Motorcyclist ;
+    btp:happendInArea btp:saffi ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 38 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:motorcyclistAccident_9 a btp:Motorcyclist ;
+    btp:happendInArea btp:lungoSavena ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 9 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:motorcyclistAccident_90 a btp:Motorcyclist ;
+    btp:happendInArea btp:corticellaDozza ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfMotorcyclistsDeath 1 ;
+    btp:numberOfMotorcyclistsInjuries 34 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:motorcyclistAccident_91 a btp:Motorcyclist ;
+    btp:happendInArea btp:bolognina ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 54 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:motorcyclistAccident_92 a btp:Motorcyclist ;
+    btp:happendInArea btp:barca ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 29 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:motorcyclistAccident_93 a btp:Motorcyclist ;
+    btp:happendInArea btp:birraBargellinoLavino ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 11 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:motorcyclistAccident_94 a btp:Motorcyclist ;
+    btp:happendInArea btp:borgoPanigale ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 31 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:motorcyclistAccident_95 a btp:Motorcyclist ;
+    btp:happendInArea btp:casteldebolePontelungo ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 11 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:motorcyclistAccident_96 a btp:Motorcyclist ;
+    btp:happendInArea btp:pontevecchioMazzini ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfMotorcyclistsDeath 1 ;
+    btp:numberOfMotorcyclistsInjuries 47 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:motorcyclistAccident_97 a btp:Motorcyclist ;
+    btp:happendInArea btp:saffi ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfMotorcyclistsDeath 1 ;
+    btp:numberOfMotorcyclistsInjuries 34 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:motorcyclistAccident_98 a btp:Motorcyclist ;
+    btp:happendInArea btp:sanDonatoNuovo ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 17 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:motorcyclistAccident_99 a btp:Motorcyclist ;
+    btp:happendInArea btp:saragozzaSanLuca ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfMotorcyclistsDeath 0 ;
+    btp:numberOfMotorcyclistsInjuries 37 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:numberOfAccidents a owl:DatatypeProperty .
+
+btp:numberOfCyclistsDeath a owl:DatatypeProperty .
+
+btp:numberOfCyclistsInjuries a owl:DatatypeProperty .
+
+btp:numberOfDriverDeath a owl:DatatypeProperty .
+
+btp:numberOfDriverInjuries a owl:DatatypeProperty .
+
+btp:numberOfMotorcyclistsDeath a owl:DatatypeProperty .
+
+btp:numberOfMotorcyclistsInjuries a owl:DatatypeProperty .
+
+btp:numberOfPedestrainDeath a owl:DatatypeProperty .
+
+btp:numberOfPedestrainInjuries a owl:DatatypeProperty .
+
+btp:numberOfScooterDeath a owl:DatatypeProperty .
+
+btp:numberOfScooterInjuries a owl:DatatypeProperty .
+
+btp:pedestrainAccident_0 a btp:Pedestrain ;
+    btp:happendInArea btp:casteldebolePontelungo ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 7 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:pedestrainAccident_1 a btp:Pedestrain ;
+    btp:happendInArea btp:croceDelBiaccoRoveri ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 3 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:pedestrainAccident_10 a btp:Pedestrain ;
+    btp:happendInArea btp:malpighi ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 21 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:pedestrainAccident_100 a btp:Pedestrain ;
+    btp:happendInArea btp:viaToscanaS.RuffilloMonteDonato ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 6 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:pedestrainAccident_101 a btp:Pedestrain ;
+    btp:happendInArea btp:casteldebolePontelungo ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 1 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:pedestrainAccident_102 a btp:Pedestrain ;
+    btp:happendInArea btp:croceDelBiaccoRoveri ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 2 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:pedestrainAccident_103 a btp:Pedestrain ;
+    btp:happendInArea btp:irnerio ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 8 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:pedestrainAccident_104 a btp:Pedestrain ;
+    btp:happendInArea btp:malpighi ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 14 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:pedestrainAccident_105 a btp:Pedestrain ;
+    btp:happendInArea btp:marconi ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 17 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:pedestrainAccident_106 a btp:Pedestrain ;
+    btp:happendInArea btp:murri ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfPedestrainDeath 1 ;
+    btp:numberOfPedestrainInjuries 11 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:pedestrainAccident_107 a btp:Pedestrain ;
+    btp:happendInArea btp:osservanzaPaderno ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 7 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:pedestrainAccident_108 a btp:Pedestrain ;
+    btp:happendInArea btp:saffi ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 7 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:pedestrainAccident_109 a btp:Pedestrain ;
+    btp:happendInArea btp:sanDonatoVecchio ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 13 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:pedestrainAccident_11 a btp:Pedestrain ;
+    btp:happendInArea btp:marconi ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 22 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:pedestrainAccident_110 a btp:Pedestrain ;
+    btp:happendInArea btp:saragozzaSanLuca ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 11 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:pedestrainAccident_111 a btp:Pedestrain ;
+    btp:happendInArea btp:viaToscanaS.RuffilloMonteDonato ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 3 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:pedestrainAccident_112 a btp:Pedestrain ;
+    btp:happendInArea btp:corticellaDozza ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 13 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:pedestrainAccident_113 a btp:Pedestrain ;
+    btp:happendInArea btp:bolognina ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 31 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:pedestrainAccident_114 a btp:Pedestrain ;
+    btp:happendInArea btp:barca ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 10 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:pedestrainAccident_115 a btp:Pedestrain ;
+    btp:happendInArea btp:birraBargellinoLavino ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 1 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:pedestrainAccident_116 a btp:Pedestrain ;
+    btp:happendInArea btp:casteldebolePontelungo ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 6 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:pedestrainAccident_117 a btp:Pedestrain ;
+    btp:happendInArea btp:lungoSavena ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 4 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:pedestrainAccident_118 a btp:Pedestrain ;
+    btp:happendInArea btp:marconi ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 17 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:pedestrainAccident_119 a btp:Pedestrain ;
+    btp:happendInArea btp:osservanzaPaderno ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 5 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:pedestrainAccident_12 a btp:Pedestrain ;
+    btp:happendInArea btp:osservanzaPaderno ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 5 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:pedestrainAccident_120 a btp:Pedestrain ;
+    btp:happendInArea btp:barca ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 10 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:pedestrainAccident_121 a btp:Pedestrain ;
+    btp:happendInArea btp:borgoPanigale ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 6 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:pedestrainAccident_122 a btp:Pedestrain ;
+    btp:happendInArea btp:marconi ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 24 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:pedestrainAccident_123 a btp:Pedestrain ;
+    btp:happendInArea btp:saragozzaSanLuca ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 26 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:pedestrainAccident_124 a btp:Pedestrain ;
+    btp:happendInArea btp:beverara ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 6 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:pedestrainAccident_13 a btp:Pedestrain ;
+    btp:happendInArea btp:sanDonatoVecchio ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 22 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:pedestrainAccident_14 a btp:Pedestrain ;
+    btp:happendInArea btp:santaViola ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 8 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:pedestrainAccident_15 a btp:Pedestrain ;
+    btp:happendInArea btp:beverara ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 4 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:pedestrainAccident_16 a btp:Pedestrain ;
+    btp:happendInArea btp:bolognina ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 32 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:pedestrainAccident_17 a btp:Pedestrain ;
+    btp:happendInArea btp:cirenaicaMassarentiScandellara ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 13 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:pedestrainAccident_18 a btp:Pedestrain ;
+    btp:happendInArea btp:fossoloDueMadonne ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 3 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:pedestrainAccident_19 a btp:Pedestrain ;
+    btp:happendInArea btp:galvani ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 7 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:pedestrainAccident_2 a btp:Pedestrain ;
+    btp:happendInArea btp:fossoloDueMadonne ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 4 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:pedestrainAccident_20 a btp:Pedestrain ;
+    btp:happendInArea btp:sanDonatoNuovo ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 1 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:pedestrainAccident_21 a btp:Pedestrain ;
+    btp:happendInArea btp:bertaliaNoce ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 4 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:pedestrainAccident_22 a btp:Pedestrain ;
+    btp:happendInArea btp:cirenaicaMassarentiScandellara ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 20 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:pedestrainAccident_23 a btp:Pedestrain ;
+    btp:happendInArea btp:croceDelBiaccoRoveri ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 1 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:pedestrainAccident_24 a btp:Pedestrain ;
+    btp:happendInArea btp:irnerio ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 21 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:pedestrainAccident_25 a btp:Pedestrain ;
+    btp:happendInArea btp:murri ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 25 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:pedestrainAccident_26 a btp:Pedestrain ;
+    btp:happendInArea btp:pontevecchioMazzini ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 12 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:pedestrainAccident_27 a btp:Pedestrain ;
+    btp:happendInArea btp:saffi ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 12 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:pedestrainAccident_28 a btp:Pedestrain ;
+    btp:happendInArea btp:sanDonatoNuovo ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfPedestrainDeath 1 ;
+    btp:numberOfPedestrainInjuries 6 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:pedestrainAccident_29 a btp:Pedestrain ;
+    btp:happendInArea btp:sanDonatoVecchio ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 13 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:pedestrainAccident_3 a btp:Pedestrain ;
+    btp:happendInArea btp:irnerio ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfPedestrainDeath 1 ;
+    btp:numberOfPedestrainInjuries 33 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:pedestrainAccident_30 a btp:Pedestrain ;
+    btp:happendInArea btp:santaViola ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 11 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:pedestrainAccident_31 a btp:Pedestrain ;
+    btp:happendInArea btp:saragozzaSanLuca ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 18 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:pedestrainAccident_32 a btp:Pedestrain ;
+    btp:happendInArea btp:viaToscanaS.RuffilloMonteDonato ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 5 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:pedestrainAccident_33 a btp:Pedestrain ;
+    btp:happendInArea btp:beverara ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 5 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:pedestrainAccident_34 a btp:Pedestrain ;
+    btp:happendInArea btp:bertaliaNoce ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 3 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:pedestrainAccident_35 a btp:Pedestrain ;
+    btp:happendInArea btp:birraBargellinoLavino ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 3 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:pedestrainAccident_36 a btp:Pedestrain ;
+    btp:happendInArea btp:croceDelBiaccoRoveri ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 3 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:pedestrainAccident_37 a btp:Pedestrain ;
+    btp:happendInArea btp:irnerio ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 35 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:pedestrainAccident_38 a btp:Pedestrain ;
+    btp:happendInArea btp:lungoSavena ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 5 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:pedestrainAccident_39 a btp:Pedestrain ;
+    btp:happendInArea btp:malpighi ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 18 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:pedestrainAccident_4 a btp:Pedestrain ;
+    btp:happendInArea btp:lungoSavena ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 3 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:pedestrainAccident_40 a btp:Pedestrain ;
+    btp:happendInArea btp:murri ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 25 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:pedestrainAccident_41 a btp:Pedestrain ;
+    btp:happendInArea btp:viaToscanaS.RuffilloMonteDonato ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 6 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:pedestrainAccident_42 a btp:Pedestrain ;
+    btp:happendInArea btp:corticellaDozza ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 11 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:pedestrainAccident_43 a btp:Pedestrain ;
+    btp:happendInArea btp:barca ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfPedestrainDeath 2 ;
+    btp:numberOfPedestrainInjuries 18 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:pedestrainAccident_44 a btp:Pedestrain ;
+    btp:happendInArea btp:birraBargellinoLavino ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 5 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:pedestrainAccident_45 a btp:Pedestrain ;
+    btp:happendInArea btp:borgoPanigale ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfPedestrainDeath 1 ;
+    btp:numberOfPedestrainInjuries 12 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:pedestrainAccident_46 a btp:Pedestrain ;
+    btp:happendInArea btp:cirenaicaMassarentiScandellara ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 27 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:pedestrainAccident_47 a btp:Pedestrain ;
+    btp:happendInArea btp:galvani ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 10 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:pedestrainAccident_48 a btp:Pedestrain ;
+    btp:happendInArea btp:marconi ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 30 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:pedestrainAccident_49 a btp:Pedestrain ;
+    btp:happendInArea btp:pontevecchioMazzini ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 21 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:pedestrainAccident_5 a btp:Pedestrain ;
+    btp:happendInArea btp:malpighi ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 21 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:pedestrainAccident_50 a btp:Pedestrain ;
+    btp:happendInArea btp:sanDonatoNuovo ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 4 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:pedestrainAccident_51 a btp:Pedestrain ;
+    btp:happendInArea btp:sanDonatoVecchio ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfPedestrainDeath 1 ;
+    btp:numberOfPedestrainInjuries 12 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:pedestrainAccident_52 a btp:Pedestrain ;
+    btp:happendInArea btp:santaViola ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 7 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:pedestrainAccident_53 a btp:Pedestrain ;
+    btp:happendInArea btp:beverara ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 3 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:pedestrainAccident_54 a btp:Pedestrain ;
+    btp:happendInArea btp:bertaliaNoce ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 1 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:pedestrainAccident_55 a btp:Pedestrain ;
+    btp:happendInArea btp:cirenaicaMassarentiScandellara ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfPedestrainDeath 1 ;
+    btp:numberOfPedestrainInjuries 29 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:pedestrainAccident_56 a btp:Pedestrain ;
+    btp:happendInArea btp:croceDelBiaccoRoveri ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 0 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:pedestrainAccident_57 a btp:Pedestrain ;
+    btp:happendInArea btp:fossoloDueMadonne ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 4 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:pedestrainAccident_58 a btp:Pedestrain ;
+    btp:happendInArea btp:galvani ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 13 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:pedestrainAccident_59 a btp:Pedestrain ;
+    btp:happendInArea btp:irnerio ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 40 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:pedestrainAccident_6 a btp:Pedestrain ;
+    btp:happendInArea btp:murri ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 32 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:pedestrainAccident_60 a btp:Pedestrain ;
+    btp:happendInArea btp:murri ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 27 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:pedestrainAccident_61 a btp:Pedestrain ;
+    btp:happendInArea btp:corticellaDozza ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 7 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:pedestrainAccident_62 a btp:Pedestrain ;
+    btp:happendInArea btp:barca ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfPedestrainDeath 1 ;
+    btp:numberOfPedestrainInjuries 7 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:pedestrainAccident_63 a btp:Pedestrain ;
+    btp:happendInArea btp:bertaliaNoce ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfPedestrainDeath 1 ;
+    btp:numberOfPedestrainInjuries 3 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:pedestrainAccident_64 a btp:Pedestrain ;
+    btp:happendInArea btp:birraBargellinoLavino ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 0 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:pedestrainAccident_65 a btp:Pedestrain ;
+    btp:happendInArea btp:borgoPanigale ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 8 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:pedestrainAccident_66 a btp:Pedestrain ;
+    btp:happendInArea btp:lungoSavena ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 4 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:pedestrainAccident_67 a btp:Pedestrain ;
+    btp:happendInArea btp:pontevecchioMazzini ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfPedestrainDeath 1 ;
+    btp:numberOfPedestrainInjuries 4 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:pedestrainAccident_68 a btp:Pedestrain ;
+    btp:happendInArea btp:santaViola ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 2 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:pedestrainAccident_69 a btp:Pedestrain ;
+    btp:happendInArea btp:beverara ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 2 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:pedestrainAccident_7 a btp:Pedestrain ;
+    btp:happendInArea btp:saragozzaSanLuca ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 14 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:pedestrainAccident_70 a btp:Pedestrain ;
+    btp:happendInArea btp:borgoPanigale ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 8 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:pedestrainAccident_71 a btp:Pedestrain ;
+    btp:happendInArea btp:fossoloDueMadonne ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 4 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:pedestrainAccident_72 a btp:Pedestrain ;
+    btp:happendInArea btp:galvani ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 14 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:pedestrainAccident_73 a btp:Pedestrain ;
+    btp:happendInArea btp:malpighi ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 11 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:pedestrainAccident_74 a btp:Pedestrain ;
+    btp:happendInArea btp:corticellaDozza ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 13 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:pedestrainAccident_75 a btp:Pedestrain ;
+    btp:happendInArea btp:bolognina ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfPedestrainDeath 1 ;
+    btp:numberOfPedestrainInjuries 21 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:pedestrainAccident_76 a btp:Pedestrain ;
+    btp:happendInArea btp:casteldebolePontelungo ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfPedestrainDeath 1 ;
+    btp:numberOfPedestrainInjuries 5 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:pedestrainAccident_77 a btp:Pedestrain ;
+    btp:happendInArea btp:cirenaicaMassarentiScandellara ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfPedestrainDeath 1 ;
+    btp:numberOfPedestrainInjuries 31 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:pedestrainAccident_78 a btp:Pedestrain ;
+    btp:happendInArea btp:fossoloDueMadonne ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 9 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:pedestrainAccident_79 a btp:Pedestrain ;
+    btp:happendInArea btp:galvani ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 9 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:pedestrainAccident_8 a btp:Pedestrain ;
+    btp:happendInArea btp:viaToscanaS.RuffilloMonteDonato ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 5 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:pedestrainAccident_80 a btp:Pedestrain ;
+    btp:happendInArea btp:osservanzaPaderno ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 10 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:pedestrainAccident_81 a btp:Pedestrain ;
+    btp:happendInArea btp:pontevecchioMazzini ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 21 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:pedestrainAccident_82 a btp:Pedestrain ;
+    btp:happendInArea btp:saffi ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 11 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:pedestrainAccident_83 a btp:Pedestrain ;
+    btp:happendInArea btp:sanDonatoNuovo ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 4 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:pedestrainAccident_84 a btp:Pedestrain ;
+    btp:happendInArea btp:sanDonatoVecchio ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 16 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:pedestrainAccident_85 a btp:Pedestrain ;
+    btp:happendInArea btp:santaViola ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 11 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:pedestrainAccident_86 a btp:Pedestrain ;
+    btp:happendInArea btp:bolognina ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 35 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:pedestrainAccident_87 a btp:Pedestrain ;
+    btp:happendInArea btp:bertaliaNoce ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 2 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:pedestrainAccident_88 a btp:Pedestrain ;
+    btp:happendInArea btp:osservanzaPaderno ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 2 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:pedestrainAccident_89 a btp:Pedestrain ;
+    btp:happendInArea btp:saffi ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfPedestrainDeath 1 ;
+    btp:numberOfPedestrainInjuries 14 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:pedestrainAccident_9 a btp:Pedestrain ;
+    btp:happendInArea btp:lungoSavena ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 4 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:pedestrainAccident_90 a btp:Pedestrain ;
+    btp:happendInArea btp:corticellaDozza ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 16 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:pedestrainAccident_91 a btp:Pedestrain ;
+    btp:happendInArea btp:bolognina ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfPedestrainDeath 2 ;
+    btp:numberOfPedestrainInjuries 32 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:pedestrainAccident_92 a btp:Pedestrain ;
+    btp:happendInArea btp:barca ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 13 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:pedestrainAccident_93 a btp:Pedestrain ;
+    btp:happendInArea btp:birraBargellinoLavino ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfPedestrainDeath 2 ;
+    btp:numberOfPedestrainInjuries 3 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:pedestrainAccident_94 a btp:Pedestrain ;
+    btp:happendInArea btp:borgoPanigale ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfPedestrainDeath 1 ;
+    btp:numberOfPedestrainInjuries 6 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:pedestrainAccident_95 a btp:Pedestrain ;
+    btp:happendInArea btp:casteldebolePontelungo ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 2 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:pedestrainAccident_96 a btp:Pedestrain ;
+    btp:happendInArea btp:pontevecchioMazzini ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 14 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:pedestrainAccident_97 a btp:Pedestrain ;
+    btp:happendInArea btp:saffi ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 17 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:pedestrainAccident_98 a btp:Pedestrain ;
+    btp:happendInArea btp:sanDonatoNuovo ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 6 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:pedestrainAccident_99 a btp:Pedestrain ;
+    btp:happendInArea btp:saragozzaSanLuca ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfPedestrainDeath 0 ;
+    btp:numberOfPedestrainInjuries 21 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:recordedInDistrict a owl:ObjectProperty .
+
+btp:scooterAccident_0 a btp:Scooter ;
+    btp:happendInArea btp:casteldebolePontelungo ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:scooterAccident_1 a btp:Scooter ;
+    btp:happendInArea btp:croceDelBiaccoRoveri ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:scooterAccident_10 a btp:Scooter ;
+    btp:happendInArea btp:malpighi ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:scooterAccident_100 a btp:Scooter ;
+    btp:happendInArea btp:viaToscanaS.RuffilloMonteDonato ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:scooterAccident_101 a btp:Scooter ;
+    btp:happendInArea btp:casteldebolePontelungo ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:scooterAccident_102 a btp:Scooter ;
+    btp:happendInArea btp:croceDelBiaccoRoveri ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:scooterAccident_103 a btp:Scooter ;
+    btp:happendInArea btp:irnerio ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 1 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:scooterAccident_104 a btp:Scooter ;
+    btp:happendInArea btp:malpighi ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:scooterAccident_105 a btp:Scooter ;
+    btp:happendInArea btp:marconi ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 1 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:scooterAccident_106 a btp:Scooter ;
+    btp:happendInArea btp:murri ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:scooterAccident_107 a btp:Scooter ;
+    btp:happendInArea btp:osservanzaPaderno ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:scooterAccident_108 a btp:Scooter ;
+    btp:happendInArea btp:saffi ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 1 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:scooterAccident_109 a btp:Scooter ;
+    btp:happendInArea btp:sanDonatoVecchio ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 2 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:scooterAccident_11 a btp:Scooter ;
+    btp:happendInArea btp:marconi ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:scooterAccident_110 a btp:Scooter ;
+    btp:happendInArea btp:saragozzaSanLuca ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:scooterAccident_111 a btp:Scooter ;
+    btp:happendInArea btp:viaToscanaS.RuffilloMonteDonato ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:scooterAccident_112 a btp:Scooter ;
+    btp:happendInArea btp:corticellaDozza ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 1 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:scooterAccident_113 a btp:Scooter ;
+    btp:happendInArea btp:bolognina ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 2 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:scooterAccident_114 a btp:Scooter ;
+    btp:happendInArea btp:barca ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 2 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:scooterAccident_115 a btp:Scooter ;
+    btp:happendInArea btp:birraBargellinoLavino ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:scooterAccident_116 a btp:Scooter ;
+    btp:happendInArea btp:casteldebolePontelungo ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 3 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:scooterAccident_117 a btp:Scooter ;
+    btp:happendInArea btp:lungoSavena ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:scooterAccident_118 a btp:Scooter ;
+    btp:happendInArea btp:marconi ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 3 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:scooterAccident_119 a btp:Scooter ;
+    btp:happendInArea btp:osservanzaPaderno ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:scooterAccident_12 a btp:Scooter ;
+    btp:happendInArea btp:osservanzaPaderno ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:scooterAccident_120 a btp:Scooter ;
+    btp:happendInArea btp:barca ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 1 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:scooterAccident_121 a btp:Scooter ;
+    btp:happendInArea btp:borgoPanigale ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:scooterAccident_122 a btp:Scooter ;
+    btp:happendInArea btp:marconi ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 4 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:scooterAccident_123 a btp:Scooter ;
+    btp:happendInArea btp:saragozzaSanLuca ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 1 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:scooterAccident_124 a btp:Scooter ;
+    btp:happendInArea btp:beverara ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 2 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:scooterAccident_13 a btp:Scooter ;
+    btp:happendInArea btp:sanDonatoVecchio ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:scooterAccident_14 a btp:Scooter ;
+    btp:happendInArea btp:santaViola ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:scooterAccident_15 a btp:Scooter ;
+    btp:happendInArea btp:beverara ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:scooterAccident_16 a btp:Scooter ;
+    btp:happendInArea btp:bolognina ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:scooterAccident_17 a btp:Scooter ;
+    btp:happendInArea btp:cirenaicaMassarentiScandellara ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 2 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:scooterAccident_18 a btp:Scooter ;
+    btp:happendInArea btp:fossoloDueMadonne ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:scooterAccident_19 a btp:Scooter ;
+    btp:happendInArea btp:galvani ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 2 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:scooterAccident_2 a btp:Scooter ;
+    btp:happendInArea btp:fossoloDueMadonne ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:scooterAccident_20 a btp:Scooter ;
+    btp:happendInArea btp:sanDonatoNuovo ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:scooterAccident_21 a btp:Scooter ;
+    btp:happendInArea btp:bertaliaNoce ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:scooterAccident_22 a btp:Scooter ;
+    btp:happendInArea btp:cirenaicaMassarentiScandellara ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 3 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:scooterAccident_23 a btp:Scooter ;
+    btp:happendInArea btp:croceDelBiaccoRoveri ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 2 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:scooterAccident_24 a btp:Scooter ;
+    btp:happendInArea btp:irnerio ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 6 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:scooterAccident_25 a btp:Scooter ;
+    btp:happendInArea btp:murri ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 1 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:scooterAccident_26 a btp:Scooter ;
+    btp:happendInArea btp:pontevecchioMazzini ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 5 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:scooterAccident_27 a btp:Scooter ;
+    btp:happendInArea btp:saffi ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 3 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:scooterAccident_28 a btp:Scooter ;
+    btp:happendInArea btp:sanDonatoNuovo ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 1 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:scooterAccident_29 a btp:Scooter ;
+    btp:happendInArea btp:sanDonatoVecchio ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:scooterAccident_3 a btp:Scooter ;
+    btp:happendInArea btp:irnerio ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:scooterAccident_30 a btp:Scooter ;
+    btp:happendInArea btp:santaViola ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:scooterAccident_31 a btp:Scooter ;
+    btp:happendInArea btp:saragozzaSanLuca ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 1 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:scooterAccident_32 a btp:Scooter ;
+    btp:happendInArea btp:viaToscanaS.RuffilloMonteDonato ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:scooterAccident_33 a btp:Scooter ;
+    btp:happendInArea btp:beverara ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 1 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:scooterAccident_34 a btp:Scooter ;
+    btp:happendInArea btp:bertaliaNoce ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 1 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:scooterAccident_35 a btp:Scooter ;
+    btp:happendInArea btp:birraBargellinoLavino ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:scooterAccident_36 a btp:Scooter ;
+    btp:happendInArea btp:croceDelBiaccoRoveri ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 3 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:scooterAccident_37 a btp:Scooter ;
+    btp:happendInArea btp:irnerio ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 3 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:scooterAccident_38 a btp:Scooter ;
+    btp:happendInArea btp:lungoSavena ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:scooterAccident_39 a btp:Scooter ;
+    btp:happendInArea btp:malpighi ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 2 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:scooterAccident_4 a btp:Scooter ;
+    btp:happendInArea btp:lungoSavena ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:scooterAccident_40 a btp:Scooter ;
+    btp:happendInArea btp:murri ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 4 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:scooterAccident_41 a btp:Scooter ;
+    btp:happendInArea btp:viaToscanaS.RuffilloMonteDonato ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 1 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:scooterAccident_42 a btp:Scooter ;
+    btp:happendInArea btp:corticellaDozza ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 5 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:scooterAccident_43 a btp:Scooter ;
+    btp:happendInArea btp:barca ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:scooterAccident_44 a btp:Scooter ;
+    btp:happendInArea btp:birraBargellinoLavino ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:scooterAccident_45 a btp:Scooter ;
+    btp:happendInArea btp:borgoPanigale ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:scooterAccident_46 a btp:Scooter ;
+    btp:happendInArea btp:cirenaicaMassarentiScandellara ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:scooterAccident_47 a btp:Scooter ;
+    btp:happendInArea btp:galvani ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:scooterAccident_48 a btp:Scooter ;
+    btp:happendInArea btp:marconi ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:scooterAccident_49 a btp:Scooter ;
+    btp:happendInArea btp:pontevecchioMazzini ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:scooterAccident_5 a btp:Scooter ;
+    btp:happendInArea btp:malpighi ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:scooterAccident_50 a btp:Scooter ;
+    btp:happendInArea btp:sanDonatoNuovo ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:scooterAccident_51 a btp:Scooter ;
+    btp:happendInArea btp:sanDonatoVecchio ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:scooterAccident_52 a btp:Scooter ;
+    btp:happendInArea btp:santaViola ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:scooterAccident_53 a btp:Scooter ;
+    btp:happendInArea btp:beverara ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:scooterAccident_54 a btp:Scooter ;
+    btp:happendInArea btp:bertaliaNoce ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:scooterAccident_55 a btp:Scooter ;
+    btp:happendInArea btp:cirenaicaMassarentiScandellara ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:scooterAccident_56 a btp:Scooter ;
+    btp:happendInArea btp:croceDelBiaccoRoveri ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:scooterAccident_57 a btp:Scooter ;
+    btp:happendInArea btp:fossoloDueMadonne ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:scooterAccident_58 a btp:Scooter ;
+    btp:happendInArea btp:galvani ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:scooterAccident_59 a btp:Scooter ;
+    btp:happendInArea btp:irnerio ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:scooterAccident_6 a btp:Scooter ;
+    btp:happendInArea btp:murri ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:scooterAccident_60 a btp:Scooter ;
+    btp:happendInArea btp:murri ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:scooterAccident_61 a btp:Scooter ;
+    btp:happendInArea btp:corticellaDozza ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:scooterAccident_62 a btp:Scooter ;
+    btp:happendInArea btp:barca ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 1 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:scooterAccident_63 a btp:Scooter ;
+    btp:happendInArea btp:bertaliaNoce ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:scooterAccident_64 a btp:Scooter ;
+    btp:happendInArea btp:birraBargellinoLavino ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:scooterAccident_65 a btp:Scooter ;
+    btp:happendInArea btp:borgoPanigale ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:scooterAccident_66 a btp:Scooter ;
+    btp:happendInArea btp:lungoSavena ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:scooterAccident_67 a btp:Scooter ;
+    btp:happendInArea btp:pontevecchioMazzini ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:scooterAccident_68 a btp:Scooter ;
+    btp:happendInArea btp:santaViola ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:scooterAccident_69 a btp:Scooter ;
+    btp:happendInArea btp:beverara ;
+    btp:hasAccidentYear btp:year_2020 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:scooterAccident_7 a btp:Scooter ;
+    btp:happendInArea btp:saragozzaSanLuca ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:scooterAccident_70 a btp:Scooter ;
+    btp:happendInArea btp:borgoPanigale ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:scooterAccident_71 a btp:Scooter ;
+    btp:happendInArea btp:fossoloDueMadonne ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 1 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:scooterAccident_72 a btp:Scooter ;
+    btp:happendInArea btp:galvani ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 3 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:scooterAccident_73 a btp:Scooter ;
+    btp:happendInArea btp:malpighi ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:scooterAccident_74 a btp:Scooter ;
+    btp:happendInArea btp:corticellaDozza ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 1 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:scooterAccident_75 a btp:Scooter ;
+    btp:happendInArea btp:bolognina ;
+    btp:hasAccidentYear btp:year_2021 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 4 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:scooterAccident_76 a btp:Scooter ;
+    btp:happendInArea btp:casteldebolePontelungo ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 2 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:scooterAccident_77 a btp:Scooter ;
+    btp:happendInArea btp:cirenaicaMassarentiScandellara ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 5 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:scooterAccident_78 a btp:Scooter ;
+    btp:happendInArea btp:fossoloDueMadonne ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 1 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:scooterAccident_79 a btp:Scooter ;
+    btp:happendInArea btp:galvani ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 3 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:scooterAccident_8 a btp:Scooter ;
+    btp:happendInArea btp:viaToscanaS.RuffilloMonteDonato ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:scooterAccident_80 a btp:Scooter ;
+    btp:happendInArea btp:osservanzaPaderno ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:scooterAccident_81 a btp:Scooter ;
+    btp:happendInArea btp:pontevecchioMazzini ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 6 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:scooterAccident_82 a btp:Scooter ;
+    btp:happendInArea btp:saffi ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 4 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:scooterAccident_83 a btp:Scooter ;
+    btp:happendInArea btp:sanDonatoNuovo ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 5 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:scooterAccident_84 a btp:Scooter ;
+    btp:happendInArea btp:sanDonatoVecchio ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 5 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:scooterAccident_85 a btp:Scooter ;
+    btp:happendInArea btp:santaViola ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 1 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:scooterAccident_86 a btp:Scooter ;
+    btp:happendInArea btp:bolognina ;
+    btp:hasAccidentYear btp:year_2022 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 10 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:scooterAccident_87 a btp:Scooter ;
+    btp:happendInArea btp:bertaliaNoce ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:scooterAccident_88 a btp:Scooter ;
+    btp:happendInArea btp:osservanzaPaderno ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:santoStefano .
+
+btp:scooterAccident_89 a btp:Scooter ;
+    btp:happendInArea btp:saffi ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:scooterAccident_9 a btp:Scooter ;
+    btp:happendInArea btp:lungoSavena ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:scooterAccident_90 a btp:Scooter ;
+    btp:happendInArea btp:corticellaDozza ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:scooterAccident_91 a btp:Scooter ;
+    btp:happendInArea btp:bolognina ;
+    btp:hasAccidentYear btp:year_2018 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:navile .
+
+btp:scooterAccident_92 a btp:Scooter ;
+    btp:happendInArea btp:barca ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:scooterAccident_93 a btp:Scooter ;
+    btp:happendInArea btp:birraBargellinoLavino ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:scooterAccident_94 a btp:Scooter ;
+    btp:happendInArea btp:borgoPanigale ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:scooterAccident_95 a btp:Scooter ;
+    btp:happendInArea btp:casteldebolePontelungo ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:borgoPanigaleReno .
+
+btp:scooterAccident_96 a btp:Scooter ;
+    btp:happendInArea btp:pontevecchioMazzini ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:savena .
+
+btp:scooterAccident_97 a btp:Scooter ;
+    btp:happendInArea btp:saffi ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:scooterAccident_98 a btp:Scooter ;
+    btp:happendInArea btp:sanDonatoNuovo ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:sanDonatoSanVitale .
+
+btp:scooterAccident_99 a btp:Scooter ;
+    btp:happendInArea btp:saragozzaSanLuca ;
+    btp:hasAccidentYear btp:year_2019 ;
+    btp:numberOfScooterDeath 0 ;
+    btp:numberOfScooterInjuries 0 ;
+    btp:recordedInDistrict btp:portoSaragozza .
+
+btp:totalNumberOfDeath a owl:DatatypeProperty .
+
+btp:totalNumberOfInjuries a owl:DatatypeProperty .
+
+btp:year_2018 a btp:Year ;
+    btp:hasYear 2018 .
+
+btp:year_2019 a btp:Year ;
+    btp:hasYear 2019 .
+
+btp:year_2020 a btp:Year ;
+    btp:hasYear 2020 .
+
+btp:year_2021 a btp:Year ;
+    btp:hasYear 2021 .
+
+btp:year_2022 a btp:Year ;
+    btp:hasYear 2022 .
+
