@@ -3,6 +3,7 @@ from datetime import datetime
 from rdflib import Graph, Namespace, Literal, RDF, URIRef
 from rdflib.namespace import RDFS, XSD
 from tqdm import tqdm
+import unicodedata
 import re
 
 # Load the ontology from git folder
@@ -25,6 +26,7 @@ g.add((BASE["asserted"], RDF.type, OWL.Ontology))
 # Load the JSON file from git folder
 roads_file_path = '../../../datasets/json/rifter_arcstra_li.json'
 speed_file_path = '../../../datasets/json/velocita-citta-30.json'
+projects_file_path = '../../../datasets/json/progetti-citta-30.json'
 
 with open(roads_file_path, 'r') as f:
     roads_data = json.load(f)
@@ -32,11 +34,17 @@ with open(roads_file_path, 'r') as f:
 with open(speed_file_path, 'r') as f:
     speed_data = json.load(f)
 
+with open(projects_file_path, 'r') as f:
+    projects_data = json.load(f)
+
 def get_first_word_lower(s):
     return s.split()[0].lower() if s else ''
 
 
 def to_camel_case(s):
+    s = s.replace('/', ' ')
+    # Remove accents
+    s = ''.join(c for c in unicodedata.normalize('NFD', s) if unicodedata.category(c) != 'Mn')
     s = re.sub(r'[-/]', '', s)
     s = re.sub(r'[^a-zA-Z0-9]', ' ', s).title().replace(' ', '')
     return s[0].lower() + s[1:] if s else ''
@@ -91,6 +99,7 @@ def process_roads(roads_data):
         g.add((roadarch_uri, BASE.hasNode, node_1_uri))
         g.add((roadarch_uri, BASE.hasNode, node_2_uri))
         g.add((roadarch_uri, BASE.length, Literal(entry['lunghez'], datatype=XSD.decimal)))
+        # Use hashmap in order to map road codes from names
         if(entry['da'] in road_map and entry['a'] in road_map):
             from_uri = BASE[f"road_{road_map[entry['da']]}"]
             to_uri = BASE[f"road_{road_map[entry['a']]}"]
@@ -114,7 +123,7 @@ def process_roads(roads_data):
 
 def process_speed(speed_data):
 
-    print(f"Processing road JSON data from: {speed_file_path} ... ")
+    print(f"Processing speed JSON data from: {speed_file_path} ... ")
     # Add Object Property
     g.add((BASE.isSpeedLimit, RDF.type, OWL.ObjectProperty))
     pbar = tqdm(total=len(speed_data))
@@ -128,9 +137,97 @@ def process_speed(speed_data):
         pbar.update(1)
 
 
+
+def process_projects(projects_data):
+
+    entries = []
+    for item in projects_data:
+        if 'tema_prima' in item and item['tema_prima']:
+            entries.append(item['tema_prima'])
+        if 'tema_secon' in item and item['tema_secon']:
+            entries.append(item['tema_secon'])
+        if 'filone_sec' in item and item['filone_sec']:
+            entries.append(item['filone_sec'])
+
+    # Create hashmap to parse SKOS
+    hashmap = {entry: to_camel_case(entry) for entry in set(entries)}
+
+    # Manual fixes for typo
+    hashmap["Accessibiltà"] = "accessibilita"
+
+    print(f"Processing project JSON data from: {projects_file_path} ... ")
+    # Print hashmap
+    print(json.dumps(hashmap, indent=4, ensure_ascii=False))
+    # Define the properties
+    g.add((BASE.isProject, RDF.type, OWL.ObjectProperty))
+    g.add((BASE.hasStartYear, RDF.type, OWL.ObjectProperty))
+    g.add((BASE.hasProjectType, RDF.type, OWL.ObjectProperty))
+    g.add((BASE.hasEndYear, RDF.type, OWL.ObjectProperty))
+    g.add((BASE.hasYear, RDF.type, OWL.DatatypeProperty))
+    g.add((BASE.hasDescription, RDF.type, OWL.DatatypeProperty))
+    g.add((BASE.hasStatus, RDF.type, OWL.DatatypeProperty))
+
+    pbar = tqdm(total=len(projects_data))
+
+    #undefined_code = 0;
+
+    for entry in projects_data:
+        """ Apparently codice is not the ID
+        if not entry['codice']:
+            print(f"[WARN] Undefined Project code: Number: #{undefined_code}")
+            project_uri = BASE[f"project_undefined_{undefined_code}"]
+            undefined_code+=1
+        else:
+            project_uri = BASE[f"project_{entry['codice']}"]
+
+        # Handle the fact that some of them have the same code
+        if ((project_uri, RDF.type, BASE.Project30)) not in g:
+            g.add((project_uri, RDF.type, BASE.Project30))
+        else:
+            while ((project_uri, RDF.type, BASE.Project30)) in g:
+                project_uri += "I"
+            g.add((project_uri, RDF.type, BASE.Project30))
+        """
+        project_uri = BASE[f"project_{entry["id"]}"]
+
+        # Some projects can not have an initial date or end
+        if entry['inizio_lav']:
+            startyear_uri = BASE[f"year_{int(entry['inizio_lav'])}"]
+        if entry['fine_lavor']:
+            startyear_uri = BASE[f"year_{int(entry['fine_lavor'])}"]
+
+        # Add datatype properties
+        g.add((project_uri, BASE.hasDescription, Literal(entry['descrizion'], datatype=XSD.string)))
+        g.add((project_uri, BASE.hasStatus, Literal(entry['stato_semp'], datatype=XSD.string)))
+
+        # First check if the project type is instantiated in the graph
+        thread_uri = BASE[hashmap[entry["filone_sec"]]]
+        theme_1_uri =  BASE[hashmap[entry["tema_prima"]]]
+        theme_2_uri =  BASE[hashmap[entry["tema_secon"]]]
+
+        if ((thread_uri, RDF.type, BASE.ProjectThread)) in btp:
+            g.add((project_uri, BASE.hasProjectType, thread_uri))
+        else:
+            print(f"[WARN] Missing thread: {entry["filone_sec"]}")
+        if ((theme_1_uri, RDF.type, BASE.ProjectTheme)) in btp:
+            g.add((project_uri, BASE.hasProjectType, theme_1_uri))
+        else:
+            print(f"[WARN] Missing theme: {entry["tema_prima"]}")
+        if ((theme_2_uri, RDF.type, BASE.ProjectTheme)) in btp:
+            g.add((project_uri, BASE.hasProjectType, theme_2_uri))
+        else:
+            print(f"[WARN] Missing theme: {entry["tema_secon"]}")
+        # Note Project types are already instantiated in the ontology, just add the uri
+        pbar.update(1)
+
+
+
+
+
 # Serialize the updated graph back to a file
 process_roads(roads_data)
 process_speed(speed_data)
+process_projects(projects_data)
 output_path = 'rdf/roads.ttl'
 print(f"Saving graph to {output_path}")
 

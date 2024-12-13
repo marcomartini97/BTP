@@ -1124,6 +1124,18 @@ VOLTONE"""@en ;
 #    Individuals
 #################################################################
 
+###  http://www.dei.unipd.it/~gdb/ontology/btp#innovazione
+:innovazione rdf:type owl:NamedIndividual ,
+                      :ProjectThread ,
+                      skos:Concept .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp#manutenzioneStrade
+:manutenzioneStrade rdf:type owl:NamedIndividual ,
+                             :ProjectTheme ,
+                             skos:Concept .
+
+
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/C6H6
 :C6H6 rdf:type owl:NamedIndividual ,
                :ChemicalElement ;
@@ -1430,6 +1442,7 @@ VOLTONE"""@en ;
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/pontiCanali
 :pontiCanali rdf:type owl:NamedIndividual ,
+                      :ProjectTheme ,
                       :ProjectThread ,
                       skos:Concept ;
              skos:prefLabel "Ponti/Canali"@it .
