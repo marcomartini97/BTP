@@ -121,16 +121,6 @@ xsd:gYear rdf:type rdfs:Datatype .
             rdfs:label "has End Year" .
 
 
-###  http://www.dei.unipd.it/~gdb/ontology/btp/hasImpositionDate
-:hasImpositionDate rdf:type owl:ObjectProperty ;
-                   owl:inverseOf :isImpositionDate ;
-                   rdf:type owl:FunctionalProperty ;
-                   rdfs:domain :SpeedLimit30 ;
-                   rdfs:range :Date ;
-                   rdfs:comment "Defines the date when a certain speed limit was imposed"@en ;
-                   rdfs:label "has Imposition Date" .
-
-
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/hasLevel
 :hasLevel rdf:type owl:ObjectProperty ;
           rdfs:domain :Coil ;
@@ -299,14 +289,6 @@ xsd:gYear rdf:type rdfs:Datatype .
            rdfs:domain :Year ;
            rdfs:range :Project30 ;
            rdfs:label "is End Year" .
-
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp/isImpositionDate
-:isImpositionDate rdf:type owl:ObjectProperty ,
-                           owl:InverseFunctionalProperty ;
-                  rdfs:domain :Date ;
-                  rdfs:range :SpeedLimit30 ;
-                  rdfs:label "is Imposition Date" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/isLocatedAt
@@ -1011,8 +993,7 @@ Some roads can be long and traverse multiple districts"""@en .
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/RoadType
 :RoadType rdf:type owl:Class ;
           owl:equivalentClass [ rdf:type owl:Class ;
-                                owl:oneOf ( :roadtype_vicolo
-                                            :roadtype_autostrada
+                                owl:oneOf ( :roadtype_autostrada
                                             :roadtype_corte
                                             :roadtype_galleria
                                             :roadtype_giardino
@@ -1032,6 +1013,7 @@ Some roads can be long and traverse multiple districts"""@en .
                                             :roadtype_undefined
                                             :roadtype_via
                                             :roadtype_viale
+                                            :roadtype_vicolo
                                           )
                               ] ;
           rdfs:comment """The type of road, enumerated class that can be one of:
@@ -1141,12 +1123,6 @@ VOLTONE"""@en ;
 #################################################################
 #    Individuals
 #################################################################
-
-###  http://www.dei.unipd.it/~gdb/ontology/btp#roadtype_vicolo
-:roadtype_vicolo rdf:type owl:NamedIndividual ,
-                          :RoadType ;
-                 rdfs:label "Road-Type: Vicolo" .
-
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/C6H6
 :C6H6 rdf:type owl:NamedIndividual ,
@@ -1649,6 +1625,12 @@ VOLTONE"""@en ;
 :roadtype_viale rdf:type owl:NamedIndividual ,
                          :RoadType ;
                 rdfs:label "Road-Type: Viale" .
+
+
+###  http://www.dei.unipd.it/~gdb/ontology/btp/roadtype_vicolo
+:roadtype_vicolo rdf:type owl:NamedIndividual ,
+                          :RoadType ;
+                 rdfs:label "Road-Type: Vicolo" .
 
 
 ###  http://www.dei.unipd.it/~gdb/ontology/btp/saffi
