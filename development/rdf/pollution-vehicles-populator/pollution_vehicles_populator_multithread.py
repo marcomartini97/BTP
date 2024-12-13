@@ -12,14 +12,9 @@ from rdflib.namespace import XSD
 import psutil
 
 # For multi-threading
-import threading
+import concurrent.futures
 
 ############################################################################################################
-
-global threads
-threads = []
-
-global pbar
 
 print(f'Number of threads: {psutil.cpu_count()}')
 print(f'Number of core: {psutil.cpu_count(logical=False)}')
@@ -188,14 +183,13 @@ def coils_process_chunk(chunk, piece, year_dataset):
         g_coils.add((Coil, BTP.hasID, Literal(str(row['codice spira']), datatype=XSD.string)))
 
         # Road here can't be empty
-        RoadArch = URIRef(BTP["road_"+codice_arco])
+        RoadArch = URIRef(BTP["road_"+ str(codice_arco)])
         g_coils.add((Coil, BTP.isOn, RoadArch))
         g_coils.add((RoadArch, BTP.isPlacedOn, Coil))
     
     # Save the graph
     save_graph(g_coils, temp_path+'/coils_populated_'+year_dataset+'_'+str(piece)+'.ttl')
 
-    pbar.update(len(chunk))
 
 ############################################################################################################
 
@@ -300,7 +294,6 @@ def vehicle_count_process_chunk(chunk, piece, year_dataset):
     # Save the graph
     save_graph(g_vc, temp_path+'/vehicle_count_populated_'+year_dataset+'_'+str(piece)+'.ttl')
 
-    pbar.update(len(chunk))
 
 ############################################################################################################
 
@@ -366,7 +359,6 @@ def vehicle_accuracy_process_chunk(chunk, piece, year_dataset):
     # Save the graph
     save_graph(g_acc, 'rdf/vehicle_accuracy_populated_'+year_dataset+'_'+str(piece)+'.ttl')
 
-    pbar.update(len(chunk))
 
 ############################################################################################################
 
@@ -455,7 +447,6 @@ def pollution_process_chunk(chunk, piece, year_dataset):
     # Save the graph
     save_graph(g_pol, temp_path+'/pollution_station_populated_'+year_dataset+'_'+str(piece)+'.ttl')
 
-    pbar.update(len(chunk))
 
 ############################################################################################################
 
@@ -469,19 +460,15 @@ def merge_graph(regex, name_file):
     total_lenght = len(files)
     pbar = tqdm(total=total_lenght)
 
-    for filename in files:
-        temp = Graph()
-        temp.parse(os.path.join(temp_path, filename), format='turtle')
-        # Add all triples to the merged graph as: subject, predicate, object
-        merged_graph += temp
-        del temp
-        pbar.update(1)
+    with open(os.path.join(save_path, name_file), 'w') as outfile:
+        for filename in files:
+                with open(os.path.join(temp_path, filename)) as infile:
+                    for line in infile:
+                        outfile.write(line)
+                pbar.update(1)
 
     pbar.close()
     
-    # Save the merged graph using the longturtle format to speed up the process of serialization
-    merged_graph.serialize(destination=os.path.join(save_path, name_file), format='longturtle')
-
     # Remove all the partial files in the directory (temp_path)
     for filename in os.listdir(temp_path):
         if regex.match(filename):
@@ -536,202 +523,187 @@ def get_coil_by_id(coil_id):
 ############################################################################################################
 
 # I check if the folder is empty or not
-if not os.listdir(save_path) == []:
-    print("The folder is not empty, do you want to continue? (y/n)")
-    answer = input()
-    if(answer.lower() == 'y'):
-        # I remove all the files in the folders
-        print("Removing all the files in the folder ...")
-        for file in os.listdir(save_path):
-            os.remove(os.path.join(save_path, file))
-        for file in os.listdir(temp_path):
-            os.remove(os.path.join(temp_path, file))
-        print("DONE!")
-    else:
-        exit()
+#if not os.listdir(save_path) == []:
+#    print("The folder is not empty, do you want to continue? (y/n)")
+#    answer = input()
+#    if(answer.lower() == 'y'):
+#        # I remove all the files in the folders
+#        print("Removing all the files in the folder ...")
+#        for file in os.listdir(save_path):
+#            os.remove(os.path.join(save_path, file))
+#        for file in os.listdir(temp_path):
+#            os.remove(os.path.join(temp_path, file))
+#        print("DONE!")
+#    else:
+#        exit()
 
 ############################################################################################################
 
-print("--- populating coils ---")
+# Wrap main logic in __name__ guard for ProcessPoolExecutor to work on Windows
 
-for namefile in rilevazione_flusso:
+if __name__ == "__main__":
+    with concurrent.futures.ProcessPoolExecutor(max_workers=psutil.cpu_count()) as executor:
 
-    year_dataset = namefile.split('_')[3].split('.')[0]
-    piece = 0
+        print("--- populating coils ---")
 
-    total_rows = len(pd.read_csv(namefile))
-    pbar = tqdm(total=total_rows)
+        for namefile in rilevazione_flusso:
 
-    for chunk in pd.read_csv(namefile, sep=';', chunksize=chunksize):
-        
-        # Manage NaN values
-        chunk = chunk.fillna('')
+            futures = []
 
-        # Memory monitor
-        if psutil.virtual_memory().percent > 80 or len(threads) == psutil.cpu_count():
-            # I'm using more than 70% of the whole RAM or I'm using all the threads
-            for thread in threads:
-                thread.join()
-                # At least one thread is now available
-                break
+            year_dataset = namefile.split('_')[3].split('.')[0]
+            piece = 0
 
-        # I can start a new thread
-        thread = threading.Thread(target=coils_process_chunk, args=(chunk, piece, year_dataset))
-        thread.start()
-        threads.append(thread)
-        piece+=1
-      
-    for thread in threads:
-        thread.join()
+            total_rows = len(pd.read_csv(namefile))
+            pbar = tqdm(total=total_rows)
 
-    pbar.close()
+            for chunk in pd.read_csv(namefile, sep=';', chunksize=chunksize):
 
-############################################################################################################
+                # Manage NaN values
+                chunk = chunk.fillna('')
 
-print("--- merging coils ---")
+                futures.append(executor.submit(coils_process_chunk, chunk, piece, year_dataset))
+                piece+=1
 
-regex = re.compile(r'coils_populated_\d{4}_\d+\.ttl')
-merge_graph(regex, 'coils_populated.ttl')
+                # Test small number of chunks
+                if (piece >= 10):
+                    break
 
-print("--- merging done ---")
+            for future in concurrent.futures.as_completed(futures):
+                try:
+                    pbar.update(chunksize)
+                except:
+                    print(f"Error in future: {e}")
 
-############################################################################################################
 
-print("--- populating vehicle count ---")
+            pbar.close()
 
-for namefile in rilevazione_flusso:
+        ############################################################################################################
 
-    year_dataset = namefile.split('_')[3].split('.')[0]
-    piece = 0
+        print("--- merging coils ---")
 
-    total_rows = len(pd.read_csv(namefile))
-    pbar = tqdm(total=total_rows)
+        regex = re.compile(r'coils_populated_\d{4}_\d+\.ttl')
+        merge_graph(regex, 'coils_populated.ttl')
 
-    for chunk in pd.read_csv(namefile, sep=';', chunksize=chunksize):
+        print("--- merging done ---")
 
-        # Manage NaN values
-        chunk = chunk.fillna('')
+        ############################################################################################################
 
-        # Memory monitor
-        if psutil.virtual_memory().percent > 80 or len(threads) == psutil.cpu_count():
-            # I'm using more than 70% of the whole RAM or I'm using all the threads
-            for thread in threads:
-                thread.join()
-                # At least one thread is now available
-                break
-        
-        # I can start a new thread
-        thread = threading.Thread(target=vehicle_count_process_chunk, args=(chunk, piece, year_dataset))
-        thread.start()
-        threads.append(thread)
-        piece+=1
-        
-        pbar.update(chunksize)
+        print("--- populating vehicle count ---")
 
-    for thread in threads:
-        thread.join()
+        for namefile in rilevazione_flusso:
 
-    pbar.close()
+            futures = []
 
-############################################################################################################
+            year_dataset = namefile.split('_')[3].split('.')[0]
+            piece = 0
 
-print("--- merging vehicle count ---")
+            total_rows = len(pd.read_csv(namefile))
+            pbar = tqdm(total=total_rows)
 
-regex = re.compile(r'vehicle_count_populated_\d{4}_\d+\.ttl')
-merge_graph(regex, 'vehicle_count_populated.ttl')
+            for chunk in pd.read_csv(namefile, sep=';', chunksize=chunksize):
 
-print("--- merging done ---")
+                # Manage NaN values
+                chunk = chunk.fillna('')
 
-############################################################################################################
+                futures.append(executor.submit(vehicle_count_process_chunk, chunk, piece, year_dataset))
+                piece+=1
 
-print("--- populating vehicle accuracy ---")
+            for future in concurrent.futures.as_completed(futures):
+                try:
+                    pbar.update(chunksize)
+                except:
+                    print(f"Error in future: {e}")
 
-for namefile in accuratezza_spire:
+            pbar.close()
 
-    year_dataset = namefile.split('/')[-1].split('_')[2].split('.')[0]
-    piece = 0
+        ############################################################################################################
 
-    total_rows = len(pd.read_csv(namefile))
-    pbar = tqdm(total=total_rows)
+        print("--- merging vehicle count ---")
 
-    for chunk in pd.read_csv(namefile, sep=';', chunksize=chunksize):
+        regex = re.compile(r'vehicle_count_populated_\d{4}_\d+\.ttl')
+        merge_graph(regex, 'vehicle_count_populated.ttl')
 
-        # Manage NaN values
-        chunk = chunk.fillna('')
+        print("--- merging done ---")
 
-        # Memory monitor
-        if psutil.virtual_memory().percent > 80 or len(threads) == psutil.cpu_count():
-            # I'm using more than 70% of the whole RAM or I'm using all the threads
-            for thread in threads:
-                thread.join()
-                # At least one thread is now available
-                break
-        
-        # I can start a new thread
-        thread = threading.Thread(target=vehicle_accuracy_process_chunk, args=(chunk, piece, year_dataset))
-        thread.start()
-        threads.append(thread)
-        piece+=1
+        ############################################################################################################
 
-    for thread in threads:
-        thread.join()
+        print("--- populating vehicle accuracy ---")
 
-    pbar.close()
+        for namefile in accuratezza_spire:
 
-############################################################################################################
+            futures = []
 
-print("--- merging vehicles accuracy ---")
+            year_dataset = namefile.split('/')[-1].split('_')[2].split('.')[0]
+            piece = 0
 
-regex = re.compile(r'vehicle_accuracy_populated_\d{4}_\d+\.ttl')
-merge_graph(regex, 'vehicle_accuracy_populated.ttl')
+            total_rows = len(pd.read_csv(namefile))
+            pbar = tqdm(total=total_rows)
 
-print("--- merging done ---")
+            for chunk in pd.read_csv(namefile, sep=';', chunksize=chunksize):
 
-############################################################################################################
+                # Manage NaN values
+                chunk = chunk.fillna('')
 
-print("--- populating pollution data ---")
+                futures.append(executor.submit(vehicle_accuracy_process_chunk, chunk, piece, year_dataset))
+                piece+=1
 
-for namefile in centraline:
+            for future in concurrent.futures.as_completed(futures):
+                try:
+                    pbar.update(chunksize)
+                except:
+                    print(f"Error in future: {e}")
 
-    year_dataset = namefile.split('/')[-1].split('_')[2].split('.')[0]
-    piece = 0
+            pbar.close()
 
-    total_rows = len(pd.read_csv(namefile))
-    pbar = tqdm(total=total_rows)
+        ############################################################################################################
 
-    for chunk in pd.read_csv(namefile, sep=';', chunksize=chunksize):
+        print("--- merging vehicles accuracy ---")
 
-        # Manage NaN values
-        chunk = chunk.fillna('')
+        regex = re.compile(r'vehicle_accuracy_populated_\d{4}_\d+\.ttl')
+        merge_graph(regex, 'vehicle_accuracy_populated.ttl')
 
-        # Memory monitor
-        if psutil.virtual_memory().percent > 80 or len(threads) == psutil.cpu_count():
-            # I'm using more than 70% of the whole RAM or I'm using all the threads
-            for thread in threads:
-                thread.join()
-                # At least one thread is now available
-                break
+        print("--- merging done ---")
 
-        # I can start a new thread
-        thread = threading.Thread(target=pollution_process_chunk, args=(chunk, piece, year_dataset))
-        thread.start()
-        threads.append(thread)
-        piece+=1
+        ############################################################################################################
 
-    for thread in threads:
-        thread.join()
+        print("--- populating pollution data ---")
 
-    pbar.close()
 
-############################################################################################################
+        for namefile in centraline:
 
-print("--- merging pollution data ---")
+            futures = []
 
-regex = re.compile(r'pollution_station_populated_\d{4}_\d+\.ttl')
-merge_graph(regex, 'pollution_station_populated.ttl')
+            year_dataset = namefile.split('/')[-1].split('_')[2].split('.')[0]
+            piece = 0
 
-print("--- merging done ---")
+            total_rows = len(pd.read_csv(namefile))
+            pbar = tqdm(total=total_rows)
 
-############################################################################################################
+            for chunk in pd.read_csv(namefile, sep=';', chunksize=chunksize):
 
-print("--- end ---")
+                # Manage NaN values
+                chunk = chunk.fillna('')
+
+                futures.append(executor.submit(pollution_process_chunk, chunk, piece, year_dataset))
+                piece+=1
+
+            for future in concurrent.futures.as_completed(futures):
+                try:
+                    pbar.update(chunksize)
+                except:
+                    print(f"Error in future: {e}")
+
+            pbar.close()
+
+        ############################################################################################################
+
+        print("--- merging pollution data ---")
+
+        regex = re.compile(r'pollution_station_populated_\d{4}_\d+\.ttl')
+        merge_graph(regex, 'pollution_station_populated.ttl')
+
+        print("--- merging done ---")
+
+        ############################################################################################################
+
+        print("--- end ---")
