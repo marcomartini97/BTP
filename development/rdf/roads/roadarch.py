@@ -3,6 +3,9 @@ from datetime import datetime
 from rdflib import Graph, Namespace, Literal, RDF, URIRef
 from rdflib.namespace import RDFS, XSD
 from tqdm import tqdm
+# For geography
+from shapely import intersection, LineString, Point, Polygon, MultiPolygon
+import numpy
 import unicodedata
 import re
 
@@ -43,6 +46,7 @@ def get_first_word_lower(s):
 
 def to_camel_case(s):
     s = s.replace('/', ' ')
+    s = s.replace('-', ' ')
     # Remove accents
     s = ''.join(c for c in unicodedata.normalize('NFD', s) if unicodedata.category(c) != 'Mn')
     s = re.sub(r'[-/]', '', s)
@@ -136,28 +140,54 @@ def process_speed(speed_data):
         g.add((speedlimit_uri, BASE.isSpeedLimit, roadarch_uri))
         pbar.update(1)
 
+# There are multiple shapes for project
+def do_shapes_intersect(proj, arc):
+    geometry = proj['geo_shape']['geometry']
+    if geometry['type'] == 'Point':
+        proj_shape = Point(geometry['coordinates'][:2])
+    elif geometry['type'] == 'LineString':
+        proj_shape = (LineString(geometry['coordinates']))
+    elif geometry['type'] == 'Polygon':
+        proj_shape = (Polygon(geometry['coordinates'][0]))
+    elif geometry['type'] == 'MultiPolygon':
+        proj_shape = MultiPolygon([Polygon(polygon[0]) for polygon in geometry['coordinates']])
+    else:
+      return False
+
+    geometry = arc['geo_shape']['geometry']
+    if geometry['type'] == 'LineString':
+        arc_shape = (LineString(geometry['coordinates']))
+    elif geometry['type'] == 'Polygon':
+        arc_shape = (Polygon(geometry['coordinates'][0]))
+    else:
+        arc_shape = (Point(geometry['coordinates']))
+    return proj_shape.intersects(arc_shape)
 
 
 def process_projects(projects_data):
 
-    entries = []
+    type_entries = []
+    zone_entries = []
     for item in projects_data:
+        if  'zona' in item and item['zona']:
+            zone_entries.append(item['zona'])
         if 'tema_prima' in item and item['tema_prima']:
-            entries.append(item['tema_prima'])
+            type_entries.append(item['tema_prima'])
         if 'tema_secon' in item and item['tema_secon']:
-            entries.append(item['tema_secon'])
+            type_entries.append(item['tema_secon'])
         if 'filone_sec' in item and item['filone_sec']:
-            entries.append(item['filone_sec'])
+            type_entries.append(item['filone_sec'])
 
     # Create hashmap to parse SKOS
-    hashmap = {entry: to_camel_case(entry) for entry in set(entries)}
+    type_hashmap = {entry: to_camel_case(entry) for entry in set(type_entries)}
+    zone_hashmap = {entry: to_camel_case(entry) for entry in set(zone_entries)}
 
     # Manual fixes for typo
-    hashmap["Accessibiltà"] = "accessibilita"
+    type_hashmap["Accessibiltà"] = "accessibilita"
 
     print(f"Processing project JSON data from: {projects_file_path} ... ")
     # Print hashmap
-    print(json.dumps(hashmap, indent=4, ensure_ascii=False))
+    print(json.dumps(zone_hashmap, indent=4, ensure_ascii=False))
     # Define the properties
     g.add((BASE.isProject, RDF.type, OWL.ObjectProperty))
     g.add((BASE.hasStartYear, RDF.type, OWL.ObjectProperty))
@@ -165,6 +195,7 @@ def process_projects(projects_data):
     g.add((BASE.hasEndYear, RDF.type, OWL.ObjectProperty))
     g.add((BASE.hasYear, RDF.type, OWL.DatatypeProperty))
     g.add((BASE.hasDescription, RDF.type, OWL.DatatypeProperty))
+    g.add((BASE.hasProximityArea, RDF.type, OWL.ObjectProperty))
     g.add((BASE.hasStatus, RDF.type, OWL.DatatypeProperty))
 
     pbar = tqdm(total=len(projects_data))
@@ -172,22 +203,6 @@ def process_projects(projects_data):
     #undefined_code = 0;
 
     for entry in projects_data:
-        """ Apparently codice is not the ID
-        if not entry['codice']:
-            print(f"[WARN] Undefined Project code: Number: #{undefined_code}")
-            project_uri = BASE[f"project_undefined_{undefined_code}"]
-            undefined_code+=1
-        else:
-            project_uri = BASE[f"project_{entry['codice']}"]
-
-        # Handle the fact that some of them have the same code
-        if ((project_uri, RDF.type, BASE.Project30)) not in g:
-            g.add((project_uri, RDF.type, BASE.Project30))
-        else:
-            while ((project_uri, RDF.type, BASE.Project30)) in g:
-                project_uri += "I"
-            g.add((project_uri, RDF.type, BASE.Project30))
-        """
         project_uri = BASE[f"project_{entry["id"]}"]
 
         # Some projects can not have an initial date or end
@@ -197,14 +212,23 @@ def process_projects(projects_data):
             startyear_uri = BASE[f"year_{int(entry['fine_lavor'])}"]
 
         # Add datatype properties
+        g.add((project_uri, RDF.type, BASE.Project30))
+        g.add((project_uri, BASE.hasStartYear, startyear_uri))
         g.add((project_uri, BASE.hasDescription, Literal(entry['descrizion'], datatype=XSD.string)))
         g.add((project_uri, BASE.hasStatus, Literal(entry['stato_semp'], datatype=XSD.string)))
 
-        # First check if the project type is instantiated in the graph
-        thread_uri = BASE[hashmap[entry["filone_sec"]]]
-        theme_1_uri =  BASE[hashmap[entry["tema_prima"]]]
-        theme_2_uri =  BASE[hashmap[entry["tema_secon"]]]
+        # Add proximity areas
+        if(entry['zona'] in zone_hashmap):
+            zone_uri = BASE[zone_hashmap[entry['zona']]]
+            g.add((project_uri, BASE.hasProximityArea, zone_uri))
 
+
+        # First check if the project type is instantiated in the graph
+        thread_uri = BASE[type_hashmap[entry["filone_sec"]]]
+        theme_1_uri =  BASE[type_hashmap[entry["tema_prima"]]]
+        theme_2_uri =  BASE[type_hashmap[entry["tema_secon"]]]
+
+        # Note Project types are already instantiated in the ontology, just add the uri
         if ((thread_uri, RDF.type, BASE.ProjectThread)) in btp:
             g.add((project_uri, BASE.hasProjectType, thread_uri))
         else:
@@ -217,7 +241,12 @@ def process_projects(projects_data):
             g.add((project_uri, BASE.hasProjectType, theme_2_uri))
         else:
             print(f"[WARN] Missing theme: {entry["tema_secon"]}")
-        # Note Project types are already instantiated in the ontology, just add the uri
+
+        # Check if the project is inside an arco stradale, and associate the road through geometric shapes
+        for road_entry in roads_data:
+            if do_shapes_intersect(entry, road_entry):
+                #print(f"Descrizione: {entry['descrizion']}\n{entry['luogo']} intersects: {road_entry['nomevia']}")
+                g.add((project_uri, BASE.isProject, BASE[f"road_{road_entry['codvia']}"]))
         pbar.update(1)
 
 
