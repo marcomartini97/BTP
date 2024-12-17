@@ -1,0 +1,16 @@
+coils_populated_2019_0.ttl filter=lfs diff=lfs merge=lfs -text
+coils_populated_2020_0.ttl filter=lfs diff=lfs merge=lfs -text
+coils_populated_2021_0.ttl filter=lfs diff=lfs merge=lfs -text
+coils_populated_2022_0.ttl filter=lfs diff=lfs merge=lfs -text
+pollution_populated_2019_0.ttl filter=lfs diff=lfs merge=lfs -text
+pollution_populated_2020_0.ttl filter=lfs diff=lfs merge=lfs -text
+pollution_populated_2021_0.ttl filter=lfs diff=lfs merge=lfs -text
+pollution_populated_2022_0.ttl filter=lfs diff=lfs merge=lfs -text
+vehicle_accuracy_populated_2019_0.ttl filter=lfs diff=lfs merge=lfs -text
+vehicle_accuracy_populated_2020_0.ttl filter=lfs diff=lfs merge=lfs -text
+vehicle_accuracy_populated_2021_0.ttl filter=lfs diff=lfs merge=lfs -text
+vehicle_accuracy_populated_2022_0.ttl filter=lfs diff=lfs merge=lfs -text
+vehicle_count_populated_2019_0.ttl filter=lfs diff=lfs merge=lfs -text
+vehicle_count_populated_2020_0.ttl filter=lfs diff=lfs merge=lfs -text
+vehicle_count_populated_2021_0.ttl filter=lfs diff=lfs merge=lfs -text
+vehicle_count_populated_2022_0.ttl filter=lfs diff=lfs merge=lfs -text
