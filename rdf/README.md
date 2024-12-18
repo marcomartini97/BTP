@@ -8,6 +8,10 @@ The datasets are divided in 3 macro areas:
 + Roads and Projects
 + Accidents
 
+## Report
+
+[Click here](https://docs.google.com/document/d/1iIKldbJ3VUruU1ghUgTw2VJeQClqwr-zL5v28QynkDE/edit?usp=sharing)
+
 ## Datasets (Drive)
 
 A copy of the RDF datasets can be found in the following Google Drive links:
