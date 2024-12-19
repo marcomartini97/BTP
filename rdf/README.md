@@ -4,7 +4,7 @@ This folder contains the RDF datasets used in the project, due to practical reas
 
 The datasets are divided in 3 macro areas:
 
-+ Pollution - Vehicle Traffic Sensors
++ Pollution - Vehicle Traffic
 + Roads and Projects
 + Road Accidents
 
@@ -19,5 +19,5 @@ A copy of the RDF datasets can be found in the following Google Drive links:
 | Dataset link | Macro Area |
 | ------------ | ---------- |
 | [Roads - Projects](https://drive.google.com/file/d/1Rn0Ur3-y7pDqm5npi0Szf6j2_Dx0N8ME/view?usp=sharing) | Roads and Projects |
-| [Vehicles - Pollution](https://drive.google.com/drive/folders/1aLYbOY5xAzoq8o0PH7YTVIEId7jRREee?usp=sharing) | Vehicles Detection & Accuracy and Pollution |
+| [Pollution - Vehicle Traffic](https://drive.google.com/drive/folders/1aLYbOY5xAzoq8o0PH7YTVIEId7jRREee?usp=sharing) | Vehicles Detection & Accuracy and Pollution |
 | [Road Accidents](https://drive.google.com/drive/folders/13HunHFsZVRgzvIwtvj7bztM7kS-8xhS1?usp=drive_link) | Road Accidents |
