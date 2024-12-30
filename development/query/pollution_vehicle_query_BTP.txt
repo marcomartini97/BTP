@@ -1,0 +1,138 @@
+# Q01 - AVERAGE ANNUAL QUANTITY OF POLLUTANTS
+
+prefix btp:<http://www.dei.unipd.it/~gdb/ontology/btp/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+select ?year ?chemical_element ((sum(?daily_quantity)/365) as ?yearly_quantity)  where {
+    {
+        # sub-query to calculate the daily average quantity of each chemical element
+        select ?day ?chemical_element (avg(?quantity) as ?daily_quantity) where {
+            ?chemical_element a btp:ChemicalElement ;
+            btp:isDetected ?chemical_detection .
+            ?chemical_detection a btp:ChemicalDetection ;
+            btp:inQuantity ?quantity .
+            ?chemical_detection a btp:ChemicalDetection ;
+            btp:hasDetectedOnPeriod ?period .
+            ?period a btp:Period ;
+            btp:startTime ?date .
+            
+            bind(xsd:date(?date) as ?day)
+        }
+        group by ?day ?chemical_element
+    }
+    # extract the year from the date
+    bind(year(?day) as ?year)
+}
+group by ?year ?chemical_element
+order by asc(?chemical_element)
+
+
+
+# Q02 - AVERAGE ANNUAL TRAFFIC
+
+prefix btp:<http://www.dei.unipd.it/~gdb/ontology/btp/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+select ?year (xsd:integer(sum(?daily_traffic)/365) as ?yearly_traffic)  where {
+    
+    {
+        # first sub-query: calculate the daily average traffic in all the roads
+        select ?day (xsd:integer(sum(?daily_traffic_roadarch)) as ?daily_traffic) where {
+
+            {
+            # second sub-query: calculate the daily average traffic with the accuracy for each road arch
+                select ?day ?roadarch (xsd:integer(avg(?flow * if(?accuracy = -1, 0, ?accuracy))) as ?daily_traffic_roadarch) where {
+                    ?vehicledet a btp:VehicleDetection ;
+                    btp:hasCount ?flow ;
+                    btp:hasAccuracy ?accuracy ;
+                    btp:isObserved ?coil ;
+                    btp:hasObservedOnPeriod ?period .
+                    ?period a btp:Period ;
+                    btp:startTime ?date .
+                    ?coil a btp:Coil ;
+                    btp:isOn ?roadarch .
+
+                    bind(xsd:date(?date) as ?day)
+
+                }
+                # for each road arch 
+                group by ?day ?roadarch
+            }
+
+        }
+	# for each day
+        group by ?day            
+   }
+    
+   # extract the year from the date
+   bind(year(?day) as ?year)
+}
+group by ?year
+
+
+
+# Q03 - ROADS COVERED BY COILS
+
+prefix btp:<http://www.dei.unipd.it/~gdb/ontology/btp/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+ask where {
+    {
+        select (count(distinct ?road) as ?total_roads_2019) where {
+            ?vehicledet a btp:VehicleDetection ;
+            	btp:isObserved ?coil ;
+            	btp:hasObservedOnPeriod ?period .
+            ?period a btp:Period ;
+            	btp:startTime ?date .
+            ?coil a btp:Coil ;
+            	btp:isOn ?roadarch .
+            ?roadarch a btp:RoadArch ;
+            	btp:isArchtoRoad | btp:isArchfromRoad ?road .
+            
+            # select the year 2019
+            filter(year(?date) = 2019)
+        }
+    }
+    {
+        select (count(distinct ?road) as ?total_roads_2022) where {
+            ?vehicledet a btp:VehicleDetection ;
+            	btp:isObserved ?coil ;
+            	btp:hasObservedOnPeriod ?period .
+            ?period a btp:Period ;
+            	btp:startTime ?date .
+            ?coil a btp:Coil ;
+            	btp:isOn ?roadarch .
+            ?roadarch a btp:RoadArch ;
+            	btp:isArchToRoad | btp:isArchFromRoad ?road .
+            
+            # select the year 2022
+            filter(year(?date) = 2022)
+        }
+    }
+    
+    filter(?total_roads_2019 < ?total_roads_2022)   
+}
+
+
+# Q04 -DISTRIBUTION OF COILS OVER ROAD TYPES
+
+prefix btp:<http://www.dei.unipd.it/~gdb/ontology/btp/>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+select ?year ?road_type (count(distinct ?road) as ?tot_coils) where {
+    ?vehicledet a btp:VehicleDetection ;
+        btp:isObserved ?coil ;
+        btp:hasObservedOnPeriod ?period .
+	?period a btp:Period ;
+        btp:startTime ?date .
+    ?coil a btp:Coil ;
+        btp:isOn ?roadarch .
+    ?roadarch a btp:RoadArch ;
+        btp:isArchToRoad | btp:isArchFromRoad ?road .
+    ?road a btp:Road ;
+        btp:hasRoadType ?road_type .
+            
+	bind(year(?date) as ?year)
+}
+group by ?year ?road_type
+order by ?year
