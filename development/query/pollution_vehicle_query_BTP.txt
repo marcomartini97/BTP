@@ -1,9 +1,9 @@
-# Q01 - AVERAGE ANNUAL QUANTITY OF POLLUTANTS
+# Q01 - AVERAGE MONTHLY QUANTITY OF POLLUTANTS
 
 prefix btp:<http://www.dei.unipd.it/~gdb/ontology/btp/>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
-select ?year ?chemical_element ((sum(?daily_quantity)/365) as ?yearly_quantity)  where {
+select ?year ?month ?chemical_element ((sum(?daily_quantity)/365) as ?monthly_quantity)  where {
     {
         # sub-query to calculate the daily average quantity of each chemical element
         select ?day ?chemical_element (avg(?quantity) as ?daily_quantity) where {
@@ -22,9 +22,10 @@ select ?year ?chemical_element ((sum(?daily_quantity)/365) as ?yearly_quantity) 
     }
     # extract the year from the date
     bind(year(?day) as ?year)
+    bind(month(?day) as ?month)
 }
-group by ?year ?chemical_element
-order by asc(?chemical_element)
+group by ?year ?month ?chemical_element
+order by asc(?year)
 
 
 
@@ -87,7 +88,7 @@ ask where {
             ?coil a btp:Coil ;
             	btp:isOn ?roadarch .
             ?roadarch a btp:RoadArch ;
-            	btp:isArchtoRoad | btp:isArchfromRoad ?road .
+            	btp:isArchToRoad | btp:isArchFromRoad ?road .
             
             # select the year 2019
             filter(year(?date) = 2019)
