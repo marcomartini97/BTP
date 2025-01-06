@@ -14,10 +14,16 @@ This repository is a template repository for the homeworks to be developed in th
 
 ## Organisation of the repository ##
 The repository is organised as follows:
-* code: folder that contains all the code for the homework + files for git.
-* presentation: this folder contains the final presentation of the course.
-    * slides: this folder contains the slides used for presenting the project.
-* developing: contains the files that the group uses for developing the project.
+* datasets: folder that contains all the dataset of the database.
+    * csv: folder that contains datasets in .csv format.
+    * json: folder that contains datasets in .json format.
+* development: contains the files that the group uses for developing the project.
+    * ontology: contains the files that the group uses for developing the ontology.
+    * query: contains the files that the group uses for developing the queries.
+    * rdf: contains the files that the group uses for developing the rdf extractor.
+    * test_rdf: contains file for testing purposes.
+* ontology: contains the files of the ontology.
+* rdf: contains the rdf files in Turtle format (.ttl).
 * report: contains the report for the assignments.
 
 ## Topic ##
