@@ -64,7 +64,11 @@ ORDER BY DESC(?totalPedDeaths)
 
 PREFIX btp: <http://www.dei.unipd.it/~gdb/ontology/btp/>
 
-SELECT ?district (MAX(?trafficCount) AS ?maxTraffic) (MAX(?numberOfAccidents) AS ?mostPopularAccidentCount)
+SELECT ?district 
+       (MAX(?trafficCount) AS ?maxTraffic) 
+       (SUM(?numberOfAccidents) AS ?totalAccidents)
+       (MAX(?maxCasualties) AS ?mostCasualtiesInAnyCategory)
+       (SAMPLE(?category) AS ?mostCasualtiesCategory)
 WHERE {
   # Subquery for calculating traffic count per district
   {
@@ -80,9 +84,109 @@ WHERE {
     GROUP BY ?district
   }
 
-  # Main query for accidents data
-  ?roadaccident a btp:RoadAccident ;
-                btp:recordedInDistrict ?district ;
-                btp:numberOfAccidents ?numberOfAccidents .
+  # Subquery for Cyclist
+  {
+    SELECT ?district (SUM(?cyclistInjuries + ?cyclistDeaths) AS ?totalCyclist)
+    WHERE {
+      ?cyclist a btp:Cyclist ;
+               btp:numberOfCyclistsInjuries ?cyclistInjuries ;
+               btp:numberOfCyclistsDeath ?cyclistDeaths ;
+               btp:recordedInDistrict ?district .
+    }
+    GROUP BY ?district
+  }
+
+  # Subquery for Driver
+  {
+    SELECT ?district (SUM(?driverInjuries + ?driverDeaths) AS ?totalDriver)
+    WHERE {
+      ?driver a btp:Driver ;
+              btp:numberOfDriverInjuries ?driverInjuries ;
+              btp:numberOfDriverDeath ?driverDeaths ;
+              btp:recordedInDistrict ?district .
+    }
+    GROUP BY ?district
+  }
+
+  # Subquery for Motorcyclist
+  {
+    SELECT ?district (SUM(?motorcyclistInjuries + ?motorcyclistDeaths) AS ?totalMotorcyclist)
+    WHERE {
+      ?motorcyclist a btp:Motorcyclist ;
+                    btp:numberOfMotorcyclistsInjuries ?motorcyclistInjuries ;
+                    btp:numberOfMotorcyclistsDeath ?motorcyclistDeaths ;
+                    btp:recordedInDistrict ?district .
+    }
+    GROUP BY ?district
+  }
+
+  # Subquery for Pedestrian
+  {
+    SELECT ?district (SUM(?pedestrianInjuries + ?pedestrianDeaths) AS ?totalPedestrian)
+    WHERE {
+      ?pedestrian a btp:Pedestrain ;
+                  btp:numberOfPedestrainInjuries ?pedestrianInjuries ;
+                  btp:numberOfPedestrainDeath ?pedestrianDeaths ;
+                  btp:recordedInDistrict ?district .
+    }
+    GROUP BY ?district
+  }
+
+  # Subquery for Scooter
+  {
+    SELECT ?district (SUM(?scooterInjuries + ?scooterDeaths) AS ?totalScooter)
+    WHERE {
+      ?scooter a btp:Scooter ;
+               btp:numberOfScooterInjuries ?scooterInjuries ;
+               btp:numberOfScooterDeath ?scooterDeaths ;
+               btp:recordedInDistrict ?district .
+    }
+    GROUP BY ?district
+  }
+
+  # Query for accident count
+  {
+    SELECT ?district (SUM(?numberOfAccidents) AS ?numberOfAccidents)
+    WHERE {
+      ?roadaccident a btp:RoadAccident ;
+                    btp:recordedInDistrict ?district ;
+                    btp:numberOfAccidents ?numberOfAccidents .
+    }
+    GROUP BY ?district
+  }
+
+  # Calculate the max casualties among the categories and assign category label
+  BIND(
+    IF(?totalCyclist > ?totalDriver && ?totalCyclist > ?totalMotorcyclist && ?totalCyclist > ?totalPedestrian && ?totalCyclist > ?totalScooter, 
+       "Cyclist", 
+       IF(?totalDriver > ?totalMotorcyclist && ?totalDriver > ?totalPedestrian && ?totalDriver > ?totalScooter, 
+          "Driver", 
+          IF(?totalMotorcyclist > ?totalPedestrian && ?totalMotorcyclist > ?totalScooter, 
+             "Motorcyclist", 
+             IF(?totalPedestrian > ?totalScooter, 
+                "Pedestrian", 
+                "Scooter"
+             )
+          )
+       )
+    ) AS ?category
+  )
+
+  # Calculate max casualties value
+  BIND(
+    IF(?totalCyclist > ?totalDriver && ?totalCyclist > ?totalMotorcyclist && ?totalCyclist > ?totalPedestrian && ?totalCyclist > ?totalScooter, 
+       ?totalCyclist, 
+       IF(?totalDriver > ?totalMotorcyclist && ?totalDriver > ?totalPedestrian && ?totalDriver > ?totalScooter, 
+          ?totalDriver, 
+          IF(?totalMotorcyclist > ?totalPedestrian && ?totalMotorcyclist > ?totalScooter, 
+             ?totalMotorcyclist, 
+             IF(?totalPedestrian > ?totalScooter, 
+                ?totalPedestrian, 
+                ?totalScooter
+             )
+          )
+       )
+    ) AS ?maxCasualties
+  )
 }
 GROUP BY ?district
