@@ -1,36 +1,38 @@
-# All the projects in the district with most accidents in 2022
-
+#Q1 =  All the projects in the district with the most accidents in 2022
 
 PREFIX btp: <http://www.dei.unipd.it/~gdb/ontology/btp/>
 
-SELECT ?districtOut 
-       ?totalAccidentCount
-       (GROUP_CONCAT(DISTINCT ?Ptype; separator = "   $$$$  ") AS ?projects) 
-       
+SELECT 
+    ?district 
+    ?totalAccidentCount
+    (GROUP_CONCAT(DISTINCT CONCAT(STR(?project), " \n = ", STR(?description)); separator = "* \n ") AS ?projectsAndDescriptions)
 WHERE {
   {
-    SELECT ?districtOut (SUM(?accidents) AS ?totalAccidentCount)
+    SELECT ?district (SUM(?accidents) AS ?totalAccidentCount)
     WHERE {
       ?accident a btp:RoadAccident ;
-                btp:recordedInDistrict ?districtOut ;
+                btp:recordedInDistrict ?district ;
                 btp:hasAccidentYear btp:year_2022 ;
                 btp:numberOfAccidents ?accidents .
     }
-    GROUP BY ?districtOut
+    GROUP BY ?district
     ORDER BY DESC(?totalAccidentCount)
     LIMIT 1
   }
 
-  ?districtOut btp:containsArea ?area .
+  ?district btp:containsArea ?area .
   ?area btp:isProximityArea ?project .
-  ?proje btp:hasProjectType ?Ptype.
+  ?project btp:hasDescription ?description .
+  
+ 
 }
-GROUP BY ?districtOut ?totalAccidentCount
+GROUP BY ?district ?totalAccidentCount
+
 
 **********************************************************************************
 
 
-#Q2 list all the pedestrian deaths compared to the average speed limit for every district
+#Q2 - list all the pedestrian deaths compared to the average speed limit for every district
 
 PREFIX btp: <http://www.dei.unipd.it/~gdb/ontology/btp/>
 PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
@@ -60,7 +62,7 @@ ORDER BY DESC(?totalPedDeaths)
 
 **********************************************************************************
 
-#Q3 - the most "popular" accident on a district with the least and most traffic.
+#Q3 - Identifying Districts with the Highest Traffic, Accidents, and Casualties Categorized by User Type
 
 PREFIX btp: <http://www.dei.unipd.it/~gdb/ontology/btp/>
 
