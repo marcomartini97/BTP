@@ -1,0 +1,88 @@
+# All the projects in the district with most accidents in 2022
+
+
+PREFIX btp: <http://www.dei.unipd.it/~gdb/ontology/btp/>
+
+SELECT ?districtOut 
+       ?totalAccidentCount
+       (GROUP_CONCAT(DISTINCT ?Ptype; separator = "   $$$$  ") AS ?projects) 
+       
+WHERE {
+  {
+    SELECT ?districtOut (SUM(?accidents) AS ?totalAccidentCount)
+    WHERE {
+      ?accident a btp:RoadAccident ;
+                btp:recordedInDistrict ?districtOut ;
+                btp:hasAccidentYear btp:year_2022 ;
+                btp:numberOfAccidents ?accidents .
+    }
+    GROUP BY ?districtOut
+    ORDER BY DESC(?totalAccidentCount)
+    LIMIT 1
+  }
+
+  ?districtOut btp:containsArea ?area .
+  ?area btp:isProximityArea ?project .
+  ?proje btp:hasProjectType ?Ptype.
+}
+GROUP BY ?districtOut ?totalAccidentCount
+
+**********************************************************************************
+
+
+#Q2 list all the pedestrian deaths compared to the average speed limit for every district
+
+PREFIX btp: <http://www.dei.unipd.it/~gdb/ontology/btp/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?district ?totalPedDeaths (xsd:integer(AVG(?limit)) AS ?averageSpeedLimit)
+WHERE {
+    
+    {
+        SELECT ?district (SUM(?pedDeath) AS ?totalPedDeaths)
+        WHERE {
+            ?accident a btp:RoadAccident;
+                      btp:recordedInDistrict ?district;
+                      btp:numberOfPedestrainDeath ?pedDeath.
+        }
+        GROUP BY ?district
+    }
+
+    
+    ?district btp:isDistrict ?road.
+    ?road btp:hasArchToRoad|btp:hasArchFromRoad ?arch.
+    ?arch btp:hasSpeedLimit ?splim.
+    ?splim btp:speedLimit ?limit.
+}
+GROUP BY ?district ?totalPedDeaths
+ORDER BY DESC(?totalPedDeaths)
+
+
+
+**********************************************************************************
+
+#Q3 - the most "popular" accident on a district with the least and most traffic.
+
+PREFIX btp: <http://www.dei.unipd.it/~gdb/ontology/btp/>
+
+SELECT ?district (MAX(?trafficCount) AS ?maxTraffic) (MAX(?numberOfAccidents) AS ?mostPopularAccidentCount)
+WHERE {
+  # Subquery for calculating traffic count per district
+  {
+    SELECT ?district (SUM(?traffic) AS ?trafficCount)
+    WHERE {
+      ?district a btp:District ;
+                btp:isDistrict ?road .
+      ?road btp:hasArchFromRoad|btp:hasArchToRoad ?roadarch .
+      ?roadarch btp:isPlaced ?coil .
+      ?coil btp:hasObserve ?VD .
+      ?VD btp:hasCount ?traffic .
+    }
+    GROUP BY ?district
+  }
+
+  # Main query for accidents data
+  ?roadaccident a btp:RoadAccident ;
+                btp:recordedInDistrict ?district ;
+                btp:numberOfAccidents ?numberOfAccidents .
+}
+GROUP BY ?district
