@@ -3,7 +3,7 @@
 prefix btp:<http://www.dei.unipd.it/~gdb/ontology/btp/>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
-select ?year ?month ?chemical_element ((sum(?daily_quantity)/365) as ?monthly_quantity)  where {
+select ?year ?month ?chemical_element ((sum(?daily_quantity)/count(?day)) as ?monthly_quantity)  where {
     {
         # sub-query to calculate the daily average quantity of each chemical element
         select ?day ?chemical_element (avg(?quantity) as ?daily_quantity) where {
@@ -29,7 +29,7 @@ order by asc(?year)
 
 
 
-# Q02 - AVERAGE ANNUAL TRAFFIC
+# Q02 - AVERAGE DAILY TRAFFIC FOR EVERY YEAR
 
 prefix btp:<http://www.dei.unipd.it/~gdb/ontology/btp/>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
