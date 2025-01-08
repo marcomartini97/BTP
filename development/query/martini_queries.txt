@@ -1,0 +1,179 @@
+PREFIX : <http://www.dei.unipd.it/~gdb/ontology/btp/>
+
+# Gets the number of projects of type "Piste e Corsie Ciclabili" in the proximity areas with the most cyclist injuries
+SELECT ?proximityAreaLabel ?averageInjuries (COUNT(?projects) as ?num_projects) 
+WHERE{
+    # Gets the projects with proximity area
+    ?projects a :Project30;
+    	:hasProjectType ?projectType;
+    	:hasProximityArea ?proximityArea.
+    ?proximityAreaLabel ^rdfs:label ?proximityArea.
+    FILTER(?projectType = :pisteECorsieCiclabili)
+    {
+        # Gets the proximityArea with most average injuries
+        SELECT ?proximityArea (AVG(?injuries) AS ?averageInjuries)
+        WHERE {
+            ?incident a :Cyclist;
+            :happendInArea ?proximityArea;
+            :numberOfCyclistsInjuries ?injuries.
+        }
+        GROUP BY ?proximityArea
+        ORDER BY DESC(?averageInjuries) 
+    }
+}GROUP BY ?proximityAreaLabel ?averageInjuries
+ORDER BY DESC(?num_projects)
+
+*************************************************************************************
+
+PREFIX : <http://www.dei.unipd.it/~gdb/ontology/btp/>
+PREFIX btp: <http://www.dei.unipd.it/~gdb/ontology/btp/>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+# Average traffic per speed
+SELECT ?year ?speed (SUM(?yearly_traffic) as ?yearly_traffic_per_speed) WHERE {
+
+  {
+    # Sub-query to calculate daily average traffic grouped by day and speed
+    SELECT ?day ?speed (SUM(?daily_traffic_roadarch) AS ?daily_traffic) WHERE {
+
+      {
+        # Sub-query to calculate daily average traffic per road arch with speed
+        SELECT ?day ?speed (AVG(?flowAdjusted) AS ?daily_traffic_roadarch) WHERE {
+          ?vehicledet a btp:VehicleDetection ;
+                      btp:hasCount ?flow ;
+                      btp:hasAccuracy ?accuracy ;
+                      btp:isObserved ?coil ;
+                      btp:hasObservedOnPeriod ?period .
+
+          ?period a btp:Period ;
+                  btp:startTime ?date .
+
+          ?coil a btp:Coil ;
+                btp:isOn ?roadarch .
+
+          # Retrieve speed limit for the road arch
+          ?roadarch :hasSpeedLimit ?speed .
+
+          # Bind the date
+          BIND(xsd:date(?date) AS ?day)
+
+          # Adjust flow based on accuracy
+          BIND(?flow * IF(?accuracy = -1, 0, ?accuracy) AS ?flowAdjusted)
+        }
+        GROUP BY ?day ?roadarch ?speed
+      }
+
+    }
+    GROUP BY ?day ?speed
+  }
+
+  # Extract the year from the day
+  BIND(YEAR(?day) AS ?year)
+
+  # Calculate yearly traffic
+  BIND(xsd:integer(?daily_traffic) / 365 AS ?yearly_traffic)
+
+}
+GROUP BY ?year ?speed
+ORDER BY ?year ?speed
+
+*************************************************************************************
+
+PREFIX : <http://www.dei.unipd.it/~gdb/ontology/btp/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# Get the smallest roads per road type based on total road length
+SELECT ?roadType ?road ?roadLabel ?totalLength
+WHERE {
+    # Subquery 1: Compute total length for each road
+    {
+        SELECT ?road ?roadType ?roadLabel (SUM(?length) AS ?totalLength)
+        WHERE {
+            ?road (:hasArchFromRoad | :hasArchToRoad) ?arch .
+            ?arch :length ?length .
+            ?road :hasRoadType ?roadType .
+            ?road rdfs:label ?roadLabel .
+        }
+        GROUP BY ?road ?roadType ?roadLabel
+    }
+
+    # Subquery 2: Compute the minimum total length per road type
+    {
+        SELECT ?roadType (MIN(?totalLength) AS ?minTotalLength)
+        WHERE {
+            # Reuse the total lengths from Subquery 1
+            {
+                SELECT ?roadType (SUM(?length) AS ?totalLength)
+                WHERE {
+                    ?road (:hasArchFromRoad | :hasArchToRoad) ?arch .
+                    ?arch :length ?length .
+                    ?road :hasRoadType ?roadType .
+                }
+                GROUP BY ?roadType ?road
+            }
+        }
+        GROUP BY ?roadType
+    }
+
+    # Join the two subqueries on roadType and ensure totalLength equals minTotalLength
+    FILTER(?totalLength = ?minTotalLength)
+}
+ORDER BY ?roadType ?road
+
+
+*************************************************************************************
+
+PREFIX : <http://www.dei.unipd.it/~gdb/ontology/btp/>
+#Get the largest type of roads along with the smallest road
+
+# Get the longest roads per road type based on total road length
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?roadType ?road ?roadLabel ?totalLength
+WHERE {
+    # Subquery 1: Compute total length for each road
+    {
+        SELECT ?road ?roadType ?roadLabel (SUM(?length) AS ?totalLength)
+        WHERE {
+            ?road (:hasArchFromRoad | :hasArchToRoad) ?arch .
+            ?arch :length ?length .
+            ?road :hasRoadType ?roadType .
+            ?road rdfs:label ?roadLabel .
+        }
+        GROUP BY ?road ?roadType ?roadLabel
+    }
+
+    # Subquery 2: Compute the maximum total length per road type
+    {
+        SELECT ?roadType (MAX(?totalLength) AS ?maxTotalLength)
+        WHERE {
+            # Inner subquery to calculate total length per road type and road
+            {
+                SELECT ?roadType (SUM(?length) AS ?totalLength)
+                WHERE {
+                    ?road (:hasArchFromRoad | :hasArchToRoad) ?arch .
+                    ?arch :length ?length .
+                    ?road :hasRoadType ?roadType .
+                }
+                GROUP BY ?roadType ?road
+            }
+        }
+        GROUP BY ?roadType
+    }
+
+    # Join the two subqueries on roadType and ensure totalLength equals maxTotalLength
+    FILTER(?totalLength = ?maxTotalLength)
+}
+ORDER BY ?roadType ?road
+
+
+*************************************************************************************
+
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX : <http://www.dei.unipd.it/~gdb/ontology/btp/>
+# Get all the roads that are part of a proximity area (We didn't have that open data) and count them
+
+select (COUNT(?road) as ?number_roads) ?area_label where {
+    ?project :hasProximityArea ?area .
+	?area rdfs:label ?area_label .
+    ?project :isProject ?road .
+}GROUP BY(?area_label)
