@@ -72,7 +72,7 @@ group by ?year
 
 
 
-# Q03 - ROADS COVERED BY COILS
+# Q03 - HAS THE NUMBER OF COILS INCREASED OVER THE YEARS?
 
 prefix btp:<http://www.dei.unipd.it/~gdb/ontology/btp/>
 prefix xsd: <http://www.w3.org/2001/XMLSchema#>
