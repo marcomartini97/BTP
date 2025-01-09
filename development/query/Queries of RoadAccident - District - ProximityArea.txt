@@ -62,7 +62,7 @@ ORDER BY DESC(?totalPedDeaths)
 
 **********************************************************************************
 
-#Q3 - Identifying Districts with the Highest Traffic, Accidents, and Casualties Categorized by User Type
+#Q3 - most popular type of accidents out of total accidents that happend in each district with their respected number of casualties + total traffic of districts
 
 PREFIX btp: <http://www.dei.unipd.it/~gdb/ontology/btp/>
 
